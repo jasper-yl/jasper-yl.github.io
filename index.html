@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent 日报</title>
+<meta name="description" content="Agent 与 Agent Context 领域每日 GitHub 项目与论文追踪">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<style>
+:root {
+  --bg: #fafaf9; --panel: #ffffff; --text: #1c1917; --muted: #78716c;
+  --border: #e7e5e4; --accent: #c2410c; --accent-soft: #fff1e8; --code: #f5f5f4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141210; --panel: #1c1a17; --text: #e7e5e4; --muted: #a8a29e;
+    --border: #2e2a26; --accent: #fb923c; --accent-soft: #2a1d14; --code: #26231f;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141210; --panel: #1c1a17; --text: #e7e5e4; --muted: #a8a29e;
+  --border: #2e2a26; --accent: #fb923c; --accent-soft: #2a1d14; --code: #26231f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.75 -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", sans-serif;
+}
+header {
+  position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);
+}
+.bar { max-width: 1180px; margin: 0 auto; padding: 10px 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.brand { font-weight: 700; letter-spacing: .02em; margin-right: auto; }
+.brand span { color: var(--accent); }
+.tabs { display: flex; background: var(--code); border-radius: 999px; padding: 3px; }
+.tabs button {
+  border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 14px;
+  padding: 4px 14px; border-radius: 999px; cursor: pointer;
+}
+.tabs button.on { background: var(--panel); color: var(--text); box-shadow: 0 1px 2px rgb(0 0 0 / .12); }
+select, .icon {
+  font: inherit; font-size: 14px; color: var(--text); background: var(--panel);
+  border: 1px solid var(--border); border-radius: 8px; padding: 4px 8px; cursor: pointer;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; }
+aside { position: sticky; top: 64px; align-self: start; padding-top: 28px; max-height: calc(100vh - 64px); overflow: auto; }
+aside h4 { margin: 0 0 8px; font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .08em; }
+aside a { display: block; padding: 3px 10px; border-radius: 6px; color: var(--muted); text-decoration: none; font-size: 14px; font-variant-numeric: tabular-nums; }
+aside a:hover { color: var(--text); }
+aside a.on { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+main { min-width: 0; padding: 20px 0 80px; }
+article { background: var(--panel); border: 1px solid var(--border); border-radius: 14px; padding: 8px 36px 32px; }
+article h1 { font-size: 26px; line-height: 1.35; margin: 24px 0 8px; }
+article h2 { font-size: 20px; margin: 36px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
+article h3 { font-size: 17px; margin: 26px 0 6px; }
+article a { color: var(--accent); text-decoration: none; word-break: break-word; }
+article a:hover { text-decoration: underline; }
+article blockquote { margin: 12px 0; padding: 8px 14px; border-left: 3px solid var(--accent); background: var(--accent-soft); color: var(--muted); border-radius: 0 8px 8px 0; }
+article blockquote p { margin: 0; }
+article code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+article ul, article ol { padding-left: 22px; }
+article li { margin: 4px 0; }
+.table { overflow-x: auto; margin: 12px 0; }
+article table { border-collapse: collapse; width: 100%; font-size: 14px; }
+article th, article td { border-bottom: 1px solid var(--border); padding: 8px 10px; text-align: left; vertical-align: top; }
+article th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+article td:nth-child(4), article td:nth-child(5) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); padding: 60px 0; text-align: center; }
+footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
+.mobile-date { display: none; }
+@media (max-width: 760px) {
+  .wrap { grid-template-columns: 1fr; gap: 0; }
+  aside { display: none; }
+  .mobile-date { display: inline-block; }
+  article { padding: 4px 18px 24px; border-radius: 10px; }
+  article h1 { font-size: 21px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <div class="brand">📡 Agent <span>日报</span></div>
+    <div class="tabs" role="tablist">
+      <button data-kind="github" class="on">GitHub 项目</button>
+      <button data-kind="papers">论文</button>
+    </div>
+    <select class="mobile-date" id="dateSelect" aria-label="选择日期"></select>
+    <button class="icon" id="theme" title="切换主题">◐</button>
+  </div>
+</header>
+<div class="wrap">
+  <aside><h4>历史日报</h4><nav id="dates"></nav></aside>
+  <main><article id="content"><div class="empty">加载中…</div></article></main>
+</div>
+<footer>每日自动采集 GitHub Trending / 新仓库增速 / arXiv / Hugging Face Daily Papers，由 Claude 整理</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script>
+const state = { kind: "github", date: null, dates: [] };
+const $ = (s) => document.querySelector(s);
+
+function store(k, v) { try { v === undefined ? (v = localStorage.getItem(k)) : localStorage.setItem(k, v); } catch (e) { v = null; } return v; }
+
+const savedTheme = store("theme");
+if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+$("#theme").onclick = () => {
+  const cur = document.documentElement.dataset.theme ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  store("theme", next);
+};
+
+function readHash() {
+  const [date, kind] = location.hash.slice(1).split("/");
+  if (kind === "github" || kind === "papers") state.kind = kind;
+  if (state.dates.some((d) => d.date === date)) state.date = date;
+}
+
+function syncUI() {
+  document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === state.kind));
+  document.querySelectorAll("#dates a").forEach((a) => a.classList.toggle("on", a.dataset.date === state.date));
+  $("#dateSelect").value = state.date;
+  history.replaceState(null, "", `#${state.date}/${state.kind}`);
+}
+
+async function render() {
+  syncUI();
+  const entry = state.dates.find((d) => d.date === state.date);
+  const el = $("#content");
+  if (!entry || !entry[state.kind]) { el.innerHTML = '<div class="empty">这一天没有该报告</div>'; return; }
+  el.innerHTML = '<div class="empty">加载中…</div>';
+  try {
+    const md = await (await fetch(`reports/${entry[state.kind]}`, { cache: "no-cache" })).text();
+    el.innerHTML = DOMPurify.sanitize(marked.parse(md));
+    el.querySelectorAll("table").forEach((t) => { const w = document.createElement("div"); w.className = "table"; t.replaceWith(w); w.appendChild(t); });
+    el.querySelectorAll("a[href^='http']").forEach((a) => { a.target = "_blank"; a.rel = "noopener"; });
+    window.scrollTo(0, 0);
+  } catch (e) {
+    el.innerHTML = '<div class="empty">加载失败，请刷新重试</div>';
+  }
+}
+
+async function init() {
+  try {
+    state.dates = await (await fetch("reports/index.json", { cache: "no-cache" })).json();
+  } catch (e) { state.dates = []; }
+  if (!state.dates.length) { $("#content").innerHTML = '<div class="empty">还没有日报</div>'; return; }
+  state.date = state.dates[0].date;
+  readHash();
+  $("#dates").innerHTML = state.dates.map((d) => `<a href="#${d.date}/${state.kind}" data-date="${d.date}">${d.date}</a>`).join("");
+  $("#dateSelect").innerHTML = state.dates.map((d) => `<option value="${d.date}">${d.date}</option>`).join("");
+  $("#dates").onclick = (e) => { const a = e.target.closest("a"); if (!a) return; e.preventDefault(); state.date = a.dataset.date; render(); };
+  $("#dateSelect").onchange = (e) => { state.date = e.target.value; render(); };
+  document.querySelectorAll(".tabs button").forEach((b) => b.onclick = () => { state.kind = b.dataset.kind; render(); });
+  window.onhashchange = () => { readHash(); render(); };
+  render();
+}
+init();
+</script>
+</body>
+</html>
