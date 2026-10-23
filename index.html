@@ -33,7 +33,7 @@ header {
 .bar { max-width: 1180px; margin: 0 auto; padding: 10px 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
 .brand { font-weight: 700; letter-spacing: .02em; margin-right: auto; }
 .brand span { color: var(--accent); }
-.tabs { display: flex; background: var(--code); border-radius: 999px; padding: 3px; }
+.tabs { display: flex; flex-wrap: wrap; background: var(--code); border-radius: 999px; padding: 3px; }
 .tabs button {
   border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 14px;
   padding: 4px 14px; border-radius: 999px; cursor: pointer;
@@ -86,6 +86,8 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
     <div class="tabs" role="tablist">
       <button data-kind="github" class="on">GitHub 项目</button>
       <button data-kind="papers">论文</button>
+      <button data-kind="social">社区热议</button>
+      <button data-kind="weekly">周报</button>
     </div>
     <select class="mobile-date" id="dateSelect" aria-label="选择日期"></select>
     <button class="icon" id="theme" title="切换主题">◐</button>
@@ -100,7 +102,8 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
 <script>
-const state = { kind: "github", date: null, dates: [] };
+const KINDS = ["github", "papers", "social", "weekly"];
+const state = { kind: "github", key: { day: null, week: null }, days: [], weeks: [] };
 const $ = (s) => document.querySelector(s);
 
 function store(k, v) { try { v === undefined ? (v = localStorage.getItem(k)) : localStorage.setItem(k, v); } catch (e) { v = null; } return v; }
@@ -115,27 +118,40 @@ $("#theme").onclick = () => {
   store("theme", next);
 };
 
+const isWeekly = () => state.kind === "weekly";
+const list = () => isWeekly() ? state.weeks.map((w) => ({ key: w.week, file: w.file }))
+  : state.days.map((d) => ({ key: d.date, file: d[state.kind] }));
+const slot = () => isWeekly() ? "week" : "day";
+const current = () => state.key[slot()];
+
 function readHash() {
-  const [date, kind] = location.hash.slice(1).split("/");
-  if (kind === "github" || kind === "papers") state.kind = kind;
-  if (state.dates.some((d) => d.date === date)) state.date = date;
+  const [key, kind] = decodeURIComponent(location.hash.slice(1)).split("/");
+  if (KINDS.includes(kind)) state.kind = kind;
+  if (list().some((e) => e.key === key)) state.key[slot()] = key;
 }
 
-function syncUI() {
-  document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === state.kind));
-  document.querySelectorAll("#dates a").forEach((a) => a.classList.toggle("on", a.dataset.date === state.date));
-  $("#dateSelect").value = state.date;
-  history.replaceState(null, "", `#${state.date}/${state.kind}`);
+function buildNav() {
+  $("aside h4").textContent = isWeekly() ? "历史周报" : "历史日报";
+  const items = list();
+  $("#dates").innerHTML = items.map((e) => `<a href="#${e.key}/${state.kind}" data-key="${e.key}">${e.key}</a>`).join("");
+  $("#dateSelect").innerHTML = items.map((e) => `<option value="${e.key}">${e.key}</option>`).join("");
 }
 
 async function render() {
-  syncUI();
-  const entry = state.dates.find((d) => d.date === state.date);
+  buildNav();
+  document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === state.kind));
+  document.querySelectorAll("#dates a").forEach((a) => a.classList.toggle("on", a.dataset.key === current()));
+  $("#dateSelect").value = current() || "";
+  history.replaceState(null, "", `#${current() || ""}/${state.kind}`);
+  const entry = list().find((e) => e.key === current());
   const el = $("#content");
-  if (!entry || !entry[state.kind]) { el.innerHTML = '<div class="empty">这一天没有该报告</div>'; return; }
+  if (!entry || !entry.file) {
+    el.innerHTML = `<div class="empty">${isWeekly() && !state.weeks.length ? "第一份周报会在下周一生成" : "这一天没有该报告"}</div>`;
+    return;
+  }
   el.innerHTML = '<div class="empty">加载中…</div>';
   try {
-    const md = await (await fetch(`reports/${entry[state.kind]}`, { cache: "no-cache" })).text();
+    const md = await (await fetch(`reports/${entry.file}`, { cache: "no-cache" })).text();
     el.innerHTML = DOMPurify.sanitize(marked.parse(md));
     el.querySelectorAll("table").forEach((t) => { const w = document.createElement("div"); w.className = "table"; t.replaceWith(w); w.appendChild(t); });
     el.querySelectorAll("a[href^='http']").forEach((a) => { a.target = "_blank"; a.rel = "noopener"; });
@@ -147,15 +163,14 @@ async function render() {
 
 async function init() {
   try {
-    state.dates = await (await fetch("reports/index.json", { cache: "no-cache" })).json();
-  } catch (e) { state.dates = []; }
-  if (!state.dates.length) { $("#content").innerHTML = '<div class="empty">还没有日报</div>'; return; }
-  state.date = state.dates[0].date;
+    const idx = await (await fetch("reports/index.json", { cache: "no-cache" })).json();
+    state.days = idx.days || []; state.weeks = idx.weeks || [];
+  } catch (e) { /* empty site */ }
+  state.key.day = state.days[0]?.date || null;
+  state.key.week = state.weeks[0]?.week || null;
   readHash();
-  $("#dates").innerHTML = state.dates.map((d) => `<a href="#${d.date}/${state.kind}" data-date="${d.date}">${d.date}</a>`).join("");
-  $("#dateSelect").innerHTML = state.dates.map((d) => `<option value="${d.date}">${d.date}</option>`).join("");
-  $("#dates").onclick = (e) => { const a = e.target.closest("a"); if (!a) return; e.preventDefault(); state.date = a.dataset.date; render(); };
-  $("#dateSelect").onchange = (e) => { state.date = e.target.value; render(); };
+  $("#dates").onclick = (e) => { const a = e.target.closest("a"); if (!a) return; e.preventDefault(); state.key[slot()] = a.dataset.key; render(); };
+  $("#dateSelect").onchange = (e) => { state.key[slot()] = e.target.value; render(); };
   document.querySelectorAll(".tabs button").forEach((b) => b.onclick = () => { state.kind = b.dataset.kind; render(); });
   window.onhashchange = () => { readHash(); render(); };
   render();

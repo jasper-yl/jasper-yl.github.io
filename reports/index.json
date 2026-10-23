@@ -1,7 +1,16 @@
-[
- {
-  "date": "2026-10-22",
-  "github": "2026-10-22-github.md",
-  "papers": "2026-10-22-papers.md"
- }
-]
+{
+ "days": [
+  {
+   "date": "2026-10-23",
+   "github": "2026-10-23-github.md",
+   "papers": "2026-10-23-papers.md",
+   "social": "2026-10-23-social.md"
+  },
+  {
+   "date": "2026-10-22",
+   "github": "2026-10-22-github.md",
+   "papers": "2026-10-22-papers.md"
+  }
+ ],
+ "weeks": []
+}
