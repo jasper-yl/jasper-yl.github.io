@@ -12,5 +12,10 @@
    "papers": "2026-10-22-papers.md"
   }
  ],
- "weeks": []
+ "weeks": [
+  {
+   "week": "2026-W43",
+   "file": "2026-W43-weekly.md"
+  }
+ ]
 }
