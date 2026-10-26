@@ -67,6 +67,28 @@ article th, article td { border-bottom: 1px solid var(--border); padding: 8px 10
 article th { color: var(--muted); font-weight: 600; white-space: nowrap; }
 article td:nth-child(4), article td:nth-child(5) { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .empty { color: var(--muted); padding: 60px 0; text-align: center; }
+article a.repo { border-bottom: 1px dotted var(--accent); }
+article a.repo:hover { text-decoration: none; }
+#tip {
+  position: absolute; z-index: 20; max-width: 340px; display: none;
+  background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 6px 24px rgb(0 0 0 / .16); padding: 10px 14px; font-size: 14px; line-height: 1.6;
+}
+#tip b { display: block; font-size: 13px; word-break: break-all; }
+#tip .zh { margin: 4px 0; }
+#tip .meta { color: var(--muted); font-size: 12px; }
+#tip .open { display: none; margin-top: 6px; color: var(--accent); font-size: 13px; text-decoration: none; }
+@media (hover: none) { #tip .open { display: inline-block; } }
+.proj-tools { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 20px 0 4px; }
+.proj-tools input {
+  flex: 1; min-width: 180px; font: inherit; font-size: 14px; color: var(--text); background: var(--panel);
+  border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px;
+}
+.proj-tools .count { color: var(--muted); font-size: 13px; }
+article td.refs { white-space: normal; min-width: 160px; }
+article td.refs a { display: inline-block; margin-right: 8px; font-size: 13px; white-space: nowrap; }
+article td.name { min-width: 170px; word-break: normal; overflow-wrap: anywhere; }
+article td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
 footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
 .mobile-date { display: none; }
 @media (max-width: 760px) {
@@ -88,6 +110,7 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
       <button data-kind="papers">论文</button>
       <button data-kind="social">社区热议</button>
       <button data-kind="weekly">周报</button>
+      <button data-kind="projects">项目库</button>
     </div>
     <select class="mobile-date" id="dateSelect" aria-label="选择日期"></select>
     <button class="icon" id="theme" title="切换主题">◐</button>
@@ -97,13 +120,15 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
   <aside><h4>历史日报</h4><nav id="dates"></nav></aside>
   <main><article id="content"><div class="empty">加载中…</div></article></main>
 </div>
+<div id="tip" role="tooltip"></div>
 <footer>每日自动采集 GitHub Trending / 新仓库增速 / arXiv / Hugging Face Daily Papers，由 Claude 整理</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
 <script>
-const KINDS = ["github", "papers", "social", "weekly"];
-const state = { kind: "github", key: { day: null, week: null }, days: [], weeks: [] };
+const KINDS = ["github", "papers", "social", "weekly", "projects"];
+const KIND_NAMES = { github: "GitHub", papers: "论文", social: "社区", weekly: "周报" };
+const state = { kind: "github", key: { day: null, week: null }, days: [], weeks: [], glossary: {} };
 const $ = (s) => document.querySelector(s);
 
 function store(k, v) { try { v === undefined ? (v = localStorage.getItem(k)) : localStorage.setItem(k, v); } catch (e) { v = null; } return v; }
@@ -137,7 +162,83 @@ function buildNav() {
   $("#dateSelect").innerHTML = items.map((e) => `<option value="${e.key}">${e.key}</option>`).join("");
 }
 
+const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmt = (n) => n == null ? "—" : Number(n).toLocaleString("en-US");
+const repoOf = (href) => {
+  const m = /^https:\/\/github\.com\/([\w.-]+)\/([\w.-]+?)(?:\.git)?\/?(?:[#?].*)?$/.exec(href || "");
+  return m ? `${m[1]}/${m[2]}` : null;
+};
+const lookup = (name) => state.glossary[name] ||
+  state.glossary[Object.keys(state.glossary).find((k) => k.toLowerCase() === name.toLowerCase())];
+const refLink = (ref) => { const [key, kind] = ref.split("/"); return `<a href="#${key}/${kind}">${key.slice(5)} ${KIND_NAMES[kind] || kind}</a>`; };
+
+// Hover card for repo links: what the project is, so nobody has to remember dozens of names
+const tip = $("#tip");
+let tipFor = null;
+function showTip(a) {
+  const name = a.dataset.repo, g = lookup(name);
+  if (!g) return;
+  tip.innerHTML = `<b>${esc(name)}</b><div class="zh">${esc(g.zh || g.description)}</div>` +
+    `<div class="meta">⭐ ${fmt(g.stars)}${g.first_seen ? ` · 首次出现 ${esc(g.first_seen)}` : ""}${g.mentions ? ` · 出现 ${g.mentions.length} 次` : ""}</div>` +
+    `<a class="open" href="https://github.com/${esc(name)}" target="_blank" rel="noopener">打开 GitHub ↗</a>`;
+  tip.style.display = "block";
+  const r = a.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  const left = Math.max(8, Math.min(r.left + scrollX, scrollX + document.documentElement.clientWidth - w - 8));
+  const below = r.bottom + 8 + h < innerHeight;
+  tip.style.left = left + "px";
+  tip.style.top = (below ? r.bottom + scrollY + 6 : r.top + scrollY - h - 6) + "px";
+  tipFor = a;
+}
+function hideTip() { tip.style.display = "none"; tipFor = null; }
+const touch = matchMedia("(hover: none)").matches;
+function wireRepoLinks(el) {
+  el.querySelectorAll("a[href^='https://github.com/']").forEach((a) => {
+    const name = repoOf(a.getAttribute("href"));
+    if (!name || !lookup(name)) return;
+    a.dataset.repo = name; a.classList.add("repo");
+    if (touch) {  // no hover on phones: first tap shows the card, the card's link opens GitHub
+      a.addEventListener("click", (e) => { if (tipFor !== a) { e.preventDefault(); showTip(a); } });
+    } else {
+      a.addEventListener("mouseenter", () => showTip(a));
+      a.addEventListener("mouseleave", hideTip);
+      a.addEventListener("focus", () => showTip(a));
+      a.addEventListener("blur", hideTip);
+    }
+  });
+}
+document.addEventListener("click", (e) => { if (tipFor && !e.target.closest("#tip, a.repo")) hideTip(); });
+addEventListener("scroll", () => { if (!touch) hideTip(); }, { passive: true });
+
+function renderProjects(el) {
+  const rows = Object.entries(state.glossary).map(([name, g]) => ({ name, ...g }));
+  el.innerHTML = `<h1>项目库</h1><p style="color:var(--muted)">日报里出现过的所有 GitHub 项目。日报中的项目链接悬停即可看到这里的介绍。</p>
+    <div class="proj-tools"><input id="q" type="search" placeholder="搜索项目名或介绍…" aria-label="搜索项目">
+    <select id="sort" aria-label="排序"><option value="recent">最近出现</option><option value="first">首次出现</option><option value="stars">星数</option><option value="count">出现次数</option></select>
+    <span class="count" id="count"></span></div><div class="table"><table><thead><tr><th>项目</th><th>介绍</th><th>⭐</th><th>出现在</th></tr></thead><tbody id="rows"></tbody></table></div>`;
+  const latest = (r) => (r.mentions || []).filter((m) => !m.includes("-W")).sort().pop() || "";
+  const draw = () => {
+    const q = $("#q").value.trim().toLowerCase(), by = $("#sort").value;
+    const list = rows.filter((r) => !q || `${r.name} ${r.zh} ${r.description}`.toLowerCase().includes(q));
+    const key = { recent: (r) => latest(r), first: (r) => r.first_seen || "", stars: (r) => r.stars || 0, count: (r) => (r.mentions || []).length }[by];
+    list.sort((a, b) => (key(a) < key(b) ? 1 : key(a) > key(b) ? -1 : 0));
+    $("#count").textContent = `${list.length} 个项目`;
+    $("#rows").innerHTML = list.map((r) => `<tr><td class="name"><a href="https://github.com/${esc(r.name)}" target="_blank" rel="noopener">${esc(r.name)}</a></td>` +
+      `<td>${esc(r.zh || r.description)}</td><td class="num">${fmt(r.stars)}</td>` +
+      `<td class="refs">${(r.mentions || []).slice(0, 4).map(refLink).join("")}${(r.mentions || []).length > 4 ? `<span style="color:var(--muted)">等 ${r.mentions.length} 次</span>` : ""}</td></tr>`).join("");
+  };
+  $("#q").oninput = draw; $("#sort").onchange = draw; draw();
+}
+
 async function render() {
+  hideTip();
+  if (state.kind === "projects") {
+    document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === "projects"));
+    $("aside").style.visibility = "hidden"; $("#dateSelect").style.visibility = "hidden";
+    history.replaceState(null, "", "#/projects");
+    renderProjects($("#content"));
+    return;
+  }
+  $("aside").style.visibility = ""; $("#dateSelect").style.visibility = "";
   buildNav();
   document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === state.kind));
   document.querySelectorAll("#dates a").forEach((a) => a.classList.toggle("on", a.dataset.key === current()));
@@ -155,6 +256,7 @@ async function render() {
     el.innerHTML = DOMPurify.sanitize(marked.parse(md));
     el.querySelectorAll("table").forEach((t) => { const w = document.createElement("div"); w.className = "table"; t.replaceWith(w); w.appendChild(t); });
     el.querySelectorAll("a[href^='http']").forEach((a) => { a.target = "_blank"; a.rel = "noopener"; });
+    wireRepoLinks(el);
     window.scrollTo(0, 0);
   } catch (e) {
     el.innerHTML = '<div class="empty">加载失败，请刷新重试</div>';
@@ -166,6 +268,7 @@ async function init() {
     const idx = await (await fetch("reports/index.json", { cache: "no-cache" })).json();
     state.days = idx.days || []; state.weeks = idx.weeks || [];
   } catch (e) { /* empty site */ }
+  try { state.glossary = await (await fetch("glossary.json", { cache: "no-cache" })).json(); } catch (e) { /* no hover cards */ }
   state.key.day = state.days[0]?.date || null;
   state.key.week = state.weeks[0]?.week || null;
   readHash();
