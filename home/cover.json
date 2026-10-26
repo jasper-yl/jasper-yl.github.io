@@ -1,0 +1,37 @@
+{
+ "date": "2026-10-25",
+ "issue": 4,
+ "cover": {
+  "kicker": "封面故事 · 社区热议",
+  "title": "一个安全审计 Skill\n没靠营销号就破百万浏览",
+  "dek": "Cloudflare 的 security-audit-skill 日增 +2,744,真实讨论浏览超过 100 万,自媒体清单却只有 35 次曝光。靠大厂背书和一句话讲清的机制自然出圈,在满屏推广的榜单里很少见。",
+  "big": "+2,744",
+  "unit": "颗星 / 日",
+  "kind": "social"
+ },
+ "stickers": [
+  {
+   "title": "论文角",
+   "text": "RAG 组合评测给出反直觉结果:单点有效的技术叠加后,预测提升 +47%,实测只有 +17%。",
+   "face": "Σ(っ °Д °;)っ",
+   "kind": "papers"
+  },
+  {
+   "title": "新热点",
+   "text": "多 harness 编排升温,HarnessRouter 让一个 Bot 同时调度 Codex、Claude Code 等多个 Agent。",
+   "face": "(⊙ˍ⊙)",
+   "kind": "social"
+  },
+  {
+   "title": "通用 Agent",
+   "text": "开箱即用的 makecindy/cindy 日增 +719,昨天是 +471,是通用 Agent 里涨得最快的。",
+   "face": "(๑•̀ㅂ•́)و✧",
+   "kind": "github"
+  }
+ ],
+ "reports": {
+  "github": "2026-10-25-github.md",
+  "papers": "2026-10-25-papers.md",
+  "social": "2026-10-25-social.md"
+ }
+}

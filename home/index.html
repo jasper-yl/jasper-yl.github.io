@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jasper's Agent 观察</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* Layout: a magazine cover (masthead, issue line, cover story + stickers) above a two-column contents spread.
+   The cover and stickers come from cover.json, rebuilt every morning after the daily reports. */
+:root {
+  --paper: #fff6dc; --panel: #fffdf6; --ink: #1f2a44; --muted: #6b6a7a; --rule: #ecdcae;
+  --tomato: #e8553e; --sky: #3d7be0; --sticker: #ffd75e; --sticker-ink: #1f2a44;
+  --display: "ZCOOL KuaiLe", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --latin: "Fraunces", Georgia, serif;
+  --body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #1b1a24; --panel: #23222e; --ink: #f3ead3; --muted: #a8a3b4; --rule: #36344a;
+  --tomato: #ff7a62; --sky: #7aa7ff; --sticker: #e9b93a; --sticker-ink: #1b1a24; color-scheme: dark;
+} }
+:root[data-theme="dark"] {
+  --paper: #1b1a24; --panel: #23222e; --ink: #f3ead3; --muted: #a8a3b4; --rule: #36344a;
+  --tomato: #ff7a62; --sky: #7aa7ff; --sticker: #e9b93a; --sticker-ink: #1b1a24; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
+body {
+  margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.75 var(--body);
+  padding-block: 28px 64px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.page { max-width: 1040px; margin: 0 auto; display: grid; gap: 40px; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; border-radius: 4px; }
+
+.issue { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 13px; letter-spacing: .12em; color: var(--muted); border-bottom: 2px solid var(--ink); padding-bottom: 8px; }
+.issue nav { display: flex; gap: 14px; align-items: center; }
+.issue nav a { text-decoration: none; }
+.issue nav a:hover { color: var(--tomato); }
+#theme { font: inherit; font-size: 13px; color: var(--ink); background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 0 10px; cursor: pointer; }
+.mast { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+.mast h1 { margin: 0; font: 800 clamp(44px, 9vw, 104px)/.95 var(--latin); letter-spacing: -.02em; }
+.mast h1 em { font-style: normal; font-family: var(--display); font-weight: 400; color: var(--tomato); }
+.hello { font-family: var(--display); font-size: clamp(18px, 2.4vw, 24px); margin: 0; }
+
+.cover { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 36px; align-items: start; }
+.story .kicker { font-size: 13px; letter-spacing: .14em; color: var(--tomato); font-weight: 700; }
+.story h2 { font: 400 clamp(28px, 4vw, 42px)/1.25 var(--display); margin: 6px 0 14px; text-wrap: balance; white-space: pre-line; }
+.story p { margin: 0; max-width: 34em; color: var(--muted); }
+.story .big { font: 800 clamp(48px, 8vw, 84px)/1 var(--latin); color: var(--tomato); font-variant-numeric: tabular-nums; display: block; margin: 18px 0 4px; overflow-wrap: anywhere; }
+.story .big small { font: 500 15px var(--body); color: var(--muted); margin-left: 6px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 10px 18px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 700; }
+.btn:hover { background: var(--tomato); }
+
+.stickers { display: flex; flex-direction: column; gap: 16px; padding-top: 6px; }
+.sticker {
+  display: block; text-decoration: none; background: var(--panel); border: 2px solid var(--ink); border-radius: 16px;
+  padding: 12px 16px; box-shadow: 5px 5px 0 var(--ink); font-size: 15px; width: min(100%, 320px); transition: transform .2s;
+}
+.sticker:hover { transform: rotate(0deg) scale(1.03) !important; }
+.sticker b { display: block; font-family: var(--display); font-weight: 400; font-size: 20px; }
+.sticker .from { display: block; margin-top: 4px; font-size: 12px; color: var(--muted); }
+.sticker:nth-child(1) { align-self: flex-start; transform: rotate(-3deg); background: var(--sticker); color: var(--sticker-ink); }
+.sticker:nth-child(1) .from { color: var(--sticker-ink); opacity: .7; }
+.sticker:nth-child(2) { align-self: flex-end; transform: rotate(2.5deg); }
+.sticker:nth-child(3) { align-self: center; transform: rotate(-1deg); }
+.face { white-space: nowrap; }
+
+.spread { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 36px; border-top: 2px solid var(--ink); padding-top: 22px; }
+.col { display: grid; gap: 28px; align-content: start; min-width: 0; }
+.sec h3 { display: flex; align-items: baseline; gap: 10px; margin: 0 0 10px; font: 400 26px/1.2 var(--display); }
+.sec h3 span { font: 600 13px var(--body); letter-spacing: .12em; color: var(--muted); }
+.list { list-style: none; margin: 0; padding: 0; display: grid; }
+.list li { display: grid; grid-template-columns: 4.2em minmax(0, 1fr); gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--rule); }
+.list .no { font: 800 22px/1.2 var(--latin); color: var(--tomato); font-variant-numeric: tabular-nums; }
+.list a { text-decoration: none; font-weight: 500; }
+.list a:hover { color: var(--tomato); }
+.list p { margin: 2px 0 0; color: var(--muted); font-size: 14px; }
+.empty { color: var(--muted); padding: 14px 0; border-bottom: 1px dashed var(--rule); }
+.card { background: var(--panel); border: 2px solid var(--ink); border-radius: 18px; padding: 18px 20px; }
+.card p { margin: 0; }
+.card .who { font-family: var(--display); font-size: 24px; margin-bottom: 6px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.links a { font-size: 14px; padding: 3px 12px; border-radius: 999px; background: var(--paper); border: 1px solid var(--rule); text-decoration: none; }
+.links a:hover { border-color: var(--tomato); color: var(--tomato); }
+.proj { display: grid; gap: 10px; }
+.proj div { display: flex; gap: 12px; align-items: baseline; }
+.proj i { font-style: normal; font-size: 20px; }
+.proj p { margin: 0; font-size: 14px; color: var(--muted); }
+.proj b { color: var(--ink); font-weight: 700; }
+footer { text-align: center; font-size: 13px; color: var(--muted); }
+
+@media (max-width: 760px) {
+  .cover, .spread { grid-template-columns: 1fr; }
+  .sticker { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) { .sticker { transition: none; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="issue">
+      <span id="issueLine">每天 08:30 出刊</span>
+      <nav><a href="/">日报</a><a href="/#/projects">项目库</a><button id="theme" type="button" title="切换主题">◐</button></nav>
+    </div>
+    <div class="mast">
+      <h1>Jasper's<br><em>Agent 观察</em></h1>
+      <p class="hello">欢迎光临 ヾ(≧▽≦*)o 这里记录 Agent context 的每一天</p>
+    </div>
+  </header>
+
+  <section class="cover" aria-label="本期封面">
+    <div class="story">
+      <div class="kicker" id="kicker">封面故事</div>
+      <h2 id="title">今天的封面还在印刷中</h2>
+      <p id="dek">每天早上日报写完后，这里会换成当天最值得读的一件事。</p>
+      <span class="big" id="big" hidden></span>
+      <a class="btn" id="read" href="/">读今天的日报 →</a>
+    </div>
+    <div class="stickers" id="stickers" aria-label="本期速览"></div>
+  </section>
+
+  <section class="spread">
+    <div class="col">
+      <div class="sec">
+        <h3>本期日报 <span id="dailyCount">DAILY</span></h3>
+        <ul class="list" id="dailyList">
+          <li><span class="no">01</span><div><a href="/#/github">GitHub 项目</a><p>Agent context 方向大家在做什么、最火的 Agent、连续爆发的新秀</p></div></li>
+          <li><span class="no">02</span><div><a href="/#/papers">论文</a><p>热度榜和今天新上的 arXiv / HF 论文</p></div></li>
+          <li><span class="no">03</span><div><a href="/#/social">社区热议</a><p>每个快速增长的项目，靠自媒体曝光还是真实讨论</p></div></li>
+        </ul>
+      </div>
+      <div class="sec">
+        <h3>随笔 <span>BLOG</span></h3>
+        <ul class="list" id="blogList"><li class="empty">还没开始写，写了会出现在这里 (ง •_•)ง</li></ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="sec">
+        <h3>关于我 <span>ABOUT</span></h3>
+        <div class="card">
+          <div class="who">Hi，我是 Jasper <span class="face">(＾▽＾)ﾉ</span></div>
+          <p>在关注 Agent context：大家怎么给 Agent 喂上下文、存记忆、省 token。</p>
+          <div class="links"><a href="https://github.com/jasper-yl" target="_blank" rel="noopener">GitHub</a></div>
+        </div>
+      </div>
+      <div class="sec">
+        <h3>作品 <span>PROJECTS</span></h3>
+        <div class="proj">
+          <div><i>📡</i><p><b>agent-daily</b>　每天自动采集 GitHub、arXiv、X，写成三份日报</p></div>
+          <div><i>🗂️</i><p><b>项目库</b>　日报里出现过的每个项目，一句话说清它是做什么的</p></div>
+          <div><i>🏗️</i><p><b>这个站点</b>　装修中，进度 90%（已经 90% 好几天了）</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>由 GitHub Pages 和 Claude 印刷 · 偶尔有错别字 <span class="face">(´▽`ʃ♡ƪ)</span></footer>
+</div>
+
+<script>
+const $ = (s) => document.querySelector(s);
+const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const KINDS = { github: "GitHub 项目", papers: "论文", social: "社区热议" };
+const WEEK = ["日", "一", "二", "三", "四", "五", "六"];
+function store(k, v) { try { v === undefined ? (v = localStorage.getItem(k)) : localStorage.setItem(k, v); } catch (e) { v = null; } return v; }
+
+const saved = store("theme");  // same key as the daily site, so the choice carries over
+if (saved) document.documentElement.dataset.theme = saved;
+$("#theme").onclick = () => {
+  const cur = document.documentElement.dataset.theme || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next; store("theme", next);
+};
+
+async function getJSON(url) { try { const r = await fetch(url, { cache: "no-cache" }); return r.ok ? r.json() : null; } catch (e) { return null; } }
+
+(async () => {
+  const [cover, idx, blog] = await Promise.all([getJSON("cover.json"), getJSON("/reports/index.json"), getJSON("/blog/index.json")]);
+  if (cover) {
+    const d = new Date(cover.date + "T12:00:00");
+    $("#issueLine").textContent = `NO. ${String(cover.issue).padStart(3, "0")} · ${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日 · 周${WEEK[d.getDay()]}`;
+    const c = cover.cover, link = (kind) => `/#${cover.date}/${kind}`;
+    $("#kicker").textContent = c.kicker;
+    $("#title").textContent = c.title;
+    $("#dek").textContent = c.dek;
+    $("#big").innerHTML = `${esc(c.big)}<small>${esc(c.unit)}</small>`;
+    $("#big").hidden = !c.big;
+    $("#read").href = link(c.kind);
+    $("#read").textContent = `读今天的${KINDS[c.kind] || ""}日报 →`;
+    $("#stickers").innerHTML = cover.stickers.map((s) =>
+      `<a class="sticker" href="${link(s.kind)}"><b>${esc(s.title)}</b>${esc(s.text)} <span class="face">${esc(s.face)}</span>` +
+      `<span class="from">来自${esc(KINDS[s.kind] || "")}日报 →</span></a>`).join("");
+    document.querySelectorAll("#dailyList a").forEach((a) => { a.href = `/#${cover.date}/${a.getAttribute("href").split("/").pop()}`; });
+  }
+  if (idx && idx.days) $("#dailyCount").textContent = `DAILY · 已出 ${idx.days.length} 期`;
+  if (blog && blog.length) {
+    $("#blogList").innerHTML = blog.slice(0, 5).map((p) =>
+      `<li><span class="no">${esc(p.date.slice(5).replace("-", "/"))}</span><div><a href="/blog/#${encodeURIComponent(p.slug)}">${esc(p.title)}</a>` +
+      `${p.summary ? `<p>${esc(p.summary)}</p>` : ""}</div></li>`).join("");
+  }
+})();
+</script>
+</body>
+</html>
