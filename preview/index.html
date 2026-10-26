@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jasper's Agent 观察 · 日报</title>
+<meta name="description" content="Agent 与 Agent Context 领域每日 GitHub 项目与论文追踪">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Noto+Sans+SC:wght@400;500;700&display=swap">
+<style>
+/* Inside pages of "Jasper's Agent 观察": same paper, ink and tomato as /home/, but a calm reading layout.
+   Display face only for headings; numbers and channel labels get their own treatment so tables scan fast. */
+:root {
+  --bg: #fff8e6; --panel: #fffdf6; --text: #1f2a44; --muted: #6b6a7a; --ink: #1f2a44;
+  --border: #eedfb6; --accent: #c8432c; --accent-soft: #ffeedd; --code: #f6ecd0; --sky: #3d7be0;
+  --green: #2f8a5f; --green-soft: #e3f4e9; --blue-soft: #e6eefc; --gold-soft: #fff0c2;
+  --display: "ZCOOL KuaiLe", "PingFang SC", "Microsoft YaHei", sans-serif;
+  --latin: "Fraunces", Georgia, serif;
+  --body: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #1b1a24; --panel: #23222e; --text: #ece4cf; --muted: #a8a3b4; --ink: #f3ead3;
+    --border: #36344a; --accent: #ff8a70; --accent-soft: #3a2626; --code: #2b2a38; --sky: #7aa7ff;
+    --green: #6fd0a0; --green-soft: #1f3329; --blue-soft: #232c45; --gold-soft: #3a3220; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #1b1a24; --panel: #23222e; --text: #ece4cf; --muted: #a8a3b4; --ink: #f3ead3;
+  --border: #36344a; --accent: #ff8a70; --accent-soft: #3a2626; --code: #2b2a38; --sky: #7aa7ff;
+  --green: #6fd0a0; --green-soft: #1f3329; --blue-soft: #232c45; --gold-soft: #3a3220; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font: 16px/1.8 var(--body);
+}
+header {
+  position: sticky; top: 0; z-index: 5; background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(8px); border-bottom: 2px solid var(--ink);
+}
+.bar { max-width: 1180px; margin: 0 auto; padding: 10px 16px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.brand { margin-right: auto; display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; text-decoration: none; color: var(--ink); }
+.brand b { font: 800 20px/1.1 var(--latin); letter-spacing: -.01em; }
+.brand b em { font: 400 19px var(--display); font-style: normal; color: var(--accent); margin-left: 4px; }
+.brand small { font-size: 12px; letter-spacing: .12em; color: var(--muted); font-variant-numeric: tabular-nums; }
+a:focus-visible, button:focus-visible, select:focus-visible, input:focus-visible { outline: 3px solid var(--sky); outline-offset: 2px; border-radius: 6px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 2px; background: var(--code); border-radius: 999px; padding: 3px; }
+.tabs button {
+  border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 14px;
+  padding: 4px 14px; border-radius: 999px; cursor: pointer;
+}
+.tabs button:hover { color: var(--ink); }
+.tabs button.on { background: var(--ink); color: var(--bg); font-weight: 500; }
+select, .icon {
+  font: inherit; font-size: 14px; color: var(--text); background: var(--panel);
+  border: 1px solid var(--border); border-radius: 8px; padding: 4px 8px; cursor: pointer;
+}
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 16px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px; }
+aside { position: sticky; top: 64px; align-self: start; padding-top: 28px; max-height: calc(100vh - 64px); overflow: auto; }
+aside h4 { margin: 0 0 8px; font-size: 12px; color: var(--muted); letter-spacing: .12em; }
+aside h4 + nav { margin-bottom: 26px; }
+#toc a { font-variant-numeric: normal; line-height: 1.45; padding: 5px 10px; }
+#toc a.sub { padding-left: 22px; font-size: 13px; }
+#toc a.here { color: var(--accent); }
+aside a { display: block; padding: 3px 10px; border-radius: 6px; color: var(--muted); text-decoration: none; font-size: 14px; font-variant-numeric: tabular-nums; }
+aside a:hover { color: var(--text); }
+aside a.on { background: var(--accent-soft); color: var(--accent); font-weight: 700; }
+main { min-width: 0; padding: 20px 0 80px; }
+article { background: var(--panel); border: 1px solid var(--border); border-radius: 16px; padding: 8px 40px 36px; }
+article h1 { font: 400 30px/1.3 var(--display); margin: 26px 0 8px; text-wrap: balance; }
+article h2 { font: 400 24px/1.35 var(--display); margin: 44px 0 12px; padding-bottom: 6px; border-bottom: 2px solid var(--ink); scroll-margin-top: 80px; }
+article h3 { font-size: 17px; font-weight: 700; margin: 28px 0 6px; scroll-margin-top: 80px; }
+article strong { color: var(--ink); }
+.delta { color: var(--accent); font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.metric { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.chip { display: inline-block; padding: 0 8px; margin: 0 2px; border-radius: 999px; font-size: .86em; font-weight: 500; white-space: nowrap; line-height: 1.7; }
+.chip.media { background: var(--gold-soft); color: var(--ink); }
+.chip.organic { background: var(--green-soft); color: var(--green); }
+.chip.official { background: var(--blue-soft); color: var(--sky); }
+.chip.strong { background: var(--accent-soft); color: var(--accent); }
+.chip.some { background: var(--gold-soft); color: var(--ink); }
+.chip.natural { background: var(--green-soft); color: var(--green); }
+article a { color: var(--accent); text-decoration: none; word-break: break-word; }
+article a:hover { text-decoration: underline; }
+article blockquote { margin: 12px 0; padding: 8px 14px; border-left: 3px solid var(--accent); background: var(--accent-soft); color: var(--muted); border-radius: 0 8px 8px 0; }
+article blockquote p { margin: 0; }
+article code { background: var(--code); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+article ul, article ol { padding-left: 22px; }
+article li { margin: 4px 0; }
+.table { overflow-x: auto; margin: 12px 0; }
+article table { border-collapse: collapse; width: 100%; font-size: 14px; }
+article th, article td { border-bottom: 1px solid var(--border); padding: 9px 10px; text-align: left; vertical-align: top; }
+article th { color: var(--muted); font-weight: 600; white-space: nowrap; border-bottom: 2px solid var(--ink); }
+article tbody tr:hover { background: color-mix(in srgb, var(--accent-soft) 55%, transparent); }
+article td.n { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+article td:nth-child(4), article td:nth-child(5) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.empty { color: var(--muted); padding: 60px 0; text-align: center; }
+.empty .face { display: block; font-size: 28px; margin-bottom: 6px; }
+article a.repo, article span.repo { border-bottom: 1px dotted var(--accent); }
+article span.repo { cursor: help; }
+article a.repo:hover { text-decoration: none; }
+#tip {
+  position: absolute; z-index: 20; max-width: 340px; display: none;
+  background: var(--panel); color: var(--text); border: 1px solid var(--border); border-radius: 10px;
+  box-shadow: 0 6px 24px rgb(0 0 0 / .16); padding: 10px 14px; font-size: 14px; line-height: 1.6;
+}
+#tip b { display: block; font-size: 13px; word-break: break-all; }
+#tip .zh { margin: 4px 0; }
+#tip .meta { color: var(--muted); font-size: 12px; }
+#tip .open { display: none; margin-top: 6px; color: var(--accent); font-size: 13px; text-decoration: none; }
+@media (hover: none) { #tip .open { display: inline-block; } }
+.proj-tools { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 20px 0 4px; }
+.proj-tools input {
+  flex: 1; min-width: 180px; font: inherit; font-size: 14px; color: var(--text); background: var(--panel);
+  border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px;
+}
+.proj-tools .count { color: var(--muted); font-size: 13px; }
+article td.refs { white-space: normal; min-width: 160px; }
+article td.refs a { display: inline-block; margin-right: 8px; font-size: 13px; white-space: nowrap; }
+article td.name { min-width: 170px; word-break: normal; overflow-wrap: anywhere; }
+article td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
+footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
+.mobile-date, #tocSelect { display: none; }
+@media (max-width: 760px) {
+  .wrap { grid-template-columns: 1fr; gap: 0; }
+  aside { display: none; }
+  header { position: static; }
+  .bar { gap: 8px; }
+  .tabs { order: 3; width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .tabs button { white-space: nowrap; flex: none; }
+  .mobile-date { display: inline-block; order: 4; }
+  #tocSelect { order: 5; }
+  #theme { order: 2; }
+  #tocSelect:not([hidden]) { display: inline-block; max-width: 46vw; }
+  .brand small { display: none; }
+  article { padding: 4px 18px 24px; border-radius: 12px; }
+  article h1 { font-size: 24px; }
+  article h2 { font-size: 21px; }
+  body { font-size: 15px; }
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="/home/" title="回到首页"><b>Jasper's<em>Agent 观察</em></b><small id="issue"></small></a>
+    <div class="tabs" role="tablist">
+      <button data-kind="github" class="on">GitHub 项目</button>
+      <button data-kind="papers">论文</button>
+      <button data-kind="social">社区热议</button>
+      <button data-kind="weekly">周报</button>
+      <button data-kind="projects">项目库</button>
+    </div>
+    <select class="mobile-date" id="dateSelect" aria-label="选择日期"></select>
+    <select id="tocSelect" aria-label="跳到章节" hidden></select>
+    <button class="icon" id="theme" title="切换主题">◐</button>
+  </div>
+</header>
+<div class="wrap">
+  <aside><h4 id="tocTitle" hidden>本页目录</h4><nav id="toc"></nav><h4 id="datesTitle">历史日报</h4><nav id="dates"></nav></aside>
+  <main><article id="content"><div class="empty"><span class="face">(｡･ω･｡)</span>加载中…</div></article></main>
+</div>
+<div id="tip" role="tooltip"></div>
+<footer>每天 08:30 自动采集 GitHub、arXiv、Hugging Face、X，由 Claude 整理印刷 · 偶尔有错别字 (´▽`ʃ♡ƪ)</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
+<script>
+const KINDS = ["github", "papers", "social", "weekly", "projects"];
+const KIND_NAMES = { github: "GitHub", papers: "论文", social: "社区", weekly: "周报" };
+const state = { kind: "github", key: { day: null, week: null }, days: [], weeks: [], glossary: {} };
+const $ = (s) => document.querySelector(s);
+
+function store(k, v) { try { v === undefined ? (v = localStorage.getItem(k)) : localStorage.setItem(k, v); } catch (e) { v = null; } return v; }
+
+const savedTheme = store("theme");
+if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+$("#theme").onclick = () => {
+  const cur = document.documentElement.dataset.theme ||
+    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  const next = cur === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = next;
+  store("theme", next);
+};
+
+const isWeekly = () => state.kind === "weekly";
+const list = () => isWeekly() ? state.weeks.map((w) => ({ key: w.week, file: w.file }))
+  : state.days.map((d) => ({ key: d.date, file: d[state.kind] }));
+const slot = () => isWeekly() ? "week" : "day";
+const current = () => state.key[slot()];
+
+function readHash() {
+  const [key, kind] = decodeURIComponent(location.hash.slice(1)).split("/");
+  if (KINDS.includes(kind)) state.kind = kind;
+  if (list().some((e) => e.key === key)) state.key[slot()] = key;
+}
+
+function buildNav() {
+  $("#datesTitle").textContent = isWeekly() ? "历史周报" : "历史日报";
+  const items = list();
+  $("#dates").innerHTML = items.map((e) => `<a href="#${e.key}/${state.kind}" data-key="${e.key}">${e.key}</a>`).join("");
+  $("#dateSelect").innerHTML = items.map((e) => `<option value="${e.key}">${e.key}</option>`).join("");
+}
+
+const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const fmt = (n) => n == null ? "—" : Number(n).toLocaleString("en-US");
+const repoOf = (href) => {
+  const m = /^https:\/\/github\.com\/([\w.-]+)\/([\w.-]+?)(?:\.git)?\/?(?:[#?].*)?$/.exec(href || "");
+  return m ? `${m[1]}/${m[2]}` : null;
+};
+const lookup = (name) => state.glossary[name] ||
+  state.glossary[Object.keys(state.glossary).find((k) => k.toLowerCase() === name.toLowerCase())];
+const KIND_TITLES = { github: "GitHub 项目", papers: "论文", social: "社区热议", weekly: "周报" };
+const emptyMsg = (face, text) => `<div class="empty"><span class="face">${face}</span>${text}</div>`;
+
+// Numbers and channel labels: the things a reader scans for
+const CHIPS = [
+  [/📢\s?自媒体曝光/g, "media"], [/💬\s?真实讨论/g, "organic"], [/🏢\s?官方[^：:，,。]{0,12}/g, "official"],
+  [/🔥\s?强推广/g, "strong"], [/📣\s?有推广/g, "some"], [/🌱\s?自然增长/g, "natural"],
+];
+const NUM_RE = /(≈?[+＋][\d,]+(?:\.\d+)?%?|👁\s?[\d,]+|❤\s?[\d,]+|⭐\s?[\d,]+)/g;
+function decorate(el) {
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => n.parentElement.closest("a, code, pre, h1, .repo, .chip, .delta, .metric") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT,
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  for (const node of nodes) {
+    let html = esc(node.nodeValue), changed = false;
+    for (const [re, cls] of CHIPS) html = html.replace(re, (m) => { changed = true; return `<span class="chip ${cls}">${m}</span>`; });
+    html = html.replace(NUM_RE, (m) => { changed = true; return `<span class="${/^≈?[+＋]/.test(m) ? "delta" : "metric"}">${m}</span>`; });
+    if (!changed) continue;
+    const span = document.createElement("span");
+    span.innerHTML = html;
+    node.replaceWith(...span.childNodes);
+  }
+  el.querySelectorAll("td").forEach((td) => {  // numeric cells right-aligned so columns compare at a glance
+    if (/^[\s≈+＋\-−\d,.%⭐👁❤（）()→/万kK×]+$/.test(td.textContent) && /\d/.test(td.textContent)) td.classList.add("n");
+  });
+}
+function buildToc(el) {
+  const heads = [...el.querySelectorAll("h2, h3")];
+  heads.forEach((h, i) => { h.id = `s${i}`; });
+  const label = (h) => h.textContent.replace(/\s+/g, " ").trim().split(" · ")[0];  // "owner/repo · ⭐… · 日增…" -> name
+  $("#toc").innerHTML = heads.map((h) => `<a href="#" data-target="${h.id}" class="${h.tagName === "H3" ? "sub" : ""}">${esc(label(h).slice(0, 34))}</a>`).join("");
+  $("#tocTitle").hidden = !heads.length;
+  $("#tocSelect").innerHTML = `<option value="">跳到…</option>` + heads.filter((h) => h.tagName === "H2").map((h) => `<option value="${h.id}">${esc(label(h).slice(0, 24))}</option>`).join("");
+  $("#tocSelect").hidden = !heads.length;
+  tocHeads = heads;
+}
+let tocHeads = [];
+addEventListener("scroll", () => {  // highlight the section being read
+  if (!tocHeads.length) return;
+  const cur = tocHeads.filter((h) => h.getBoundingClientRect().top < 120).pop();
+  document.querySelectorAll("#toc a").forEach((a) => a.classList.toggle("here", !!cur && a.dataset.target === cur.id));
+}, { passive: true });
+function clearToc() { tocHeads = []; $("#toc").innerHTML = ""; $("#tocTitle").hidden = true; $("#tocSelect").hidden = true; }
+const jump = (id) => { const t = document.getElementById(id); if (t) t.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); };
+
+const refLink = (ref) => { const [key, kind] = ref.split("/"); return `<a href="#${key}/${kind}">${key.slice(5)} ${KIND_NAMES[kind] || kind}</a>`; };
+
+// Hover card for repo links: what the project is, so nobody has to remember dozens of names
+const tip = $("#tip");
+let tipFor = null;
+function showTip(a) {
+  const name = a.dataset.repo, g = lookup(name);
+  if (!g) return;
+  tip.innerHTML = `<b>${esc(name)}</b><div class="zh">${esc(g.zh || g.description)}</div>` +
+    `<div class="meta">⭐ ${fmt(g.stars)}${g.first_seen ? ` · 首次出现 ${esc(g.first_seen)}` : ""}${g.mentions ? ` · 出现 ${g.mentions.length} 次` : ""}</div>` +
+    `<a class="open" href="https://github.com/${esc(name)}" target="_blank" rel="noopener">打开 GitHub ↗</a>`;
+  tip.style.display = "block";
+  const r = a.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
+  const left = Math.max(8, Math.min(r.left + scrollX, scrollX + document.documentElement.clientWidth - w - 8));
+  const below = r.bottom + 8 + h < innerHeight;
+  tip.style.left = left + "px";
+  tip.style.top = (below ? r.bottom + scrollY + 6 : r.top + scrollY - h - 6) + "px";
+  tipFor = a;
+}
+function hideTip() { tip.style.display = "none"; tipFor = null; }
+const touch = matchMedia("(hover: none)").matches;
+// Names too generic to spot in running text (they only get a card when they are links)
+const STOP = new Set(["agent", "agents", "skills", "memory", "context", "awesome", "claude", "codex", "docs", "tools", "harness", "openai"]);
+let nameRe = null, byName = {};
+function buildNameIndex() {
+  const counts = {};
+  for (const full of Object.keys(state.glossary)) {
+    const short = full.split("/")[1].toLowerCase();
+    counts[short] = (counts[short] || 0) + 1;
+  }
+  for (const full of Object.keys(state.glossary)) {
+    byName[full.toLowerCase()] = full;
+    const short = full.split("/")[1].toLowerCase();
+    if (short.length >= 4 && counts[short] === 1 && !STOP.has(short)) byName[short] = full;
+  }
+  const names = Object.keys(byName).sort((a, b) => b.length - a.length)
+    .map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  nameRe = names.length ? new RegExp(`(?<![\\w./-])(${names.join("|")})(?![\\w/-]|\\.\\w)`, "gi") : null;
+}
+// Bare mentions like **xerj** or `graphify` in 今日要点 / 观察 get the same card as links
+function wrapBareNames(el) {
+  if (!nameRe) return;
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => n.parentElement.closest("a, pre, h1, .repo") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT,
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  for (const node of nodes) {
+    const text = node.nodeValue;
+    nameRe.lastIndex = 0;
+    if (!nameRe.test(text)) continue;
+    nameRe.lastIndex = 0;
+    const frag = document.createDocumentFragment();
+    let last = 0, m;
+    while ((m = nameRe.exec(text))) {
+      frag.append(text.slice(last, m.index));
+      const span = document.createElement("span");
+      span.className = "repo"; span.tabIndex = 0;
+      span.dataset.repo = byName[m[1].toLowerCase()];
+      span.textContent = m[1];
+      frag.append(span);
+      last = m.index + m[1].length;
+    }
+    frag.append(text.slice(last));
+    node.replaceWith(frag);
+  }
+}
+function attachTip(a) {
+  if (touch) {  // no hover on phones: first tap shows the card, the card's link opens GitHub
+    a.addEventListener("click", (e) => { if (tipFor !== a) { e.preventDefault(); showTip(a); } });
+  } else {
+    a.addEventListener("mouseenter", () => showTip(a));
+    a.addEventListener("mouseleave", hideTip);
+    a.addEventListener("focus", () => showTip(a));
+    a.addEventListener("blur", hideTip);
+  }
+}
+function wireRepoLinks(el) {
+  el.querySelectorAll("a[href^='https://github.com/']").forEach((a) => {
+    const name = repoOf(a.getAttribute("href"));
+    if (!name || !lookup(name)) return;
+    a.dataset.repo = name; a.classList.add("repo");
+  });
+  wrapBareNames(el);
+  el.querySelectorAll(".repo").forEach(attachTip);
+}
+document.addEventListener("click", (e) => { if (tipFor && !e.target.closest("#tip, .repo")) hideTip(); });
+addEventListener("scroll", () => { if (!touch) hideTip(); }, { passive: true });
+
+function renderProjects(el) {
+  const rows = Object.entries(state.glossary).map(([name, g]) => ({ name, ...g }));
+  el.innerHTML = `<h1>项目库</h1><p style="color:var(--muted)">日报里出现过的所有 GitHub 项目。日报中的项目链接悬停即可看到这里的介绍。</p>
+    <div class="proj-tools"><input id="q" type="search" placeholder="搜索项目名或介绍…" aria-label="搜索项目">
+    <select id="sort" aria-label="排序"><option value="recent">最近出现</option><option value="first">首次出现</option><option value="stars">星数</option><option value="count">出现次数</option></select>
+    <span class="count" id="count"></span></div><div class="table"><table><thead><tr><th>项目</th><th>介绍</th><th>⭐</th><th>出现在</th></tr></thead><tbody id="rows"></tbody></table></div>`;
+  const latest = (r) => (r.mentions || []).filter((m) => !m.includes("-W")).sort().pop() || "";
+  const draw = () => {
+    const q = $("#q").value.trim().toLowerCase(), by = $("#sort").value;
+    const list = rows.filter((r) => !q || `${r.name} ${r.zh} ${r.description}`.toLowerCase().includes(q));
+    const key = { recent: (r) => latest(r), first: (r) => r.first_seen || "", stars: (r) => r.stars || 0, count: (r) => (r.mentions || []).length }[by];
+    list.sort((a, b) => (key(a) < key(b) ? 1 : key(a) > key(b) ? -1 : 0));
+    $("#count").textContent = `${list.length} 个项目`;
+    $("#rows").innerHTML = list.map((r) => `<tr><td class="name"><a href="https://github.com/${esc(r.name)}" target="_blank" rel="noopener">${esc(r.name)}</a></td>` +
+      `<td>${esc(r.zh || r.description)}</td><td class="num">${fmt(r.stars)}</td>` +
+      `<td class="refs">${(r.mentions || []).slice(0, 4).map(refLink).join("")}${(r.mentions || []).length > 4 ? `<span style="color:var(--muted)">等 ${r.mentions.length} 次</span>` : ""}</td></tr>`).join("");
+  };
+  $("#q").oninput = draw; $("#sort").onchange = draw; draw();
+}
+
+async function render() {
+  hideTip();
+  if (state.kind === "projects") {
+    document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === "projects"));
+    $("aside").style.visibility = "hidden"; $("#dateSelect").style.visibility = "hidden";
+    history.replaceState(null, "", "#/projects");
+    $("#issue").textContent = "项目库";
+    clearToc();
+    renderProjects($("#content"));
+    return;
+  }
+  $("aside").style.visibility = ""; $("#dateSelect").style.visibility = "";
+  buildNav();
+  document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === state.kind));
+  document.querySelectorAll("#dates a").forEach((a) => a.classList.toggle("on", a.dataset.key === current()));
+  $("#dateSelect").value = current() || "";
+  history.replaceState(null, "", `#${current() || ""}/${state.kind}`);
+  const no = isWeekly() ? "" : `NO. ${String(state.days.length - state.days.findIndex((d) => d.date === current())).padStart(3, "0")} · `;
+  $("#issue").textContent = current() ? `${no}${KIND_TITLES[state.kind]} · ${current()}` : "";
+  const entry = list().find((e) => e.key === current());
+  const el = $("#content");
+  clearToc();
+  if (!entry || !entry.file) {
+    el.innerHTML = isWeekly() && !state.weeks.length ? emptyMsg("(｀・ω・´)", "第一份周报会在下周一生成") : emptyMsg("┐(￣ヘ￣)┌", "这一天没有该报告");
+    return;
+  }
+  el.innerHTML = emptyMsg("(｡･ω･｡)", "加载中…");
+  try {
+    const md = await (await fetch(`/reports/${entry.file}`, { cache: "no-cache" })).text();
+    el.innerHTML = DOMPurify.sanitize(marked.parse(md));
+    el.querySelectorAll("table").forEach((t) => { const w = document.createElement("div"); w.className = "table"; t.replaceWith(w); w.appendChild(t); });
+    el.querySelectorAll("a[href^='http']").forEach((a) => { a.target = "_blank"; a.rel = "noopener"; });
+    wireRepoLinks(el);
+    decorate(el);
+    buildToc(el);
+    window.scrollTo(0, 0);
+  } catch (e) {
+    el.innerHTML = emptyMsg("(；′⌒`)", "加载失败，请刷新重试");
+  }
+}
+
+async function init() {
+  try {
+    const idx = await (await fetch("/reports/index.json", { cache: "no-cache" })).json();
+    state.days = idx.days || []; state.weeks = idx.weeks || [];
+  } catch (e) { /* empty site */ }
+  try { state.glossary = await (await fetch("/glossary.json", { cache: "no-cache" })).json(); buildNameIndex(); } catch (e) { /* no hover cards */ }
+  state.key.day = state.days[0]?.date || null;
+  state.key.week = state.weeks[0]?.week || null;
+  readHash();
+  $("#dates").onclick = (e) => { const a = e.target.closest("a"); if (!a) return; e.preventDefault(); state.key[slot()] = a.dataset.key; render(); };
+  $("#dateSelect").onchange = (e) => { state.key[slot()] = e.target.value; render(); };
+  $("#toc").onclick = (e) => { const a = e.target.closest("a"); if (!a) return; e.preventDefault(); jump(a.dataset.target); };
+  $("#tocSelect").onchange = (e) => { if (e.target.value) jump(e.target.value); e.target.value = ""; };
+  document.querySelectorAll(".tabs button").forEach((b) => b.onclick = () => { state.kind = b.dataset.kind; render(); });
+  window.onhashchange = () => { readHash(); render(); };
+  render();
+}
+init();
+</script>
+</body>
+</html>
