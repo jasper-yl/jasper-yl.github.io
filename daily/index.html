@@ -6,6 +6,7 @@
 <title>Jasper's Agent 观察 · 日报</title>
 <meta name="description" content="Agent 与 Agent Context 领域每日 GitHub 项目与论文追踪">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📡</text></svg>">
+<script src="/lang.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
 /* Inside pages of "Jasper's Agent 观察": same paper, ink and tomato as /home/, but a calm reading layout.
@@ -123,6 +124,7 @@ article td.name { min-width: 170px; word-break: normal; overflow-wrap: anywhere;
 article td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
 footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
 .mobile-date, #tocSelect { display: none; }
+.notice { margin: 18px 0 0; padding: 8px 14px; border-radius: 10px; background: var(--gold-soft); color: var(--ink); font-size: 14px; }
 @media (max-width: 760px) {
   .wrap { grid-template-columns: 1fr; gap: 0; }
   aside { display: none; }
@@ -145,31 +147,53 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
 <body>
 <header>
   <div class="bar">
-    <a class="brand" href="/" title="回到首页"><b>Jasper's<em>Agent 观察</em></b><small id="issue"></small></a>
+    <a class="brand" href="/" title="回到首页" data-i18n-attr="title:home"><b>Jasper's<em data-i18n="name">Agent 观察</em></b><small id="issue"></small></a>
     <div class="tabs" role="tablist">
-      <button data-kind="github" class="on">GitHub 项目</button>
-      <button data-kind="papers">论文</button>
-      <button data-kind="social">社区热议</button>
-      <button data-kind="weekly">周报</button>
-      <button data-kind="projects">项目库</button>
+      <button data-kind="github" class="on" data-i18n="github">GitHub 项目</button>
+      <button data-kind="papers" data-i18n="papers">论文</button>
+      <button data-kind="social" data-i18n="social">社区热议</button>
+      <button data-kind="weekly" data-i18n="weekly">周报</button>
+      <button data-kind="projects" data-i18n="projects">项目库</button>
     </div>
-    <select class="mobile-date" id="dateSelect" aria-label="选择日期"></select>
-    <select id="tocSelect" aria-label="跳到章节" hidden></select>
-    <button class="icon" id="theme" title="切换主题">◐</button>
+    <select class="mobile-date" id="dateSelect" aria-label="选择日期" data-i18n-attr="aria-label:pickDate"></select>
+    <select id="tocSelect" aria-label="跳到章节" data-i18n-attr="aria-label:jumpLabel" hidden></select>
+    <button class="icon" id="lang" type="button"></button>
+    <button class="icon" id="theme" title="切换主题" data-i18n-attr="title:theme">◐</button>
   </div>
 </header>
 <div class="wrap">
-  <aside><h4 id="tocTitle" hidden>本页目录</h4><nav id="toc"></nav><h4 id="datesTitle">历史日报</h4><nav id="dates"></nav></aside>
-  <main><article id="content"><div class="empty"><span class="face">(｡･ω･｡)</span>加载中…</div></article></main>
+  <aside><h4 id="tocTitle" data-i18n="toc" hidden>本页目录</h4><nav id="toc"></nav><h4 id="datesTitle">历史日报</h4><nav id="dates"></nav></aside>
+  <main><article id="content"><div class="empty"><span class="face">(｡･ω･｡)</span><span data-i18n="loading">加载中…</span></div></article></main>
 </div>
 <div id="tip" role="tooltip"></div>
-<footer>每天 08:30 自动采集 GitHub、arXiv、Hugging Face、X，由 Claude 整理印刷 · 偶尔有错别字 (´▽`ʃ♡ƪ)</footer>
+<footer data-i18n="footer">每天 08:30 自动采集 GitHub、arXiv、Hugging Face、X，由 Claude 整理印刷 · 偶尔有错别字 (´▽`ʃ♡ƪ)</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"></script>
 <script>
 const KINDS = ["github", "papers", "social", "weekly", "projects"];
-const KIND_NAMES = { github: "GitHub", papers: "论文", social: "社区", weekly: "周报" };
+const EN = window.siteLang === "en";
+// UI strings; the Chinese ones are the defaults written into the page
+const T = EN ? {
+  name: "Agent Watch", home: "Back to the front page", github: "GitHub", papers: "Papers", social: "Community", weekly: "Weekly",
+  projects: "Projects", pickDate: "Pick a date", jumpLabel: "Jump to section", theme: "Switch theme", toc: "On this page",
+  footer: "Collected every morning at 08:30 from GitHub, arXiv, Hugging Face and X, written up by Claude · typos happen (´▽`ʃ♡ƪ)",
+  pastDays: "Past issues", pastWeeks: "Past weeks", jump: "Jump to…", firstSeen: "first seen", seenTimes: (n) => `mentioned ${n}×`,
+  openGh: "Open on GitHub ↗", libTitle: "Project library", libDesc: "Every GitHub project the reports have mentioned. Hover a project in any report to see its card.",
+  search: "Search projects…", recent: "Last seen", first: "First seen", stars: "Stars", count: "Mentions", nProjects: (n) => `${n} projects`,
+  thProject: "Project", thAbout: "What it does", thSeen: "Seen in", more: (n) => `${n} in total`,
+  noWeekly: "The first weekly report comes out next Monday", noReport: "No report of this kind for this day", loading: "Loading…",
+  failed: "Couldn't load this report. Try refreshing.", untranslated: "This report hasn't been translated yet, so you're seeing the Chinese edition.",
+} : {
+  pastDays: "历史日报", pastWeeks: "历史周报", jump: "跳到…", firstSeen: "首次出现", seenTimes: (n) => `出现 ${n} 次`,
+  openGh: "打开 GitHub ↗", libTitle: "项目库", libDesc: "日报里出现过的所有 GitHub 项目。日报中的项目链接悬停即可看到这里的介绍。",
+  search: "搜索项目名或介绍…", recent: "最近出现", first: "首次出现", stars: "星数", count: "出现次数", nProjects: (n) => `${n} 个项目`,
+  thProject: "项目", thAbout: "介绍", thSeen: "出现在", more: (n) => `等 ${n} 次`,
+  noWeekly: "第一份周报会在下周一生成", noReport: "这一天没有该报告", loading: "加载中…", failed: "加载失败，请刷新重试",
+};
+applyI18n(T);
+if (EN) document.title = "Jasper's Agent Watch · Daily";
+const KIND_NAMES = EN ? { github: "GitHub", papers: "Papers", social: "Community", weekly: "Weekly" } : { github: "GitHub", papers: "论文", social: "社区", weekly: "周报" };
 const state = { kind: "github", key: { day: null, week: null }, days: [], weeks: [], glossary: {} };
 const $ = (s) => document.querySelector(s);
 
@@ -177,6 +201,7 @@ function store(k, v) { try { v === undefined ? (v = localStorage.getItem(k)) : l
 
 const savedTheme = store("theme");
 if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+langButton($("#lang"));
 $("#theme").onclick = () => {
   const cur = document.documentElement.dataset.theme ||
     (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -186,8 +211,8 @@ $("#theme").onclick = () => {
 };
 
 const isWeekly = () => state.kind === "weekly";
-const list = () => isWeekly() ? state.weeks.map((w) => ({ key: w.week, file: w.file }))
-  : state.days.map((d) => ({ key: d.date, file: d[state.kind] }));
+const list = () => isWeekly() ? state.weeks.map((w) => ({ key: w.week, file: w.file, en: w.en }))
+  : state.days.map((d) => ({ key: d.date, file: d[state.kind], en: d.en && d.en[state.kind] }));
 const slot = () => isWeekly() ? "week" : "day";
 const current = () => state.key[slot()];
 
@@ -198,7 +223,7 @@ function readHash() {
 }
 
 function buildNav() {
-  $("#datesTitle").textContent = isWeekly() ? "历史周报" : "历史日报";
+  $("#datesTitle").textContent = isWeekly() ? T.pastWeeks : T.pastDays;
   const items = list();
   $("#dates").innerHTML = items.map((e) => `<a href="#${e.key}/${state.kind}" data-key="${e.key}">${e.key}</a>`).join("");
   $("#dateSelect").innerHTML = items.map((e) => `<option value="${e.key}">${e.key}</option>`).join("");
@@ -212,13 +237,16 @@ const repoOf = (href) => {
 };
 const lookup = (name) => state.glossary[name] ||
   state.glossary[Object.keys(state.glossary).find((k) => k.toLowerCase() === name.toLowerCase())];
-const KIND_TITLES = { github: "GitHub 项目", papers: "论文", social: "社区热议", weekly: "周报" };
+const KIND_TITLES = EN ? { github: "GitHub", papers: "Papers", social: "Community", weekly: "Weekly" } : { github: "GitHub 项目", papers: "论文", social: "社区热议", weekly: "周报" };
 const emptyMsg = (face, text) => `<div class="empty"><span class="face">${face}</span>${text}</div>`;
 
 // Numbers and channel labels: the things a reader scans for
 const CHIPS = [
   [/📢\s?自媒体曝光/g, "media"], [/💬\s?真实讨论/g, "organic"], [/🏢\s?官方[^：:，,。]{0,12}/g, "official"],
   [/🔥\s?强推广/g, "strong"], [/📣\s?有推广/g, "some"], [/🌱\s?自然增长/g, "natural"],
+  // English editions use fixed renderings (prompts/translate.md)
+  [/📢\s?Influencer exposure/g, "media"], [/💬\s?Organic discussion/g, "organic"], [/🏢\s?Official[^:;,.]{0,24}/g, "official"],
+  [/🔥\s?Heavy promotion/g, "strong"], [/📣\s?Some promotion/g, "some"], [/🌱\s?Organic growth/g, "natural"],
 ];
 const NUM_RE = /(≈?[+＋][\d,]+(?:\.\d+)?%?|👁\s?[\d,]+|❤\s?[\d,]+|⭐\s?[\d,]+)/g;
 function decorate(el) {
@@ -246,7 +274,7 @@ function buildToc(el) {
   const label = (h) => h.textContent.replace(/\s+/g, " ").trim().split(" · ")[0];  // "owner/repo · ⭐… · 日增…" -> name
   $("#toc").innerHTML = heads.map((h) => `<a href="#" data-target="${h.id}" class="${h.tagName === "H3" ? "sub" : ""}">${esc(label(h).slice(0, 34))}</a>`).join("");
   $("#tocTitle").hidden = !heads.length;
-  $("#tocSelect").innerHTML = `<option value="">跳到…</option>` + heads.filter((h) => h.tagName === "H2").map((h) => `<option value="${h.id}">${esc(label(h).slice(0, 24))}</option>`).join("");
+  $("#tocSelect").innerHTML = `<option value="">${T.jump}</option>` + heads.filter((h) => h.tagName === "H2").map((h) => `<option value="${h.id}">${esc(label(h).slice(0, 24))}</option>`).join("");
   $("#tocSelect").hidden = !heads.length;
   tocHeads = heads;
 }
@@ -267,9 +295,10 @@ let tipFor = null;
 function showTip(a) {
   const name = a.dataset.repo, g = lookup(name);
   if (!g) return;
-  tip.innerHTML = `<b>${esc(name)}</b><div class="zh">${esc(g.zh || g.description)}</div>` +
-    `<div class="meta">⭐ ${fmt(g.stars)}${g.first_seen ? ` · 首次出现 ${esc(g.first_seen)}` : ""}${g.mentions ? ` · 出现 ${g.mentions.length} 次` : ""}</div>` +
-    `<a class="open" href="https://github.com/${esc(name)}" target="_blank" rel="noopener">打开 GitHub ↗</a>`;
+  const intro = EN ? (g.description || g.zh) : (g.zh || g.description);  // the repo's own (mostly English) description
+  tip.innerHTML = `<b>${esc(name)}</b><div class="zh">${esc(intro.length > 220 ? intro.slice(0, 217) + "…" : intro)}</div>` +
+    `<div class="meta">⭐ ${fmt(g.stars)}${g.first_seen ? ` · ${T.firstSeen} ${esc(g.first_seen)}` : ""}${g.mentions ? ` · ${T.seenTimes(g.mentions.length)}` : ""}</div>` +
+    `<a class="open" href="https://github.com/${esc(name)}" target="_blank" rel="noopener">${T.openGh}</a>`;
   tip.style.display = "block";
   const r = a.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
   const left = Math.max(8, Math.min(r.left + scrollX, scrollX + document.documentElement.clientWidth - w - 8));
@@ -350,20 +379,20 @@ addEventListener("scroll", () => { if (!touch) hideTip(); }, { passive: true });
 
 function renderProjects(el) {
   const rows = Object.entries(state.glossary).map(([name, g]) => ({ name, ...g }));
-  el.innerHTML = `<h1>项目库</h1><p style="color:var(--muted)">日报里出现过的所有 GitHub 项目。日报中的项目链接悬停即可看到这里的介绍。</p>
-    <div class="proj-tools"><input id="q" type="search" placeholder="搜索项目名或介绍…" aria-label="搜索项目">
-    <select id="sort" aria-label="排序"><option value="recent">最近出现</option><option value="first">首次出现</option><option value="stars">星数</option><option value="count">出现次数</option></select>
-    <span class="count" id="count"></span></div><div class="table"><table><thead><tr><th>项目</th><th>介绍</th><th>⭐</th><th>出现在</th></tr></thead><tbody id="rows"></tbody></table></div>`;
+  el.innerHTML = `<h1>${T.libTitle}</h1><p style="color:var(--muted)">${T.libDesc}</p>
+    <div class="proj-tools"><input id="q" type="search" placeholder="${T.search}" aria-label="${T.search}">
+    <select id="sort" aria-label="sort"><option value="recent">${T.recent}</option><option value="first">${T.first}</option><option value="stars">${T.stars}</option><option value="count">${T.count}</option></select>
+    <span class="count" id="count"></span></div><div class="table"><table><thead><tr><th>${T.thProject}</th><th>${T.thAbout}</th><th>⭐</th><th>${T.thSeen}</th></tr></thead><tbody id="rows"></tbody></table></div>`;
   const latest = (r) => (r.mentions || []).filter((m) => !m.includes("-W")).sort().pop() || "";
   const draw = () => {
     const q = $("#q").value.trim().toLowerCase(), by = $("#sort").value;
     const list = rows.filter((r) => !q || `${r.name} ${r.zh} ${r.description}`.toLowerCase().includes(q));
     const key = { recent: (r) => latest(r), first: (r) => r.first_seen || "", stars: (r) => r.stars || 0, count: (r) => (r.mentions || []).length }[by];
     list.sort((a, b) => (key(a) < key(b) ? 1 : key(a) > key(b) ? -1 : 0));
-    $("#count").textContent = `${list.length} 个项目`;
+    $("#count").textContent = T.nProjects(list.length);
     $("#rows").innerHTML = list.map((r) => `<tr><td class="name"><a href="https://github.com/${esc(r.name)}" target="_blank" rel="noopener">${esc(r.name)}</a></td>` +
-      `<td>${esc(r.zh || r.description)}</td><td class="num">${fmt(r.stars)}</td>` +
-      `<td class="refs">${(r.mentions || []).slice(0, 4).map(refLink).join("")}${(r.mentions || []).length > 4 ? `<span style="color:var(--muted)">等 ${r.mentions.length} 次</span>` : ""}</td></tr>`).join("");
+      `<td>${esc(EN ? (r.description || r.zh) : (r.zh || r.description))}</td><td class="num">${fmt(r.stars)}</td>` +
+      `<td class="refs">${(r.mentions || []).slice(0, 4).map(refLink).join("")}${(r.mentions || []).length > 4 ? `<span style="color:var(--muted)">${T.more(r.mentions.length)}</span>` : ""}</td></tr>`).join("");
   };
   $("#q").oninput = draw; $("#sort").onchange = draw; draw();
 }
@@ -374,7 +403,7 @@ async function render() {
     document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === "projects"));
     $("aside").style.visibility = "hidden"; $("#dateSelect").style.visibility = "hidden";
     history.replaceState(null, "", "#/projects");
-    $("#issue").textContent = "项目库";
+    $("#issue").textContent = T.libTitle || "项目库";
     clearToc();
     renderProjects($("#content"));
     return;
@@ -391,13 +420,14 @@ async function render() {
   const el = $("#content");
   clearToc();
   if (!entry || !entry.file) {
-    el.innerHTML = isWeekly() && !state.weeks.length ? emptyMsg("(｀・ω・´)", "第一份周报会在下周一生成") : emptyMsg("┐(￣ヘ￣)┌", "这一天没有该报告");
+    el.innerHTML = isWeekly() && !state.weeks.length ? emptyMsg("(｀・ω・´)", T.noWeekly) : emptyMsg("┐(￣ヘ￣)┌", T.noReport);
     return;
   }
-  el.innerHTML = emptyMsg("(｡･ω･｡)", "加载中…");
+  el.innerHTML = emptyMsg("(｡･ω･｡)", T.loading);
   try {
-    const md = await (await fetch(`/reports/${entry.file}`, { cache: "no-cache" })).text();
-    el.innerHTML = DOMPurify.sanitize(marked.parse(md));
+    const file = EN && entry.en ? entry.en : entry.file;  // English edition when there is one
+    const md = await (await fetch(`/reports/${file}`, { cache: "no-cache" })).text();
+    el.innerHTML = (EN && !entry.en ? `<p class="notice">${T.untranslated}</p>` : "") + DOMPurify.sanitize(marked.parse(md));
     el.querySelectorAll("table").forEach((t) => { const w = document.createElement("div"); w.className = "table"; t.replaceWith(w); w.appendChild(t); });
     el.querySelectorAll("a[href^='http']").forEach((a) => { a.target = "_blank"; a.rel = "noopener"; });
     wireRepoLinks(el);
@@ -405,7 +435,7 @@ async function render() {
     buildToc(el);
     window.scrollTo(0, 0);
   } catch (e) {
-    el.innerHTML = emptyMsg("(；′⌒`)", "加载失败，请刷新重试");
+    el.innerHTML = emptyMsg("(；′⌒`)", T.failed);
   }
 }
 

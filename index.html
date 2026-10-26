@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jasper's Agent 观察</title>
+<script src="/lang.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
 /* Layout: a magazine cover (masthead, issue line, cover story + stickers) above a two-column contents spread.
@@ -39,7 +40,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--sky); outline-o
 .issue nav { display: flex; gap: 14px; align-items: center; }
 .issue nav a { text-decoration: none; }
 .issue nav a:hover { color: var(--tomato); }
-#theme { font: inherit; font-size: 13px; color: var(--ink); background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 0 10px; cursor: pointer; }
+#theme, #lang { font: inherit; font-size: 13px; color: var(--ink); background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 0 10px; cursor: pointer; }
 .mast { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
 .mast h1 { margin: 0; font: 800 clamp(44px, 9vw, 104px)/.95 var(--latin); letter-spacing: -.02em; }
 .mast h1 em { font-style: normal; font-family: var(--display); font-weight: 400; color: var(--tomato); }
@@ -71,7 +72,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--sky); outline-o
 .spread { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 36px; border-top: 2px solid var(--ink); padding-top: 22px; }
 .col { display: grid; gap: 28px; align-content: start; min-width: 0; }
 .sec h3 { display: flex; align-items: baseline; gap: 10px; margin: 0 0 10px; font: 400 26px/1.2 var(--display); }
-.sec h3 span { font: 600 13px var(--body); letter-spacing: .12em; color: var(--muted); }
+.sec h3 span:not(.h) { font: 600 13px var(--body); letter-spacing: .12em; color: var(--muted); }
+.chip { display: inline-block; font-size: 12px; padding: 0 8px; border-radius: 999px; border: 1px solid var(--rule); color: var(--muted); margin-left: 6px; vertical-align: 2px; }
 .list { list-style: none; margin: 0; padding: 0; display: grid; }
 .list li { display: grid; grid-template-columns: 4.2em minmax(0, 1fr); gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--rule); }
 .list .no { font: 800 22px/1.2 var(--latin); color: var(--tomato); font-variant-numeric: tabular-nums; }
@@ -103,22 +105,22 @@ footer { text-align: center; font-size: 13px; color: var(--muted); }
 <div class="page">
   <header>
     <div class="issue">
-      <span id="issueLine">每天 08:30 出刊</span>
-      <nav><a href="/daily/">日报</a><a href="/daily/#/projects">项目库</a><button id="theme" type="button" title="切换主题">◐</button></nav>
+      <span id="issueLine" data-i18n="issue">每天 08:30 出刊</span>
+      <nav><a href="/daily/" data-i18n="navDaily">日报</a><a href="/daily/#/projects" data-i18n="navProjects">项目库</a><button id="lang" type="button"></button><button id="theme" type="button" title="切换主题" data-i18n-attr="title:theme">◐</button></nav>
     </div>
     <div class="mast">
-      <h1>Jasper's<br><em>Agent 观察</em></h1>
-      <p class="hello">欢迎光临 ヾ(≧▽≦*)o 这里记录 Agent context 的每一天</p>
+      <h1>Jasper's<br><em data-i18n="name">Agent 观察</em></h1>
+      <p class="hello" data-i18n="hello">欢迎光临 ヾ(≧▽≦*)o 这里记录 Agent context 的每一天</p>
     </div>
   </header>
 
-  <section class="cover" aria-label="本期封面">
+  <section class="cover" aria-label="本期封面" data-i18n-attr="aria-label:coverLabel">
     <div class="story">
-      <div class="kicker" id="kicker">封面故事</div>
-      <h2 id="title">今天的封面还在印刷中</h2>
-      <p id="dek">每天早上日报写完后，这里会换成当天最值得读的一件事。</p>
+      <div class="kicker" id="kicker" data-i18n="kicker">封面故事</div>
+      <h2 id="title" data-i18n="title">今天的封面还在印刷中</h2>
+      <p id="dek" data-i18n="dek">每天早上日报写完后，这里会换成当天最值得读的一件事。</p>
       <span class="big" id="big" hidden></span>
-      <a class="btn" id="read" href="/daily/">读今天的日报 →</a>
+      <a class="btn" id="read" href="/daily/" data-i18n="read">读今天的日报 →</a>
     </div>
     <div class="stickers" id="stickers" aria-label="本期速览"></div>
   </section>
@@ -126,39 +128,39 @@ footer { text-align: center; font-size: 13px; color: var(--muted); }
   <section class="spread">
     <div class="col">
       <div class="sec">
-        <h3>本期日报 <span id="dailyCount">DAILY</span></h3>
+        <h3><span data-i18n="dailyH" class="h">本期日报</span> <span id="dailyCount">DAILY</span></h3>
         <ul class="list" id="dailyList">
-          <li><span class="no">01</span><div><a href="/daily/#/github">GitHub 项目</a><p>Agent context 方向大家在做什么、最火的 Agent、连续爆发的新秀</p></div></li>
-          <li><span class="no">02</span><div><a href="/daily/#/papers">论文</a><p>热度榜和今天新上的 arXiv / HF 论文</p></div></li>
-          <li><span class="no">03</span><div><a href="/daily/#/social">社区热议</a><p>每个快速增长的项目，靠自媒体曝光还是真实讨论</p></div></li>
+          <li><span class="no">01</span><div><a href="/daily/#/github" data-i18n="ghT">GitHub 项目</a><p data-i18n="ghD">Agent context 方向大家在做什么、最火的 Agent、连续爆发的新秀</p></div></li>
+          <li><span class="no">02</span><div><a href="/daily/#/papers" data-i18n="paT">论文</a><p data-i18n="paD">热度榜和今天新上的 arXiv / HF 论文</p></div></li>
+          <li><span class="no">03</span><div><a href="/daily/#/social" data-i18n="soT">社区热议</a><p data-i18n="soD">每个快速增长的项目，靠自媒体曝光还是真实讨论</p></div></li>
         </ul>
       </div>
       <div class="sec">
-        <h3>随笔 <span>BLOG</span></h3>
-        <ul class="list" id="blogList"><li class="empty">还没开始写，写了会出现在这里 (ง •_•)ง</li></ul>
+        <h3><span data-i18n="blogH" class="h">随笔</span> <span>BLOG</span></h3>
+        <ul class="list" id="blogList"><li class="empty" data-i18n="blogEmpty">还没开始写，写了会出现在这里 (ง •_•)ง</li></ul>
       </div>
     </div>
     <div class="col">
       <div class="sec">
-        <h3>关于我 <span>ABOUT</span></h3>
+        <h3><span data-i18n="aboutH" class="h">关于我</span> <span>ABOUT</span></h3>
         <div class="card">
-          <div class="who">Hi，我是 Jasper <span class="face">(＾▽＾)ﾉ</span></div>
-          <p>在关注 Agent context：大家怎么给 Agent 喂上下文、存记忆、省 token。</p>
+          <div class="who"><span data-i18n="hi">Hi，我是 Jasper</span> <span class="face">(＾▽＾)ﾉ</span></div>
+          <p data-i18n="intro">在关注 Agent context：大家怎么给 Agent 喂上下文、存记忆、省 token。</p>
           <div class="links"><a href="https://github.com/jasper-yl" target="_blank" rel="noopener">GitHub</a></div>
         </div>
       </div>
       <div class="sec">
-        <h3>作品 <span>PROJECTS</span></h3>
+        <h3><span data-i18n="projH" class="h">作品</span> <span>PROJECTS</span></h3>
         <div class="proj">
-          <div><i>📡</i><p><b>agent-daily</b>　每天自动采集 GitHub、arXiv、X，写成三份日报</p></div>
-          <div><i>🗂️</i><p><b>项目库</b>　日报里出现过的每个项目，一句话说清它是做什么的</p></div>
-          <div><i>🏗️</i><p><b>这个站点</b>　装修中，进度 90%（已经 90% 好几天了）</p></div>
+          <div><i>📡</i><p data-i18n="p1"><b>agent-daily</b>　每天自动采集 GitHub、arXiv、X，写成三份日报</p></div>
+          <div><i>🗂️</i><p data-i18n="p2"><b>项目库</b>　日报里出现过的每个项目，一句话说清它是做什么的</p></div>
+          <div><i>🏗️</i><p data-i18n="p3"><b>这个站点</b>　装修中，进度 90%（已经 90% 好几天了）</p></div>
         </div>
       </div>
     </div>
   </section>
 
-  <footer>由 GitHub Pages 和 Claude 印刷 · 偶尔有错别字 <span class="face">(´▽`ʃ♡ƪ)</span></footer>
+  <footer><span data-i18n="footer">由 GitHub Pages 和 Claude 印刷 · 偶尔有错别字</span> <span class="face">(´▽`ʃ♡ƪ)</span></footer>
 </div>
 
 <script>
@@ -168,7 +170,23 @@ forwardOldLink();
 addEventListener("hashchange", forwardOldLink);
 const $ = (s) => document.querySelector(s);
 const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-const KINDS = { github: "GitHub 项目", papers: "论文", social: "社区热议" };
+const EN = window.siteLang === "en";
+const KINDS = EN ? { github: "GitHub", papers: "Papers", social: "Community" } : { github: "GitHub 项目", papers: "论文", social: "社区热议" };
+applyI18n({
+  issue: "Out every morning at 08:30 PT", navDaily: "Daily", navProjects: "Projects", theme: "Switch theme", name: "Agent Watch",
+  hello: "Welcome ヾ(≧▽≦*)o A day-by-day log of agent context", coverLabel: "Today's cover",
+  kicker: "Cover story", title: "Today's cover is still at the printer", dek: "Each morning, once the reports are written, this becomes the one story most worth reading.",
+  read: "Read today's report →", dailyH: "In this issue", blogH: "Notes", blogEmpty: "Nothing here yet. Posts will show up here (ง •_•)ง",
+  ghT: "GitHub", ghD: "What people build for agent context, the hottest agents, and small repos on a sustained run",
+  paT: "Papers", paD: "The heat chart plus today's new arXiv / Hugging Face papers",
+  soT: "Community", soD: "For each fast-growing project: influencer exposure or real discussion?",
+  aboutH: "About", hi: "Hi, I'm Jasper", intro: "I follow agent context: how people feed agents context, give them memory, and save tokens.",
+  projH: "Projects", p1: "<b>agent-daily</b>　Collects GitHub, arXiv and X every morning and writes three reports",
+  p2: "<b>Project library</b>　Every project the reports mention, explained in one line",
+  p3: "<b>This site</b>　Under construction, 90% done (and has been for days)", footer: "Printed by GitHub Pages and Claude · typos happen",
+});
+langButton($("#lang"));
+const pick = (o, k) => (EN && o[k + "_en"]) || o[k];
 const WEEK = ["日", "一", "二", "三", "四", "五", "六"];
 function store(k, v) { try { v === undefined ? (v = localStorage.getItem(k)) : localStorage.setItem(k, v); } catch (e) { v = null; } return v; }
 
@@ -186,25 +204,30 @@ async function getJSON(url) { try { const r = await fetch(url, { cache: "no-cach
   const [cover, idx, blog] = await Promise.all([getJSON("/home/cover.json"), getJSON("/reports/index.json"), getJSON("/blog/index.json")]);
   if (cover) {
     const d = new Date(cover.date + "T12:00:00");
-    $("#issueLine").textContent = `NO. ${String(cover.issue).padStart(3, "0")} · ${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日 · 周${WEEK[d.getDay()]}`;
+    const no = `NO. ${String(cover.issue).padStart(3, "0")}`;
+    $("#issueLine").textContent = EN
+      ? `${no} · ${d.toLocaleDateString("en-US", { weekday: "long", month: "short", day: "numeric", year: "numeric" })}`
+      : `${no} · ${d.getFullYear()} 年 ${d.getMonth() + 1} 月 ${d.getDate()} 日 · 周${WEEK[d.getDay()]}`;
     const c = cover.cover, link = (kind) => `/daily/#${cover.date}/${kind}`;
-    $("#kicker").textContent = c.kicker;
-    $("#title").textContent = c.title;
-    $("#dek").textContent = c.dek;
-    $("#big").innerHTML = `${esc(c.big)}<small>${esc(c.unit)}</small>`;
+    $("#kicker").textContent = pick(c, "kicker");
+    $("#title").textContent = pick(c, "title");
+    $("#dek").textContent = pick(c, "dek");
+    $("#big").innerHTML = `${esc(c.big)}<small>${esc(pick(c, "unit"))}</small>`;
     $("#big").hidden = !c.big;
     $("#read").href = link(c.kind);
-    $("#read").textContent = `读今天的${KINDS[c.kind] || ""}日报 →`;
+    $("#read").textContent = EN ? `Read today's ${KINDS[c.kind] || ""} report →` : `读今天的${KINDS[c.kind] || ""}日报 →`;
     $("#stickers").innerHTML = cover.stickers.map((s) =>
-      `<a class="sticker" href="${link(s.kind)}"><b>${esc(s.title)}</b>${esc(s.text)} <span class="face">${esc(s.face)}</span>` +
-      `<span class="from">来自${esc(KINDS[s.kind] || "")}日报 →</span></a>`).join("");
+      `<a class="sticker" href="${link(s.kind)}"><b>${esc(pick(s, "title"))}</b>${esc(pick(s, "text"))} <span class="face">${esc(s.face)}</span>` +
+      `<span class="from">${EN ? `From the ${esc(KINDS[s.kind] || "")} report →` : `来自${esc(KINDS[s.kind] || "")}日报 →`}</span></a>`).join("");
     document.querySelectorAll("#dailyList a").forEach((a) => { a.href = `/daily/#${cover.date}/${a.getAttribute("href").split("/").pop()}`; });
   }
-  if (idx && idx.days) $("#dailyCount").textContent = `DAILY · 已出 ${idx.days.length} 期`;
-  if (blog && blog.length) {
-    $("#blogList").innerHTML = blog.slice(0, 5).map((p) =>
-      `<li><span class="no">${esc(p.date.slice(5).replace("-", "/"))}</span><div><a href="/blog/#${encodeURIComponent(p.slug)}">${esc(p.title)}</a>` +
-      `${p.summary ? `<p>${esc(p.summary)}</p>` : ""}</div></li>`).join("");
+  if (idx && idx.days) $("#dailyCount").textContent = EN ? `DAILY · ${idx.days.length} issues` : `DAILY · 已出 ${idx.days.length} 期`;
+  if (blog && blog.length) {  // each post has a zh and/or en version; show the reader's language when there is one
+    $("#blogList").innerHTML = blog.slice(0, 5).map((p) => {
+      const v = p[EN ? "en" : "zh"] || p.zh || p.en, other = !p[EN ? "en" : "zh"];
+      return `<li><span class="no">${esc(p.date.slice(5).replace("-", "/"))}</span><div><a href="/blog/#${encodeURIComponent(p.slug)}">${esc(v.title)}</a>` +
+        `${other ? `<span class="chip">${EN ? "in Chinese" : "英文"}</span>` : ""}${v.summary ? `<p>${esc(v.summary)}</p>` : ""}</div></li>`;
+    }).join("");
   }
 })();
 </script>

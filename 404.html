@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>404 · Jasper's Agent 观察</title>
+<script src="/lang.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Fraunces:opsz,wght@9..144,800&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
 /* A missing page, told as an agent session: it went looking, ran out of context, and kept only a summary.
@@ -59,27 +60,27 @@ footer { color: var(--muted); font-size: 12px; text-align: center; }
 </head>
 <body>
   <div class="head">
-    <a href="/">Jasper's<em>Agent 观察</em></a>
+    <a href="/">Jasper's<em data-i18n="name">Agent 观察</em></a>
     <span class="code" aria-label="404 页面不存在">404</span>
   </div>
 
   <div class="term" role="main">
     <div class="bar">
       <i class="dot" style="background:#ff5f56"></i><i class="dot" style="background:#ffbd2e"></i><i class="dot" style="background:#27c93f"></i>
-      <span>agent — 上下文用量 100%</span>
+      <span data-i18n="bar">agent — 上下文用量 100%</span>
     </div>
     <div class="screen">
       <div><span class="p">$ </span>agent fetch <span class="s" id="path">/这一页</span></div>
-      <div class="spin">在上下文里检索中…</div>
-      <div class="dim">  已读 128,000 / 128,000 tokens</div>
-      <div class="err">✗ context window exceeded — 这一页在压缩时被丢掉了</div>
-      <div class="dim">  保留的摘要：「它曾经存在过，大概」(；′⌒`)</div>
+      <div class="spin" data-i18n="search">在上下文里检索中…</div>
+      <div class="dim" data-i18n="read">  已读 128,000 / 128,000 tokens</div>
+      <div class="err" data-i18n="err">✗ context window exceeded — 这一页在压缩时被丢掉了</div>
+      <div class="dim" data-i18n="summary">  保留的摘要：「它曾经存在过，大概」(；′⌒`)</div>
       <div class="gap"></div>
       <div><span class="p">$ </span>agent suggest</div>
       <div class="links">
-        <a href="/">回首页</a>
-        <a href="/daily/">看今天的日报</a>
-        <a href="/daily/#/projects">翻翻项目库</a>
+        <a href="/" data-i18n="l1">回首页</a>
+        <a href="/daily/" data-i18n="l2">看今天的日报</a>
+        <a href="/daily/#/projects" data-i18n="l3">翻翻项目库</a>
       </div>
       <div class="bot">
         <pre aria-hidden="true">  ┌─────┐
@@ -89,17 +90,25 @@ footer { color: var(--muted); font-size: 12px; text-align: center; }
  ┌───┴───┐
  │  404  │
  └─┬───┬─┘</pre>
-        <p>「小机器人把这页的上下文弄丢了，正在面壁思过 ┐(￣ヘ￣)┌ 要不先去别处逛逛？」</p>
+        <p data-i18n="bot">「小机器人把这页的上下文弄丢了，正在面壁思过 ┐(￣ヘ￣)┌ 要不先去别处逛逛？」</p>
       </div>
       <div class="gap"></div>
       <div><span class="p">$ </span><span class="cursor" aria-hidden="true"></span></div>
     </div>
   </div>
 
-  <footer>由 GitHub Pages 和 Claude 印刷 · 这一页印漏了 (´･ω･`)</footer>
+  <footer data-i18n="footer">由 GitHub Pages 和 Claude 印刷 · 这一页印漏了 (´･ω･`)</footer>
 
 <script>
 try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) { /* default theme */ }
+applyI18n({
+  name: "Agent Watch", bar: "agent — context used 100%", search: "searching the context…", read: "  read 128,000 / 128,000 tokens",
+  err: "✗ context window exceeded — this page was dropped during compaction", summary: "  summary kept: “it existed once, probably” (；′⌒`)",
+  l1: "front page", l2: "today's reports", l3: "project library",
+  bot: "“The little robot lost this page's context and is now thinking about what it did ┐(￣ヘ￣)┌ Maybe look around elsewhere?”",
+  footer: "Printed by GitHub Pages and Claude · this page didn't make it to print (´･ω･`)",
+});
+if (window.siteLang === "en") document.title = "404 · Jasper's Agent Watch";
 const path = decodeURIComponent(location.pathname + location.hash);
 if (path && path !== "/") document.getElementById("path").textContent = path.length > 60 ? path.slice(0, 57) + "…" : path;
 </script>

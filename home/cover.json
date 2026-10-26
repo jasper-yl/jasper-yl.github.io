@@ -3,30 +3,40 @@
  "issue": 4,
  "cover": {
   "kicker": "封面故事 · 社区热议",
-  "title": "一个安全审计 Skill\n没靠营销号就破百万浏览",
-  "dek": "Cloudflare 的 security-audit-skill 日增 +2,744,真实讨论浏览超过 100 万,自媒体清单却只有 35 次曝光。靠大厂背书和一句话讲清的机制自然出圈,在满屏推广的榜单里很少见。",
-  "big": "+2,744",
+  "title": "REA 日增近六千星\n争议让它再涨百万浏览",
+  "dek": "morluto/rea 日增 +5,896 连续第二天居榜首,今天的话题转向「Anthropic 是否限制了逆向能力」。两条帖子合计 👁1,067,130,不过「限制」只是网友转述,并无官方确认。",
+  "big": "+5,896",
   "unit": "颗星 / 日",
-  "kind": "social"
+  "kind": "social",
+  "kicker_en": "Cover story · Community",
+  "title_en": "REA Adds Nearly 6,000 Stars a Day\nAs a Restriction Row Draws a Million Views",
+  "dek_en": "morluto/rea topped the chart for a second day at +5,896 stars. The chatter has shifted to whether Anthropic restricted reverse engineering: two posts drew 1,067,130 views, though the claim is hearsay with no official confirmation.",
+  "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "论文角",
-   "text": "RAG 组合评测给出反直觉结果:单点有效的技术叠加后,预测提升 +47%,实测只有 +17%。",
-   "face": "Σ(っ °Д °;)っ",
-   "kind": "papers"
-  },
-  {
-   "title": "新热点",
-   "text": "多 harness 编排升温,HarnessRouter 让一个 Bot 同时调度 Codex、Claude Code 等多个 Agent。",
-   "face": "(⊙ˍ⊙)",
-   "kind": "social"
-  },
-  {
-   "title": "通用 Agent",
-   "text": "开箱即用的 makecindy/cindy 日增 +719,昨天是 +471,是通用 Agent 里涨得最快的。",
+   "title": "安全新势",
+   "text": "cloudflare/security-audit-skill 日增 +2,744,高于昨天的 +2,177,连续两天排在增速第二。",
    "face": "(๑•̀ㅂ•́)و✧",
-   "kind": "github"
+   "kind": "github",
+   "title_en": "Security Surge",
+   "text_en": "cloudflare/security-audit-skill gained +2,744 stars, up from +2,177 yesterday, and is second in growth for the second straight day."
+  },
+  {
+   "title": "论文角",
+   "text": "Self-Evolving Agent Harness 获 👍99,让脚手架在固定权重下自我演化,成为论文区最热主题。",
+   "face": "φ(゜▽゜*)♪",
+   "kind": "papers",
+   "title_en": "Paper Corner",
+   "text_en": "Self-Evolving Agent Harness drew 👍99 by letting scaffolding evolve with fixed weights, the hottest theme in papers today."
+  },
+  {
+   "title": "叠加缩水",
+   "text": "RAG 组合评测显示,单点有效的技术叠加后,预测提升 +47%,实测只有 +17%。",
+   "face": "(⊙ˍ⊙)",
+   "kind": "papers",
+   "title_en": "Gains Shrink",
+   "text_en": "A RAG composition study found techniques that work alone stack poorly: a predicted +47% gain came out at just +17%."
   }
  ],
  "reports": {
