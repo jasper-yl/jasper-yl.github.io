@@ -15,6 +15,7 @@
   "zh": "沙箱化处理编码Agent的工具输出并持久化会话记忆，优化上下文窗口",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/github",
    "2026-10-24/github",
    "2026-10-23/github",
    "2026-10-22/github"
@@ -27,6 +28,7 @@
   "zh": "让编码Agent用简短的“原始人”口吻回答，从而减少token消耗",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github",
@@ -40,6 +42,7 @@
   "zh": "给编码Agent加上“偷懒资深开发”思路，倾向少写代码、避免过度实现",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
    "2026-10-25/github",
    "2026-10-24/social",
    "2026-10-24/github",
@@ -55,6 +58,7 @@
   "zh": "为编码Agent命令行提供长期记忆，并方便在不同厂商Agent间交接",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github",
@@ -98,6 +102,8 @@
   "zh": "把代码库、文档和配置解析成可查询的知识图谱，供编码Agent检索",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/social",
@@ -114,6 +120,8 @@
   "zh": "本地优先的Rust搜索引擎，为Agent索引代码文档并支持全文与向量混合检索",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/social",
    "2026-10-24/github",
@@ -128,6 +136,7 @@
   "stars": 2909,
   "zh": "用自然语言描述功能，为编码Agent查找相关代码文件的命令行工具",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github",
@@ -230,6 +239,7 @@
   "stars": 57224,
   "zh": "把各类软件改造成命令行接口，使其便于AI Agent调用",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github",
@@ -289,6 +299,8 @@
   "zh": "让编码Agent执行多阶段安全审计并输出可验证的结构化结果",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/social",
@@ -305,6 +317,8 @@
   "zh": "同时管理和运行多个编码Agent的桌面与移动端工作环境",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/social",
@@ -321,6 +335,7 @@
   "zh": "开源的终端编码Agent，可辅助编写和修改代码",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github",
@@ -344,6 +359,8 @@
   "zh": "借助Agent对应用行为乃至原生二进制进行逆向工程",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/social",
@@ -381,6 +398,7 @@
   "zh": "为自主运行的AI Agent提供安全、私密的运行时环境",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/social",
    "2026-10-24/github",
@@ -415,6 +433,7 @@
   "zh": "编排多Agent集群与自主工作流的Agent框架，带自适应记忆和向量检索",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github",
@@ -465,6 +484,8 @@
   "zh": "在菜单栏里为各编程智能体切换底层模型，如让 Codex 用 DeepSeek",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/social",
@@ -541,7 +562,7 @@
  "thu-nics/AKV": {
   "first_seen": "2026-10-22",
   "description": "Official implementation of paper \"Cache Engineering for Agents\"",
-  "stars": 73,
+  "stars": 126,
   "zh": "论文《Cache Engineering for Agents》的官方实现，研究智能体的缓存工程",
   "mentions": [
    "2026-W43/weekly",
@@ -552,7 +573,7 @@
  "MemTensor/MemT-1.0": {
   "first_seen": "2026-10-22",
   "description": "Official repository for MemT-1.0",
-  "stars": 406,
+  "stars": 416,
   "zh": "面向大模型的原生长期记忆项目 MemT-1.0 官方代码库",
   "mentions": [
    "2026-W43/weekly",
@@ -563,7 +584,7 @@
  "uclanlp/OpenVLHarness": {
   "first_seen": "2026-10-22",
   "description": "Official Code for OpenVLHarness: Real-World Visual Agentic Tool‑Use with Multimodal Memory",
-  "stars": 257,
+  "stars": 269,
   "zh": "带多模态记忆的真实世界视觉智能体工具调用框架官方代码",
   "mentions": [
    "2026-10-23/papers",
@@ -586,6 +607,7 @@
   "stars": 103311,
   "zh": "记录并压缩智能体的会话过程，在后续会话中自动注入相关上下文",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github"
@@ -607,6 +629,7 @@
   "stars": 81385,
   "zh": "统一接入数百家模型服务商的 AI 网关，支持额度感知的自动回退切换",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github"
@@ -619,6 +642,8 @@
   "zh": "为 Claude Code、Codex 等智能体提供技能、记忆与安全的性能优化套件",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/social",
@@ -683,6 +708,7 @@
   "stars": 10699,
   "zh": "用 Rust 编写的参数化 3D CAD 应用，可通过 MCP 自动化操作",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github"
@@ -694,6 +720,8 @@
   "stars": 103114,
   "zh": "用一个命令行工具让智能体读取和搜索推特、Reddit、B站、小红书等平台",
   "mentions": [
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/github",
@@ -748,6 +776,8 @@
   "zh": "DeepSeek 推出的以插件为核心的智能体运行框架",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/social",
@@ -762,6 +792,8 @@
   "stars": 115544,
   "zh": "由多个大模型智能体协作完成金融交易决策的框架",
   "mentions": [
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github"
@@ -773,6 +805,7 @@
   "stars": 107536,
   "zh": "用于管理和编排多个工作智能体的应用，支持任务与流程自动化",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github"
@@ -793,6 +826,7 @@
   "stars": 257291,
   "zh": "Nous Research 推出的可随使用不断成长的 AI 智能体",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github",
    "2026-10-23/github"
@@ -804,6 +838,7 @@
   "stars": 117976,
   "zh": "包含统一大模型接口、智能体循环、终端界面和编程智能体命令行的工具包",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-23/github"
   ]
  },
@@ -841,6 +876,7 @@
   "zh": "训练模型时由编程智能体实时改写优化器的响应式优化器",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
    "2026-10-25/social",
    "2026-10-24/social",
    "2026-10-23/social",
@@ -853,6 +889,7 @@
   "stars": 723,
   "zh": "面向编程智能体的桌面工作台（推断）",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-23/github"
   ]
  },
@@ -862,6 +899,7 @@
   "stars": 7,
   "zh": "为智能体提供记忆管理与辅助的工具（推断）",
   "mentions": [
+   "2026-10-26/papers",
    "2026-10-25/papers",
    "2026-10-23/papers"
   ]
@@ -881,6 +919,7 @@
   "stars": 2,
   "zh": "苏格拉底式技能学习的代码、基准测试与交互轨迹数据集",
   "mentions": [
+   "2026-10-26/papers",
    "2026-10-25/papers",
    "2026-10-24/papers",
    "2026-10-23/papers"
@@ -893,6 +932,8 @@
   "zh": "dsh 插件，免登录免密钥直接调用 DeepSeek、Kimi 等免费模型",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-24/social",
    "2026-10-24/github",
@@ -917,6 +958,8 @@
   "zh": "用 HTML 编写画面并渲染成视频，专为智能体设计的视频框架",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/social",
@@ -930,6 +973,7 @@
   "zh": "为 Claude Code 提供虚幻引擎开发技能的插件（推断）",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
    "2026-10-25/social",
    "2026-10-24/social",
    "2026-10-23/social"
@@ -954,6 +998,7 @@
   "zh": "安装前扫描智能体技能，检测提示注入、数据外泄等安全风险",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/social",
    "2026-10-24/github",
@@ -998,6 +1043,7 @@
   "zh": "面向工程师的智能体技能合集，取自作者的 .agents 目录",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/social",
@@ -1011,6 +1057,7 @@
   "stars": 54036,
   "zh": "能从交互中不断学习的智能体长期记忆系统",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github"
   ]
@@ -1032,6 +1079,8 @@
   "stars": 35488,
   "zh": "帮 Claude Code 等工具避免千篇一律 AI 风格的设计技能",
   "mentions": [
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/github"
@@ -1073,6 +1122,8 @@
   "stars": 5962,
   "zh": "开箱即用的开源 AI 智能体，替你自动完成各类任务",
   "mentions": [
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/github"
@@ -1094,6 +1145,8 @@
   "zh": "让 Claude Code 用代码做短片的 59 种电影风格工具箱",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social",
    "2026-10-25/github",
    "2026-10-24/github"
@@ -1105,6 +1158,7 @@
   "stars": 2980,
   "zh": "把编程智能体变成视频智能体，并带可修改成品的编辑器",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github",
    "2026-10-24/github"
   ]
@@ -1125,6 +1179,7 @@
   "stars": 600,
   "zh": "把 Pi 编程智能体预编译成单个原生可执行文件，启动更快更省资源",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-24/github"
   ]
  },
@@ -1172,7 +1227,7 @@
  "Tongyi-MAI/OpenGCUA": {
   "first_seen": "2026-10-24",
   "description": "An open-source stack for generalist computer-use agents, combining code execution, GUI interaction, and cross-device control.",
-  "stars": 497,
+  "stars": 514,
   "zh": "整合代码执行、界面操作与跨设备控制的通用电脑操作智能体",
   "mentions": [
    "2026-W43/weekly",
@@ -1182,7 +1237,7 @@
  "HexaFuture/HexaShell": {
   "first_seen": "2026-10-24",
   "description": "HexaShell: a thin harness in which a coding agent drives a robot from RGB images and writes its own tools; frozen tools for the 42 RoboDojo tasks",
-  "stars": 159,
+  "stars": 171,
   "zh": "让编程智能体根据 RGB 图像操控机器人并自写工具的轻量框架",
   "mentions": [
    "2026-10-24/papers"
@@ -1194,6 +1249,7 @@
   "stars": 88,
   "zh": "让智能体像人一样理解流式视频的研究项目",
   "mentions": [
+   "2026-10-26/papers",
    "2026-10-25/papers",
    "2026-10-24/papers"
   ]
@@ -1205,6 +1261,7 @@
   "zh": "替换 RAG 流程单个环节、评测组合效果是否保持的实验框架",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/papers",
    "2026-10-25/papers",
    "2026-10-24/papers"
   ]
@@ -1224,6 +1281,7 @@
   "stars": 2936,
   "zh": "压缩上下文的 dsh 插件，支持超长会话并节省约五倍 token",
   "mentions": [
+   "2026-10-26/github",
    "2026-10-25/github"
   ]
  },
@@ -1302,9 +1360,10 @@
  "fyzhang1/FocusGUI": {
   "first_seen": "2026-10-25",
   "description": "Official code for \"Focused Omni-Modal GUI Agents“",
-  "stars": 44,
+  "stars": 50,
   "zh": "聚焦式全模态 GUI 智能体的官方代码，基于 PyTorch 参数高效训练",
   "mentions": [
+   "2026-10-26/papers",
    "2026-10-25/papers"
   ]
  },
@@ -1315,6 +1374,7 @@
   "zh": "录制屏幕操作并还原为意图与步骤，生成可复用的 Agent 技能或自动化流程",
   "mentions": [
    "2026-W43/weekly",
+   "2026-10-26/social",
    "2026-10-25/social"
   ]
  },
@@ -1324,6 +1384,7 @@
   "stars": 4267,
   "zh": "为 Hermes Agent 提供编码能力与技能包，支持图工程式工作流",
   "mentions": [
+   "2026-10-26/social",
    "2026-10-25/social"
   ]
  },
@@ -1333,6 +1394,8 @@
   "stars": 753,
   "zh": "收录逆向工程闭源应用、接口、设备与协议所得开源工具的可搜索清单，附 MCP 服务器",
   "mentions": [
+   "2026-10-26/social",
+   "2026-10-26/github",
    "2026-10-25/social"
   ]
  },
@@ -1342,13 +1405,14 @@
    "2026-W43/weekly"
   ],
   "description": "",
-  "stars": null,
+  "stars": 62,
   "zh": "评测智能体在商业业务场景中完成任务能力的基准测试集（推断）"
  },
  "yihui-dev/awesome-opus5-5-videos": {
-  "first_seen": null,
+  "first_seen": "2026-10-26",
   "mentions": [
-   "2026-W43/weekly"
+   "2026-W43/weekly",
+   "2026-10-26/social"
   ],
   "description": "A growing collection of viral videos made with Claude Opus 5.5 and the prompts behind them. Watch each original next to a live remake on Skillry. Updated regularly.",
   "stars": 11405,
@@ -1371,5 +1435,258 @@
   "description": "Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
   "stars": 2614,
   "zh": "用 Claude Opus 5.5 编写代码生成的《I'm Upping My P(doom)》音乐视频源码"
+ },
+ "AgriciDaniel/claude-seo": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/social",
+   "2026-10-26/github"
+  ],
+  "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for l",
+  "stars": 21846,
+  "zh": "面向 Claude Code 的 SEO 技能集，覆盖技术 SEO、结构化数据、外链与报告生成"
+ },
+ "google/elephant-goldfish-model": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "An open-source method and skill set created at Google for spec-driven development with LLMs",
+  "stars": 1524,
+  "zh": "Google 出品的规范驱动开发方法与技能集，让大模型按规格说明写代码"
+ },
+ "t3dotgg/tstack": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "The agent skills I use every day. Works with Claude Code and Codex.",
+  "stars": 1105,
+  "zh": "作者日常使用的一套智能体技能，适用于 Claude Code 和 Codex"
+ },
+ "AstrBotDevs/AstrBot": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
+  "stars": 43758,
+  "zh": "接入多种即时通讯平台、大模型与插件的 AI 智能体助手及开发框架"
+ },
+ "herdrdev/herdr": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "the runtime your coding agents live on",
+  "stars": 45968,
+  "zh": "为多个编程智能体提供统一运行环境并负责编排调度的命令行工具"
+ },
+ "Kai-Jungsthoefel/SOMA": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "Desktop app for designing parametric 3D models in CadQuery together with the coding agent of your choice",
+  "stars": 377,
+  "zh": "桌面应用，与编程智能体协作用 CadQuery 设计参数化 3D 模型"
+ },
+ "mailschema/mailschema": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "Working-draft Mail Action Protocol for agent actions through email, with type contracts, a registry, and a validation CLI.",
+  "stars": 131,
+  "zh": "定义通过电子邮件触发智能体动作的协议，含类型约定、注册表和校验命令行"
+ },
+ "y5ez3g/facadecode": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "One IDE for you and your AI team. A VS Code fork where Claude Code, Codex, Antigravity, and Muse Code work in parallel across multiple projects and features.",
+  "stars": 105,
+  "zh": "基于 VS Code 的 IDE，让多个编程智能体并行处理多个项目与功能"
+ },
+ "ZipengWu365/TOMC": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "TOMC Memory: CPU context compression and task memory for Codex, Claude Code, Cursor, TRAE, WorkBuddy and other MCP clients.",
+  "stars": 264,
+  "zh": "为各类 MCP 客户端提供上下文压缩与任务记忆，降低 token 消耗"
+ },
+ "nuglifeleoji/Sentry": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "Learning to Recover from LLM Agent Failures at Test Time",
+  "stars": 442,
+  "zh": "研究如何让大模型智能体在测试阶段从失败中恢复（推断）"
+ },
+ "hanzohanzhe/Grandet": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "Find the cheapest API for any model and connect it from your AI agent: Grandet Skill and an anonymous MCP server, backed by listed prices from 1,800+ official, inference and relay providers on grandet.ai.",
+  "stars": 818,
+  "zh": "汇总各家 API 报价，帮智能体找到最便宜的模型接口并接入"
+ },
+ "ZiChuanLan/agent-purge": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
+  "stars": 245,
+  "zh": "带本地网页控制台，为多种编程智能体统一替换或注入系统提示词"
+ },
+ "hevnsnt/CVEngine": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "AI-first external attack surface assessment with continuous discovery, evidence-based vulnerability validation, and developer-agent MCP integration.",
+  "stars": 320,
+  "zh": "AI 驱动的外部攻击面评估工具，持续发现资产并验证漏洞，支持 MCP 接入"
+ },
+ "morganlinton/BeautifulRust": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, and Gemini CLI.",
+  "stars": 1120,
+  "zh": "教编程智能体编写、审查和移植地道 Rust 代码的技能集，附 clippy 配置"
+ },
+ "JetBrains/thinkrail": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+  "stars": 2461,
+  "zh": "轻量级 IDE，用 pi 智能体做氛围编程，并可按使用习惯自我定制"
+ },
+ "dagoSte/squadra": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/github"
+  ],
+  "description": "Coordinate Claude, Codex and Cursor windows with shared tasks, acknowledgements, prechecks, parallel tests, source-bound proofs and independent review. Built-in skills recall lessons, simplify code and forecast work. Track progress, decisions and evidence in a bilingual local dashboard, with MCP plu",
+  "stars": 632,
+  "zh": "协调多个 Claude、Codex、Cursor 窗口，共享任务、交叉评审并用本地面板追踪进度"
+ },
+ "SJTU-DAI-Sys/DLite": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/papers"
+  ],
+  "description": "Official Implementation for DLite",
+  "stars": 49,
+  "zh": "DLite 论文的官方实现代码（推断）"
+ },
+ "MSR-Orchard/Self-HPO": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/papers"
+  ],
+  "description": "Self-HPO: self-improving harness + policy co-optimization for agentic SWE",
+  "stars": 48,
+  "zh": "让智能体运行框架与策略协同自我优化，用于软件工程任务"
+ },
+ "pzs19/HarnessPro": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/papers"
+  ],
+  "description": "",
+  "stars": 105,
+  "zh": "面向智能体运行框架（harness）的工具或研究项目（推断）"
+ },
+ "HKUST-KnowComp/CoworkEnv": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/papers"
+  ],
+  "description": "",
+  "stars": 15,
+  "zh": "用于智能体协同工作的评测或实验环境（推断）"
+ },
+ "xinxinliu-ai/AgenticRoboRL": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/papers"
+  ],
+  "description": "Post-training robot planners with SFT and multi-turn RL across agentic robotics harnesses",
+  "stars": 40,
+  "zh": "用监督微调和多轮强化学习对机器人规划模型做后训练"
+ },
+ "NineAbyss/OR-License": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/papers"
+  ],
+  "description": "Can LLM agents do the work of an operations research practitioner, without an expert reformulating the problem first?",
+  "stars": 10,
+  "zh": "评测大模型智能体能否不经专家转述，独立完成运筹学建模工作"
+ },
+ "jiamingzhang94/lgwm": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/papers"
+  ],
+  "description": "LGWM (Latent GUI World Model): an action-conditioned world model that verifies GUI agent transitions in representation space. Official code for \"Right Screen, Wrong Transition: World Models as Verifiers for GUI Agents\".",
+  "stars": 4,
+  "zh": "在表示空间中用世界模型验证 GUI 智能体操作转移是否正确"
+ },
+ "tianyi0216/Memcryst": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/papers"
+  ],
+  "description": "",
+  "stars": 1,
+  "zh": "可能是智能体或大模型的记忆存储工具（推断）"
+ },
+ "simple-agent-lab/RSIHub": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/papers"
+  ],
+  "description": "A research framework for principled agent self-improvement under frozen evaluators and declared mutation boundaries, recording verifiable lineage to make it reproducible and auditable.",
+  "stars": 199,
+  "zh": "在固定评估器和变更边界下研究智能体自我改进，并记录可验证的演化谱系"
+ },
+ "elayadesign/ai-design-skills": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/social"
+  ],
+  "description": "",
+  "stars": 7609,
+  "zh": "面向 AI 智能体的设计类技能集合（推断）"
+ },
+ "threerocks/sweety-handdraw-video": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/social"
+  ],
+  "description": "从主题或文章制作完整手绘讲解视频：按部位描线、逐字书写、VoiceStudio 配音、五项内置制作依赖。",
+  "stars": 876,
+  "zh": "根据主题或文章生成手绘讲解视频，含描线、逐字书写和配音"
+ },
+ "JohnHeibel/ClaudeAnimationBase": {
+  "first_seen": "2026-10-26",
+  "mentions": [
+   "2026-10-26/social"
+  ],
+  "description": "A starter kit for animating hand-painted cartoons with Claude: p5.js + p5.brush, the Clawd character, 31 acted emotions and a guide for the model",
+  "stars": 1883,
+  "zh": "用 Claude 制作手绘卡通动画的入门套件，基于 p5.js 并含角色与情绪表演"
  }
 }

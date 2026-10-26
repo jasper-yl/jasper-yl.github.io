@@ -1,47 +1,47 @@
 {
- "date": "2026-10-25",
- "issue": 4,
+ "date": "2026-10-26",
+ "issue": 5,
  "cover": {
-  "kicker": "封面故事 · 社区热议",
-  "title": "REA 日增近六千星\n争议让它再涨百万浏览",
-  "dek": "morluto/rea 日增 +5,896 连续第二天居榜首,今天的话题转向「Anthropic 是否限制了逆向能力」。两条帖子合计 👁1,067,130,不过「限制」只是网友转述,并无官方确认。",
-  "big": "+5,896",
-  "unit": "颗星 / 日",
-  "kind": "social",
-  "kicker_en": "Cover story · Community",
-  "title_en": "REA Adds Nearly 6,000 Stars a Day\nAs a Restriction Row Draws a Million Views",
-  "dek_en": "morluto/rea topped the chart for a second day at +5,896 stars. The chatter has shifted to whether Anthropic restricted reverse engineering: two posts drew 1,067,130 views, though the claim is hearsay with no official confirmation.",
-  "unit_en": "stars / day"
+  "kicker": "封面故事 · 论文",
+  "title": "单项有效的 RAG 技术\n叠在一起，收益缩水",
+  "dek": "三项检索技术各自有效，叠在一起预测能涨 47%，实测只涨了 17%。记忆和检索是今天论文热度榜的主线，做 RAG 的人值得先看这篇。",
+  "big": "+17%",
+  "unit": "实测收益（预测 +47%）",
+  "kind": "papers",
+  "kicker_en": "Cover story · Papers",
+  "title_en": "Each RAG technique helps alone\nStack three and the gain shrinks",
+  "dek_en": "Three retrieval techniques that each work on their own were predicted to add 47% when combined. Measured gain: 17%. Memory and retrieval lead today's paper charts, so anyone building RAG should start here.",
+  "unit_en": "measured gain (predicted +47%)"
  },
  "stickers": [
   {
-   "title": "安全新势",
-   "text": "cloudflare/security-audit-skill 日增 +2,744,高于昨天的 +2,177,连续两天排在增速第二。",
-   "face": "(๑•̀ㅂ•́)و✧",
+   "title": "管理潮",
+   "text": "新秀爆发的 10 个项目里，4 个是在一个界面管多个 Agent 的工具。",
+   "face": "(⊙ˍ⊙)",
    "kind": "github",
-   "title_en": "Security Surge",
-   "text_en": "cloudflare/security-audit-skill gained +2,744 stars, up from +2,177 yesterday, and is second in growth for the second straight day."
+   "title_en": "Agent wranglers",
+   "text_en": "4 of the 10 breakout newcomers are tools for running several agents from one interface."
+  },
+  {
+   "title": "自然传播",
+   "text": "magpie 真实讨论 👁246,250，自媒体曝光为 0，日增 +1,104。",
+   "face": "(｡•̀ᴗ-)✧",
+   "kind": "social",
+   "title_en": "Organic reach",
+   "text_en": "magpie drew 246,250 views of real discussion, zero from promo accounts, and gained +1,104 stars in a day."
   },
   {
    "title": "论文角",
-   "text": "Self-Evolving Agent Harness 获 👍99,让脚手架在固定权重下自我演化,成为论文区最热主题。",
-   "face": "φ(゜▽゜*)♪",
+   "text": "MCP-Injector 发现模型从 20B 放大到 120B，工具故障下的容错没有变好。",
+   "face": "Σ(っ °Д °;)っ",
    "kind": "papers",
-   "title_en": "Paper Corner",
-   "text_en": "Self-Evolving Agent Harness drew 👍99 by letting scaffolding evolve with fixed weights, the hottest theme in papers today."
-  },
-  {
-   "title": "叠加缩水",
-   "text": "RAG 组合评测显示,单点有效的技术叠加后,预测提升 +47%,实测只有 +17%。",
-   "face": "(⊙ˍ⊙)",
-   "kind": "papers",
-   "title_en": "Gains Shrink",
-   "text_en": "A RAG composition study found techniques that work alone stack poorly: a predicted +47% gain came out at just +17%."
+   "title_en": "Paper corner",
+   "text_en": "MCP-Injector finds that going from 20B to 120B parameters does not improve tolerance to tool failures."
   }
  ],
  "reports": {
-  "github": "2026-10-25-github.md",
-  "papers": "2026-10-25-papers.md",
-  "social": "2026-10-25-social.md"
+  "github": "2026-10-26-github.md",
+  "papers": "2026-10-26-papers.md",
+  "social": "2026-10-26-social.md"
  }
 }
