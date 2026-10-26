@@ -4,6 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jasper's Agent 观察</title>
+<link rel="alternate" type="application/rss+xml" title="Jasper's Agent Watch (English)" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" title="Jasper's Agent 观察（中文）" href="/feed.zh.xml">
 <script src="/lang.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Noto+Sans+SC:wght@400;500;700&display=swap">
 <style>
@@ -160,7 +162,7 @@ footer { text-align: center; font-size: 13px; color: var(--muted); }
     </div>
   </section>
 
-  <footer><span data-i18n="footer">由 GitHub Pages 和 Claude 印刷 · 偶尔有错别字</span> <span class="face">(´▽`ʃ♡ƪ)</span></footer>
+  <footer><span data-i18n="footer">由 GitHub Pages 和 Claude 印刷 · 偶尔有错别字</span> <span class="face">(´▽`ʃ♡ƪ)</span> · <a id="rss" href="/feed.zh.xml">RSS</a></footer>
 </div>
 
 <script>
@@ -186,6 +188,7 @@ applyI18n({
   p3: "<b>This site</b>　Under construction, 90% done (and has been for days)", footer: "Printed by GitHub Pages and Claude · typos happen",
 });
 langButton($("#lang"));
+$("#rss").href = EN ? "/feed.xml" : "/feed.zh.xml";
 const pick = (o, k) => (EN && o[k + "_en"]) || o[k];
 const WEEK = ["日", "一", "二", "三", "四", "五", "六"];
 function store(k, v) { try { v === undefined ? (v = localStorage.getItem(k)) : localStorage.setItem(k, v); } catch (e) { v = null; } return v; }
