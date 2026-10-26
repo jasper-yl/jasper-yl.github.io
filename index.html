@@ -67,7 +67,8 @@ article th, article td { border-bottom: 1px solid var(--border); padding: 8px 10
 article th { color: var(--muted); font-weight: 600; white-space: nowrap; }
 article td:nth-child(4), article td:nth-child(5) { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .empty { color: var(--muted); padding: 60px 0; text-align: center; }
-article a.repo { border-bottom: 1px dotted var(--accent); }
+article a.repo, article span.repo { border-bottom: 1px dotted var(--accent); }
+article span.repo { cursor: help; }
 article a.repo:hover { text-decoration: none; }
 #tip {
   position: absolute; z-index: 20; max-width: 340px; display: none;
@@ -191,22 +192,72 @@ function showTip(a) {
 }
 function hideTip() { tip.style.display = "none"; tipFor = null; }
 const touch = matchMedia("(hover: none)").matches;
+// Names too generic to spot in running text (they only get a card when they are links)
+const STOP = new Set(["agent", "agents", "skills", "memory", "context", "awesome", "claude", "codex", "docs", "tools", "harness", "openai"]);
+let nameRe = null, byName = {};
+function buildNameIndex() {
+  const counts = {};
+  for (const full of Object.keys(state.glossary)) {
+    const short = full.split("/")[1].toLowerCase();
+    counts[short] = (counts[short] || 0) + 1;
+  }
+  for (const full of Object.keys(state.glossary)) {
+    byName[full.toLowerCase()] = full;
+    const short = full.split("/")[1].toLowerCase();
+    if (short.length >= 4 && counts[short] === 1 && !STOP.has(short)) byName[short] = full;
+  }
+  const names = Object.keys(byName).sort((a, b) => b.length - a.length)
+    .map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"));
+  nameRe = names.length ? new RegExp(`(?<![\\w./-])(${names.join("|")})(?![\\w/-]|\\.\\w)`, "gi") : null;
+}
+// Bare mentions like **xerj** or `graphify` in 今日要点 / 观察 get the same card as links
+function wrapBareNames(el) {
+  if (!nameRe) return;
+  const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => n.parentElement.closest("a, pre, h1, .repo") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT,
+  });
+  const nodes = [];
+  while (walker.nextNode()) nodes.push(walker.currentNode);
+  for (const node of nodes) {
+    const text = node.nodeValue;
+    nameRe.lastIndex = 0;
+    if (!nameRe.test(text)) continue;
+    nameRe.lastIndex = 0;
+    const frag = document.createDocumentFragment();
+    let last = 0, m;
+    while ((m = nameRe.exec(text))) {
+      frag.append(text.slice(last, m.index));
+      const span = document.createElement("span");
+      span.className = "repo"; span.tabIndex = 0;
+      span.dataset.repo = byName[m[1].toLowerCase()];
+      span.textContent = m[1];
+      frag.append(span);
+      last = m.index + m[1].length;
+    }
+    frag.append(text.slice(last));
+    node.replaceWith(frag);
+  }
+}
+function attachTip(a) {
+  if (touch) {  // no hover on phones: first tap shows the card, the card's link opens GitHub
+    a.addEventListener("click", (e) => { if (tipFor !== a) { e.preventDefault(); showTip(a); } });
+  } else {
+    a.addEventListener("mouseenter", () => showTip(a));
+    a.addEventListener("mouseleave", hideTip);
+    a.addEventListener("focus", () => showTip(a));
+    a.addEventListener("blur", hideTip);
+  }
+}
 function wireRepoLinks(el) {
   el.querySelectorAll("a[href^='https://github.com/']").forEach((a) => {
     const name = repoOf(a.getAttribute("href"));
     if (!name || !lookup(name)) return;
     a.dataset.repo = name; a.classList.add("repo");
-    if (touch) {  // no hover on phones: first tap shows the card, the card's link opens GitHub
-      a.addEventListener("click", (e) => { if (tipFor !== a) { e.preventDefault(); showTip(a); } });
-    } else {
-      a.addEventListener("mouseenter", () => showTip(a));
-      a.addEventListener("mouseleave", hideTip);
-      a.addEventListener("focus", () => showTip(a));
-      a.addEventListener("blur", hideTip);
-    }
   });
+  wrapBareNames(el);
+  el.querySelectorAll(".repo").forEach(attachTip);
 }
-document.addEventListener("click", (e) => { if (tipFor && !e.target.closest("#tip, a.repo")) hideTip(); });
+document.addEventListener("click", (e) => { if (tipFor && !e.target.closest("#tip, .repo")) hideTip(); });
 addEventListener("scroll", () => { if (!touch) hideTip(); }, { passive: true });
 
 function renderProjects(el) {
@@ -268,7 +319,7 @@ async function init() {
     const idx = await (await fetch("reports/index.json", { cache: "no-cache" })).json();
     state.days = idx.days || []; state.weeks = idx.weeks || [];
   } catch (e) { /* empty site */ }
-  try { state.glossary = await (await fetch("glossary.json", { cache: "no-cache" })).json(); } catch (e) { /* no hover cards */ }
+  try { state.glossary = await (await fetch("glossary.json", { cache: "no-cache" })).json(); buildNameIndex(); } catch (e) { /* no hover cards */ }
   state.key.day = state.days[0]?.date || null;
   state.key.week = state.weeks[0]?.week || null;
   readHash();
