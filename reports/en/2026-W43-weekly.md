@@ -1,172 +1,206 @@
-# Agent & Agent Context Weekly · 2026-W43 (2026-10-17 ~ 2026-10-23)
+# Agent Weekly · 2026-W43 (2026-10-19 ~ 2026-10-25)
 
-> Generated at 2026-10-23 00:59 PDT
+> Generated at 2026-10-26 09:32 PDT
 
-> Data coverage: only two days this week, 2026-10-22 and 10-23, have data; the other 5 days are missing. The "weekly growth" figures below mostly use the Trending weekly metric, and those marked with ≈ are estimates summed from 2 days of daily growth. Social data is mainly from X; there is no Reddit data.
+Data coverage: only 4 days have daily reports (10-22 to 10-25). 10-19 to 10-21 have none. A few tweets from 10-17 to 10-21 are included and dated by actual post date. Reddit data is empty this week. Most weekly gains are GitHub Trending's weekly figure, which includes 10-19 to 10-21, so they run higher than four days of daily gains added up.
 
-## Weekly highlights
-- The reverse-engineering Agent **morluto/rea** gained +106,341 this week, with 368,637 stars, making it the fastest-growing project of the week. The REA post on HN has 814 points, but it was posted on 10-10.
-- Skills remain the biggest source of traffic: **cloudflare/security-audit-skill** gained ≈+4,040 this week, and a single recommendation tweet got 7,010 likes. **anthropics/claude-plugins-official** gained +5,649 this week, and Epic's Unreal plugin tweet got 5,186 likes.
-- Context infrastructure keeps heating up: code knowledge graphs (graphify), tool output compression (context-mode, headroom), cross-Agent memory (ai-memory, agent-beacon), and local retrieval (xerj) are all on the charts.
-- On the paper side, the KV cache is becoming a controllable resource for Agents (Cache Engineering for Agents), and memory is becoming "native" (MemT-1.0). Harness self-evolution is the hottest term.
-- The DeepSeek Harness (dsh) plugin ecosystem is taking shape, with free models and context visualization plugins on the charts. Multi-Agent parallel management (Orca, +9,401 this week) and Agent security runtimes (NVIDIA OpenShell, 377 points on HN) are also drawing attention.
+## This week's highlights
 
-## 1. This week's Agent Context feature trends
+- [morluto/rea](https://github.com/morluto/rea) stays #1 with ⭐382,593 and +88,243 this week (Trending's weekly figure), about +5.5k/day over the 4 days. Claims on X that Anthropic added reverse-engineering restrictions to Claude drove heavy organic discussion, but they are user retellings with no official confirmation.
+- [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) is the cleanest organic growth: +12,680 this week, daily gains rising (+2,979 → +2,038 → +2,177 → +2,744), near-zero influencer exposure, 👁1,027,652 of organic discussion.
+- Multi-agent orchestration and harnesses became a category: Orca +9,828 this week, the dsh plugin ecosystem around DeepSeek Harness, HarnessRouter letting a Grok bot dispatch to other vendors' harnesses, and Google's Harness² all appeared together.
+- Retrieval and memory projects are diverging. xerj has +8,080 this week but its daily gain fell from +1,180 to +255, while graphify holds at +573 to +632/day. The Raw-RAG paper argues plain RAG beats complex memory systems, which puts pressure on this group.
+- "Free model" projects and Opus 5.5 video repos grew on distribution, with risks. dsh-our-free-model has ≈+7,286 this week amid privacy and compliance questions. lemo-opuscar and similar repos drew 👁750,397 of influencer exposure with far less real usage feedback.
 
-### 1. Tool output compression / token savings (heating up)
-The main thread of the week. Several projects start from "output less, read less", and the community treats them as cost-cutting tools.
-- [mksglu/context-mode](https://github.com/mksglu/context-mode) · ⭐31,888 · +2,271 this week · Sandboxes tool output (claims a 98% reduction), persists session memory, and covers 17 platforms through MCP + hooks.
-- [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) · ⭐77,595 · ≈+602 this week · Compresses tool output, logs, and RAG snippets before they enter the LLM, offered as a library, a proxy, and an MCP server.
-- [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) · ⭐114,478 · +2,173 this week · Cuts about 65% of tokens with a "caveman speak" style skill + proxy.
-- [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) · ⭐174,041 · ≈+2,750 this week · Makes the Agent check the repo and standard library before writing new code. The tweet claims code volume -53% and cost -26%; these figures are the tweet's own claims and are unverified.
-- [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context) · ⭐2,435 · A dsh context compression plugin for month-long sessions, claiming 5x token savings (per the repo's own description).
-- Related papers: Cache Engineering for Agents, DLite (see Section 4).
+## Context feature trends
 
-### 2. Memory layer (heating up)
-The direction is cross-harness sharing and self-improvement, while academia is shifting to "what to store and what to forget".
-- [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) · ⭐12,862 · +3,322 this week · Long-term memory for coding CLIs, making handoffs between different Agent vendors easier.
-- [Asymptote-Labs/agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) · ⭐2,656 · ≈+281 this week · A cross-harness, self-improving memory layer that captures session trajectories and stores them in a shared index. A tweet from @_avichawla (79k followers) got 633 likes.
-- [affaan-m/ECC](https://github.com/affaan-m/ECC) · ⭐286,740 · ≈+328 this week · A harness optimization layer combining skills, memory, hooks, and security scanning, mentioned in several listicles.
-- Related papers: MemT-1.0, FlowState, Memory-Centric Continual Learning, MemPilot. The daily report also mentions studies such as REM and TokenWorth that question whether "remembering more is better"; these papers are not in this data's paper list.
+**1. Codebase indexing / retrieval (still heating up, but splitting)**
+- [xerj-org/xerj](https://github.com/xerj-org/xerj) · ⭐15,461 · +8,080 this week (Trending) · Single Rust binary that indexes code, docs, logs and PDFs locally, with hybrid BM25 + vector search, an MCP server and agent memory. Daily gains: 10-23 +938, 10-24 +1,180, 10-25 +255, a spike and pullback (see the 10-25 report).
+  - Official benchmark (relayed by @vicky_grok): both sides got 16/16 tasks right; output tokens fell from 26,477 to 9,982 (2.7× fewer).
+  - In its own case study, Claude Code answering valkey/memcached tasks from memory got 6/6 for $1.49. With the xerj index it got 5/6 for $4.40, which is more expensive. Source: [@himanshu19890](https://x.com/himanshu19890/status/2113108227458318809) (37 followers, based on reading the README).
+- [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) · ⭐134,868 · +6,868 this week · Local deterministic AST parsing (tree-sitter) turns code, SQL, config and PDFs into a queryable knowledge graph with no vector store, shipped as a /graphify skill. Daily gains: 10-22 +1,407, 10-23 +858, 10-24 +573, 10-25 +632, a gradual decline that then levels off.
+  - Joined the Perplexity Computer skill marketplace on 10-21, free until 10-31 ([@AskPerplexity](https://x.com/AskPerplexity/status/2113022451840122886), 387,602 followers, ❤102 👁40,190).
+  - A Rust rewrite, [Graphicle](https://news.ycombinator.com/item?id=50088713), appeared on HN (48 points / 15 comments, 10-14).
+- Related papers: [Raw-RAG](https://arxiv.org/abs/2610.30755) finds raw chat logs + dense retrieval + reranking ranks first in 6 of 7 benchmark/model settings. [RAG Compositionality](https://arxiv.org/abs/2610.29722) finds techniques that work alone give shrunken gains when stacked (predicted +47%, measured +17%). Retrieval and indexing tools now need to beat a plain baseline. The direction is hot but increasingly questioned.
 
-### 3. Codebase indexing / retrieval (heating up)
-- [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) · ⭐133,364 · ≈+1,966 this week · Local tree-sitter AST parsing that turns code, SQL, docs, and PDFs into a queryable knowledge graph, with no vector store. Now listed in Perplexity Computer's skills marketplace.
-- [xerj-org/xerj](https://github.com/xerj-org/xerj) · ⭐13,217 · +8,064 this week · A single Rust binary providing a local search engine and MCP server with BM25 + vector hybrid retrieval, compatible with the Elasticsearch API, covering code search, memory, and RAG.
-- Competitor moves: on HN there is a Rust port, Graphicle (48 points), and DaidDocs (4 points), which claims a comparison against Graphify, showing this direction is being replicated.
-- Related paper: Retrieval Augmented Generation Compositionality (a compositional evaluation of 450 RAG configurations).
+**2. Memory (heating up, shifting from "store more" to "store usefully")**
+- [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) · ⭐13,438 · +3,541 this week · Rust long-term memory for coding agent CLIs, with handoff between different agent vendors.
+- [Asymptote-Labs/agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) · ⭐2,601 · +920 this week (on the list 1 day) · Self-improving memory layer across harnesses; it captures sessions from each harness into a shared index. Recommended by [@_avichawla](https://x.com/_avichawla/status/2112862391268688291) (79,311 followers, 10-21, ❤633 👁61,080) in a promotional tone.
+- Papers: MemT-1.0 and MCCL put memory inside the model or judge it by whether it improves future actions (see Paper picks).
+- Growth here clusters around cross-harness handoff. Real user feedback is scarce in the data.
 
-### 4. Skills / plugin ecosystem (sustained high, security becomes a new topic)
-- [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) · ⭐43,978 · +5,649 this week · Anthropic's official plugin directory.
-- [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) · ⭐40,265 · ≈+4,040 this week · Multi-stage security audit, with different agents independently verifying each finding.
-- [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) · ⭐53,997 · +3,967 this week · 177 scientific skills and 100+ scientific databases.
-- [cursor/plugins](https://github.com/cursor/plugins) · ⭐13,670 · +2,046 this week · Cursor plugin spec and official plugins.
-- [vercel-labs/skills](https://github.com/vercel-labs/skills) · ⭐36,202 · +1,073 this week · `npx skills`, an open skills tool.
-- Security angle: NVIDIA/SkillSpector was recommended by @RoundtableSpace; the tweet says 26.1% of the 31,132 skills analyzed contain vulnerabilities, a figure that comes from the tweet.
+**3. Context compression / caching and cost (still hot, selling on token savings)**
+- [mksglu/context-mode](https://github.com/mksglu/context-mode) · ⭐32,087 · +2,271 this week · Sandboxes tool output (claims a 98% reduction), persists session memory, connects to 17 platforms via MCP + hooks.
+- [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) · ⭐114,956 · +2,419 this week · Skill + proxy that makes the model talk like a caveman, claiming 65% fewer tokens.
+- [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) · ⭐175,935 · ≈+4,644 this week · Makes the agent reuse what the repo, standard library or browser already provides before writing code. The author's own test: code -53%, cost -26%, high-risk logic shipped with tests 98% vs 68% (relayed by [@TheoVanceln](https://x.com/TheoVanceln/status/2113340653983646187); the project's own test, not third-party).
+- Papers: [Cache Engineering for Agents](https://arxiv.org/abs/2610.28577) lets the agent control the live KV cache directly, so unchanged prefixes don't trigger re-prefill. [CarryOn](https://arxiv.org/abs/2610.18784) organizes context around reusable task objects.
+- HN: [Skyvern, "agent 2.3× faster after removing RAG"](https://news.ycombinator.com/item?id=50222826) (19 points / 2 comments).
+- Research is moving from "compress history" to "don't break the cache / organize by progress". Tools are still quoting self-reported numbers like "98% / 65% savings".
 
-### 5. MCP (stable, as a universal integration layer)
-- Several new projects use MCP as their integration method, such as [tangency-labs/solidcraft](https://github.com/tangency-labs/solidcraft) (⭐9,439 · ≈+784 this week · Rust parametric CAD, automated via MCP) and [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything) (⭐56,371 · +3,275 this week · making software natively usable by Agents).
-- On social: Supabase launched "bring your own MCP server for your app", and Nous Research's Hermes Agent connects to Meshy via MCP.
-- Paper: WildAWM synthesizes environments that support GUI, MCP services, and CLI at the same time.
+**4. Skills / plugins (the dominant distribution format; security auditing is the strongest theme)**
+- [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) · ⭐46,163 · +12,680 this week · Multi-stage security audit skill; findings are independently verified and machine-readable.
+- [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) · ⭐44,480 · +3,232 this week · Anthropic's official plugin directory. [cursor/plugins](https://github.com/cursor/plugins) (⭐13,870 · +1,729 this week) and [vercel-labs/skills](https://github.com/vercel-labs/skills) (⭐36,494 · +1,077 this week) also charted.
+- Counterforce, skill supply-chain security: [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) (⭐21,206) scans skills. A stat quoted by @RoundtableSpace says 26.1% of 31,132 skills contain vulnerabilities and 5.2% look malicious (from that tweet, not independently checked).
+- Paper: [Socratic Skill Learning](https://arxiv.org/abs/2610.17860) (👍47) has a Student write skills while practicing under expert guidance.
 
-### 6. Caching and cost (heating up, academic-leaning)
-- [Cache Engineering for Agents](https://arxiv.org/abs/2610.28577) (heat 123) argues for directly controlling the active KV rather than rewriting the prefix.
-- On the serving and cost side: DLite, EdgeWise, SpecAgent, and HarnessPro all revolve around "call the large model less and save prefill".
-- On the engineering side: [yetone/magpie](https://github.com/yetone/magpie) (⭐19,836 · ≈+1,021 this week) runs Codex on DeepSeek and Claude Code on Kimi, cutting costs through model switching.
+**5. MCP / runtime / multi-agent orchestration (heating up, but sandboxes cooling)**
+- [stablyai/orca](https://github.com/stablyai/orca) · ⭐105,478 · +9,828 this week · Runs several coding agents in parallel (Codex, Claude Code, OpenCode, Pi), each in its own git worktree, on your own subscriptions, with a mobile client. Daily gains: 10-22 +1,694, 10-23 +848, 10-24 +1,122.
+- [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) · ⭐261,223 · ≈+3,125 this week · "Everything is a plugin"; the dsh plugin ecosystem is forming (rea, archify, ruflo and others carry a dsh-plugin tag).
+- [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) · ⭐19,780 · +3,189 this week · Secure private runtime for autonomous agents, driven by HN; daily gains +978 → +779 → +556, declining. [anthropics/sandbox-runtime](https://github.com/anthropics/sandbox-runtime) (⭐6,581) had a Trending daily value of +592 on 10-24 and +208 on 10-25.
+- Orchestration tools are rising. Sandboxes/runtimes fell back after the HN event.
 
-### 7. Multi-Agent parallelism and runtimes (heating up)
-- [stablyai/orca](https://github.com/stablyai/orca) · ⭐103,156 · +9,401 this week · Runs multiple coding Agents in parallel using git worktree, across desktop, mobile, and remote.
-- New repos [harp](https://github.com/dominikmartn/harp) (⭐578 · ≈+289 this week) and [coucou](https://github.com/Louis-CFM/coucou) (⭐6,212 · ≈+248 this week) are building unified multi-Agent dashboards.
-- [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) · ⭐18,086 · ≈+840 this week · A secure private runtime for autonomous Agents.
+**6. Model access / free gateways (hot, high risk)**
+- [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model), [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) (⭐41,361 · +4,402 this week), [yetone/magpie](https://github.com/yetone/magpie) (⭐21,316 · ≈+2,501 this week; a local gateway that lets Codex use DeepSeek and Claude Code use Kimi). Details in the growth section.
 
-## 2. Top 15 hottest Agent projects this week
+## Top 15 Agent projects this week
 
-Sorted by weekly growth; estimates are marked with ≈. Non-Agent projects have been excluded: ollama, vllm, MoneyPrinterTurbo, freellmapi (LLM gateway), NSFW image-generation skills, and others.
+Dropped as weakly related to agents: free-my-tv (TV desktop), MoneyPrinterTurbo (short-video generation), vllm and ollama (inference engines). Ranked by weekly gain.
 
-| Rank | Project | Type | ⭐ Stars | Weekly growth | Days on chart | Why it's hot |
+| # | Project | Type | ⭐ Total | This week | Days on list | Why it's hot |
 |---|---|---|---|---|---|---|
-| 1 | [morluto/rea](https://github.com/morluto/rea) | Reverse-engineering Agent / skill | 368,637 | +106,341 | 2 | Plugs Ghidra and Hopper into Codex/Cursor; @wquguru's attack-chain listicle tweet got 494 likes, HN post 814 points |
-| 2 | [stablyai/orca](https://github.com/stablyai/orca) | Multi-Agent parallel IDE | 103,156 | +9,401 | 2 | Runs Claude Code, Codex, and others in parallel; promoted by multiple listicle tweets and the official account |
-| 3 | [xerj-org/xerj](https://github.com/xerj-org/xerj) | Local search / MCP | 13,217 | +8,064 | 2 | One Rust binary covering code search, memory, and RAG; mentioned in a Japanese listicle tweet |
-| 4 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | Open-source coding Agent | 220,340 | +6,750 | 2 | Perennially popular; no dedicated promotion post this week in the data |
-| 5 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | Video generation framework | 70,234 | +5,669 | 2 | "Write HTML to render video", lifted by several motion-graphics listicles |
-| 6 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | Plugin directory | 43,978 | +5,649 | 2 | Epic's official Unreal plugin is distributed through it; the related tweet got 5,186 likes |
-| 7 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | Security audit skill | 40,265 | ≈+4,040 | 2 | Open-sourced officially by Cloudflare; @jurbed's recommendation tweet got 7,010 likes |
-| 8 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | Scientific skill library | 53,997 | +3,967 | 2 | 177 skills + 100+ databases; no social posts in the data |
-| 9 | [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | Agent harness / multi-agent | 78,577 | +3,708 | 2 | Swarm, adaptive memory, and RAG; tagged `dsh-plugin` |
-| 10 | [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) | Memory layer | 12,862 | +3,322 | 2 | Long-term memory for coding CLIs, supporting cross-vendor handoff |
-| 11 | [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything) | Agent-native CLI | 56,371 | +3,275 | 2 | "Make all software natively usable by Agents"; featured in @Fluyeporlaweb's October growth chart |
-| 12 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | skill / code saving | 174,041 | ≈+2,750 | 2 | "Laziest senior dev" style, claims code volume -53%; recommended by @KanikaBK (37k followers) |
-| 13 | [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) | dsh plugin / free model | 37,681 | ≈+2,322 | 2 | Use DeepSeek V4.1 Flash and Kimi K3 with no login or API key; @WojakTheDev's tweet got 63 likes |
-| 14 | [mksglu/context-mode](https://github.com/mksglu/context-mode) | Context optimization | 31,888 | +2,271 | 2 | "Tool output down 98%", named as the "try this first" pick |
-| 15 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | token-saving skill | 114,478 | +2,173 | 2 | Meme-style skill, claims 65% token savings |
+| 1 | [morluto/rea](https://github.com/morluto/rea) | context (MCP reverse engineering) | 382,593 | +88,243 (Trending weekly, see note) | 4 | Agent drives Ghidra/Hopper to reverse any app. The "Claude restricted from reverse engineering" dispute produced 👁1.7M of organic discussion on X; the 10-10 HN post has 814 points / 340 comments |
+| 2 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | agent (skill) | 46,163 | +12,680 | 4 | Audit skill from Cloudflare; one @jurbed recommendation got 👁594,554, almost all organic |
+| 3 | [stablyai/orca](https://github.com/stablyai/orca) | agent (orchestration) | 105,478 | +9,828 | 4 | Parallel coding agents with worktree isolation, on your own subscriptions |
+| 4 | [xerj-org/xerj](https://github.com/xerj-org/xerj) | context (retrieval/MCP) | 15,461 | +8,080 | 4 | Local single-binary search, claims 2.7× fewer output tokens; Corpus Hub contributors promote it on their own |
+| 5 | [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) | agent (model plugin) | 42,645 | ≈+7,286 | 4 | No login, no API key for DeepSeek V4.1 Flash and Kimi K3; "free" is the hook |
+| 6 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | context (knowledge graph) | 134,868 | +6,868 | 4 | Codebase-to-knowledge-graph skill; roundup posts drew 👁515,964, plus a Perplexity Computer listing |
+| 7 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | agent | 221,420 | +6,857 | 4 | Open-source coding agent, the default target for many harnesses and gateways; no dedicated social post this week |
+| 8 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | context (video) | 71,916 | +5,633 | 4 | "Write HTML, render video, built for agents"; 9 roundup posts, 👁210,391 |
+| 9 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | context (skill) | 175,935 | ≈+4,644 | 4 | "Write less code" skill, self-tested -53% code; pushed by roundup posts |
+| 10 | [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | context (gateway) | 41,361 | +4,402 | 4 | Merges 34 free LLM providers into one /v1 endpoint, claims 7.4B tokens a month |
+| 11 | [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) | context (memory) | 13,438 | +3,541 | 4 | Long-term memory for coding CLIs, handoff across vendors |
+| 12 | [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | context (swarm) | 79,198 | +3,241 | 4 | Multi-agent swarm harness with adaptive memory and vector RAG |
+| 13 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | agent (plugin directory) | 44,480 | +3,232 | 4 | Official plugin directory; Epic's Unreal plugin ships through it (@RoundtableSpace ❤5,186 👁314,658) |
+| 14 | [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) | agent (runtime) | 19,780 | +3,189 | 4 | Driven by an HN post (458 points / 205 comments, 10-22) |
+| 15 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | agent (harness) | 261,223 | ≈+3,125 | 3 | Base of the dsh plugin ecosystem, about +1,000 to +1,127/day |
 
-## 3. Growth attribution and promotion
+Note on rea: the +88,243 figure is Trending's weekly number and does not match the daily gains. Daily gains on 10-23, 10-24 and 10-25 were +5,853, +5,465 and +5,896, and stars rose only about 11k, from 371,232 on 10-23 to 382,593 on 10-25. Summing daily gains puts the week at roughly 20k to 30k, so go by the daily trend. Not verified online.
 
-1. **morluto/rea** (+106,341 this week) · 📣 Some promotion
-   - Why: links reverse-engineering toolchains into coding Agents, outputting pseudocode and call chains.
-   - Who's pushing: KOL @wquguru (25k followers) with an attack-chain listicle tweet, 494 likes and 28k views; @sammy_capital's tool-map tweet, 65 likes. The REA post on HN has 814 points and 340 comments, dated 10-10, before this week.
-   - Links: [X](https://x.com/wquguru/status/2113181135522214168) · [HN](https://news.ycombinator.com/item?id=50028275)
-   - Note: the weekly growth figure is unusually large, and the engagement on the two tweets is far below that scale; verifying the methodology is recommended.
-2. **cloudflare/security-audit-skill** (≈+4,040 this week) · 🔥 Heavy promotion
-   - Why: official release, multi-stage audit, with each vulnerability independently verified by a fresh agent.
-   - Who's pushing: @jurbed's recommendation tweet has 7,010 likes and 465k views; community stats show 12 mentions in total, 11 authors, and about 960k views.
-   - Link: [X](https://x.com/jurbed/status/2112973191157252103)
-3. **anthropics/claude-plugins-official** (+5,649 this week) · 🔥 Heavy promotion
-   - Why: official plugin directory; Epic's official Unreal plugin is installed through it.
-   - Who's pushing: @RoundtableSpace (270k followers) tweet with 5,186 likes and 310k views.
-   - Link: [X](https://x.com/RoundtableSpace/status/2111702567449424226)
-4. **stablyai/orca** (+9,401 this week) · 📣 Some promotion
-   - Why: runs multiple coding Agents in parallel without overwriting each other.
-   - Who's pushing: official account @orca_build (20k followers); its 10-22 tweet says SWE-2 Max is free for a limited time, with Opus 5.5 orchestrating sub-Agents; plus several listicles.
-   - Link: [X](https://x.com/orca_build/status/2113290782916423938)
-5. **Graphify-Labs/graphify** (≈+1,966 this week) · 📣 Some promotion
-   - Why: the Agent reads a knowledge graph instead of grepping the whole repo, with local, deterministic parsing.
-   - Who's pushing: @AskPerplexity (380k followers) announced its listing in the Computer skills marketplace, 102 likes; @Sumanth_077's tweet got 667 likes; @grok also introduced it.
-   - Links: [X](https://x.com/AskPerplexity/status/2113022451840122886) · [X](https://x.com/Sumanth_077/status/2111824469006360864)
-6. **Ebony-Vinyl/dsh-our-free-model** (≈+2,322 this week) · 📣 Some promotion
-   - Why: a free, no-login plugin for frontier models.
-   - Who's pushing: @WojakTheDev's tweet, 63 likes, with installation steps.
-   - Link: [X](https://x.com/WojakTheDev/status/2113200900412223530)
-7. **heygen-com/hyperframes** (+5,669 this week) · 📣 Some promotion
-   - Why: HTML-to-video, well suited to Agent invocation.
-   - Who's pushing: multiple "making video/motion graphics with Claude Code" listicles, such as @Asteri_eth's 324-repo map (42 likes).
-   - Link: [X](https://x.com/Asteri_eth/status/2113213410078843154)
-8. **xerj-org/xerj** (+8,064 this week) · 🌱 Organic growth
-   - Why: local search + MCP, handled by one binary.
-   - Promotion: no dedicated social posts in the data; it only appears in one Japanese listicle.
-   - Link: [X](https://x.com/ClaudeCodeBase/status/2113264112092541251)
+## Growth attribution and promotion
 
-## 4. Selected papers of the week
+**1. [morluto/rea](https://github.com/morluto/rea)** · ⭐382,593 · +88,243 this week (basis above)
+- Why people care: an agent reverse-engineers any app or binary via MCP + Ghidra/Hopper, installed with one line, `npx rea-agents setup`.
+- 📢 Influencer exposure: 7 posts / 👁162,344. Accounts: @88n77n @DanielZambrini @ch3nweiii @rakib_hossen_ai @sammy_capital @wquguru. Representative: [@sammy_capital](https://x.com/sammy_capital/status/2113733817596834151), a learning-path roundup (2,739 followers, 10-23, ❤3,790 👁122,946).
+- 💬 Organic discussion: 17 posts / 👁1,709,879. Representative: [@0x0SojalSec](https://x.com/0x0SojalSec/status/2113751276320399694) saying "Anthropic killed REA" (63,013 followers, 10-23). [Another post](https://x.com/0x0SojalSec/status/2113751276320399694) from the same account cited a Samsung TV being rooted, ❤11,831 👁799,288. [@Pirat_Nation](https://x.com/Pirat_Nation/status/2114069664875557083) (369,752 followers, 10-24, ❤4,934 👁267,842) said users report Claude triggering safety checks while doing reverse engineering with REA.
+- 🌱 Organic growth (event-driven). Organic exposure is about 10× the influencer exposure. The "Anthropic restriction" claim is a rumor passed along by users, with no official confirmation in the data. The 10-24 report judged that all exposure came from roundup posts; the full-week data overturns that.
 
-### Agent Context
-- [Cache Engineering for Agents](https://arxiv.org/abs/2610.28577) · heat 123. Over long trajectories, KV cache I/O and storage become the main cost, while trimming or summarizing history invalidates later caches and triggers re-prefill. The authors propose cache engineering, letting the Agent directly control the active KV.
-- [MemT-1.0: Towards Memory-Native Evolution](https://arxiv.org/abs/2610.26825) · heat 133. Makes memory part of the model's computation: token-level updates based on Gated DeltaNet-2, expanded with Mixture-of-Storage, with two-stage training. The daily report says storage is reduced 66x at 128K history.
-- [Pack Light, CarryOn](https://arxiv.org/abs/2610.18784) · heat 120. Organizes long-horizon context around reusable task objects rather than history: the context view consists of a continuation carrier, supplementary execution context, and recent interactions.
-- [Mosaic: Multi-Session Agentic RL](https://arxiv.org/abs/2610.22174) · heat 63. Context compression and sub-Agent forking cause a single trajectory to span multiple sessions, which single-session training doesn't match. The paper proposes multi-session Agent reinforcement learning that distinguishes each session's contribution.
-- [FlowState](https://arxiv.org/abs/2609.34565) · heat 21. Treats execution state as memory that can be retained and revisited: keeps typed state nodes, relations, and references to raw tool observations, separating persistent retention from on-demand reading.
-- [Memory-Centric Continual Learning](https://arxiv.org/abs/2610.29357) · heat 20. Argues memory should be judged by whether it improves future actions, not whether it can recall facts; offers a three-axis taxonomy.
-- [Self-Evolving Agent Harness](https://arxiv.org/abs/2610.18813) · heat 99. Formalizes harness self-evolution (prompts, memory, workflows, executable components) with model weights unchanged, and provides generalization and retention bounds.
-- [Socratic Skill Learning](https://arxiv.org/abs/2610.17860) · heat 32. An Educator and a Student alternate teaching and practice to learn transferable skills, and build SkillTransferBench (35 task families, 408 executable cases).
+**2. [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)** · ⭐46,163 · +12,680 this week
+- Why people care: a multi-stage audit skill Cloudflare uses internally. Findings are independently verified, and it runs on any harness and any model, including free ones.
+- 📢 Influencer exposure: 2 posts / 👁35, essentially zero. 💬 Organic discussion: 19 posts / 👁1,027,652.
+- Who's pushing: KOLs recommending it unprompted. Representative: [@jurbed](https://x.com/jurbed/status/2112973191157252103) (14,620 followers, 10-21, ❤8,721 👁594,554): "Run it on all your software… Run it with the free models."
+- 🌱 Organic growth, the cleanest case this week. Daily gains of +2,979, +2,038, +2,177, +2,744 rose day by day (the 10-24 report had +2,177 at the time).
 
-### Other Agent topics
-- [BizBench](https://arxiv.org/abs/2610.20424) (heat 492): a long-horizon Agent benchmark based on a payment company's real workflows, focusing on compliance of intermediate steps.
-- [Into the Unknown](https://arxiv.org/abs/2610.19159) (heat 157): has 9 frontier Agents write follow-up papers for open scientific questions, using conditions given by scientists as the scoring rubric.
-- [MAI-Gym](https://arxiv.org/abs/2610.20939) (heat 150): a unified GUI Agent evaluation and online RL training platform, scalable to 20,000 parallel environments.
-- [CoEvo-RSI](https://arxiv.org/abs/2610.25078) (heat 118): studies the "brain-body mismatch" when harness and model co-evolve, using a shared evolution archive for bidirectional inheritance.
-- [OpenGCUA](https://arxiv.org/abs/2610.22200) (heat 103): the full technology stack for open general computer-use Agents, released for the first time.
+**3. [stablyai/orca](https://github.com/stablyai/orca)** · ⭐105,478 · +9,828 this week
+- Why people care: parallel coding agents, worktree isolation, mobile follow-up, SSH remote, diff annotations sent back to the agent.
+- 📢 Influencer exposure: 2 posts / 👁5,742 (@Joyingeth, @TheoVanceln). 💬 Organic discussion: 17 posts / 👁9,995.
+- X volume is too small to explain +9,828. Representative: [@xoyif63862452](https://x.com/xoyif63862452/status/2113940136903762416) (6,284 followers, 10-24, 👁377), a long Chinese-language review. HN has only a few small posts ([Orca + Oh My Pi setup](https://news.ycombinator.com/item?id=49916232), 6 points).
+- 🌱 Organic growth. The source can't be seen in the data (possibly off-platform channels).
 
-## 5. Community discussion focus
+**4. [xerj-org/xerj](https://github.com/xerj-org/xerj)** · ⭐15,461 · +8,080 this week
+- Why people care: local retrieval, token savings (officially 2.7×), and a Corpus Hub with a hundred-plus reference memory corpora.
+- 📢 Influencer exposure: 1 post / 👁638 ([@vicky_grok](https://x.com/vicky_grok/status/2113624864368349269), 11,419 followers, promotional tone). 💬 Organic discussion: 18 posts / 👁2,124.
+- Unusual mechanism: open-source contributors picked for the Corpus Hub tweet about it themselves (e.g. [@Nancysingh251](https://x.com/Nancysingh251/status/2112623930246914496), ❤13), and HN has several small "X on the XERJ Corpus Hub" posts (1 to 2 points). This contributor-credit-to-self-promotion loop is an inference; the data doesn't say it is the main driver.
+- 📣 Some promotion (contributor loop plus one promotional-toned tweet). Total X exposure is very low, so growth most likely came from Trending itself. The 10-25 daily gain fell to +255, so the spike has faded.
 
-### 5 projects mentioned repeatedly but not at the top of the growth chart
-All projects were mentioned on only 1 day (the data covers only 2 days).
-1. [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) · ⭐21,032 · mentioned 1 day · A skill security scanner covering 71 attack patterns, giving each skill a 0–100 risk score.
-2. [EpicGames/unreal-engine-skills-for-claude-code-plugin](https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin) · ⭐1,598 · mentioned 1 day · Epic's official plugin that lets Claude Code control the Unreal Editor. Third in community heat score, behind only cloudflare and claude-plugins-official.
-3. [xingjian-bai/opal](https://github.com/xingjian-bai/opal) · ⭐167 · mentioned 1 day · A reactive optimizer: the coding Agent rewrites the optimizer's source code during training. The author's tweet got 1,354 likes.
-4. [google/mantis](https://github.com/google/mantis) · ⭐2,515 · mentioned 1 day · A modular toolkit that lets AI coding Agents autonomously discover, reproduce, and fix vulnerabilities.
-5. [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context) · ⭐2,435 · mentioned 1 day · A dsh context compression plugin for month-long sessions.
+**5. [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model)** · ⭐42,645 · ≈+7,286 this week
+- Why people care: a plugin for DeepSeek's dsh that gives unlimited use of DeepSeek V4.1 Flash, GLM 5.3 Flash and Kimi K3 with no login and no key.
+- 📢 Influencer exposure: 0. 💬 Organic discussion: 17 posts / 👁190,828. Representative: [@WojakTheDev](https://x.com/WojakTheDev/status/2113200900412223530) (4,091 followers, 10-22, ❤95 👁7,882). [@Fourpqwq](https://x.com/Fourpqwq/status/2113548229396611556) (4,186 followers, 10-23) warns that the quota comes from upstream, may be rate-limited, and that conversations in the free pool may be logged.
+- Risks (all third-party claims, unverified):
+  - [A tweet linking a yoDEV article](https://x.com/dev_yodev61400/status/2112341389451157875) (3 followers, 👁7) says that reading the code showed it loads a 2.9MB bundle, operates an account pool, and claims credits from 13 AI tools.
+  - [@Channing_AI_X](https://x.com/Channing_AI_X/status/2113180377045147938) says [issue #576](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues/576) contains a 20,000-character "lawyer's letter". The 10-25 report calls it likely forged and says it accuses the project of reverse engineering Tencent's WorkBuddy.
+- 🌱 Organic growth, with "free" as the hook. Daily gains: +2,089, +2,120, +1,767. Flag the compliance and privacy risk without drawing a conclusion.
 
-### Most discussed topics
-1. **Agent security and auditing**: both using Agents for auditing (the Cloudflare skill, rea's attack-chain listicle) and scanning of skills themselves and runtime isolation.
-   - [OpenShell HN (377 points / 187 comments)](https://news.ycombinator.com/item?id=50198675)
-   - [SkillSpector tweet](https://x.com/RoundtableSpace/status/2113114370406293672)
-   - [OpenAI releases Codex inspection skill (9,171 likes)](https://x.com/OpenAI/status/2112945805686604033)
-2. **Free models and token economics**: freellmapi claims 7.4B free tokens per month; @Rifat_EE points out that this is the repo's own estimate rather than a measurement, and that new models arrive 30 days later on the free tier. The dsh free model plugin is also in this category.
-   - [@Rifat_EE (321 likes)](https://x.com/Rifat_EE/status/2113136966552494178)
-   - [@PratikSinhatwt](https://x.com/PratikSinhatwt/status/2112804549602030014)
-   - [@WojakTheDev](https://x.com/WojakTheDev/status/2113200900412223530)
-3. **DeepSeek Harness plugin ecosystem**: @xiaomovps lists plugins for a plugin marketplace, context compression, Windows command-line enhancement, free search, a sidebar, and more.
-   - [Tweet](https://x.com/xiaomovps/status/2112840223227089396)
-   - [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)
-4. **Harness self-evolution and courses**: MIT is offering a self-evolving AI course; @rohanpaul_ai covers Google's OO-Harness (evolving specialized harnesses for different task clusters).
-   - [@pliang279 (768 likes)](https://x.com/pliang279/status/2113300326015275424)
-   - [@rohanpaul_ai](https://x.com/rohanpaul_ai/status/2113118164586582416)
-5. **Personal Agents and multi-Agent development environments**: @AlexFinn says Anthropic will release a personal Agent, "Duet"; the tweet got 1,513 likes, and this is a personal judgment, unconfirmed. Multi-Agent tools such as Orca and Capy 0.5.0 are also being discussed.
-   - [@AlexFinn](https://x.com/AlexFinn/status/2112990775202185437)
-   - [Capy 0.5.0](https://x.com/capydotai/status/2113326692928548974)
+**6. [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** · ⭐134,868 · +6,868 this week
+- Why people care: local deterministic AST, every edge explainable, no vector store; a skill that works across agents.
+- 📢 Influencer exposure: 5 posts / 👁515,964. Accounts: @ArchiveExplorer @Bober_smart @TheoVanceln @thegreatest_sv @tim_tom34325. 💬 Organic discussion: 33 posts / 👁82,176.
+- Official side: the [@AskPerplexity](https://x.com/AskPerplexity/status/2113022451840122886) listing notice; an intro from [@Sumanth_077](https://x.com/Sumanth_077/status/2111824469006360864) (77,621 followers, 10-18, ❤667 👁35,965).
+- 🔥 Heavy promotion: influencer exposure dominates (about 6× organic), backed by an official distribution channel. We don't assert paid promotion.
 
-In addition, the daily report notes that large numbers of "10 GitHub repos"-style listicles are inflating numbers, with little genuine usage feedback, making the charts quite noisy.
+**7. [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)** · ⭐71,916 · +5,633 this week
+- Why people care: from HeyGen; write HTML, render MP4, agent-friendly, ships a /figma skill.
+- 📢 Influencer exposure: 9 posts / 👁210,391. Accounts: @AIonfire0 @CoderDaMing @DanielZambrini @He1s_Sammy @RoundtableSpace @damkina7 @kocer_eth @naldzyul. Representative: [@RoundtableSpace](https://x.com/RoundtableSpace/status/2113975041763516842) (269,645 followers, 10-24, 👁48,120). 💬 Organic discussion: 18 posts / 👁11,676.
+- 🔥 Heavy promotion: exposure is concentrated in roundup posts (about 18× organic). A company stands behind it, and there's little real usage feedback.
 
-## 6. What to watch next week
-1. **The context-infrastructure trio** (graphify-style knowledge graphs, context-mode/headroom-style output compression, ai-memory/agent-beacon-style cross-harness memory) may keep climbing, since they are backed at once by the charts, KOL tweets, and papers. What needs verifying is that the savings figures each project claims, such as 98% and 65%, all come from the projects' own descriptions and lack independent evaluation.
-2. **Skill security** will move from a topic to supporting tooling: the buzz around the cloudflare audit skill, combined with attention on SkillSpector and OpenShell, may drive more skill-scanning and sandbox projects. Meanwhile, rea's weekly growth of +106,341 is out of proportion to its social engagement, so the methodology should be verified first before judging whether it will last.
-3. **The dsh (DeepSeek Harness) ecosystem** is worth watching: deepseek-harness, the free model plugin, dsh-context, and billion-context are all on the charts at once, and several other projects have also added the `dsh-plugin` tag. We need to see whether the growth comes from real usage or from a "freebie-hunting" effect like that of free models. There are only 2 days of data this week, so all of the trend judgments above need to be rechecked against next week's full 7 days of data.
+**8. [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** · ⭐175,935 · ≈+4,644 this week
+- Why people care: the agent reuses before it writes code; the author's own test shows -53% code.
+- 📢 Influencer exposure: 4 posts / 👁7,086 ([@KanikaBK](https://x.com/KanikaBK/status/2113230397740065222), 37,352 followers, accounts for 👁6,765 of it). 💬 Organic discussion: 19 posts / 👁1,007, barely seen.
+- 📣 Some promotion (mostly roundup posts). X volume doesn't match +4,644, and the main driver isn't visible (Trending daily gains: 10-22 about +1,949, 10-23 +1,292).
+
+### Influencer exposure ranking this week
+
+| Project | Influencer posts | Exposure 👁 | Representative accounts | Organic 👁 | Verdict |
+|---|---|---|---|---|---|
+| [lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) (⭐7,121 · ≈+1,828 this week) | 4 | 750,397 | @KinGao476942 @RoundtableSpace @remoteugur | 86,614 | 🔥 Exposure about 9× discussion; one batch of Opus 5.5 video repos was pushed as a bundle (see Community discussion) |
+| [Graphify](https://github.com/Graphify-Labs/graphify) | 5 | 515,964 | @ArchiveExplorer @thegreatest_sv @TheoVanceln | 82,176 | 🔥 Roundup posts dominate, with official Perplexity distribution |
+| [mattpocock/skills](https://github.com/mattpocock/skills) (⭐302,993 · ≈+1,438 this week) | 22 | 475,152 | @RoundtableSpace @_avichawla @Fluyeporlaweb | 1,094,505 | Noisy data: unrelated tweets about oh-my-hermes, HarnessRouter and Harness² got mixed into this entry, so draw no conclusion |
+| [ECC](https://github.com/affaan-m/ECC) (⭐288,551 · ≈+2,139 this week) | 6 | 164,736 | @Fluyeporlaweb @KanikaBK @RoundtableSpace | 42,632 | 📣 Repeatedly included in roundup posts; an established project |
+| [rea](https://github.com/morluto/rea) | 7 | 162,344 | @sammy_capital @wquguru @ch3nweiii | 1,709,879 | 🌱 Organic discussion far exceeds exposure |
+| [hyperframes](https://github.com/heygen-com/hyperframes) | 9 | 210,391 | @RoundtableSpace @CoderDaMing @kocer_eth | 11,676 | 🔥 Roundup posts dominate |
+| [freellmapi](https://github.com/tashfeenahmed/freellmapi) | 2 | 7,894 | @Fluyeporlaweb @HongyeMain | 89,259 | 🌱 [@Rifat_EE](https://x.com/Rifat_EE/status/2113136966552494178) (33,025 followers, ❤321 👁47,451) led skeptical discussion: 7.4B is the project's own estimate, and the website and repo don't match |
+| [ponytail](https://github.com/DietrichGebert/ponytail) | 4 | 7,086 | @KanikaBK @TheoVanceln @benou_irl | 1,007 | 📣 Roundup posts only, almost no organic discussion |
+
+## Paper picks
+
+**Agent Context**
+1. [Cache Engineering for Agents](https://arxiv.org/abs/2610.28577) · 👍130 · code: [thu-nics/AKV](https://github.com/thu-nics/AKV) 48★. In long trajectories, KV cache I/O and storage become the main cost, and rewriting a prefix invalidates later cache and forces re-prefill. The paper proposes "cache engineering", where the agent controls the live KV directly. Average cost drops 27.7% versus threshold-triggered summarization (see the 10-23 report).
+2. [MemT-1.0: Towards Memory-Native Evolution](https://arxiv.org/abs/2610.26825) · 👍134 · [MemTensor/MemT-1.0](https://github.com/MemTensor/MemT-1.0) 361★. Makes memory part of the model's computation: Gated DeltaNet-2 for token-level memory updates, Mixture-of-Storage for capacity, two-stage training on 34B tokens. At 128K history, persistent storage is 66× smaller than a full-context KV cache (see the 10-23 report).
+3. [Pack Light, CarryOn](https://arxiv.org/abs/2610.18784) · 👍122 · [Ethannju/carryon](https://github.com/Ethannju/carryon) 5★. Organizes context around reusable task objects rather than history; the view is built from a continuation carrier, supplementary execution context and a recent tail. OSWorld 2.0 +5.8% and BrowseComp-Plus +7.0%, with 51.9% and 22.9% fewer tokens (see the 10-24 report).
+4. [Mosaic: Multi-Session Agentic RL](https://arxiv.org/abs/2610.22174) · 👍63 · [LARK-AI-Lab/Mosaic](https://github.com/LARK-AI-Lab/Mosaic) 37★. Context compression and sub-agent forking produce multi-session trajectories that break the single-session assumption in training. It sets up a multi-session agentic RL formulation that avoids broadcasting a trajectory-level advantage evenly across all sessions.
+5. [Memory-Centric Continual Learning (MCCL)](https://arxiv.org/abs/2610.29357) · 👍42. Argues memory should be judged by whether it improves future actions, not whether it can recall facts, and gives a three-axis memory taxonomy.
+6. [Is Complex Agentic Memory Always Needed? (Raw-RAG)](https://arxiv.org/abs/2610.30755) (not on the paper list; found via the tweet from [@omarsar0](https://x.com/omarsar0/status/2113635562578178147), 325,934 followers, 10-23, ❤896 👁47,893). Raw-RAG ranks first in 6 of 7 settings across LoCoMo, LongMemEval, MEME and MemoryAgentBench, beating the strongest agent memory system by 0.13 to 5.53 points. On BEAM-1M, ingestion takes 0.3 hours versus 3.2 to 27 hours for Mem0, MemOS and others.
+7. [Retrieval Augmented Generation Compositionality](https://arxiv.org/abs/2610.29722) · 👍54 · [dolev31/lasagna](https://github.com/dolev31/lasagna) 18★. The LASAGNA framework tests 450 configurations across 8 benchmarks and corpora of 5K to 200K documents. Stacked techniques gain far less than the sum of their parts (predicted +47%, measured +17%, see the 10-25 report).
+8. [Self-Evolving Agent Harness](https://arxiv.org/abs/2610.18813) · 👍99 · [zgcagi/Harness-RSI](https://github.com/zgcagi/Harness-RSI) 387★. Keeps weights fixed and lets the scaffolding (prompts, memory, workflows, plugins) evolve itself. It formalizes the feedback-driven process and analyzes reliability with continual PAC learning.
+
+**Other agent topics**
+- [BizBench](https://arxiv.org/abs/2610.20424) · 👍494: benchmark for long-horizon agents in payments, stressing compliance of intermediate steps, since final-outcome scoring hides violations ([BizAgentBench](https://github.com/ant-intl/BizAgentBench) 48★).
+- [Into the Unknown](https://arxiv.org/abs/2610.19159) · 👍158: nine frontier agents write follow-up papers for DOE national lab scientists, graded with expert-conditioned rubrics.
+- [MAI-Gym](https://arxiv.org/abs/2610.20939) · 👍150: one platform for GUI-agent evaluation, data collection and online RL, with 10 benchmarks and 20,000 parallel environments.
+- [OpenGCUA](https://arxiv.org/abs/2610.22200) · 👍103: open full stack for general computer-use agents ([Tongyi-MAI/OpenGCUA](https://github.com/Tongyi-MAI/OpenGCUA) 441★).
+- [Self-HPO](https://arxiv.org/abs/2610.22791) · 👍55: a coding agent alternates between optimizing its harness and its policy, using the evolving policy itself as the harness proposer.
+
+## Community discussion
+
+**Five projects mentioned repeatedly but not near the top of the growth chart**
+- [EpicGames/unreal-engine-skills-for-claude-code-plugin](https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin) · ⭐1,657 · mentioned 3 days · Epic's official plugin that lets Claude Code drive the Unreal editor (30+ toolsets), installed through Anthropic's official marketplace. [@RoundtableSpace](https://x.com/RoundtableSpace/status/2111702567449424226) (10-18, ❤5,186 👁314,658).
+- [xingjian-bai/opal](https://github.com/xingjian-bai/opal) · ⭐200 · mentioned 3 days · A "reactive optimizer": during training, a coding agent rewrites the optimizer's source in real time. [@SimulatedAnneal](https://x.com/SimulatedAnneal/status/2112936831398375800) (1,243 followers, 10-21, ❤1,354 👁152,225) says that with no tuned recipe it matches or beats the best one-shot recipe.
+- [google/mantis](https://github.com/google/mantis) · ⭐2,530 · mentioned 3 days · Modular toolkit for coding agents to find, reproduce and patch vulnerabilities on their own. [@RoundtableSpace](https://x.com/RoundtableSpace/status/2112397145412091969) ❤802 👁95,636.
+- [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) · ⭐21,206 · mentioned 2 days · Skill security scanner with 71 attack patterns in 17 categories and a 0 to 100 risk score. [@RoundtableSpace](https://x.com/RoundtableSpace/status/2113114370406293672) (10-21, ❤539 👁65,587).
+- [microsoft/skill-recorder](https://github.com/microsoft/skill-recorder) · ⭐4,981 · mentioned 1 day · Record a screen operation once and the GitHub Copilot SDK turns it into a reusable skill or scheduled automation. [@RoundtableSpace](https://x.com/RoundtableSpace/status/2113891994128822631) (10-24, ❤1,005 👁95,326).
+- Also pushed as a bundle: Opus 5.5 video repos ([awesome-opus5-5-videos](https://github.com/yihui-dev/awesome-opus5-5-videos) ⭐10,865, [mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15) ⭐2,097, [PDoomVideo](https://github.com/JohnHeibel/PDoomVideo) ⭐2,575 and others), lifted by a single influencer post with 👁639,392.
+
+**Most-discussed topics on X / HN / Reddit** (no Reddit data this week)
+
+1. **Agents and security: audit skills, skill supply chain, incident response**
+   - [@jurbed recommends Cloudflare's audit skill](https://x.com/jurbed/status/2112973191157252103) (❤8,721 👁594,554).
+   - [@OpenAI posts a Codex skill, php2shell-checker](https://x.com/OpenAI/status/2112945805686604033) (5,464,574 followers, 10-21, ❤9,171 👁1,364,604).
+   - [@AM09_21 uses a coding agent to check how the eMudhra intermediate CA key leak affects devices](https://x.com/AM09_21/status/2112897200531640416) (40,025 followers, 10-21, ❤1,770 👁1,482,859).
+   - HN: [OpenShell](https://news.ycombinator.com/item?id=50198675) (458 points / 205 comments, 10-22).
+
+2. **rea and the "AI reverse engineering is being restricted" dispute**
+   - [@0x0SojalSec](https://x.com/0x0SojalSec/status/2113751276320399694) (❤11,831 👁799,288).
+   - [@Pirat_Nation](https://x.com/Pirat_Nation/status/2114069664875557083) (❤4,934 👁267,842).
+   - HN: [original REA post](https://news.ycombinator.com/item?id=50028275) (814 points / 340 comments, 10-10).
+   - The restriction claim has no official confirmation.
+
+3. **Personal agent platforms and multi-harness orchestration**
+   - [1Password for Agents](https://x.com/1Password/status/2113276767582498943) (146,693 followers, 10-22, ❤10,513 👁1,743,086): the agent requests a credential, and after the user approves, 1Password fills it in without the agent seeing the password.
+   - [HarnessRouter lets a Grok bot dispatch to Codex/Hermes/Claude Code/DeepSeek Harness](https://x.com/_avichawla/status/2113954302901256597) (❤1,105 👁105,097, promotional tone).
+   - [Google Harness²](https://x.com/Sumanth_077/status/2113948384113598588) (❤326 👁15,772): recursively improves the harness with weights fixed (Propose → Probe → Compose).
+   - [@AlexFinn says Anthropic will ship a personal agent called "Duet"](https://x.com/AlexFinn/status/2112990775202185437) (485,393 followers, ❤1,513): a rumor, unconfirmed.
+   - HN: [Corgi, an agent/terminal multiplexer](https://news.ycombinator.com/item?id=50214373) (113 points / 31 comments).
+
+4. **Memory, RAG and caching cost**
+   - [Raw-RAG tweet](https://x.com/omarsar0/status/2113635562578178147) (❤896 👁47,893).
+   - [@akshay_pachaar on 4 kinds of LLM caching](https://x.com/akshay_pachaar/status/2113617883456766031) (291,760 followers, 10-23, ❤325 👁16,641).
+   - HN: [Skyvern progressive disclosure](https://news.ycombinator.com/item?id=50222826) (19 points).
+
+5. **Big HN threads: formal verification and restrictions on AI**
+   - [Anthropic: LLMs make large-scale formal verification feasible](https://news.ycombinator.com/item?id=50202217) (394 points / 241 comments).
+   - [Swedish government offices plan to ban ChatGPT and Claude](https://news.ycombinator.com/item?id=50207405) (271 points / 93 comments).
+   - [r/opensource bans solo projects and projects that use LLMs](https://news.ycombinator.com/item?id=50231722) (55 points / 61 comments, 10-25).
+
+## What to watch next week
+
+1. rea: daily gains hold around +5.5k. Watch whether the "Claude restricts reverse engineering" claim is confirmed or denied officially. Confirmation could lift interest in alternatives and local models. The +88,243 weekly figure also doesn't match the daily gains and needs checking.
+2. Security audit skills and skill supply-chain security: security-audit-skill's daily gain rose each day (+2,744 on 10-25), and SkillSpector, mantis and OpenAI's checker skill were discussed in the same window, so this likely keeps rising. Claims such as "no false positives" come only from small accounts and need verifying.
+3. Whether retrieval and memory projects survive plain baselines: xerj fell from +1,180 to +255, and OpenShell and sandbox-runtime cooled at the same time. Raw-RAG and the RAG compositionality study put graphify, xerj and ai-memory up against baseline comparisons. Also watch whether the compliance and privacy dispute around dsh-our-free-model grows, and where growth comes from for hallmark (+1,477/day) and cindy (+719/day), neither of which has visible X discussion.

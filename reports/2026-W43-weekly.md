@@ -1,172 +1,206 @@
-# Agent & Agent Context 周报 · 2026-W43（2026-10-17 ~ 2026-10-23）
+# Agent & Agent Context 周报 · 2026-W43（2026-10-19 ~ 2026-10-25）
 
-> 生成于 2026-10-23 00:59 PDT
+> 生成于 2026-10-26 09:32 PDT
 
-> 数据覆盖：本周只有 2026-10-22、10-23 两天有数据，其余 5 天缺失。下文「周增」多为 Trending 本周口径，带 ≈ 的是按 2 天日增累加的估算。社交数据以 X 为主，Reddit 无数据。
+数据覆盖：本周只有 4 天有日报数据（10-22 ~ 10-25），10-19 ~ 10-21 没有日报。社交数据含少量 10-17 ~ 10-21 的推文，均按真实发帖日期标注。Reddit 本周无数据。周增多为 Trending 本周口径，包含无日报的三天，所以比 4 天日增累加大。
 
 ## 本周要点
-- 逆向工程 Agent **morluto/rea** 周增 +106,341，总星 368,637，是本周增速最高的项目。HN 上的 REA 帖子有 814 分，但发帖日期是 10-10。
-- Skills 仍是最大流量入口：**cloudflare/security-audit-skill** 周增 ≈+4,040，单条推荐推文 7,010 赞。**anthropics/claude-plugins-official** 周增 +5,649，Epic 的 Unreal 插件推文有 5,186 赞。
-- 上下文基础设施继续升温：代码知识图谱（graphify）、工具输出压缩（context-mode、headroom）、跨 Agent 记忆（ai-memory、agent-beacon）、本地检索（xerj）都在榜上。
-- 论文侧，KV cache 成为 Agent 的可控资源（Cache Engineering for Agents），记忆开始「原生化」（MemT-1.0）。Harness 自进化是最热的词。
-- DeepSeek Harness（dsh）插件生态成形，免费模型和上下文可视化插件上榜。多 Agent 并行管理（Orca 周增 +9,401）和 Agent 安全运行时（NVIDIA OpenShell，HN 377 分）同步受关注。
 
-## 一、本周 Agent Context 特性趋势
+- [morluto/rea](https://github.com/morluto/rea) 位居第一，⭐382,593，Trending 本周 +88,243，4 天日增约 +5.5k/天。「Anthropic 给 Claude 加了逆向限制」的说法带来大量真实讨论，但只是网友转述，没有官方确认。
+- [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) 是本周最干净的自然增长：周增 +12,680，日增逐日走高（+2,979 → +2,038 → +2,177 → +2,744），自媒体曝光几乎为 0，真实讨论 👁1,027,652。
+- 多 Agent 编排与 harness 生态成了赛道：[stablyai/orca](https://github.com/stablyai/orca) 周增 +9,828，[deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) 的 dsh 插件生态成形，HarnessRouter 和 Google Harness² 同期出现。
+- 检索/记忆类项目开始分化：[xerj-org/xerj](https://github.com/xerj-org/xerj) 周增 +8,080，但日增从 +1,180 掉到 +255；[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) 稳在 +573 ~ +632/天。论文 Raw-RAG 提出朴素 RAG 就能胜过复杂记忆系统，给这类项目施压。
+- 「免费模型」和 Opus 5.5 视频类项目靠传播拉动：[Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) 周增 ≈+7,286，伴随隐私和合规质疑；[lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar) 一类项目自媒体曝光 👁750,397，真实使用反馈远少于曝光。
 
-### 1. 工具输出压缩 / Token 节省（升温）
-本周的主线。多个项目从「少输出、少读取」切入，社区把它们当作降成本手段。
-- [mksglu/context-mode](https://github.com/mksglu/context-mode) · ⭐31,888 · 周增 +2,271 · 沙箱化工具输出（宣称降 98%），持久化会话记忆，通过 MCP + hooks 覆盖 17 个平台。
-- [headroomlabs-ai/headroom](https://github.com/headroomlabs-ai/headroom) · ⭐77,595 · 周增 ≈+602 · 在工具输出、日志、RAG 片段进入 LLM 前压缩，以库、代理、MCP 三种形态提供。
-- [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) · ⭐114,478 · 周增 +2,173 · 用「穴居人说话」风格的 skill + 代理削减约 65% token。
-- [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) · ⭐174,041 · 周增 ≈+2,750 · 让 Agent 先查仓库和标准库再写新代码。推文称代码量 -53%、成本 -26%，这些数字来自推文自述，未经验证。
-- [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context) · ⭐2,435 · dsh 上下文压缩插件，面向月级长会话，宣称省 5 倍 token（仓库自述）。
-- 相关论文：Cache Engineering for Agents、DLite（见第四节）。
+## 本周 Agent Context 特性趋势
 
-### 2. 记忆层（升温）
-方向是跨 harness 共享和自我改进，学术上则转向「该存什么、该忘什么」。
-- [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) · ⭐12,862 · 周增 +3,322 · 面向编码 CLI 的长期记忆，方便在不同 Agent 厂商之间交接。
-- [Asymptote-Labs/agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) · ⭐2,656 · 周增 ≈+281 · 跨 harness、自我改进的记忆层，捕获会话轨迹并存入共享索引。@_avichawla（79k 粉丝）的推文有 633 赞。
-- [affaan-m/ECC](https://github.com/affaan-m/ECC) · ⭐286,740 · 周增 ≈+328 · skills、memory、hooks 和安全扫描一体的 harness 优化层，被多条合集贴提到。
-- 相关论文：MemT-1.0、FlowState、Memory-Centric Continual Learning、MemPilot。日报还提到 REM、TokenWorth 等研究在质疑「记得越多越好」，这些论文不在本数据的论文列表中。
+**1. 代码库索引 / 检索（升温，内部开始分化）**
+- [xerj-org/xerj](https://github.com/xerj-org/xerj) · ⭐15,461 · 周增 +8,080（Trending 本周）· Rust 单二进制，本地索引代码、文档、日志和 PDF，BM25+向量混合检索，提供 MCP server，自带 agent memory。日增 10-23 +938、10-24 +1,180、10-25 +255，冲高回落（见 10-25 日报）。
+  - 官方 benchmark（经 @vicky_grok 转述）：16/16 任务两边都做对，输出 token 从 26,477 降到 9,982（少 2.7×）。
+  - 项目自己的案例研究里，Claude Code 凭记忆答 valkey/memcached 任务 6/6，花 $1.49；接入 xerj 索引后 5/6，花 $4.40，反而更贵。来源是 [@himanshu19890](https://x.com/himanshu19890/status/2113108227458318809)（37 粉，读 README 所得）。
+- [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) · ⭐134,868 · 周增 +6,868 · 用本地确定性 AST（tree-sitter）解析，把代码、SQL、配置、PDF 变成可查询的知识图谱，不用向量库，以 /graphify skill 形式使用。日增 10-22 +1,407、10-23 +858、10-24 +573、10-25 +632，缓降后企稳。
+  - 10-21 进入 Perplexity Computer 技能市场，10-31 前免费（[@AskPerplexity](https://x.com/AskPerplexity/status/2113022451840122886)，387,602 粉，❤102 👁40,190）。
+  - HN 上出现 Rust 重写版 [Graphicle](https://news.ycombinator.com/item?id=50088713)（48 分/15 评，10-14）。
+- 对照论文：[Raw-RAG](https://arxiv.org/abs/2610.30755) 用原始聊天记录加稠密检索加重排，在 7 个基准/模型设置里 6 个排第一。[RAG Compositionality](https://arxiv.org/abs/2610.29722) 发现单点有效的技术叠加后收益缩水（预测 +47%，实测 +17%）。检索/索引工具需要拿朴素基线说话，这个方向热度还在，但开始被质疑。
 
-### 3. 代码库索引 / 检索（升温）
-- [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) · ⭐133,364 · 周增 ≈+1,966 · 本地 tree-sitter AST 解析，把代码、SQL、文档、PDF 做成可查询知识图谱，无向量库。已上架 Perplexity Computer 的技能市场。
-- [xerj-org/xerj](https://github.com/xerj-org/xerj) · ⭐13,217 · 周增 +8,064 · 单一 Rust 二进制，提供 BM25 + 向量混合检索的本地搜索引擎和 MCP server，兼容 Elasticsearch API，同时覆盖代码搜索、记忆和 RAG。
-- 竞品动向：HN 上有 Rust 移植版 Graphicle（48 分）和宣称对比 Graphify 的 DaidDocs（4 分），说明这一方向正在被复刻。
-- 相关论文：Retrieval Augmented Generation Compositionality（450 种 RAG 配置的组合评测）。
+**2. 记忆（升温，从「存得多」转向「存得有用」）**
+- [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) · ⭐13,438 · 周增 +3,541 · Rust 实现，给编码 Agent CLI 做长期记忆，支持在不同 Agent 厂商之间交接。
+- [Asymptote-Labs/agent-beacon](https://github.com/Asymptote-Labs/agent-beacon) · ⭐2,601 · 周增 +920（仅上榜 1 天）· 跨 harness 的自改进记忆层，持续捕获各 harness 的会话并存入共享索引。[@_avichawla](https://x.com/_avichawla/status/2112862391268688291)（79,311 粉，10-21，❤633 👁61,080）推荐，带营销腔。
+- 论文：MemT-1.0 把记忆放进模型内部，MCCL 按「能否改善未来行动」评价记忆（详见论文精选）。
+- 记忆项目的增长集中在「跨 harness 交接」这个卖点，数据里真实用户反馈很少。
 
-### 4. Skills / 插件生态（持续高位，安全成为新议题）
-- [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) · ⭐43,978 · 周增 +5,649 · Anthropic 官方插件目录。
-- [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) · ⭐40,265 · 周增 ≈+4,040 · 多阶段安全审计，由不同 agent 独立验证每个发现。
-- [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) · ⭐53,997 · 周增 +3,967 · 177 个科学类 skill 和 100+ 科学数据库。
-- [cursor/plugins](https://github.com/cursor/plugins) · ⭐13,670 · 周增 +2,046 · Cursor 插件规范和官方插件。
-- [vercel-labs/skills](https://github.com/vercel-labs/skills) · ⭐36,202 · 周增 +1,073 · `npx skills` 开放 skill 工具。
-- 安全面：NVIDIA/SkillSpector 被 @RoundtableSpace 推荐，推文称对 31,132 个 skill 的分析里 26.1% 含漏洞，该数字来自推文。
+**3. 上下文压缩 / 缓存与成本（持续热，卖点是省 token）**
+- [mksglu/context-mode](https://github.com/mksglu/context-mode) · ⭐32,087 · 周增 +2,271 · 沙箱化工具输出（宣称减少 98%），持久化会话记忆，经 MCP+hooks 接入 17 个平台。
+- [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) · ⭐114,956 · 周增 +2,419 · 用「穴居人语气」的 skill 加代理，宣称省 65% token。
+- [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) · ⭐175,935 · 周增 ≈+4,644 · 让 Agent 先复用仓库、标准库、浏览器已有的能力，少写代码。作者自测：代码 -53%，成本 -26%，高风险逻辑带测试的比例 98% 对 68%。数字经 [@TheoVanceln](https://x.com/TheoVanceln/status/2113340653983646187) 转述，是项目自己的测试，不是第三方。
+- 论文：[Cache Engineering for Agents](https://arxiv.org/abs/2610.28577) 让 Agent 直接控制活跃 KV cache，不改前缀就不触发重新 prefill；[CarryOn](https://arxiv.org/abs/2610.18784) 围绕可复用的任务对象组织上下文。
+- HN：[Skyvern「删掉 RAG 后 Agent 快 2.3×」](https://news.ycombinator.com/item?id=50222826)（19 分/2 评）。
+- 论文侧的卖点已转向「不破坏缓存、按进展组织上下文」，工具侧还停在「省 98%/65%」这类自报数字。
 
-### 5. MCP（稳定，作为通用接入层）
-- 多个新项目把 MCP 作为接入方式，如 [tangency-labs/solidcraft](https://github.com/tangency-labs/solidcraft)（⭐9,439 · 周增 ≈+784 · Rust 参数化 CAD，经 MCP 自动化）、[HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything)（⭐56,371 · 周增 +3,275 · 让软件对 Agent 原生可用）。
-- 社交上：Supabase 推出「给你的应用自带 MCP server」，Nous Research 的 Hermes Agent 经 MCP 接入 Meshy。
-- 论文：WildAWM 合成同时支持 GUI、MCP 服务和 CLI 的环境。
+**4. Skills / 插件（最主流的分发形态，安全审计是本周最强主题）**
+- [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) · ⭐46,163 · 周增 +12,680 · 多阶段安全审计 skill，发现项经独立验证，输出机器可读。
+- [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) · ⭐44,480 · 周增 +3,232 · Anthropic 官方插件目录。同时上榜的有 [cursor/plugins](https://github.com/cursor/plugins)（⭐13,870 · 周增 +1,729）和 [vercel-labs/skills](https://github.com/vercel-labs/skills)（⭐36,494 · 周增 +1,077）。
+- 反向力量是 skill 供应链安全：[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)（⭐21,206）专门扫描 skill。@RoundtableSpace 引用的统计称 31,132 个 skill 中 26.1% 含漏洞、5.2% 疑似恶意（出自该推文，未独立核对）。
+- 论文：[Socratic Skill Learning](https://arxiv.org/abs/2610.17860)（👍47）让 Student 在专家引导下边练边写 skill。
 
-### 6. 缓存与成本（升温，偏学术）
-- [Cache Engineering for Agents](https://arxiv.org/abs/2610.28577)（热度 123）主张直接控制活跃 KV，而不是改写前缀。
-- 服务侧与成本侧：DLite、EdgeWise、SpecAgent、HarnessPro 都围绕「少调用大模型、省 prefill」。
-- 工程侧：[yetone/magpie](https://github.com/yetone/magpie)（⭐19,836 · 周增 ≈+1,021）让 Codex 跑在 DeepSeek 上、Claude Code 跑在 Kimi 上，从模型切换角度降成本。
+**5. MCP / 运行时 / 多 Agent 编排（编排升温，沙箱组降温）**
+- [stablyai/orca](https://github.com/stablyai/orca) · ⭐105,478 · 周增 +9,828 · 并行运行多个编码 Agent（Codex、Claude Code、OpenCode、Pi），各自使用独立 git worktree 和自己的订阅，带手机端。日增 10-22 +1,694、10-23 +848、10-24 +1,122。
+- [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) · ⭐261,223 · 周增 ≈+3,125 · 主打「一切皆插件」，dsh 插件生态成形（rea、archify、ruflo 等都打了 dsh-plugin 标签）。
+- [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) · ⭐19,780 · 周增 +3,189 · 自治 Agent 的安全私有运行时，由 HN 驱动；日增 +978 → +779 → +556，持续下降。[anthropics/sandbox-runtime](https://github.com/anthropics/sandbox-runtime)（⭐6,581）10-24 的 Trending 今日值 +592，10-25 掉到 +208。
 
-### 7. 多 Agent 并行与运行时（升温）
-- [stablyai/orca](https://github.com/stablyai/orca) · ⭐103,156 · 周增 +9,401 · 用 git worktree 并行运行多个编码 Agent，覆盖桌面、移动和远程。
-- 新仓库 [harp](https://github.com/dominikmartn/harp)（⭐578 · 周增 ≈+289）和 [coucou](https://github.com/Louis-CFM/coucou)（⭐6,212 · 周增 ≈+248）在做多 Agent 统一面板。
-- [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) · ⭐18,086 · 周增 ≈+840 · 自治 Agent 的安全私有运行时。
+**6. 模型接入 / 免费网关（热，但风险高）**
+- [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model)、[tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi)（⭐41,361 · 周增 +4,402）、[yetone/magpie](https://github.com/yetone/magpie)（⭐21,316 · 周增 ≈+2,501，本机网关，让 Codex 用 DeepSeek、Claude Code 用 Kimi）。详见增长归因一节。
 
-## 二、本周最火 Agent 项目 Top 15
+## 本周最火 Agent 项目 Top 15
 
-按周增数值排序，估算值带 ≈。已剔除非 Agent 项目：ollama、vllm、MoneyPrinterTurbo、freellmapi（LLM 网关）、NSFW 出图 skill 等。
+已剔除与 Agent 关系弱的项目：free-my-tv（电视桌面）、MoneyPrinterTurbo（短视频生成）、vllm 和 ollama（推理引擎）。排名按周增。
 
-| 排名 | 项目 | 类型 | ⭐总数 | 周增 | 上榜天数 | 为什么火 |
+| # | 项目 | 类型 | ⭐总数 | 周增 | 上榜天数 | 为什么火 |
 |---|---|---|---|---|---|---|
-| 1 | [morluto/rea](https://github.com/morluto/rea) | 逆向工程 Agent / skill | 368,637 | +106,341 | 2 | 把 Ghidra、Hopper 接进 Codex/Cursor；@wquguru 的攻击链合集推文有 494 赞，HN 帖 814 分 |
-| 2 | [stablyai/orca](https://github.com/stablyai/orca) | 多 Agent 并行 IDE | 103,156 | +9,401 | 2 | 并行运行 Claude Code、Codex 等，被多条合集推文和官方账号推广 |
-| 3 | [xerj-org/xerj](https://github.com/xerj-org/xerj) | 本地搜索 / MCP | 13,217 | +8,064 | 2 | 一个 Rust 二进制覆盖代码搜索、记忆和 RAG；日文合集推文提及 |
-| 4 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | 开源编码 Agent | 220,340 | +6,750 | 2 | 常驻热门，数据中没有专门的本周推广帖 |
-| 5 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | 视频生成框架 | 70,234 | +5,669 | 2 | 「写 HTML 渲染视频」，被多条动效合集贴带起 |
-| 6 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | 插件目录 | 43,978 | +5,649 | 2 | Epic 的 Unreal 官方插件通过它分发，相关推文 5,186 赞 |
-| 7 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | 安全审计 skill | 40,265 | ≈+4,040 | 2 | Cloudflare 官方开源；@jurbed 推荐推文 7,010 赞 |
-| 8 | [K-Dense-AI/scientific-agent-skills](https://github.com/K-Dense-AI/scientific-agent-skills) | 科学 skill 库 | 53,997 | +3,967 | 2 | 177 个 skill + 100+ 数据库；数据中没有社交帖 |
-| 9 | [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | Agent harness / 多智能体 | 78,577 | +3,708 | 2 | swarm、自适应记忆和 RAG；带 `dsh-plugin` 标签 |
-| 10 | [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) | 记忆层 | 12,862 | +3,322 | 2 | 编码 CLI 长期记忆，支持跨厂商交接 |
-| 11 | [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything) | Agent 原生 CLI | 56,371 | +3,275 | 2 | 「让所有软件对 Agent 原生可用」；入选 @Fluyeporlaweb 的 10 月增长榜 |
-| 12 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | skill / 省代码 | 174,041 | ≈+2,750 | 2 | 「最懒的资深开发」风格，宣称代码量 -53%；@KanikaBK（37k 粉丝）推荐 |
-| 13 | [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) | dsh 插件 / 免费模型 | 37,681 | ≈+2,322 | 2 | 无需登录和 API Key 即可用 DeepSeek V4.1 Flash、Kimi K3；@WojakTheDev 推文 63 赞 |
-| 14 | [mksglu/context-mode](https://github.com/mksglu/context-mode) | 上下文优化 | 31,888 | +2,271 | 2 | 「工具输出降 98%」，被点名为「先试这个」 |
-| 15 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | token 节省 skill | 114,478 | +2,173 | 2 | 梗式 skill，称省 65% token |
+| 1 | [morluto/rea](https://github.com/morluto/rea) | context（MCP 逆向） | 382,593 | +88,243（Trending 本周，见注） | 4 | 用 Agent 接 Ghidra/Hopper 逆向任意应用；「Claude 被限制逆向」的争议在 X 上带来 👁1.7M 真实讨论，HN 10-10 帖 814 分/340 评 |
+| 2 | [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) | agent（skill） | 46,163 | +12,680 | 4 | Cloudflare 出品的审计 skill，@jurbed 一条推荐 👁594,554，几乎全靠真实讨论 |
+| 3 | [stablyai/orca](https://github.com/stablyai/orca) | agent（编排） | 105,478 | +9,828 | 4 | 多编码 Agent 并行加 worktree 隔离，用自己的订阅 |
+| 4 | [xerj-org/xerj](https://github.com/xerj-org/xerj) | context（检索/MCP） | 15,461 | +8,080 | 4 | 本地单二进制搜索，宣称省 2.7× 输出 token；Corpus Hub 贡献者自发宣传 |
+| 5 | [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) | agent（模型插件） | 42,645 | ≈+7,286 | 4 | 免登录免 Key 使用 DeepSeek V4.1 Flash、Kimi K3，「免费」是钩子 |
+| 6 | [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify) | context（知识图谱） | 134,868 | +6,868 | 4 | 代码库转知识图谱的 skill；清单贴 👁515,964，另入驻 Perplexity Computer |
+| 7 | [anomalyco/opencode](https://github.com/anomalyco/opencode) | agent | 221,420 | +6,857 | 4 | 开源编码 Agent，被各类 harness 和网关当作默认目标；本周无专属社交热帖 |
+| 8 | [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes) | context（视频） | 71,916 | +5,633 | 4 | 「写 HTML 渲染视频，为 Agent 而建」；9 条清单贴 👁210,391 |
+| 9 | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail) | context（skill） | 175,935 | ≈+4,644 | 4 | 「少写代码」的 skill，自测代码 -53%；清单贴带动 |
+| 10 | [tashfeenahmed/freellmapi](https://github.com/tashfeenahmed/freellmapi) | context（网关） | 41,361 | +4,402 | 4 | 把 34 家免费 LLM 汇成一个 /v1 端点，号称每月 7.4B token |
+| 11 | [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) | context（记忆） | 13,438 | +3,541 | 4 | 编码 CLI 的长期记忆，跨厂商交接 |
+| 12 | [ruvnet/ruflo](https://github.com/ruvnet/ruflo) | context（swarm） | 79,198 | +3,241 | 4 | 多 Agent swarm harness，带自适应记忆和向量 RAG |
+| 13 | [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official) | agent（插件目录） | 44,480 | +3,232 | 4 | 官方插件目录；Epic 的 Unreal 插件经它分发（@RoundtableSpace ❤5,186 👁314,658） |
+| 14 | [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) | agent（运行时） | 19,780 | +3,189 | 4 | HN 458 分/205 评（10-22）驱动 |
+| 15 | [deepseek-ai/deepseek-harness](https://github.com/deepseek-ai/deepseek-harness) | agent（harness） | 261,223 | ≈+3,125 | 3 | dsh 插件生态的底座，日增约 +1,000 ~ 1,127 |
 
-## 三、增长归因与推广
+注（rea）：Trending 本周口径 +88,243，与日增累加不符，以日增趋势为准。10-23、10-24、10-25 日增分别为 +5,853、+5,465、+5,896，⭐从 10-23 的 371,232 到 10-25 的 382,593 只涨了约 11k，按日增推算一周约 2 万 ~ 3 万。未能联网核实。
 
-1. **morluto/rea**（周增 +106,341）· 📣有推广
-   - 因为：把逆向工具链接进编码 Agent，输出伪代码和调用链。
-   - 谁在推：KOL @wquguru（25k 粉丝）的攻击链合集推文，494 赞、2.8 万浏览；@sammy_capital 的工具图谱推文，65 赞。HN 上 REA 帖 814 分、340 评论，日期是 10-10，早于本周。
-   - 链接：[X](https://x.com/wquguru/status/2113181135522214168) · [HN](https://news.ycombinator.com/item?id=50028275)
-   - 说明：周增数值异常大，且两条推文的互动量远不及这个量级，建议核实口径。
-2. **cloudflare/security-audit-skill**（周增 ≈+4,040）· 🔥强推广
-   - 因为：官方出品，多阶段审计，每个漏洞由新 agent 独立验证。
-   - 谁在推：@jurbed 推荐推文 7,010 赞、46.5 万浏览；社区统计共 12 条提及、11 位作者、约 96 万浏览。
-   - 链接：[X](https://x.com/jurbed/status/2112973191157252103)
-3. **anthropics/claude-plugins-official**（周增 +5,649）· 🔥强推广
-   - 因为：官方插件目录，Epic 官方 Unreal 插件通过它安装。
-   - 谁在推：@RoundtableSpace（27 万粉丝）推文 5,186 赞、31 万浏览。
-   - 链接：[X](https://x.com/RoundtableSpace/status/2111702567449424226)
-4. **stablyai/orca**（周增 +9,401）· 📣有推广
-   - 因为：并行运行多个编码 Agent，不互相覆盖。
-   - 谁在推：官方账号 @orca_build（2 万粉丝），10-22 推文称 SWE-2 Max 限时免费，Opus 5.5 编排子 Agent；另有多条合集贴。
-   - 链接：[X](https://x.com/orca_build/status/2113290782916423938)
-5. **Graphify-Labs/graphify**（周增 ≈+1,966）· 📣有推广
-   - 因为：Agent 读知识图谱而不是 grep 全仓库，本地、确定性解析。
-   - 谁在推：@AskPerplexity（38 万粉丝）宣布上架 Computer 技能市场，102 赞；@Sumanth_077 推文 667 赞；@grok 也有介绍。
-   - 链接：[X](https://x.com/AskPerplexity/status/2113022451840122886) · [X](https://x.com/Sumanth_077/status/2111824469006360864)
-6. **Ebony-Vinyl/dsh-our-free-model**（周增 ≈+2,322）· 📣有推广
-   - 因为：免费、免登录的前沿模型插件。
-   - 谁在推：@WojakTheDev 推文 63 赞，附安装步骤。
-   - 链接：[X](https://x.com/WojakTheDev/status/2113200900412223530)
-7. **heygen-com/hyperframes**（周增 +5,669）· 📣有推广
-   - 因为：HTML 转视频，适合 Agent 调用。
-   - 谁在推：多条「Claude Code 做视频/动效」合集贴，如 @Asteri_eth 的 324 仓库图谱（42 赞）。
-   - 链接：[X](https://x.com/Asteri_eth/status/2113213410078843154)
-8. **xerj-org/xerj**（周增 +8,064）· 🌱自然增长
-   - 因为：本地搜索 + MCP，一个二进制搞定。
-   - 推广情况：数据中没有专门的社交帖，只出现在一条日文合集贴里。
-   - 链接：[X](https://x.com/ClaudeCodeBase/status/2113264112092541251)
+## 增长归因与推广
 
-## 四、本周论文精选
+**1. [morluto/rea](https://github.com/morluto/rea)** · ⭐382,593 · 周增 +88,243（口径见上）
+- 关注点：让 Agent 逆向任意应用和二进制，MCP 接 Ghidra/Hopper，`npx rea-agents setup` 一行安装。
+- 📢 自媒体：7 帖 / 👁162,344，账号 @88n77n @DanielZambrini @ch3nweiii @rakib_hossen_ai @sammy_capital @wquguru。代表：[@sammy_capital](https://x.com/sammy_capital/status/2113733817596834151) 的学习路线清单（2,739 粉，10-23，❤3,790 👁122,946）。
+- 💬 真实讨论：17 帖 / 👁1,709,879。代表：[@0x0SojalSec](https://x.com/0x0SojalSec/status/2113751276320399694)（63,013 粉，10-23）称「Anthropic killed REA」，同账号还有一条引三星电视被 root 事件的推文，❤11,831 👁799,288；[@Pirat_Nation](https://x.com/Pirat_Nation/status/2114069664875557083)（369,752 粉，10-24，❤4,934 👁267,842）称有用户报告 Claude 用 REA 做逆向时触发安全检查。
+- 🌱 自然增长（事件驱动），真实讨论曝光约为自媒体的 10 倍。「Anthropic 限制」一说来自用户转述，属传闻，数据里没有官方确认。10-24 日报曾判断「曝光全部来自清单贴」，本周完整数据不支持这一判断。
 
-### Agent Context 方向
-- [Cache Engineering for Agents](https://arxiv.org/abs/2610.28577) · 热度 123。长轨迹下 KV cache 的 I/O 和存储成为主要成本，而裁剪或摘要历史会使后续缓存失效、触发重新 prefill。作者提出让 Agent 直接控制活跃 KV 的 cache engineering。
-- [MemT-1.0: Towards Memory-Native Evolution](https://arxiv.org/abs/2610.26825) · 热度 133。把记忆做成模型计算的一部分：基于 Gated DeltaNet-2 做 token 级更新，并用 Mixture-of-Storage 扩容，配两阶段训练。日报称 128K 历史下存储降低 66 倍。
-- [Pack Light, CarryOn](https://arxiv.org/abs/2610.18784) · 热度 120。围绕可复用的任务对象而不是历史来组织长程上下文：由延续载体、补充执行上下文和最近交互组成上下文视图。
-- [Mosaic: Multi-Session Agentic RL](https://arxiv.org/abs/2610.22174) · 热度 63。上下文压缩和子 Agent 分叉会让一条轨迹跨多个会话，而单会话训练与此不匹配。论文提出多会话 Agent 强化学习，区分各会话的贡献。
-- [FlowState](https://arxiv.org/abs/2609.34565) · 热度 21。把执行状态当作可保留、可回访的记忆：保留带类型的状态节点、关系和原始工具观测的引用，把持久保留与按需读取分开。
-- [Memory-Centric Continual Learning](https://arxiv.org/abs/2610.29357) · 热度 20。认为记忆应以能否改善未来行动来评判，而非能否召回事实；给出三轴分类法。
-- [Self-Evolving Agent Harness](https://arxiv.org/abs/2610.18813) · 热度 99。形式化 harness 自进化（提示、记忆、工作流、可执行组件），模型权重不变，并给出泛化界与保留界。
-- [Socratic Skill Learning](https://arxiv.org/abs/2610.17860) · 热度 32。Educator 与 Student 交替教学和练习来学习可迁移 skill，并构建 SkillTransferBench（35 个任务族、408 个可执行用例）。
+**2. [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)** · ⭐46,163 · 周增 +12,680
+- 关注点：Cloudflare 内部使用的多阶段审计 skill，发现项独立验证，可在任意 harness、任意模型（含免费模型）上跑。
+- 📢 自媒体：2 帖 / 👁35，几乎为零。💬 真实讨论：19 帖 / 👁1,027,652。
+- 推广方：KOL 自发推荐。代表：[@jurbed](https://x.com/jurbed/status/2112973191157252103)（14,620 粉，10-21，❤8,721 👁594,554）：「Run it on all your software… Run it with the free models.」
+- 🌱 自然增长，本周最干净的案例。日增 +2,979、+2,038、+2,177、+2,744，逐日走高（10-24 日报当时为 +2,177）。
 
-### 其他 Agent 方向
-- [BizBench](https://arxiv.org/abs/2610.20424)（热度 492）：基于支付公司真实流程的长程 Agent 基准，关注中间步骤的合规性。
-- [Into the Unknown](https://arxiv.org/abs/2610.19159)（热度 157）：让 9 个前沿 Agent 为开放科学问题写后续论文，用科学家给的条件做评分量表。
-- [MAI-Gym](https://arxiv.org/abs/2610.20939)（热度 150）：统一 GUI Agent 评测与在线 RL 训练平台，可扩展到 2 万个并行环境。
-- [CoEvo-RSI](https://arxiv.org/abs/2610.25078)（热度 118）：研究 harness 与模型共同进化时的「脑体不匹配」，用共享进化档案做双向继承。
-- [OpenGCUA](https://arxiv.org/abs/2610.22200)（热度 103）：开放通用计算机使用 Agent 的完整技术栈，首次发布。
+**3. [stablyai/orca](https://github.com/stablyai/orca)** · ⭐105,478 · 周增 +9,828
+- 关注点：多编码 Agent 并行、worktree 隔离、手机端跟进、SSH 远程、diff 批注回传。
+- 📢 自媒体：2 帖 / 👁5,742（@Joyingeth、@TheoVanceln）。💬 真实讨论：17 帖 / 👁9,995。
+- X 声量很小，解释不了 +9,828。代表：[@xoyif63862452](https://x.com/xoyif63862452/status/2113940136903762416)（6,284 粉，10-24，👁377）的中文长评。HN 只有零星小帖（[Orca + Oh My Pi 配置](https://news.ycombinator.com/item?id=49916232)，6 分）。
+- 🌱 自然增长，来源在数据里看不出，可能是站外渠道。
 
-## 五、社区讨论焦点
+**4. [xerj-org/xerj](https://github.com/xerj-org/xerj)** · ⭐15,461 · 周增 +8,080
+- 关注点：本地检索，省 token（官方称 2.7×），Corpus Hub 提供上百个参考记忆语料。
+- 📢 自媒体：1 帖 / 👁638（[@vicky_grok](https://x.com/vicky_grok/status/2113624864368349269)，11,419 粉，营销腔）。💬 真实讨论：18 帖 / 👁2,124。
+- 被选进 Corpus Hub 的开源贡献者会自发发推（如 [@Nancysingh251](https://x.com/Nancysingh251/status/2112623930246914496) ❤13），HN 上也有多条「X on the XERJ Corpus Hub」小帖（1 ~ 2 分）。这个「贡献者署名、自我宣传」的回路属于推断，数据没有直接说明它是增长主因。
+- 📣 有推广（贡献者回路加单条营销腔推文）。X 总曝光很低，增长大概率来自 Trending 本身。10-25 日增掉到 +255，冲高已回落。
 
-### 被反复提及、但不在增长榜前列的 5 个项目
-所有项目被提及天数均为 1 天（数据仅覆盖 2 天）。
-1. [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) · ⭐21,032 · 提及 1 天 · skill 安全扫描器，覆盖 71 种攻击模式，给 skill 打 0–100 风险分。
-2. [EpicGames/unreal-engine-skills-for-claude-code-plugin](https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin) · ⭐1,598 · 提及 1 天 · Epic 官方插件，让 Claude Code 控制 Unreal Editor。社区热度分第三，仅次于 cloudflare 和 claude-plugins-official。
-3. [xingjian-bai/opal](https://github.com/xingjian-bai/opal) · ⭐167 · 提及 1 天 · 反应式优化器：编码 Agent 在训练过程中重写优化器源码。作者推文 1,354 赞。
-4. [google/mantis](https://github.com/google/mantis) · ⭐2,515 · 提及 1 天 · 让 AI 编码 Agent 自主发现、复现并修复漏洞的模块化工具包。
-5. [ranxianglei/billion-context](https://github.com/ranxianglei/billion-context) · ⭐2,435 · 提及 1 天 · dsh 上下文压缩插件，面向月级长会话。
+**5. [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model)** · ⭐42,645 · 周增 ≈+7,286
+- 关注点：给 DeepSeek 的 dsh 装插件，免登录、免 Key、不限量使用 DeepSeek V4.1 Flash、GLM 5.3 Flash、Kimi K3。
+- 📢 自媒体：0。💬 真实讨论：17 帖 / 👁190,828。代表：[@WojakTheDev](https://x.com/WojakTheDev/status/2113200900412223530)（4,091 粉，10-22，❤95 👁7,882）；[@Fourpqwq](https://x.com/Fourpqwq/status/2113548229396611556)（4,186 粉，10-23）提醒额度来自上游、可能限速，免费池里的对话可能被记录。
+- 风险（均为第三方说法，未核实）：
+  - [yoDEV 的文章推文](https://x.com/dev_yodev61400/status/2112341389451157875)（3 粉，👁7）称读代码发现它加载 2.9MB bundle、操作账号池、领取 13 个 AI 工具的积分。
+  - [@Channing_AI_X](https://x.com/Channing_AI_X/status/2113180377045147938) 称 [issue #576](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues/576) 里有一封两万字的「律师函」。10-25 日报称其疑似伪造，并指控该项目逆向腾讯 WorkBuddy。
+- 🌱 自然增长，「免费」是钩子；日增 +2,089、+2,120、+1,767。合规与隐私风险存在，目前没有定论。
 
-### 讨论最多的话题
-1. **Agent 安全与审计**：既有用 Agent 做审计（Cloudflare skill、rea 的攻击链合集），也有对 skill 本身的扫描和运行时隔离。
-   - [OpenShell HN（377 分 / 187 评论）](https://news.ycombinator.com/item?id=50198675)
-   - [SkillSpector 推文](https://x.com/RoundtableSpace/status/2113114370406293672)
-   - [OpenAI 发布 Codex 检查 skill（9,171 赞）](https://x.com/OpenAI/status/2112945805686604033)
-2. **免费模型与 token 经济**：freellmapi 称每月 7.4B 免费 token，@Rifat_EE 提醒那是仓库自己的估算而非实测，且免费版新模型晚 30 天。dsh 免费模型插件也在此列。
-   - [@Rifat_EE（321 赞）](https://x.com/Rifat_EE/status/2113136966552494178)
-   - [@PratikSinhatwt](https://x.com/PratikSinhatwt/status/2112804549602030014)
-   - [@WojakTheDev](https://x.com/WojakTheDev/status/2113200900412223530)
-3. **DeepSeek Harness 插件生态**：@xiaomovps 列出插件市场、上下文压缩、Windows 命令行增强、免费搜索、侧边栏等插件。
-   - [推文](https://x.com/xiaomovps/status/2112840223227089396)
-   - [deepseek-harness](https://github.com/deepseek-ai/deepseek-harness)
-4. **Harness 自进化与课程**：MIT 开设自进化 AI 课程；@rohanpaul_ai 介绍 Google 的 OO-Harness（为不同任务簇演化专用 harness）。
-   - [@pliang279（768 赞）](https://x.com/pliang279/status/2113300326015275424)
-   - [@rohanpaul_ai](https://x.com/rohanpaul_ai/status/2113118164586582416)
-5. **个人 Agent 与多 Agent 开发环境**：@AlexFinn 称 Anthropic 将发布个人 Agent「Duet」，推文 1,513 赞，属于个人判断，未获证实。Orca、Capy 0.5.0 等多 Agent 工具也有讨论。
-   - [@AlexFinn](https://x.com/AlexFinn/status/2112990775202185437)
-   - [Capy 0.5.0](https://x.com/capydotai/status/2113326692928548974)
+**6. [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** · ⭐134,868 · 周增 +6,868
+- 关注点：本地确定性 AST，每条边可解释，无向量库；可在多种 Agent 里通用的 skill。
+- 📢 自媒体：5 帖 / 👁515,964，账号 @ArchiveExplorer @Bober_smart @TheoVanceln @thegreatest_sv @tim_tom34325。💬 真实讨论：33 帖 / 👁82,176。
+- 官方侧：[@AskPerplexity](https://x.com/AskPerplexity/status/2113022451840122886) 发布上架通知；[@Sumanth_077](https://x.com/Sumanth_077/status/2111824469006360864)（77,621 粉，10-18，❤667 👁35,965）做了介绍。
+- 🔥 自媒体曝光占主导（约为真实讨论的 6 倍），另有官方分发渠道。数据不支持断言为付费推广。
 
-另外，日报指出大量「10 个 GitHub 仓库」式合集贴在刷量，真实使用反馈偏少，榜单噪声较大。
+**7. [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)** · ⭐71,916 · 周增 +5,633
+- 关注点：HeyGen 出品，写 HTML 渲染 MP4，对 Agent 友好，带 /figma skill。
+- 📢 自媒体：9 帖 / 👁210,391，账号 @AIonfire0 @CoderDaMing @DanielZambrini @He1s_Sammy @RoundtableSpace @damkina7 @kocer_eth @naldzyul。代表：[@RoundtableSpace](https://x.com/RoundtableSpace/status/2113975041763516842)（269,645 粉，10-24，👁48,120）。💬 真实讨论：18 帖 / 👁11,676。
+- 🔥 曝光集中在清单贴（约为真实讨论的 18 倍），有公司背书，真实使用反馈少。
 
-## 六、下周值得关注
-1. **上下文基础设施三件套**（graphify 类知识图谱、context-mode/headroom 类输出压缩、ai-memory/agent-beacon 类跨 harness 记忆）可能继续走高，因为它们同时被榜单、KOL 推文和论文支持。需要验证的是，各项目宣称的 98%、65% 等节省数字都出自项目自述，缺少独立评测。
-2. **Skill 安全**会从话题变成配套工具：cloudflare 审计 skill 的热度叠加 SkillSpector、OpenShell 的关注，可能带动更多 skill 扫描和沙箱类项目。同时 rea 的周增 +106,341 与社交互动量不成比例，应先核实口径，再判断是否持续。
-3. **dsh（DeepSeek Harness）生态**值得观察：deepseek-harness、免费模型插件、dsh-context、billion-context 同时上榜，多个其他项目也加了 `dsh-plugin` 标签。需要看增长是否来自真实使用，还是来自免费模型这类「薅羊毛」效应。本周只有 2 天数据，以上趋势判断都要用下周完整 7 天数据复核。
+**8. [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)** · ⭐175,935 · 周增 ≈+4,644
+- 关注点：让 Agent 先复用再写代码；作者自测代码 -53%。
+- 📢 自媒体：4 帖 / 👁7,086（[@KanikaBK](https://x.com/KanikaBK/status/2113230397740065222)，37,352 粉，👁6,765 占大头）。💬 真实讨论：19 帖 / 👁1,007，几乎无人看。
+- 📣 有推广（以清单贴为主）。X 声量与 +4,644 对不上，增长主因看不出（Trending 日增 10-22 约 +1,949，10-23 +1,292）。
+
+### 本周自媒体曝光榜
+
+| 项目 | 自媒体帖数 | 曝光 👁 | 代表账号 | 真实讨论 👁 | 判断 |
+|---|---|---|---|---|---|
+| [lemo-opuscar](https://github.com/lemomo-ai/lemo-opuscar)（⭐7,121 · 周增 ≈+1,828） | 4 | 750,397 | @KinGao476942 @RoundtableSpace @remoteugur | 86,614 | 🔥 曝光约为讨论的 9 倍；同一批 Opus 5.5 视频类仓库被打包推 |
+| [Graphify](https://github.com/Graphify-Labs/graphify) | 5 | 515,964 | @ArchiveExplorer @thegreatest_sv @TheoVanceln | 82,176 | 🔥 清单贴主导，有 Perplexity 官方分发 |
+| [mattpocock/skills](https://github.com/mattpocock/skills)（⭐302,993 · 周增 ≈+1,438） | 22 | 475,152 | @RoundtableSpace @_avichawla @Fluyeporlaweb | 1,094,505 | 数据有噪声：该条目下混入了 oh-my-hermes、HarnessRouter、Harness² 等无关推文，不下结论 |
+| [ECC](https://github.com/affaan-m/ECC)（⭐288,551 · 周增 ≈+2,139） | 6 | 164,736 | @Fluyeporlaweb @KanikaBK @RoundtableSpace | 42,632 | 📣 清单贴反复收录，老牌项目 |
+| [rea](https://github.com/morluto/rea) | 7 | 162,344 | @sammy_capital @wquguru @ch3nweiii | 1,709,879 | 🌱 真实讨论远大于曝光 |
+| [hyperframes](https://github.com/heygen-com/hyperframes) | 9 | 210,391 | @RoundtableSpace @CoderDaMing @kocer_eth | 11,676 | 🔥 清单贴主导 |
+| [freellmapi](https://github.com/tashfeenahmed/freellmapi) | 2 | 7,894 | @Fluyeporlaweb @HongyeMain | 89,259 | 🌱 [@Rifat_EE](https://x.com/Rifat_EE/status/2113136966552494178)（33,025 粉，❤321 👁47,451）带来质疑式讨论：7.4B 是项目自估，官网与仓库数字对不上 |
+| [ponytail](https://github.com/DietrichGebert/ponytail) | 4 | 7,086 | @KanikaBK @TheoVanceln @benou_irl | 1,007 | 📣 只有清单贴，几乎无真实讨论 |
+
+## 本周论文精选
+
+**Agent Context 方向**
+1. [Cache Engineering for Agents](https://arxiv.org/abs/2610.28577) · 👍130 · 代码 [thu-nics/AKV](https://github.com/thu-nics/AKV) 48★。长轨迹里 KV cache 的 I/O 和存储成为主要成本，改写前缀会让后续缓存失效并触发重新 prefill。论文提出 cache engineering，让 Agent 直接控制活跃 KV，相比阈值触发的摘要方案，平均成本降 27.7%（见 10-23 日报）。
+2. [MemT-1.0: Towards Memory-Native Evolution](https://arxiv.org/abs/2610.26825) · 👍134 · [MemTensor/MemT-1.0](https://github.com/MemTensor/MemT-1.0) 361★。把记忆做成模型计算的一部分：Gated DeltaNet-2 做 token 级记忆更新，Mixture-of-Storage 扩容量，34B token 两阶段训练。128K 历史下，持久存储比全上下文 KV cache 少 66 倍（见 10-23 日报）。
+3. [Pack Light, CarryOn](https://arxiv.org/abs/2610.18784) · 👍122 · [Ethannju/carryon](https://github.com/Ethannju/carryon) 5★。围绕可复用的任务对象而非历史组织上下文，视图由延续载体、补充执行上下文和近期尾部构成。OSWorld 2.0 +5.8%，BrowseComp-Plus +7.0%，token 分别少 51.9% 和 22.9%（见 10-24 日报）。
+4. [Mosaic: Multi-Session Agentic RL](https://arxiv.org/abs/2610.22174) · 👍63 · [LARK-AI-Lab/Mosaic](https://github.com/LARK-AI-Lab/Mosaic) 37★。上下文压缩和子 Agent 分叉会产生多会话轨迹，与单会话训练的假设错配。论文提出多会话 Agentic RL 设定，避免把轨迹级优势平均广播给所有会话。
+5. [Memory-Centric Continual Learning (MCCL)](https://arxiv.org/abs/2610.29357) · 👍42。主张评价记忆应看能否改善未来行动，而不是能否召回事实，并给出三轴记忆分类。
+6. [Is Complex Agentic Memory Always Needed? (Raw-RAG)](https://arxiv.org/abs/2610.30755)（不在论文榜，来自推文 [@omarsar0](https://x.com/omarsar0/status/2113635562578178147)，325,934 粉，10-23，❤896 👁47,893）。Raw-RAG 在 LoCoMo、LongMemEval、MEME、MemoryAgentBench 上 6/7 设置排第一，领先最强 Agent 记忆系统 0.13 ~ 5.53 分；BEAM-1M 摄入耗时 0.3 小时，Mem0、MemOS 等需要 3.2 ~ 27 小时。
+7. [Retrieval Augmented Generation Compositionality](https://arxiv.org/abs/2610.29722) · 👍54 · [dolev31/lasagna](https://github.com/dolev31/lasagna) 18★。LASAGNA 框架测了 450 种配置、8 个基准、5K ~ 200K 文档语料。叠加技术的收益远低于单点之和（预测 +47%，实测 +17%，见 10-25 日报）。
+8. [Self-Evolving Agent Harness](https://arxiv.org/abs/2610.18813) · 👍99 · [zgcagi/Harness-RSI](https://github.com/zgcagi/Harness-RSI) 387★。固定权重，让 prompt、记忆、工作流、插件等脚手架自我演化。论文给出反馈驱动过程的形式化，并用持续 PAC 学习分析可靠性。
+
+**其他 Agent 方向**
+- [BizBench](https://arxiv.org/abs/2610.20424) · 👍494：支付业务长程 Agent 基准，强调中间执行合规，只看终局成功会掩盖违规（[BizAgentBench](https://github.com/ant-intl/BizAgentBench) 48★）。
+- [Into the Unknown](https://arxiv.org/abs/2610.19159) · 👍158：让 9 个前沿 Agent 为 DOE 国家实验室的科学家撰写后续论文，用专家条件做 rubric 评估。
+- [MAI-Gym](https://arxiv.org/abs/2610.20939) · 👍150：GUI Agent 的评测、数据采集和在线 RL 一体平台，支持 10 个基准、2 万并行环境。
+- [OpenGCUA](https://arxiv.org/abs/2610.22200) · 👍103：开放的通用电脑使用 Agent 全栈（[Tongyi-MAI/OpenGCUA](https://github.com/Tongyi-MAI/OpenGCUA) 441★）。
+- [Self-HPO](https://arxiv.org/abs/2610.22791) · 👍55：编码 Agent 交替优化 harness 与策略，用演化中的策略自己充当 harness 提议者。
+
+## 社区讨论焦点
+
+**被反复提及但不在增长榜前列的 5 个项目**
+- [EpicGames/unreal-engine-skills-for-claude-code-plugin](https://github.com/EpicGames/unreal-engine-skills-for-claude-code-plugin) · ⭐1,657 · 提及 3 天 · Epic 官方插件，让 Claude Code 控制 Unreal 编辑器（30+ 工具集），经 Anthropic 官方市场安装。[@RoundtableSpace](https://x.com/RoundtableSpace/status/2111702567449424226)（10-18，❤5,186 👁314,658）。
+- [xingjian-bai/opal](https://github.com/xingjian-bai/opal) · ⭐200 · 提及 3 天 · 「反应式优化器」：训练时让编码 Agent 实时改写优化器源码。[@SimulatedAnneal](https://x.com/SimulatedAnneal/status/2112936831398375800)（1,243 粉，10-21，❤1,354 👁152,225）称在没有调优配方的设置下，效果匹配或超过一次性最佳配方。
+- [google/mantis](https://github.com/google/mantis) · ⭐2,530 · 提及 3 天 · 模块化工具包，让编码 Agent 自主发现、复现并修补漏洞。[@RoundtableSpace](https://x.com/RoundtableSpace/status/2112397145412091969) ❤802 👁95,636。
+- [NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector) · ⭐21,206 · 提及 2 天 · skill 安全扫描器，覆盖 71 种攻击模式、17 类，给出 0 ~ 100 风险分。[@RoundtableSpace](https://x.com/RoundtableSpace/status/2113114370406293672)（10-21，❤539 👁65,587）。
+- [microsoft/skill-recorder](https://github.com/microsoft/skill-recorder) · ⭐4,981 · 提及 1 天 · 录一次屏幕操作，用 GitHub Copilot SDK 生成可复用 skill 或定时自动化。[@RoundtableSpace](https://x.com/RoundtableSpace/status/2113891994128822631)（10-24，❤1,005 👁95,326）。
+
+另有一组 Opus 5.5 视频类仓库被打包推广，如 [awesome-opus5-5-videos](https://github.com/yihui-dev/awesome-opus5-5-videos)（⭐10,865）、[mg-styles-15](https://github.com/Vincentwei1021/mg-styles-15)（⭐2,097）、[PDoomVideo](https://github.com/JohnHeibel/PDoomVideo)（⭐2,575），由同一条自媒体帖带起，👁639,392。
+
+**X / HN / Reddit 讨论最多的话题**（Reddit 本周无数据）
+
+1. Agent 与安全：审计 skill、skill 供应链、事件响应
+   - [@jurbed 推荐 Cloudflare 审计 skill](https://x.com/jurbed/status/2112973191157252103)（❤8,721 👁594,554）。
+   - [@OpenAI 发布 Codex 检查 skill php2shell-checker](https://x.com/OpenAI/status/2112945805686604033)（5,464,574 粉，10-21，❤9,171 👁1,364,604）。
+   - [@AM09_21 用 Coding Agent 检查 eMudhra 中间 CA 密钥泄露对设备的影响](https://x.com/AM09_21/status/2112897200531640416)（40,025 粉，10-21，❤1,770 👁1,482,859）。
+   - HN：[OpenShell](https://news.ycombinator.com/item?id=50198675)（458 分/205 评，10-22）。
+
+2. rea 与「AI 逆向被限制」之争
+   - [@0x0SojalSec](https://x.com/0x0SojalSec/status/2113751276320399694)（❤11,831 👁799,288）。
+   - [@Pirat_Nation](https://x.com/Pirat_Nation/status/2114069664875557083)（❤4,934 👁267,842）。
+   - HN：[REA 原帖](https://news.ycombinator.com/item?id=50028275)（814 分/340 评，10-10）。
+   - 限制一说无官方确认。
+
+3. 个人 Agent 平台与多 harness 编排
+   - [1Password for Agents](https://x.com/1Password/status/2113276767582498943)（146,693 粉，10-22，❤10,513 👁1,743,086）：Agent 请求凭据，经用户批准后由 1Password 自动填入，Agent 看不到密码。
+   - [HarnessRouter 让 Grok Bot 调度 Codex/Hermes/Claude Code/DeepSeek Harness](https://x.com/_avichawla/status/2113954302901256597)（❤1,105 👁105,097，营销腔）。
+   - [Google Harness²](https://x.com/Sumanth_077/status/2113948384113598588)（❤326 👁15,772）：固定权重，递归改进 harness（Propose→Probe→Compose）。
+   - [@AlexFinn 称 Anthropic 将发布个人 Agent「Duet」](https://x.com/AlexFinn/status/2112990775202185437)（485,393 粉，❤1,513）：传闻，未证实。
+   - HN：[Corgi agent/terminal 多路复用器](https://news.ycombinator.com/item?id=50214373)（113 分/31 评）。
+
+4. 记忆、RAG 与缓存成本
+   - [Raw-RAG 推文](https://x.com/omarsar0/status/2113635562578178147)（❤896 👁47,893）。
+   - [@akshay_pachaar 讲 4 类 LLM 缓存](https://x.com/akshay_pachaar/status/2113617883456766031)（291,760 粉，10-23，❤325 👁16,641）。
+   - HN：[Skyvern progressive disclosure](https://news.ycombinator.com/item?id=50222826)（19 分）。
+
+5. HN 上的大议题：形式化验证与对 AI 的限制
+   - [Anthropic：LLM 让大规模形式化验证可行](https://news.ycombinator.com/item?id=50202217)（394 分/241 评）。
+   - [瑞典政府办公室拟禁用 ChatGPT 和 Claude](https://news.ycombinator.com/item?id=50207405)（271 分/93 评）。
+   - [r/opensource 禁止单人项目和使用 LLM 的项目](https://news.ycombinator.com/item?id=50231722)（55 分/61 评，10-25）。
+
+## 下周值得关注
+
+1. [morluto/rea](https://github.com/morluto/rea)：日增稳定在 +5.5k 左右，要看「Claude 限制逆向」是否被官方确认或辟谣；确认的话，替代方案和本地模型可能升温。+88,243 的周增口径与日增不符，需要验证。
+2. 安全审计 skill 与 skill 供应链安全：[cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill) 日增逐日走高（10-25 达 +2,744），[NVIDIA/SkillSpector](https://github.com/NVIDIA/SkillSpector)、[google/mantis](https://github.com/google/mantis) 和 OpenAI 的检查 skill 同期被讨论，大概率继续走高。「无误报」这类说法目前只来自小号转述，需要验证。
+3. 检索/记忆项目能否扛住朴素基线：[xerj-org/xerj](https://github.com/xerj-org/xerj) 已从 +1,180 掉到 +255，[NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell) 和 [anthropics/sandbox-runtime](https://github.com/anthropics/sandbox-runtime) 同步降温；Raw-RAG 与 RAG 组合评测让 [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)、xerj、[akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory) 面临基线对比。另需留意 [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model) 的合规与隐私争议是否发酵，以及 hallmark（日增 +1,477）和 cindy（日增 +719）这两个几乎没有可见 X 讨论的项目，增长来自哪里。
