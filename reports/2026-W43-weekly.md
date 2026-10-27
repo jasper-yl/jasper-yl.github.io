@@ -2,6 +2,8 @@
 
 > 生成于 2026-10-26 09:32 PDT
 
+> 10-27 更正：修改了 dsh-our-free-model 和 magpie 的相关描述，删掉没有依据的推断，补充了据仓库代码核实的事实。
+
 数据覆盖：本周只有 4 天有日报数据（10-22 ~ 10-25），10-19 ~ 10-21 没有日报。社交数据含少量 10-17 ~ 10-21 的推文，均按真实发帖日期标注。Reddit 本周无数据。周增多为 Trending 本周口径，包含无日报的三天，所以比 4 天日增累加大。
 
 ## 本周要点
@@ -104,10 +106,8 @@
 **5. [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model)** · ⭐42,645 · 周增 ≈+7,286
 - 关注点：给 DeepSeek 的 dsh 装插件，免登录、免 Key、不限量使用 DeepSeek V4.1 Flash、GLM 5.3 Flash、Kimi K3。
 - 📢 自媒体：0。💬 真实讨论：17 帖 / 👁190,828。代表：[@WojakTheDev](https://x.com/WojakTheDev/status/2113200900412223530)（4,091 粉，10-22，❤95 👁7,882）；[@Fourpqwq](https://x.com/Fourpqwq/status/2113548229396611556)（4,186 粉，10-23）提醒额度来自上游、可能限速，免费池里的对话可能被记录。
-- 风险（均为第三方说法，未核实）：
-  - [yoDEV 的文章推文](https://x.com/dev_yodev61400/status/2112341389451157875)（3 粉，👁7）称读代码发现它加载 2.9MB bundle、操作账号池、领取 13 个 AI 工具的积分。
-  - [@Channing_AI_X](https://x.com/Channing_AI_X/status/2113180377045147938) 称 [issue #576](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues/576) 里有一封两万字的「律师函」。10-25 日报称其疑似伪造，并指控该项目逆向腾讯 WorkBuddy。
-- 🌱 自然增长，「免费」是钩子；日增 +2,089、+2,120、+1,767。合规与隐私风险存在，目前没有定论。
+- 风险（据 10-27 的仓库代码核实）：免费车道模仿 OpenCode 官方客户端来使用其免费额度；内置渠道包给 10 个第三方产品提供账号池、自动签到领积分和验证码参数自动生成。这些做法可能违反相关上游的服务条款。
+- 🌱 自然增长，「免费」是钩子；日增 +2,089、+2,120、+1,767。
 
 **6. [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** · ⭐134,868 · 周增 +6,868
 - 关注点：本地确定性 AST，每条边可解释，无向量库；可在多种 Agent 里通用的 skill。

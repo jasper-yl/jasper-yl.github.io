@@ -2,6 +2,8 @@
 
 > Generated at 2026-10-26 09:32 PDT
 
+> Corrected on 10-27: revised the dsh-our-free-model and magpie entries to remove unsupported inferences and add facts checked against the repositories' code.
+
 Data coverage: only 4 days have daily reports (10-22 to 10-25). 10-19 to 10-21 have none. A few tweets from 10-17 to 10-21 are included and dated by actual post date. Reddit data is empty this week. Most weekly gains are GitHub Trending's weekly figure, which includes 10-19 to 10-21, so they run higher than four days of daily gains added up.
 
 ## This week's highlights
@@ -105,10 +107,8 @@ Note on rea: the +88,243 figure is Trending's weekly number and does not match t
 **5. [Ebony-Vinyl/dsh-our-free-model](https://github.com/Ebony-Vinyl/dsh-our-free-model)** · ⭐42,645 · ≈+7,286 this week
 - Why people care: a plugin for DeepSeek's dsh that gives unlimited use of DeepSeek V4.1 Flash, GLM 5.3 Flash and Kimi K3 with no login and no key.
 - 📢 Influencer exposure: 0. 💬 Organic discussion: 17 posts / 👁190,828. Representative: [@WojakTheDev](https://x.com/WojakTheDev/status/2113200900412223530) (4,091 followers, 10-22, ❤95 👁7,882). [@Fourpqwq](https://x.com/Fourpqwq/status/2113548229396611556) (4,186 followers, 10-23) warns that the quota comes from upstream, may be rate-limited, and that conversations in the free pool may be logged.
-- Risks (all third-party claims, unverified):
-  - [A tweet linking a yoDEV article](https://x.com/dev_yodev61400/status/2112341389451157875) (3 followers, 👁7) says that reading the code showed it loads a 2.9MB bundle, operates an account pool, and claims credits from 13 AI tools.
-  - [@Channing_AI_X](https://x.com/Channing_AI_X/status/2113180377045147938) says [issue #576](https://github.com/Ebony-Vinyl/dsh-our-free-model/issues/576) contains a 20,000-character "lawyer's letter". The 10-25 report calls it likely forged and says it accuses the project of reverse engineering Tencent's WorkBuddy.
-- 🌱 Organic growth, with "free" as the hook. Daily gains: +2,089, +2,120, +1,767. Flag the compliance and privacy risk without drawing a conclusion.
+- Risks (verified against the repository's code as of 10-27): the free lane uses OpenCode's free tier by imitating the official OpenCode client, and a bundled channel pack provides an account pool, automatic credit check-ins and automatic captcha-parameter generation for 10 third-party products. These practices may violate the upstreams' terms of service.
+- 🌱 Organic growth, with "free" as the hook. Daily gains: +2,089, +2,120, +1,767.
 
 **6. [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)** · ⭐134,868 · +6,868 this week
 - Why people care: local deterministic AST, every edge explainable, no vector store; a skill that works across agents.
