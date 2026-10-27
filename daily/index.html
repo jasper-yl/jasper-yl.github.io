@@ -133,6 +133,28 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
   #tocSelect:not([hidden]) { display: inline-block; max-width: 180px; }
   .brand small { display: none; }  /* keeps the header on one line, so the sticky columns are not covered */
 }
+.mobile-date[hidden] { display: none !important; }
+#dateBtn { font-family: var(--latin); font-variant-numeric: tabular-nums; }
+#dateBtn::after { content: " ▾"; color: var(--muted); }
+/* the mobile date picker: one month of the paper's issues, set like a newspaper's dateline box */
+#cal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: start center; padding: 72px 16px 16px;
+  background: rgb(0 0 0 / .35); }
+#cal[hidden] { display: none; }
+.cal-card { width: min(340px, 100%); background: var(--panel); border: 1px solid var(--border); border-top: 4px double var(--ink);
+  border-radius: 4px; padding: 12px 14px 10px; box-shadow: 0 12px 40px rgb(0 0 0 / .18); }
+.cal-head { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--ink); padding-bottom: 6px; margin-bottom: 6px; }
+.cal-head strong { font: 600 19px var(--latin); color: var(--ink); }
+.cal-head button { border: 0; background: none; font: 24px var(--latin); color: var(--ink); width: 40px; height: 40px; cursor: pointer; }
+.cal-head button:disabled { opacity: .2; cursor: default; }
+.cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); row-gap: 2px; text-align: center; }
+.cal-grid b { font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: .1em; padding: 4px 0; }
+.cal-grid span, .cal-grid button { width: 40px; height: 40px; justify-self: center; display: grid; place-items: center;
+  font: 15px var(--latin); font-variant-numeric: tabular-nums; }
+.cal-grid .off { color: var(--muted); opacity: .35; }
+.cal-grid button { border: 0; background: none; color: var(--ink); font-weight: 700; cursor: pointer; border-radius: 50%; position: relative; }
+.cal-grid button::after { content: ""; position: absolute; bottom: 5px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+.cal-grid button.on { background: var(--ink); color: var(--bg); }
+.cal-foot { margin: 6px 0 0; padding-top: 6px; border-top: 1px solid var(--border); font-size: 12px; color: var(--muted); text-align: center; }
 .notice { margin: 18px 0 0; padding: 8px 14px; border-radius: 10px; background: var(--gold-soft); color: var(--ink); font-size: 14px; }
 @media (max-width: 760px) {
   .wrap { grid-template-columns: 1fr; gap: 0; }
@@ -164,7 +186,8 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
       <button data-kind="weekly" data-i18n="weekly">周报</button>
       <button data-kind="projects" data-i18n="projects">项目库</button>
     </div>
-    <select class="mobile-date" id="dateSelect" aria-label="选择日期" data-i18n-attr="aria-label:pickDate"></select>
+    <button class="mobile-date icon" id="dateBtn" type="button" aria-haspopup="dialog"></button>
+    <select class="mobile-date" id="dateSelect" hidden aria-label="选择日期" data-i18n-attr="aria-label:pickDate"></select>
     <select id="tocSelect" aria-label="跳到章节" data-i18n-attr="aria-label:jumpLabel" hidden></select>
     <button class="icon" id="lang" type="button"></button>
     <button class="icon" id="theme" title="切换主题" data-i18n-attr="title:theme">◐</button>
@@ -176,6 +199,7 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
   <aside class="toc-col"><h4 id="tocTitle" data-i18n="toc" hidden>本页目录</h4><nav id="toc"></nav></aside>
 </div>
 <div id="tip" role="tooltip"></div>
+<div id="cal" role="dialog" aria-modal="true" hidden></div>
 <footer data-i18n="footer">每天 08:30 整理 GitHub、arXiv、Hugging Face 与社区讨论，由 Claude 执笔 · 偶尔有错别字 (´▽`ʃ♡ƪ)</footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
@@ -193,13 +217,13 @@ const T = EN ? {
   search: "Search projects…", recent: "Last seen", first: "First seen", stars: "Stars", count: "Mentions", nProjects: (n) => `${n} projects`,
   thProject: "Project", thAbout: "What it does", thSeen: "Seen in", more: (n) => `${n} in total`,
   noWeekly: "The first weekly report comes out next Monday", noReport: "No report of this kind for this day", loading: "Loading…",
-  failed: "Couldn't load this report. Try refreshing.", untranslated: "This report hasn't been translated yet, so you're seeing the Chinese edition.",
+  failed: "Couldn't load this report. Try refreshing.", calFoot: (n) => `${n} issues so far · tap a dotted day`, untranslated: "This report hasn't been translated yet, so you're seeing the Chinese edition.",
 } : {
   pastDays: "历史日报", pastWeeks: "历史周报", jump: "跳到…", firstSeen: "首次出现", seenTimes: (n) => `出现 ${n} 次`,
   openGh: "打开 GitHub ↗", libTitle: "项目库", libDesc: "日报里出现过的所有 GitHub 项目。日报中的项目链接悬停即可看到这里的介绍。",
   search: "搜索项目名或介绍…", recent: "最近出现", first: "首次出现", stars: "星数", count: "出现次数", nProjects: (n) => `${n} 个项目`,
   thProject: "项目", thAbout: "介绍", thSeen: "出现在", more: (n) => `等 ${n} 次`,
-  noWeekly: "第一份周报会在下周一生成", noReport: "这一天没有该报告", loading: "加载中…", failed: "加载失败，请刷新重试",
+  noWeekly: "第一份周报会在下周一生成", noReport: "这一天没有该报告", loading: "加载中…", failed: "加载失败，请刷新重试", calFoot: (n) => `已出 ${n} 期 · 带圆点的日子可以点`,
 };
 applyI18n(T);
 if (EN) document.title = "Jasper's Agent Watch · Daily";
@@ -237,7 +261,31 @@ function buildNav() {
   const items = list();
   $("#dates").innerHTML = items.map((e) => `<a href="#${e.key}/${state.kind}" data-key="${e.key}">${e.key}</a>`).join("");
   $("#dateSelect").innerHTML = items.map((e) => `<option value="${e.key}">${e.key}</option>`).join("");
+  $("#dateBtn").hidden = isWeekly(); $("#dateSelect").hidden = !isWeekly();  // weeks don't fit a month grid
+  const [, m, d] = (current() || "").split("-").map(Number);
+  $("#dateBtn").textContent = !d ? T.pickDate : EN ? new Date(2000, m - 1, d).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : `${m} 月 ${d} 日`;
 }
+
+// Calendar for phones: the month of the current issue, days with an issue are tappable
+let calMonth = "";
+const calMonths = () => [...new Set(list().map((e) => e.key.slice(0, 7)))].sort();
+function drawCal() {
+  const have = new Set(list().map((e) => e.key)), months = calMonths(), i = months.indexOf(calMonth);
+  const [y, m] = calMonth.split("-").map(Number);
+  const title = EN ? new Date(y, m - 1, 1).toLocaleDateString("en-US", { month: "long", year: "numeric" }) : `${y} 年 ${m} 月`;
+  let cells = (EN ? ["S", "M", "T", "W", "T", "F", "S"] : ["日", "一", "二", "三", "四", "五", "六"]).map((w) => `<b>${w}</b>`).join("");
+  cells += "<span></span>".repeat(new Date(y, m - 1, 1).getDay());
+  for (let d = 1; d <= new Date(y, m, 0).getDate(); d++) {
+    const k = `${calMonth}-${String(d).padStart(2, "0")}`;
+    cells += have.has(k) ? `<button type="button" data-key="${k}" class="${k === current() ? "on" : ""}">${d}</button>` : `<span class="off">${d}</span>`;
+  }
+  $("#cal").innerHTML = `<div class="cal-card"><div class="cal-head">` +
+    `<button type="button" data-step="-1" aria-label="‹" ${i <= 0 ? "disabled" : ""}>‹</button><strong>${title}</strong>` +
+    `<button type="button" data-step="1" aria-label="›" ${i >= months.length - 1 ? "disabled" : ""}>›</button></div>` +
+    `<div class="cal-grid">${cells}</div><p class="cal-foot">${T.calFoot(have.size)}</p></div>`;
+}
+function openCal() { calMonth = (current() || calMonths().pop() || "").slice(0, 7); if (!calMonth) return; drawCal(); $("#cal").hidden = false; }
+function closeCal() { $("#cal").hidden = true; }
 
 const esc = (t) => String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 const fmt = (n) => n == null ? "—" : Number(n).toLocaleString("en-US");
@@ -416,14 +464,14 @@ async function render() {
   hideTip();
   if (state.kind === "projects") {
     document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === "projects"));
-    document.querySelectorAll("aside").forEach((a) => (a.style.visibility = "hidden")); $("#dateSelect").style.visibility = "hidden";
+    document.querySelectorAll("aside").forEach((a) => (a.style.visibility = "hidden")); $("#dateSelect").style.visibility = "hidden"; $("#dateBtn").style.visibility = "hidden";
     history.replaceState(null, "", "#/projects");
     $("#issue").textContent = T.libTitle || "项目库";
     clearToc();
     renderProjects($("#content"));
     return;
   }
-  document.querySelectorAll("aside").forEach((a) => (a.style.visibility = "")); $("#dateSelect").style.visibility = "";
+  document.querySelectorAll("aside").forEach((a) => (a.style.visibility = "")); $("#dateSelect").style.visibility = ""; $("#dateBtn").style.visibility = "";
   buildNav();
   document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === state.kind));
   document.querySelectorAll("#dates a").forEach((a) => a.classList.toggle("on", a.dataset.key === current()));
@@ -465,6 +513,14 @@ async function init() {
   readHash();
   $("#dates").onclick = (e) => { const a = e.target.closest("a"); if (!a) return; e.preventDefault(); state.key[slot()] = a.dataset.key; render(); };
   $("#dateSelect").onchange = (e) => { state.key[slot()] = e.target.value; render(); };
+  $("#dateBtn").onclick = openCal;
+  $("#cal").onclick = (e) => {
+    const b = e.target.closest("button");
+    if (!b) { if (e.target.id === "cal") closeCal(); return; }  // tap outside the card closes it
+    if (b.dataset.step) { const ms = calMonths(); calMonth = ms[ms.indexOf(calMonth) + Number(b.dataset.step)]; drawCal(); return; }
+    state.key[slot()] = b.dataset.key; closeCal(); render();
+  };
+  addEventListener("keydown", (e) => { if (e.key === "Escape") closeCal(); });
   $("#toc").onclick = (e) => { const a = e.target.closest("a"); if (!a) return; e.preventDefault(); jump(a.dataset.target); };
   $("#tocSelect").onchange = (e) => { if (e.target.value) jump(e.target.value); e.target.value = ""; };
   document.querySelectorAll(".tabs button").forEach((b) => b.onclick = () => { state.kind = b.dataset.kind; render(); });
