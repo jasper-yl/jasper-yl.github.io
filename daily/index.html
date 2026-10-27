@@ -132,12 +132,16 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
   .dates-col { display: none; }
   .toc-col { grid-column: 1; grid-row: 1; }
   main { grid-column: 2; grid-row: 1; }
-  .mobile-date { display: inline-block; }
+  .wrap .dateline { display: flex; }
   .brand small { display: none; }
 }
 .mobile-date[hidden] { display: none !important; }
-#dateBtn { font-family: var(--latin); font-variant-numeric: tabular-nums; }
-#dateBtn::after { content: " ▾"; color: var(--muted); }
+.date-btn { font-family: var(--latin); font-variant-numeric: tabular-nums; }
+.date-btn::after { content: " ▾"; color: var(--muted); }
+/* medium screens: the date picker sits on a dateline above the article, not in the crowded header */
+.dateline { display: none; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; padding: 6px 0;
+  border-top: 3px double var(--ink); border-bottom: 1px solid var(--ink); }
+.dateline span { font-size: 12px; letter-spacing: .12em; color: var(--muted); font-variant-numeric: tabular-nums; }
 /* the mobile date picker: one month of the paper's issues, set like a newspaper's dateline box */
 #cal { position: fixed; inset: 0; z-index: 20; display: grid; place-items: start center; padding: 72px 16px 16px;
   background: rgb(0 0 0 / .35); }
@@ -167,6 +171,7 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
   .tabs { order: 3; width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
   .tabs button { white-space: nowrap; flex: none; }
   .mobile-date { display: inline-block; order: 4; }
+  .wrap .dateline { display: none; }
   #tocSelect { order: 5; }
   #theme { order: 2; }
   #tocSelect:not([hidden]) { display: inline-block; max-width: 46vw; }
@@ -189,8 +194,8 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
       <button data-kind="weekly" data-i18n="weekly">周报</button>
       <button data-kind="projects" data-i18n="projects">项目库</button>
     </div>
-    <button class="mobile-date icon" id="dateBtn" type="button" aria-haspopup="dialog"></button>
-    <select class="mobile-date" id="dateSelect" hidden aria-label="选择日期" data-i18n-attr="aria-label:pickDate"></select>
+    <button class="mobile-date date-btn icon" type="button" aria-haspopup="dialog"></button>
+    <select class="mobile-date week-select" hidden aria-label="选择日期" data-i18n-attr="aria-label:pickDate"></select>
     <select id="tocSelect" aria-label="跳到章节" data-i18n-attr="aria-label:jumpLabel" hidden></select>
     <button class="icon" id="lang" type="button"></button>
     <button class="icon" id="theme" title="切换主题" data-i18n-attr="title:theme">◐</button>
@@ -198,7 +203,7 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
 </header>
 <div class="wrap">
   <aside class="dates-col"><h4 id="datesTitle">历史日报</h4><nav id="dates"></nav></aside>
-  <main><article id="content"><div class="empty"><span class="face">(｡･ω･｡)</span><span data-i18n="loading">加载中…</span></div></article></main>
+  <main><div class="dateline"><span id="issue2"></span><button class="date-btn icon" type="button" aria-haspopup="dialog"></button><select class="week-select" hidden aria-label="选择日期" data-i18n-attr="aria-label:pickDate"></select></div><article id="content"><div class="empty"><span class="face">(｡･ω･｡)</span><span data-i18n="loading">加载中…</span></div></article></main>
   <aside class="toc-col"><h4 id="tocTitle" data-i18n="toc" hidden>本页目录</h4><nav id="toc"></nav></aside>
 </div>
 <div id="tip" role="tooltip"></div>
@@ -263,10 +268,12 @@ function buildNav() {
   $("#datesTitle").textContent = isWeekly() ? T.pastWeeks : T.pastDays;
   const items = list();
   $("#dates").innerHTML = items.map((e) => `<a href="#${e.key}/${state.kind}" data-key="${e.key}">${e.key}</a>`).join("");
-  $("#dateSelect").innerHTML = items.map((e) => `<option value="${e.key}">${e.key}</option>`).join("");
-  $("#dateBtn").hidden = isWeekly(); $("#dateSelect").hidden = !isWeekly();  // weeks don't fit a month grid
+  const opts = items.map((e) => `<option value="${e.key}">${e.key}</option>`).join("");
+  document.querySelectorAll(".week-select").forEach((s) => { s.innerHTML = opts; s.hidden = !isWeekly(); });  // weeks don't fit a month grid
+  document.querySelectorAll(".date-btn").forEach((b) => (b.hidden = isWeekly()));
   const [, m, d] = (current() || "").split("-").map(Number);
-  $("#dateBtn").textContent = !d ? T.pickDate : EN ? new Date(2000, m - 1, d).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : `${m} 月 ${d} 日`;
+  const label = !d ? T.pickDate : EN ? new Date(2000, m - 1, d).toLocaleDateString("en-US", { month: "short", day: "numeric" }) : `${m} 月 ${d} 日`;
+  document.querySelectorAll(".date-btn").forEach((b) => (b.textContent = label));
 }
 
 // Calendar for phones: the month of the current issue, days with an issue are tappable
@@ -467,21 +474,21 @@ async function render() {
   hideTip();
   if (state.kind === "projects") {
     document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === "projects"));
-    document.querySelectorAll("aside").forEach((a) => (a.style.visibility = "hidden")); $("#dateSelect").style.visibility = "hidden"; $("#dateBtn").style.visibility = "hidden";
+    document.querySelectorAll("aside").forEach((a) => (a.style.visibility = "hidden")); document.querySelectorAll(".mobile-date, .dateline").forEach((e) => (e.style.visibility = "hidden"));
     history.replaceState(null, "", "#/projects");
     $("#issue").textContent = T.libTitle || "项目库";
     clearToc();
     renderProjects($("#content"));
     return;
   }
-  document.querySelectorAll("aside").forEach((a) => (a.style.visibility = "")); $("#dateSelect").style.visibility = ""; $("#dateBtn").style.visibility = "";
+  document.querySelectorAll("aside").forEach((a) => (a.style.visibility = "")); document.querySelectorAll(".mobile-date, .dateline").forEach((e) => (e.style.visibility = ""));
   buildNav();
   document.querySelectorAll(".tabs button").forEach((b) => b.classList.toggle("on", b.dataset.kind === state.kind));
   document.querySelectorAll("#dates a").forEach((a) => a.classList.toggle("on", a.dataset.key === current()));
-  $("#dateSelect").value = current() || "";
+  document.querySelectorAll(".week-select").forEach((s) => (s.value = current() || ""));
   history.replaceState(null, "", `#${current() || ""}/${state.kind}`);
   const no = isWeekly() ? "" : `NO. ${String(state.days.length - state.days.findIndex((d) => d.date === current())).padStart(3, "0")} · `;
-  $("#issue").textContent = current() ? `${no}${KIND_TITLES[state.kind]} · ${current()}` : "";
+  $("#issue").textContent = $("#issue2").textContent = current() ? `${no}${KIND_TITLES[state.kind]} · ${current()}` : "";
   const entry = list().find((e) => e.key === current());
   const el = $("#content");
   clearToc();
@@ -515,8 +522,8 @@ async function init() {
   state.key.week = state.weeks[0]?.week || null;
   readHash();
   $("#dates").onclick = (e) => { const a = e.target.closest("a"); if (!a) return; e.preventDefault(); state.key[slot()] = a.dataset.key; render(); };
-  $("#dateSelect").onchange = (e) => { state.key[slot()] = e.target.value; render(); };
-  $("#dateBtn").onclick = openCal;
+  document.querySelectorAll(".week-select").forEach((s) => (s.onchange = (e) => { state.key[slot()] = e.target.value; render(); }));
+  document.querySelectorAll(".date-btn").forEach((b) => (b.onclick = openCal));
   // the side columns stick just below the header, whose height changes when it wraps
   new ResizeObserver(() => document.documentElement.style.setProperty("--head", `${$("header").offsetHeight}px`)).observe($("header"));
   $("#cal").onclick = (e) => {
