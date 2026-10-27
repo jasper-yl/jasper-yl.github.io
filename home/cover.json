@@ -1,47 +1,46 @@
 {
- "date": "2026-10-26",
- "issue": 5,
+ "date": "2026-10-27",
+ "issue": 6,
  "cover": {
-  "kicker": "封面故事 · 论文",
-  "title": "单项有效的 RAG 技术\n叠在一起，收益缩水",
-  "dek": "三项检索技术各自有效，叠在一起预测能涨 47%，实测只涨了 17%。记忆和检索是今天论文热度榜的主线，做 RAG 的人值得先看这篇。",
-  "big": "+17%",
-  "unit": "实测收益（预测 +47%）",
-  "kind": "papers",
-  "kicker_en": "Cover story · Papers",
-  "title_en": "Each RAG technique helps alone\nStack three and the gain shrinks",
-  "dek_en": "Three retrieval techniques that each work on their own were predicted to add 47% when combined. Measured gain: 17%. Memory and retrieval lead today's paper charts, so anyone building RAG should start here.",
-  "unit_en": "measured gain (predicted +47%)"
+  "kicker": "封面故事 · GitHub 项目",
+  "title": "逆向工程项目 rea\n连续 23 天高增长",
+  "dek": "morluto/rea 一天涨了 6,095 颗星，总星已到 395,650，榜上还有 4 个同主题的 awesome 清单跟着涨。X 上有人说它在 Claude 里被限制了，官方没有确认，但真实讨论量已经远超曝光。",
+  "big": "+6,095",
+  "unit": "颗星 / 日",
+  "kind": "github",
+  "kicker_en": "Cover story · GitHub",
+  "title_en": "Reverse-engineering repo rea\nis on a 23-day growth streak",
+  "dek_en": "morluto/rea gained 6,095 stars in a day and now sits at 395,650, with four awesome-lists on the same topic rising alongside it. A rumor on X says Claude restricted it. Nothing official backs that up, but organic discussion already dwarfs the promo posts.",
+  "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "管理潮",
-   "text": "新秀爆发的 10 个项目里，4 个是在一个界面管多个 Agent 的工具。",
-   "face": "(⊙ˍ⊙)",
+   "title": "Skill 配套",
+   "text": "Cloudflare 的安全审计 skill 连续 43 天上涨，NVIDIA 的 SkillSpector 日增 +815。",
+   "face": "( •̀ ω •́ )✧",
    "kind": "github",
-   "title_en": "Agent wranglers",
-   "text_en": "4 of the 10 breakout newcomers are tools for running several agents from one interface."
+   "title_en": "Skill safety",
+   "text_en": "Cloudflare's security-audit skill has been climbing for 43 days, and NVIDIA's SkillSpector added 815 stars in a day."
   },
   {
-   "title": "自然传播",
-   "text": "magpie 真实讨论 👁246,250，自媒体曝光为 0，日增 +1,104。",
-   "face": "(｡•̀ᴗ-)✧",
+   "title": "设计热点",
+   "text": "反 AI 味设计 Skill 走红：hallmark 日增 +2,822，ai-design-skills 一条推文就有 ❤10,173。",
+   "face": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
    "kind": "social",
-   "title_en": "Organic reach",
-   "text_en": "magpie drew 246,250 views of real discussion, zero from promo accounts, and gained +1,104 stars in a day."
+   "title_en": "Design buzz",
+   "text_en": "Anti-AI-look design skills are taking off: hallmark added 2,822 stars a day, and one ai-design-skills tweet drew ❤10,173."
   },
   {
-   "title": "论文角",
-   "text": "MCP-Injector 发现模型从 20B 放大到 120B，工具故障下的容错没有变好。",
-   "face": "Σ(っ °Д °;)っ",
-   "kind": "papers",
-   "title_en": "Paper corner",
-   "text_en": "MCP-Injector finds that going from 20B to 120B parameters does not improve tolerance to tool failures."
+   "title": "曝光落差",
+   "text": "Agent-Reach 的曝光约是真实讨论的 22 倍，主要靠一条营销腔清单撑起来。",
+   "face": "┐(￣ヘ￣)┌",
+   "kind": "social",
+   "title_en": "Hype gap",
+   "text_en": "Agent-Reach's exposure is about 22 times its organic discussion, driven mostly by a single promotional list."
   }
  ],
  "reports": {
-  "github": "2026-10-26-github.md",
-  "papers": "2026-10-26-papers.md",
-  "social": "2026-10-26-social.md"
+  "github": "2026-10-27-github.md",
+  "social": "2026-10-27-social.md"
  }
 }
