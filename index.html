@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Jasper's notes on AI agents: daily reports on fast-growing GitHub projects, new papers and community discussion, written up by Claude.">
 <title>Jasper's Agent 观察</title>
 <link rel="alternate" type="application/rss+xml" title="Jasper's Agent Watch (English)" href="/feed.xml">
 <link rel="alternate" type="application/rss+xml" title="Jasper's Agent 观察（中文）" href="/feed.zh.xml">
@@ -14,6 +15,7 @@
 :root {
   --paper: #fff6dc; --panel: #fffdf6; --ink: #1f2a44; --muted: #6b6a7a; --rule: #ecdcae;
   --tomato: #e8553e; --sky: #3d7be0; --sticker: #ffd75e; --sticker-ink: #1f2a44;
+  --tomato-ink: #c13b25;  /* tomato dark enough for small text */
   --display: "ZCOOL KuaiLe", "PingFang SC", "Microsoft YaHei", sans-serif;
   --latin: "Fraunces", Georgia, serif;
   --body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
@@ -21,13 +23,14 @@
 }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --paper: #1b1a24; --panel: #23222e; --ink: #f3ead3; --muted: #a8a3b4; --rule: #36344a;
-  --tomato: #ff7a62; --sky: #7aa7ff; --sticker: #e9b93a; --sticker-ink: #1b1a24; color-scheme: dark;
+  --tomato: #ff7a62; --sky: #7aa7ff; --sticker: #e9b93a; --sticker-ink: #1b1a24; --tomato-ink: #ff7a62; color-scheme: dark;
 } }
 :root[data-theme="dark"] {
   --paper: #1b1a24; --panel: #23222e; --ink: #f3ead3; --muted: #a8a3b4; --rule: #36344a;
-  --tomato: #ff7a62; --sky: #7aa7ff; --sticker: #e9b93a; --sticker-ink: #1b1a24; color-scheme: dark;
+  --tomato: #ff7a62; --sky: #7aa7ff; --sticker: #e9b93a; --sticker-ink: #1b1a24; --tomato-ink: #ff7a62; color-scheme: dark;
 }
 * { box-sizing: border-box; }
+html, body { overflow-x: clip; }
 html { padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); }
 body {
   margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.75 var(--body);
@@ -49,13 +52,19 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--sky); outline-o
 .hello { font-family: var(--display); font-size: clamp(18px, 2.4vw, 24px); margin: 0; }
 
 .cover { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 36px; align-items: start; }
-.story .kicker { font-size: 13px; letter-spacing: .14em; color: var(--tomato); font-weight: 700; }
+.story .kicker { font-size: 13px; letter-spacing: .14em; color: var(--tomato-ink); font-weight: 700; }
 .story h2 { font: 400 clamp(28px, 4vw, 42px)/1.25 var(--display); margin: 6px 0 14px; text-wrap: balance; white-space: pre-line; }
 .story p { margin: 0; max-width: 34em; color: var(--muted); }
 .story .big { font: 800 clamp(48px, 8vw, 84px)/1 var(--latin); color: var(--tomato); font-variant-numeric: tabular-nums; display: block; margin: 18px 0 4px; overflow-wrap: anywhere; }
 .story .big small { font: 500 15px var(--body); color: var(--muted); margin-left: 6px; }
 .btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 22px; padding: 10px 18px; border-radius: 999px; background: var(--ink); color: var(--paper); text-decoration: none; font-weight: 700; }
+.btn { transition: background-color .2s; }
 .btn:hover { background: var(--tomato); }
+/* the arrow nudges right twice every few seconds to invite the click, and keeps rocking while hovered */
+.btn .arrow { display: inline-block; animation: nudge 3s ease-in-out infinite; }
+.btn:hover .arrow, .btn:focus-visible .arrow { animation: rock .6s ease-in-out infinite alternate; }
+@keyframes nudge { 0%, 60%, 100% { transform: translateX(0); } 70%, 85% { transform: translateX(6px); } 78% { transform: translateX(0); } }
+@keyframes rock { from { transform: translateX(0); } to { transform: translateX(6px); } }
 
 .stickers { display: flex; flex-direction: column; gap: 16px; padding-top: 6px; }
 .sticker {
@@ -100,7 +109,7 @@ footer { text-align: center; font-size: 13px; color: var(--muted); }
   .cover, .spread { grid-template-columns: 1fr; }
   .sticker { width: 100%; }
 }
-@media (prefers-reduced-motion: reduce) { .sticker { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .sticker, .btn { transition: none; } .btn .arrow { animation: none; } }
 </style>
 </head>
 <body>
@@ -122,7 +131,7 @@ footer { text-align: center; font-size: 13px; color: var(--muted); }
       <h2 id="title" data-i18n="title">今天的封面还在印刷中</h2>
       <p id="dek" data-i18n="dek">每天早上日报写完后，这里会换成当天最值得读的一件事。</p>
       <span class="big" id="big" hidden></span>
-      <a class="btn" id="read" href="/daily/" data-i18n="read">读今天的日报 →</a>
+      <a class="btn" id="read" href="/daily/"><span id="readLabel" data-i18n="read">读今天的日报</span><span class="arrow" aria-hidden="true">→</span></a>
     </div>
     <div class="stickers" id="stickers" aria-label="本期速览"></div>
   </section>
@@ -178,7 +187,7 @@ applyI18n({
   issue: "Out every morning at 08:30 PT", navDaily: "Daily", navProjects: "Projects", theme: "Switch theme", name: "Agent Watch",
   hello: "Welcome ヾ(≧▽≦*)o A day-by-day log of agent context", coverLabel: "Today's cover",
   kicker: "Cover story", title: "Today's cover is still at the printer", dek: "Each morning, once the reports are written, this becomes the one story most worth reading.",
-  read: "Read today's report →", dailyH: "In this issue", blogH: "Notes", blogEmpty: "Nothing here yet. Posts will show up here (ง •_•)ง",
+  read: "Read today's report", dailyH: "In this issue", blogH: "Notes", blogEmpty: "Nothing here yet. Posts will show up here (ง •_•)ง",
   ghT: "GitHub", ghD: "What people build for agent context, the hottest agents, and small repos on a sustained run",
   paT: "Papers", paD: "The heat chart plus today's new arXiv / Hugging Face papers",
   soT: "Community", soD: "For each fast-growing project: influencer exposure or real discussion?",
@@ -218,7 +227,7 @@ async function getJSON(url) { try { const r = await fetch(url, { cache: "no-cach
     $("#big").innerHTML = `${esc(c.big)}<small>${esc(pick(c, "unit"))}</small>`;
     $("#big").hidden = !c.big;
     $("#read").href = link(c.kind);
-    $("#read").textContent = EN ? `Read today's ${KINDS[c.kind] || ""} report →` : `读今天的${KINDS[c.kind] || ""}日报 →`;
+    $("#readLabel").textContent = EN ? `Read today's ${KINDS[c.kind] || ""} report` : `读今天的${KINDS[c.kind] || ""}日报`;
     $("#stickers").innerHTML = cover.stickers.map((s) =>
       `<a class="sticker" href="${link(s.kind)}"><b>${esc(pick(s, "title"))}</b>${esc(pick(s, "text"))} <span class="face">${esc(s.face)}</span>` +
       `<span class="from">${EN ? `From the ${esc(KINDS[s.kind] || "")} report →` : `来自${esc(KINDS[s.kind] || "")}日报 →`}</span></a>`).join("");

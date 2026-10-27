@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="This page doesn't exist on Jasper's Agent Watch.">
 <title>404 · Jasper's Agent 观察</title>
 <script src="/lang.js"></script>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Fraunces:opsz,wght@9..144,800&family=IBM+Plex+Mono:wght@400;600&display=swap">
@@ -10,17 +11,18 @@
 /* A missing page, told as an agent session: it went looking, ran out of context, and kept only a summary.
    Magazine paper around a dark terminal; the terminal keeps its own dark colours in both themes. */
 :root {
-  --paper: #fff6dc; --ink: #1f2a44; --muted: #6b6a7a; --tomato: #e8553e; --sky: #3d7be0;
-  --term: #211b15; --term-bar: #2c241c; --term-line: #3a3027; --term-fg: #e9dfd2; --term-dim: #8f8172;
+  --paper: #fff6dc; --ink: #1f2a44; --muted: #6b6a7a; --tomato: #e8553e; --tomato-ink: #c13b25; --sky: #3d7be0;
+  --term: #211b15; --term-bar: #2c241c; --term-line: #3a3027; --term-fg: #e9dfd2; --term-dim: #a0927f;
   --amber: #f6a04d; --green: #9fd67a; --pink: #f29bb2; --red: #ff7a62;
   --display: "ZCOOL KuaiLe", "PingFang SC", "Microsoft YaHei", sans-serif;
   --latin: "Fraunces", Georgia, serif;
   --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, "PingFang SC", "Microsoft YaHei", monospace;
   color-scheme: light;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #1b1a24; --ink: #f3ead3; --muted: #a8a3b4; --tomato: #ff7a62; --sky: #7aa7ff; color-scheme: dark; } }
-:root[data-theme="dark"] { --paper: #1b1a24; --ink: #f3ead3; --muted: #a8a3b4; --tomato: #ff7a62; --sky: #7aa7ff; color-scheme: dark; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --paper: #1b1a24; --ink: #f3ead3; --muted: #a8a3b4; --tomato: #ff7a62; --tomato-ink: #ff7a62; --sky: #7aa7ff; color-scheme: dark; } }
+:root[data-theme="dark"] { --paper: #1b1a24; --ink: #f3ead3; --muted: #a8a3b4; --tomato: #ff7a62; --tomato-ink: #ff7a62; --sky: #7aa7ff; color-scheme: dark; }
 * { box-sizing: border-box; }
+html, body { overflow-x: clip; }
 body {
   margin: 0; min-height: 100vh; background: var(--paper); color: var(--ink); font: 15px/1.75 var(--mono);
   display: grid; place-items: center; gap: 18px; align-content: center;
@@ -29,7 +31,7 @@ body {
 }
 .head { width: 100%; max-width: 720px; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
 .head a { text-decoration: none; color: var(--ink); font: 800 20px/1.1 var(--latin); }
-.head a em { font: 400 19px var(--display); font-style: normal; color: var(--tomato); margin-left: 4px; }
+.head a em { font: 400 19px var(--display); font-style: normal; color: var(--tomato-ink); margin-left: 4px; }
 .code { font: 800 clamp(56px, 12vw, 96px)/1 var(--latin); color: var(--tomato); letter-spacing: -.02em; }
 .term { width: 100%; max-width: 720px; background: var(--term); color: var(--term-fg); border-radius: 12px; overflow: hidden; border: 2px solid var(--ink); box-shadow: 6px 6px 0 var(--ink); }
 .bar { display: flex; align-items: center; gap: 8px; padding: 9px 14px; background: var(--term-bar); border-bottom: 1px solid var(--term-line); }
@@ -67,13 +69,13 @@ footer { color: var(--muted); font-size: 12px; text-align: center; }
   <div class="term" role="main">
     <div class="bar">
       <i class="dot" style="background:#ff5f56"></i><i class="dot" style="background:#ffbd2e"></i><i class="dot" style="background:#27c93f"></i>
-      <span data-i18n="bar">agent — 上下文用量 100%</span>
+      <span data-i18n="bar">agent · 上下文用量 100%</span>
     </div>
     <div class="screen">
       <div><span class="p">$ </span>agent fetch <span class="s" id="path">/这一页</span></div>
       <div class="spin" data-i18n="search">在上下文里检索中…</div>
       <div class="dim" data-i18n="read">  已读 128,000 / 128,000 tokens</div>
-      <div class="err" data-i18n="err">✗ context window exceeded — 这一页在压缩时被丢掉了</div>
+      <div class="err" data-i18n="err">✗ context window exceeded：这一页在压缩时被丢掉了</div>
       <div class="dim" data-i18n="summary">  保留的摘要：「它曾经存在过，大概」(；′⌒`)</div>
       <div class="gap"></div>
       <div><span class="p">$ </span>agent suggest</div>
@@ -102,8 +104,8 @@ footer { color: var(--muted); font-size: 12px; text-align: center; }
 <script>
 try { const t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) { /* default theme */ }
 applyI18n({
-  name: "Agent Watch", bar: "agent — context used 100%", search: "searching the context…", read: "  read 128,000 / 128,000 tokens",
-  err: "✗ context window exceeded — this page was dropped during compaction", summary: "  summary kept: “it existed once, probably” (；′⌒`)",
+  name: "Agent Watch", bar: "agent · context used 100%", search: "searching the context…", read: "  read 128,000 / 128,000 tokens",
+  err: "✗ context window exceeded: this page was dropped during compaction", summary: "  summary kept: “it existed once, probably” (；′⌒`)",
   l1: "front page", l2: "today's reports", l3: "project library",
   bot: "“The little robot lost this page's context and is now thinking about what it did ┐(￣ヘ￣)┌ Maybe look around elsewhere?”",
   footer: "Printed by GitHub Pages and Claude · this page didn't make it to print (´･ω･`)",
