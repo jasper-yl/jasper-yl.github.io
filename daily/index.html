@@ -98,7 +98,8 @@ article th, article td { border-bottom: 1px solid var(--border); padding: 9px 10
 article th { color: var(--muted); font-weight: 600; white-space: nowrap; border-bottom: 2px solid var(--ink); }
 article tbody tr:hover { background: color-mix(in srgb, var(--accent-soft) 55%, transparent); }
 article td.n { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
-article td:nth-child(4), article td:nth-child(5) { white-space: nowrap; font-variant-numeric: tabular-nums; }
+article td.proj { min-width: 13em; }
+article td.proj a { word-break: normal; overflow-wrap: anywhere; }
 .empty { color: var(--muted); padding: 60px 0; text-align: center; }
 .empty .face { display: block; font-size: 28px; margin-bottom: 6px; }
 article a.repo, article span.repo { border-bottom: 1px dotted var(--accent); }
@@ -266,8 +267,13 @@ function decorate(el) {
     span.innerHTML = html;
     node.replaceWith(...span.childNodes);
   }
+  el.querySelectorAll("table").forEach((t) => {  // the project column gets room, so repo names don't break mid-word
+    const i = [...t.querySelectorAll("thead th")].findIndex((th) => /^(项目|Project)/i.test(th.textContent.trim()));
+    if (i >= 0) t.querySelectorAll(`tbody tr > td:nth-child(${i + 1})`).forEach((td) => td.classList.add("proj"));
+  });
   el.querySelectorAll("td").forEach((td) => {  // numeric cells right-aligned so columns compare at a glance
-    if (/^[\s≈+＋\-−\d,.%⭐👁❤（）()→/万kK×]+$/.test(td.textContent) && /\d/.test(td.textContent)) td.classList.add("n");
+    const t = td.textContent;  // a single figure; a run like "+24 → +32 → +35" may wrap at its arrows instead
+    if (/^[\s≈+＋\-−\d,.%⭐👁❤（）()/万kK×]+$/.test(t) && /\d/.test(t)) td.classList.add("n");
   });
 }
 function buildToc(el) {
