@@ -61,10 +61,10 @@ select, .icon {
   border: 1px solid var(--border); border-radius: 8px; padding: 4px 8px; cursor: pointer;
 }
 .wrap { max-width: 1320px; margin: 0 auto; padding: 0 16px; display: grid; grid-template-columns: 150px minmax(0, 1fr) 220px; gap: 32px; }
-aside { position: sticky; top: 64px; align-self: start; padding-top: 28px; max-height: calc(100vh - 64px); overflow: auto; }
+aside { position: sticky; top: var(--head, 64px); align-self: start; padding-top: 28px; max-height: calc(100vh - var(--head, 64px)); overflow: auto; }
 aside h4 { margin: 0 0 8px; font-size: 12px; color: var(--muted); letter-spacing: .12em; }
 aside h4 + nav { margin-bottom: 26px; }
-#toc a { font-variant-numeric: normal; line-height: 1.45; padding: 5px 10px; }
+#toc a { font-variant-numeric: normal; line-height: 1.45; padding: 5px 10px; overflow-wrap: anywhere; }
 #toc a.sub { padding-left: 22px; font-size: 13px; }
 #toc a.here { color: var(--accent); }
 aside a { display: block; padding: 3px 10px; border-radius: 6px; color: var(--muted); text-decoration: none; font-size: 14px; font-variant-numeric: tabular-nums; }
@@ -127,11 +127,13 @@ article td.name { min-width: 170px; word-break: normal; overflow-wrap: anywhere;
 article td.num { white-space: nowrap; font-variant-numeric: tabular-nums; }
 footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16px 32px; }
 .mobile-date, #tocSelect { display: none; }
-@media (max-width: 1100px) {  /* no room for the right column: the TOC moves into the header's jump menu */
-  .wrap { grid-template-columns: 150px minmax(0, 1fr); }
-  .toc-col { display: none; }
-  #tocSelect:not([hidden]) { display: inline-block; max-width: 180px; }
-  .brand small { display: none; }  /* keeps the header on one line, so the sticky columns are not covered */
+@media (max-width: 1100px) {  /* room for one side column: the page's TOC keeps it, dates move to the header calendar */
+  .wrap { grid-template-columns: 190px minmax(0, 1fr); }
+  .dates-col { display: none; }
+  .toc-col { grid-column: 1; grid-row: 1; }
+  main { grid-column: 2; grid-row: 1; }
+  .mobile-date { display: inline-block; }
+  .brand small { display: none; }
 }
 .mobile-date[hidden] { display: none !important; }
 #dateBtn { font-family: var(--latin); font-variant-numeric: tabular-nums; }
@@ -158,6 +160,7 @@ footer { color: var(--muted); font-size: 13px; text-align: center; padding: 0 16
 .notice { margin: 18px 0 0; padding: 8px 14px; border-radius: 10px; background: var(--gold-soft); color: var(--ink); font-size: 14px; }
 @media (max-width: 760px) {
   .wrap { grid-template-columns: 1fr; gap: 0; }
+  main { grid-column: auto; grid-row: auto; }
   aside { display: none; }
   header { position: static; }
   .bar { gap: 8px; }
@@ -514,6 +517,8 @@ async function init() {
   $("#dates").onclick = (e) => { const a = e.target.closest("a"); if (!a) return; e.preventDefault(); state.key[slot()] = a.dataset.key; render(); };
   $("#dateSelect").onchange = (e) => { state.key[slot()] = e.target.value; render(); };
   $("#dateBtn").onclick = openCal;
+  // the side columns stick just below the header, whose height changes when it wraps
+  new ResizeObserver(() => document.documentElement.style.setProperty("--head", `${$("header").offsetHeight}px`)).observe($("header"));
   $("#cal").onclick = (e) => {
     const b = e.target.closest("button");
     if (!b) { if (e.target.id === "cal") closeCal(); return; }  // tap outside the card closes it
