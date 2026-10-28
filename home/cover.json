@@ -1,46 +1,47 @@
 {
- "date": "2026-10-27",
- "issue": 6,
+ "date": "2026-10-28",
+ "issue": 7,
  "cover": {
-  "kicker": "封面故事 · GitHub 项目",
-  "title": "逆向工程项目 rea\n连续 23 天高增长",
-  "dek": "morluto/rea 一天涨了 6,095 颗星，总星已到 395,650，榜上还有 4 个同主题的 awesome 清单跟着涨。X 上有人说它在 Claude 里被限制了，官方没有确认，但真实讨论量已经远超曝光。",
-  "big": "+6,095",
-  "unit": "颗星 / 日",
-  "kind": "github",
-  "kicker_en": "Cover story · GitHub",
-  "title_en": "Reverse-engineering repo rea\nis on a 23-day growth streak",
-  "dek_en": "morluto/rea gained 6,095 stars in a day and now sits at 395,650, with four awesome-lists on the same topic rising alongside it. A rumor on X says Claude restricted it. Nothing official backs that up, but organic discussion already dwarfs the promo posts.",
-  "unit_en": "stars / day"
+  "kicker": "封面故事 · 论文",
+  "title": "工具结果还没进模型\n就先被截掉一大批",
+  "dek": "有人跑了 720 次 harness，发现 11,189 条工具结果里有 3,827 条在进入模型之前就被截断。模型读到的上下文，可能早就被管线剪过一遍。",
+  "big": "3,827 / 11,189",
+  "unit": "条工具结果被截断",
+  "kind": "papers",
+  "kicker_en": "Cover story · Papers",
+  "title_en": "Tool results get cut\nbefore the model sees them",
+  "dek_en": "Across 720 harness runs, researchers found 3,827 of 11,189 tool results were truncated before reaching the model. What the model reads may already have been trimmed by the pipeline.",
+  "unit_en": "tool results truncated"
  },
  "stickers": [
   {
-   "title": "Skill 配套",
-   "text": "Cloudflare 的安全审计 skill 连续 43 天上涨，NVIDIA 的 SkillSpector 日增 +815。",
-   "face": "( •̀ ω •́ )✧",
-   "kind": "github",
-   "title_en": "Skill safety",
-   "text_en": "Cloudflare's security-audit skill has been climbing for 43 days, and NVIDIA's SkillSpector added 815 stars in a day."
-  },
-  {
-   "title": "设计热点",
-   "text": "反 AI 味设计 Skill 走红：hallmark 日增 +2,822，ai-design-skills 一条推文就有 ❤10,173。",
+   "title": "新热点",
+   "text": "Google 的 elephant-goldfish-model 今日首次上榜，日增 +1,594",
    "face": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
-   "kind": "social",
-   "title_en": "Design buzz",
-   "text_en": "Anti-AI-look design skills are taking off: hallmark added 2,822 stars a day, and one ai-design-skills tweet drew ❤10,173."
+   "kind": "github",
+   "title_en": "New on the board",
+   "text_en": "Google's elephant-goldfish-model makes its first appearance, up +1,594 stars in a day."
   },
   {
-   "title": "曝光落差",
-   "text": "Agent-Reach 的曝光约是真实讨论的 22 倍，主要靠一条营销腔清单撑起来。",
-   "face": "┐(￣ヘ￣)┌",
+   "title": "论文角",
+   "text": "Trajectory2Gym 在 5 个 Qwen3 规模上，三个基准均值提升 16.9 到 29.8 个百分点",
+   "face": "(๑•̀ㅂ•́)و✧",
+   "kind": "papers",
+   "title_en": "Paper corner",
+   "text_en": "Trajectory2Gym lifts the three-benchmark average by 16.9 to 29.8 points across 5 Qwen3 sizes."
+  },
+  {
+   "title": "真实声量",
+   "text": "hallmark 的真实讨论曝光 118,653，清单帖只有 27,334",
+   "face": "(⊙ˍ⊙)",
    "kind": "social",
-   "title_en": "Hype gap",
-   "text_en": "Agent-Reach's exposure is about 22 times its organic discussion, driven mostly by a single promotional list."
+   "title_en": "Real buzz",
+   "text_en": "Real discussion of hallmark reached 118,653 views, against 27,334 for list posts."
   }
  ],
  "reports": {
-  "github": "2026-10-27-github.md",
-  "social": "2026-10-27-social.md"
+  "github": "2026-10-28-github.md",
+  "papers": "2026-10-28-papers.md",
+  "social": "2026-10-28-social.md"
  }
 }

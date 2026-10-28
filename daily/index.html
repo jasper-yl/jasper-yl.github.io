@@ -87,6 +87,7 @@ article strong { color: var(--ink); }
 .chip.official { background: var(--blue-soft); color: var(--sky-ink); }
 .chip.strong { background: var(--accent-soft); color: var(--accent-ink); }
 .chip.some { background: var(--gold-soft); color: var(--ink); }
+.chip.video { background: var(--code); color: var(--ink); }
 .chip.natural { background: var(--green-soft); color: var(--green-ink); }
 article a { color: var(--accent); text-decoration: none; word-break: break-word; }
 article a:hover { text-decoration: underline; }
@@ -314,10 +315,10 @@ const emptyMsg = (face, text) => `<div class="empty"><span class="face">${face}<
 // Numbers and channel labels: the things a reader scans for
 const CHIPS = [
   [/📢\s?自媒体曝光/g, "media"], [/💬\s?真实讨论/g, "organic"], [/🏢\s?官方[^：:，,。]{0,12}/g, "official"],
-  [/🔥\s?强推广/g, "strong"], [/📣\s?有推广/g, "some"], [/🌱\s?自然增长/g, "natural"],
+  [/📺\s?视频/g, "video"], [/🔥\s?强推广/g, "strong"], [/📣\s?有推广/g, "some"], [/🌱\s?自然增长/g, "natural"],
   // English editions use fixed renderings (prompts/translate.md)
   [/📢\s?Influencer exposure/g, "media"], [/💬\s?Organic discussion/g, "organic"], [/🏢\s?Official[^:;,.]{0,24}/g, "official"],
-  [/🔥\s?Heavy promotion/g, "strong"], [/📣\s?Some promotion/g, "some"], [/🌱\s?Organic growth/g, "natural"],
+  [/📺\s?Video/g, "video"], [/🔥\s?Heavy promotion/g, "strong"], [/📣\s?Some promotion/g, "some"], [/🌱\s?Organic growth/g, "natural"],
 ];
 const NUM_RE = /(≈?[+＋][\d,]+(?:\.\d+)?%?|👁\s?[\d,]+|❤\s?[\d,]+|⭐\s?[\d,]+)/g;
 function decorate(el) {
