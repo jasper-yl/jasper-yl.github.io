@@ -1,47 +1,47 @@
 {
- "date": "2026-10-28",
- "issue": 7,
+ "date": "2026-10-29",
+ "issue": 8,
  "cover": {
-  "kicker": "封面故事 · 论文",
-  "title": "工具结果还没进模型\n就先被截掉一大批",
-  "dek": "有人跑了 720 次 harness，发现 11,189 条工具结果里有 3,827 条在进入模型之前就被截断。模型读到的上下文，可能早就被管线剪过一遍。",
-  "big": "3,827 / 11,189",
-  "unit": "条工具结果被截断",
-  "kind": "papers",
-  "kicker_en": "Cover story · Papers",
-  "title_en": "Tool results get cut\nbefore the model sees them",
-  "dek_en": "Across 720 harness runs, researchers found 3,827 of 11,189 tool results were truncated before reaching the model. What the model reads may already have been trimmed by the pipeline.",
-  "unit_en": "tool results truncated"
+  "kicker": "封面故事 · 社区热议",
+  "title": "曝光 49 万的 REA\n真实讨论只有约 9 万",
+  "dek": "morluto/rea 总星 40.6 万,今天还在榜首。可它的自媒体曝光里清单和营销帖不少,真正在聊用法的人少得多,值得拆开看看。",
+  "big": "+5,348",
+  "unit": "颗星 / 日",
+  "kind": "social",
+  "kicker_en": "Cover story · Community",
+  "title_en": "REA draws 491K views,\nbut real discussion is about 90K",
+  "dek_en": "morluto/rea sits at 406,246 stars and still leads the board. Much of its exposure comes from list posts and promo copy, and far fewer people are talking about actually using it.",
+  "unit_en": "stars / day"
  },
  "stickers": [
   {
    "title": "新热点",
-   "text": "Google 的 elephant-goldfish-model 今日首次上榜，日增 +1,594",
-   "face": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+   "text": "impeccable 日增 +2,787,近 7 天日均 1,295,28 日均值 742,还在加速。",
+   "face": "(๑•̀ㅂ•́)و✧",
    "kind": "github",
-   "title_en": "New on the board",
-   "text_en": "Google's elephant-goldfish-model makes its first appearance, up +1,594 stars in a day."
+   "title_en": "Rising fast",
+   "text_en": "impeccable gained 2,787 stars today. Its 7-day average is 1,295 against 742 over 28 days, and it is still accelerating."
   },
   {
    "title": "论文角",
-   "text": "Trajectory2Gym 在 5 个 Qwen3 规模上，三个基准均值提升 16.9 到 29.8 个百分点",
-   "face": "(๑•̀ㅂ•́)و✧",
+   "text": "Memory Tax 发现许多专用记忆系统在不少情况下不如朴素 RAG,净价值为负。",
+   "face": "(⊙ˍ⊙)",
    "kind": "papers",
    "title_en": "Paper corner",
-   "text_en": "Trajectory2Gym lifts the three-benchmark average by 16.9 to 29.8 points across 5 Qwen3 sizes."
+   "text_en": "Memory Tax finds that many dedicated memory systems often lose to plain RAG, with negative net value."
   },
   {
-   "title": "真实声量",
-   "text": "hallmark 的真实讨论曝光 118,653，清单帖只有 27,334",
-   "face": "(⊙ˍ⊙)",
+   "title": "自发传播",
+   "text": "Google 的 elephant-goldfish-model 日增 +1,313,几乎全靠自然传播和一条中文解读。",
+   "face": "ヾ(≧▽≦*)o",
    "kind": "social",
-   "title_en": "Real buzz",
-   "text_en": "Real discussion of hallmark reached 118,653 views, against 27,334 for list posts."
+   "title_en": "Organic buzz",
+   "text_en": "Google's elephant-goldfish-model added 1,313 stars, almost all from organic sharing and one Chinese-language write-up."
   }
  ],
  "reports": {
-  "github": "2026-10-28-github.md",
-  "papers": "2026-10-28-papers.md",
-  "social": "2026-10-28-social.md"
+  "github": "2026-10-29-github.md",
+  "papers": "2026-10-29-papers.md",
+  "social": "2026-10-29-social.md"
  }
 }
