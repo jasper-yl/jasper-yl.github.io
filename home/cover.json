@@ -1,47 +1,47 @@
 {
- "date": "2026-10-29",
- "issue": 8,
+ "date": "2026-10-30",
+ "issue": 9,
  "cover": {
-  "kicker": "封面故事 · 社区热议",
-  "title": "曝光 49 万的 REA\n真实讨论只有约 9 万",
-  "dek": "morluto/rea 总星 40.6 万,今天还在榜首。可它的自媒体曝光里清单和营销帖不少,真正在聊用法的人少得多,值得拆开看看。",
-  "big": "+5,348",
+  "kicker": "封面故事 · GitHub 项目",
+  "title": "rea 热度回落\n衍生项目却在变多",
+  "dek": "rea 单日新增从 17,573 降到 5,147,仍是榜首。围绕它长出了资源清单、防御工具和游戏逆向 skill,值得看看热度之后留下了什么。",
+  "big": "+4,720",
   "unit": "颗星 / 日",
-  "kind": "social",
-  "kicker_en": "Cover story · Community",
-  "title_en": "REA draws 491K views,\nbut real discussion is about 90K",
-  "dek_en": "morluto/rea sits at 406,246 stars and still leads the board. Much of its exposure comes from list posts and promo copy, and far fewer people are talking about actually using it.",
+  "kind": "github",
+  "kicker_en": "Cover story · GitHub",
+  "title_en": "rea is cooling off,\nbut its offshoots keep multiplying",
+  "dek_en": "Daily gains for rea fell from 17,573 to 5,147, and it still leads the chart. Around it have grown awesome lists, a defensive tool and game reverse-engineering skills.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "新热点",
-   "text": "impeccable 日增 +2,787,近 7 天日均 1,295,28 日均值 742,还在加速。",
+   "title": "插件平台",
+   "text": "deepseek-harness 日增 +949,7 日均值连续 19 天不低于 666,dsh-plugin 项目越来越多。",
    "face": "(๑•̀ㅂ•́)و✧",
    "kind": "github",
-   "title_en": "Rising fast",
-   "text_en": "impeccable gained 2,787 stars today. Its 7-day average is 1,295 against 742 over 28 days, and it is still accelerating."
+   "title_en": "Plugin hub",
+   "text_en": "deepseek-harness gained +949 stars today, with its 7-day average at 666 or higher for 19 days straight."
+  },
+  {
+   "title": "安全警报",
+   "text": "官方 Claude Code VS Code 扩展 2.1.313 在 Cursor 市场被植入后门,HN 三条帖子高分。",
+   "face": "Σ(っ °Д °;)っ",
+   "kind": "social",
+   "title_en": "Security alert",
+   "text_en": "Claude Code's VS Code extension 2.1.313 was backdoored on the Cursor marketplace. Three HN threads scored 641, 393 and 235."
   },
   {
    "title": "论文角",
-   "text": "Memory Tax 发现许多专用记忆系统在不少情况下不如朴素 RAG,净价值为负。",
+   "text": "有论文扫描了 153 万个 skill,另一篇专门评估 skill 扫描器的覆盖率。",
    "face": "(⊙ˍ⊙)",
    "kind": "papers",
-   "title_en": "Paper corner",
-   "text_en": "Memory Tax finds that many dedicated memory systems often lose to plain RAG, with negative net value."
-  },
-  {
-   "title": "自发传播",
-   "text": "Google 的 elephant-goldfish-model 日增 +1,313,几乎全靠自然传播和一条中文解读。",
-   "face": "ヾ(≧▽≦*)o",
-   "kind": "social",
-   "title_en": "Organic buzz",
-   "text_en": "Google's elephant-goldfish-model added 1,313 stars, almost all from organic sharing and one Chinese-language write-up."
+   "title_en": "Papers",
+   "text_en": "One paper scanned 1.53 million skills, and another tests how much of that ground skill scanners cover."
   }
  ],
  "reports": {
-  "github": "2026-10-29-github.md",
-  "papers": "2026-10-29-papers.md",
-  "social": "2026-10-29-social.md"
+  "github": "2026-10-30-github.md",
+  "papers": "2026-10-30-papers.md",
+  "social": "2026-10-30-social.md"
  }
 }
