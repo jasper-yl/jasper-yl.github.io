@@ -1,47 +1,46 @@
 {
- "date": "2026-10-31",
- "issue": 10,
+ "date": "2026-11-01",
+ "issue": 11,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "Mika 和 agent-desktop\n同日涨星过千,前 13 天每天只有 1–4 颗",
-  "dek": "手机端和桌面端的 computer use 项目同时冒头,日增分别是 +1,840 和 +1,755。其中 agent-desktop 在 X 上几乎没人推,涨得有点意外。",
-  "big": "+1,755",
+  "title": "前 12 天每天 1–4 颗星\n昨天一口气涨了 2,270",
+  "dek": "vercel-labs/agent-desktop 读系统无障碍树来做桌面 computer use，不靠截图猜像素。项目前 12 天几乎没人理，这两天突然起飞，值得去看看它凭什么。",
+  "big": "+2,680",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "Mika and agent-desktop\nboth jump past 1,000 stars a day",
-  "dek_en": "Phone and desktop computer-use projects took off on the same day, at +1,840 and +1,755 stars. agent-desktop got almost no promotion on X, and for its first 13 days it gained only 1 to 4 stars daily.",
+  "title_en": "Four stars a day at most for 12 days,\nthen 2,270 in a single day",
+  "dek_en": "vercel-labs/agent-desktop does desktop computer use by reading the OS accessibility tree instead of guessing at pixels from screenshots. It sat nearly unnoticed for 12 days, then took off, and it's worth a look at why.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "成本新玩家",
-   "text": "microsoft/TokenEconomizer 三天日增从 +205 到 +1,515,总星 2,712。",
-   "face": "Σ(っ °Д °;)っ",
+   "title": "记忆层回暖",
+   "text": "claude-mem 日增从每天 170–340 跳到 +1,523，最近三天连续走高。",
+   "face": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
    "kind": "github",
-   "title_en": "Cost cutter",
-   "text_en": "microsoft/TokenEconomizer went from +205 to +1,515 stars a day over three days, now at 2,712 total."
+   "title_en": "Memory is back",
+   "text_en": "claude-mem went from 170–340 stars a day to +1,523, rising three days in a row."
   },
   {
    "title": "论文角",
-   "text": "同一份 skill 对强模型有益,对弱模型反而有害,见 2610.33024。",
-   "face": "( •̀ ω •́ )✧",
+   "text": "2610.34577 比较了 17 种验证设计，独立 critic 复审性价比最高。",
+   "face": "φ(゜▽゜*)♪",
    "kind": "papers",
    "title_en": "Paper corner",
-   "text_en": "One skill helps strong models and hurts weak ones, per 2610.33024."
+   "text_en": "2610.34577 compares 17 verification designs and finds an independent critic review gives the best value."
   },
   {
-   "title": "缓存差距",
-   "text": "冷前缀请求首 token 约 69.4 秒,高复用请求只要约 2.8 秒。",
-   "face": "(⊙ˍ⊙)",
-   "kind": "papers",
-   "title_en": "Cache gap",
-   "text_en": "A cold-prefix request takes about 69.4 s to first token, a high-reuse one about 2.8 s."
+   "title": "省 token",
+   "text": "微软的 TokenEconomizer 10 月 13 日创建，已有 3,643 星，连续 4 天高增长。",
+   "face": "(๑•̀ㅂ•́)و✧",
+   "kind": "github",
+   "title_en": "Token savings",
+   "text_en": "Microsoft's TokenEconomizer, created Oct 13, has 3,643 stars and four straight days of strong growth."
   }
  ],
  "reports": {
-  "github": "2026-10-31-github.md",
-  "papers": "2026-10-31-papers.md",
-  "social": "2026-10-31-social.md"
+  "github": "2026-11-01-github.md",
+  "papers": "2026-11-01-papers.md"
  }
 }
