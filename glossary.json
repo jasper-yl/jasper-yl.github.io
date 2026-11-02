@@ -335,6 +335,7 @@
   "zh": "让编码Agent执行多阶段安全审计并输出可验证的结构化结果",
   "mentions": [
    "2026-W43/weekly",
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -419,6 +420,7 @@
   "zh": "借助Agent对应用行为乃至原生二进制进行逆向工程",
   "mentions": [
    "2026-W43/weekly",
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -691,6 +693,7 @@
   "stars": 108783,
   "zh": "记录并压缩智能体的会话过程，在后续会话中自动注入相关上下文",
   "mentions": [
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -1078,6 +1081,7 @@
   "zh": "dsh 插件，免登录免密钥直接调用 DeepSeek、Kimi 等免费模型",
   "mentions": [
    "2026-W43/weekly",
+   "2026-11-01/social",
    "2026-10-30/social",
    "2026-10-30/github",
    "2026-10-29/social",
@@ -1673,6 +1677,7 @@
  "google/elephant-goldfish-model": {
   "first_seen": "2026-10-26",
   "mentions": [
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/social",
@@ -2134,6 +2139,7 @@
  "Gathin23/cleanyourtv": {
   "first_seen": "2026-10-27",
   "mentions": [
+   "2026-11-01/social",
    "2026-10-31/social",
    "2026-10-30/social",
    "2026-10-30/github",
@@ -2181,6 +2187,7 @@
  "HKUDS/DeepTutor": {
   "first_seen": "2026-10-28",
   "mentions": [
+   "2026-11-01/social",
    "2026-10-30/social",
    "2026-10-30/github",
    "2026-10-29/social",
@@ -2193,6 +2200,7 @@
  "pbakaus/impeccable": {
   "first_seen": "2026-10-28",
   "mentions": [
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -2221,6 +2229,7 @@
  "Orkas-AI/Orkas": {
   "first_seen": "2026-10-28",
   "mentions": [
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -2236,6 +2245,7 @@
  "Donchitos/Claude-Code-Game-Studios": {
   "first_seen": "2026-10-28",
   "mentions": [
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/social",
@@ -2645,6 +2655,7 @@
  "wangzan101/Mika": {
   "first_seen": "2026-10-30",
   "mentions": [
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -2826,6 +2837,7 @@
  "vercel-labs/agent-desktop": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github"
@@ -2893,6 +2905,7 @@
  "patch-gg/pixelfx": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/github"
   ],
@@ -2987,6 +3000,7 @@
  "ifixai-ai/iFixAi": {
   "first_seen": "2026-11-01",
   "mentions": [
+   "2026-11-01/social",
    "2026-11-01/github"
   ],
   "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
@@ -3100,5 +3114,14 @@
   "description": "",
   "stars": 2,
   "zh": "围绕帕累托优化与递归自我改进的训练实验环境（推断）"
+ },
+ "patchy631/ai-engineering-hub": {
+  "first_seen": "2026-11-01",
+  "mentions": [
+   "2026-11-01/social"
+  ],
+  "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
+  "stars": 39977,
+  "zh": "提供大模型、RAG检索增强和AI智能体实战应用的深度教程合集"
  }
 }

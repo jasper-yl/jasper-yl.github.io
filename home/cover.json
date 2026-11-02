@@ -3,24 +3,24 @@
  "issue": 11,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "前 12 天每天 1–4 颗星\n昨天一口气涨了 2,270",
-  "dek": "vercel-labs/agent-desktop 读系统无障碍树来做桌面 computer use，不靠截图猜像素。项目前 12 天几乎没人理，这两天突然起飞，值得去看看它凭什么。",
+  "title": "前 12 天每天只有 1–4 星\nagent-desktop 突然日增 2,680",
+  "dek": "Vercel Labs 这个项目靠读系统无障碍树做桌面 computer use，不靠截图猜像素。倒数第二天 +844，昨天 +2,270，是今天最陡的一条曲线。",
   "big": "+2,680",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "Four stars a day at most for 12 days,\nthen 2,270 in a single day",
-  "dek_en": "vercel-labs/agent-desktop does desktop computer use by reading the OS accessibility tree instead of guessing at pixels from screenshots. It sat nearly unnoticed for 12 days, then took off, and it's worth a look at why.",
+  "title_en": "12 days at 1–4 stars a day,\nthen agent-desktop jumped to +2,680",
+  "dek_en": "Vercel Labs' project drives the desktop by reading the system accessibility tree instead of guessing at screenshot pixels. It went +844 the day before last and +2,270 yesterday, the steepest curve on the board today.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "记忆层回暖",
-   "text": "claude-mem 日增从每天 170–340 跳到 +1,523，最近三天连续走高。",
-   "face": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+   "title": "记忆升温",
+   "text": "claude-mem 日增 +1,523，此前长期每天只有 170–340 颗星。",
+   "face": "Σ(っ °Д °;)っ",
    "kind": "github",
    "title_en": "Memory is back",
-   "text_en": "claude-mem went from 170–340 stars a day to +1,523, rising three days in a row."
+   "text_en": "claude-mem gained +1,523 stars in a day, up from a long-running 170–340 a day."
   },
   {
    "title": "论文角",
@@ -28,19 +28,20 @@
    "face": "φ(゜▽゜*)♪",
    "kind": "papers",
    "title_en": "Paper corner",
-   "text_en": "2610.34577 compares 17 verification designs and finds an independent critic review gives the best value."
+   "text_en": "Paper 2610.34577 compared 17 verification designs and found an independent critic review the best value."
   },
   {
-   "title": "省 token",
-   "text": "微软的 TokenEconomizer 10 月 13 日创建，已有 3,643 星，连续 4 天高增长。",
-   "face": "(๑•̀ㅂ•́)و✧",
-   "kind": "github",
-   "title_en": "Token savings",
-   "text_en": "Microsoft's TokenEconomizer, created Oct 13, has 3,643 stars and four straight days of strong growth."
+   "title": "监管信号",
+   "text": "HN 上 Anthropic 阻止 Claude 逆向游戏的帖子拿到 171 分、105 条评论。",
+   "face": "( •̀ ω •́ )✧",
+   "kind": "social",
+   "title_en": "Policy signal",
+   "text_en": "The HN post on Anthropic moving to stop Claude from reverse-engineering games drew 171 points and 105 comments."
   }
  ],
  "reports": {
   "github": "2026-11-01-github.md",
-  "papers": "2026-11-01-papers.md"
+  "papers": "2026-11-01-papers.md",
+  "social": "2026-11-01-social.md"
  }
 }
