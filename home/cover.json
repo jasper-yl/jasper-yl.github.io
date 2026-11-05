@@ -1,47 +1,47 @@
 {
- "date": "2026-11-01",
- "issue": 11,
+ "date": "2026-11-04",
+ "issue": 13,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "前 12 天每天只有 1–4 星\nagent-desktop 突然日增 2,680",
-  "dek": "Vercel Labs 这个项目靠读系统无障碍树做桌面 computer use，不靠截图猜像素。倒数第二天 +844，昨天 +2,270，是今天最陡的一条曲线。",
-  "big": "+2,680",
+  "title": "每天 3 颗星的桌面工具\n五天后冲到日增 2,406",
+  "dek": "vercel-labs 的 agent-desktop 前 9 天每天只有 1 到 4 颗星,发布后几天里日增一路涨到 3,477,11 月 2 日见顶。它用无障碍树操控电脑,computer use 从浏览器走到了桌面。",
+  "big": "+2,406",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "12 days at 1–4 stars a day,\nthen agent-desktop jumped to +2,680",
-  "dek_en": "Vercel Labs' project drives the desktop by reading the system accessibility tree instead of guessing at screenshot pixels. It went +844 the day before last and +2,270 yesterday, the steepest curve on the board today.",
+  "title_en": "From 3 stars a day\nto 2,406 in under a week",
+  "dek_en": "vercel-labs' agent-desktop got 1 to 4 stars a day for its first nine days. After release it climbed to 3,477 a day and peaked on November 2. It drives the desktop through the accessibility tree, so computer use now reaches beyond the browser.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "记忆升温",
-   "text": "claude-mem 日增 +1,523，此前长期每天只有 170–340 颗星。",
+   "title": "数据新爆点",
+   "text": "NVIDIA/auto-ontology 靠 HN 起量,282 分 138 评论,日增从 +25 涨到 +2,057。",
    "face": "Σ(っ °Д °;)っ",
-   "kind": "github",
-   "title_en": "Memory is back",
-   "text_en": "claude-mem gained +1,523 stars in a day, up from a long-running 170–340 a day."
-  },
-  {
-   "title": "论文角",
-   "text": "2610.34577 比较了 17 种验证设计，独立 critic 复审性价比最高。",
-   "face": "φ(゜▽゜*)♪",
-   "kind": "papers",
-   "title_en": "Paper corner",
-   "text_en": "Paper 2610.34577 compared 17 verification designs and found an independent critic review the best value."
-  },
-  {
-   "title": "监管信号",
-   "text": "HN 上 Anthropic 阻止 Claude 逆向游戏的帖子拿到 171 分、105 条评论。",
-   "face": "( •̀ ω •́ )✧",
    "kind": "social",
-   "title_en": "Policy signal",
-   "text_en": "The HN post on Anthropic moving to stop Claude from reverse-engineering games drew 171 points and 105 comments."
+   "title_en": "HN hit",
+   "text_en": "NVIDIA/auto-ontology rose on HN with 282 points and 138 comments. Daily stars went from +25 to +2,057."
+  },
+  {
+   "title": "记忆研究",
+   "text": "两篇新论文都发现,简单的记忆压缩和选择启发式并不可靠,编码任务上收益也不明显。",
+   "face": "( •̀ ω •́ )✧",
+   "kind": "papers",
+   "title_en": "Memory papers",
+   "text_en": "Two new papers find simple memory compression and selection heuristics unreliable, with little gain on coding tasks."
+  },
+  {
+   "title": "新秀",
+   "text": "agent-autoloop 11 月 3 日创建,首日 +1,492 星,让命令行 Agent 在后台自己接活。",
+   "face": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+   "kind": "github",
+   "title_en": "Newcomer",
+   "text_en": "agent-autoloop was created on November 3 and got +1,492 stars on day one. It lets CLI agents pick up work in the background."
   }
  ],
  "reports": {
-  "github": "2026-11-01-github.md",
-  "papers": "2026-11-01-papers.md",
-  "social": "2026-11-01-social.md"
+  "github": "2026-11-04-github.md",
+  "papers": "2026-11-04-papers.md",
+  "social": "2026-11-04-social.md"
  }
 }

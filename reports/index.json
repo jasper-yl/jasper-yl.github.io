@@ -1,6 +1,17 @@
 {
  "days": [
   {
+   "date": "2026-11-04",
+   "github": "2026-11-04-github.md",
+   "en": {
+    "github": "en/2026-11-04-github.md",
+    "papers": "en/2026-11-04-papers.md",
+    "social": "en/2026-11-04-social.md"
+   },
+   "papers": "2026-11-04-papers.md",
+   "social": "2026-11-04-social.md"
+  },
+  {
    "date": "2026-11-03",
    "github": "2026-11-03-github.md",
    "en": {
