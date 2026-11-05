@@ -23,6 +23,17 @@
    "social": "2026-11-03-social.md"
   },
   {
+   "date": "2026-11-02",
+   "social": "2026-11-02-social.md",
+   "en": {
+    "social": "en/2026-11-02-social.md",
+    "github": "en/2026-11-02-github.md",
+    "papers": "en/2026-11-02-papers.md"
+   },
+   "github": "2026-11-02-github.md",
+   "papers": "2026-11-02-papers.md"
+  },
+  {
    "date": "2026-11-01",
    "papers": "2026-11-01-papers.md",
    "en": {
@@ -141,6 +152,11 @@
   }
  ],
  "weeks": [
+  {
+   "week": "2026-W44",
+   "file": "2026-W44-weekly.md",
+   "en": "en/2026-W44-weekly.md"
+  },
   {
    "week": "2026-W43",
    "file": "2026-W43-weekly.md",

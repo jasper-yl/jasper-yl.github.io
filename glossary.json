@@ -15,6 +15,7 @@
   "zh": "沙箱化处理编码Agent的工具输出并持久化会话记忆，优化上下文窗口",
   "mentions": [
    "2026-W43/weekly",
+   "2026-11-02/github",
    "2026-10-27/github",
    "2026-10-26/github",
    "2026-10-24/github",
@@ -49,6 +50,7 @@
   "stars": 184313,
   "zh": "给编码Agent加上“偷懒资深开发”思路，倾向少写代码、避免过度实现",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-10-28/social",
    "2026-10-27/social",
@@ -69,6 +71,7 @@
   "zh": "为编码Agent命令行提供长期记忆，并方便在不同厂商Agent间交接",
   "mentions": [
    "2026-W43/weekly",
+   "2026-11-02/github",
    "2026-10-28/github",
    "2026-10-27/github",
    "2026-10-26/github",
@@ -115,9 +118,11 @@
   "stars": 142274,
   "zh": "把代码库、文档和配置解析成可查询的知识图谱，供编码Agent检索",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/social",
@@ -145,6 +150,7 @@
   "stars": 19053,
   "zh": "本地优先的Rust搜索引擎，为Agent索引代码文档并支持全文与向量混合检索",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-01/github",
    "2026-10-31/github",
@@ -210,6 +216,7 @@
    "2026-W43/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-29/github",
@@ -240,6 +247,7 @@
   "stars": 42187,
   "zh": "适配Claude Code、Codex、Cursor等多种Agent环境的插件市场",
   "mentions": [
+   "2026-W44/weekly",
    "2026-10-30/social",
    "2026-10-29/social",
    "2026-10-28/social",
@@ -341,9 +349,12 @@
   "stars": 58685,
   "zh": "让编码Agent执行多阶段安全审计并输出可验证的结构化结果",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
@@ -373,9 +384,12 @@
   "stars": 115193,
   "zh": "同时管理和运行多个编码Agent的桌面与移动端工作环境",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/social",
@@ -430,11 +444,14 @@
   "stars": 429885,
   "zh": "借助Agent对应用行为乃至原生二进制进行逆向工程",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/social",
    "2026-11-04/github",
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
@@ -537,6 +554,7 @@
   "stars": 10102,
   "zh": "给每个AI同事配备独立电脑，操作均事先审批并事后记录",
   "mentions": [
+   "2026-11-02/github",
    "2026-10-31/github",
    "2026-10-30/github",
    "2026-10-29/github",
@@ -579,9 +597,11 @@
   "stars": 29661,
   "zh": "在菜单栏里为各编程智能体切换底层模型，如让 Codex 用 DeepSeek",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-10-31/github",
    "2026-10-30/github",
    "2026-10-29/github",
@@ -712,10 +732,13 @@
   "stars": 112584,
   "zh": "记录并压缩智能体的会话过程，在后续会话中自动注入相关上下文",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/social",
    "2026-11-04/github",
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
@@ -747,8 +770,10 @@
   "stars": 84475,
   "zh": "统一接入数百家模型服务商的 AI 网关，支持额度感知的自动回退切换",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github",
@@ -767,6 +792,7 @@
   "stars": 297012,
   "zh": "为 Claude Code、Codex 等智能体提供技能、记忆与安全的性能优化套件",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-03/social",
    "2026-10-28/social",
@@ -799,6 +825,8 @@
   "stars": 312273,
   "zh": "为编程智能体提供技能库和子智能体驱动的软件开发方法论",
   "mentions": [
+   "2026-W44/weekly",
+   "2026-11-02/github",
    "2026-10-30/github",
    "2026-10-29/github",
    "2026-10-28/github",
@@ -812,6 +840,8 @@
   "stars": 109896,
   "zh": "让编程智能体借助参考图和浏览器检查做出有设计感的页面，避免千篇一律",
   "mentions": [
+   "2026-W44/weekly",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-30/social",
    "2026-10-30/github",
@@ -860,8 +890,10 @@
   "stars": 108711,
   "zh": "用一个命令行工具让智能体读取和搜索推特、Reddit、B站、小红书等平台",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-10-31/github",
    "2026-10-30/github",
    "2026-10-28/social",
@@ -922,11 +954,14 @@
   "stars": 272273,
   "zh": "DeepSeek 推出的以插件为核心的智能体运行框架",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/social",
    "2026-11-04/github",
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/social",
@@ -954,6 +989,7 @@
   "zh": "由多个大模型智能体协作完成金融交易决策的框架",
   "mentions": [
    "2026-11-04/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github",
@@ -977,6 +1013,7 @@
   "zh": "用于管理和编排多个工作智能体的应用，支持任务与流程自动化",
   "mentions": [
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-26/github",
@@ -1053,6 +1090,7 @@
   "stars": 338,
   "zh": "训练模型时由编程智能体实时改写优化器的响应式优化器",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-10-27/social",
    "2026-10-26/social",
@@ -1115,11 +1153,13 @@
   "stars": 60492,
   "zh": "dsh 插件，免登录免密钥直接调用 DeepSeek、Kimi 等免费模型",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/social",
    "2026-11-04/github",
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/social",
    "2026-11-01/social",
    "2026-10-30/social",
    "2026-10-30/github",
@@ -1154,6 +1194,7 @@
   "stars": 78767,
   "zh": "用 HTML 编写画面并渲染成视频，专为智能体设计的视频框架",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/github",
    "2026-10-30/social",
@@ -1173,6 +1214,7 @@
   "stars": 1890,
   "zh": "为 Claude Code 提供虚幻引擎开发技能的插件（推断）",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-10-29/social",
    "2026-10-28/social",
@@ -1201,9 +1243,11 @@
   "stars": 24324,
   "zh": "安装前扫描智能体技能，检测提示注入、数据外泄等安全风险",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github",
@@ -1254,11 +1298,13 @@
   "stars": 312708,
   "zh": "面向工程师的智能体技能合集，取自作者的 .agents 目录",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/social",
    "2026-11-04/github",
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -1277,8 +1323,10 @@
   "stars": 58754,
   "zh": "能从交互中不断学习的智能体长期记忆系统",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github",
@@ -1308,9 +1356,12 @@
   "stars": 47658,
   "zh": "帮 Claude Code 等工具避免千篇一律 AI 风格的设计技能",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/github",
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -1385,6 +1436,7 @@
   "mentions": [
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github",
@@ -1399,6 +1451,7 @@
   "stars": 12160,
   "zh": "让 Claude Code 用代码做短片的 59 种电影风格工具箱",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-04/github",
    "2026-10-30/social",
@@ -1579,6 +1632,7 @@
   "stars": 76355,
   "zh": "让 AI 编程助手变身完整视频制作工作室的智能体视频生产系统",
   "mentions": [
+   "2026-11-02/github",
    "2026-10-25/github"
   ]
  },
@@ -1690,6 +1744,7 @@
  "yihui-dev/awesome-opus5-5-videos": {
   "first_seen": "2026-10-26",
   "mentions": [
+   "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-10-28/social",
    "2026-10-27/social",
@@ -1721,6 +1776,7 @@
  "AgriciDaniel/claude-seo": {
   "first_seen": "2026-10-26",
   "mentions": [
+   "2026-W44/weekly",
    "2026-10-26/social",
    "2026-10-26/github"
   ],
@@ -1731,8 +1787,11 @@
  "google/elephant-goldfish-model": {
   "first_seen": "2026-10-26",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/github",
@@ -1824,6 +1883,7 @@
   "first_seen": "2026-10-26",
   "mentions": [
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-26/github"
@@ -1995,6 +2055,7 @@
  "elayadesign/ai-design-skills": {
   "first_seen": "2026-10-26",
   "mentions": [
+   "2026-W44/weekly",
    "2026-10-30/social",
    "2026-10-29/social",
    "2026-10-28/social",
@@ -2091,6 +2152,7 @@
   "first_seen": "2026-10-27",
   "mentions": [
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-30/github",
    "2026-10-28/github",
@@ -2122,6 +2184,7 @@
   "first_seen": "2026-10-27",
   "mentions": [
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-10-30/github",
    "2026-10-28/github",
    "2026-10-27/github"
@@ -2205,7 +2268,9 @@
  "Gathin23/cleanyourtv": {
   "first_seen": "2026-10-27",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-03/social",
+   "2026-11-02/social",
    "2026-11-01/social",
    "2026-10-31/social",
    "2026-10-30/social",
@@ -2243,6 +2308,7 @@
  "SouravBeraAkaSpeed/xiryn": {
   "first_seen": "2026-10-27",
   "mentions": [
+   "2026-W44/weekly",
    "2026-10-29/social",
    "2026-10-28/social",
    "2026-10-27/social"
@@ -2254,6 +2320,7 @@
  "HKUDS/DeepTutor": {
   "first_seen": "2026-10-28",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-01/social",
    "2026-10-30/social",
    "2026-10-30/github",
@@ -2267,9 +2334,12 @@
  "pbakaus/impeccable": {
   "first_seen": "2026-10-28",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/github",
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
@@ -2305,6 +2375,7 @@
   "mentions": [
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
@@ -2324,6 +2395,8 @@
    "2026-11-04/github",
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/github",
@@ -2340,6 +2413,7 @@
   "mentions": [
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github",
@@ -2355,6 +2429,7 @@
   "mentions": [
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github",
@@ -2370,6 +2445,7 @@
   "mentions": [
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github",
@@ -2504,6 +2580,7 @@
   "mentions": [
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github",
@@ -2525,8 +2602,10 @@
  "microsoft/TokenEconomizer": {
   "first_seen": "2026-10-29",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -2549,8 +2628,10 @@
  "milind-soni/OpenMausBot": {
   "first_seen": "2026-10-29",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/social",
    "2026-10-31/github",
@@ -2718,6 +2799,7 @@
   "mentions": [
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-10-31/github",
    "2026-10-30/github"
   ],
@@ -2729,6 +2811,7 @@
   "first_seen": "2026-10-30",
   "mentions": [
    "2026-11-04/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github",
    "2026-10-30/github"
@@ -2750,8 +2833,11 @@
  "wangzan101/Mika": {
   "first_seen": "2026-10-30",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
@@ -2934,10 +3020,13 @@
  "vercel-labs/agent-desktop": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-W44/weekly",
    "2026-11-04/social",
    "2026-11-04/github",
    "2026-11-03/social",
    "2026-11-03/github",
+   "2026-11-02/social",
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/social",
@@ -2980,6 +3069,7 @@
   "first_seen": "2026-10-31",
   "mentions": [
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github",
    "2026-10-31/github"
   ],
@@ -3009,6 +3099,7 @@
  "patch-gg/pixelfx": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github",
    "2026-10-31/github"
@@ -3021,6 +3112,7 @@
   "first_seen": "2026-10-31",
   "mentions": [
    "2026-11-03/papers",
+   "2026-11-02/papers",
    "2026-11-01/papers",
    "2026-10-31/papers"
   ],
@@ -3031,6 +3123,7 @@
  "TIGER-AI-Lab/ReGE": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-11-02/papers",
    "2026-11-01/papers",
    "2026-10-31/papers"
   ],
@@ -3041,6 +3134,7 @@
  "IQuestLab/WorkFactory": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-11-02/papers",
    "2026-10-31/papers"
   ],
   "description": "",
@@ -3101,6 +3195,7 @@
   "first_seen": "2026-11-01",
   "mentions": [
    "2026-11-04/github",
+   "2026-11-02/github",
    "2026-11-01/github"
   ],
   "description": "See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.",
@@ -3110,6 +3205,7 @@
  "ifixai-ai/iFixAi": {
   "first_seen": "2026-11-01",
   "mentions": [
+   "2026-11-02/github",
    "2026-11-01/social",
    "2026-11-01/github"
   ],
@@ -3149,6 +3245,7 @@
   "mentions": [
    "2026-11-04/github",
    "2026-11-03/github",
+   "2026-11-02/github",
    "2026-11-01/github"
   ],
   "description": "Open-source AI teammates in Slack, Teams, Discord, Telegram and Mattermost. Self-host it, with any agent harness and any model.",
@@ -3187,6 +3284,7 @@
   "first_seen": "2026-11-01",
   "mentions": [
    "2026-11-03/papers",
+   "2026-11-02/papers",
    "2026-11-01/papers"
   ],
   "description": "Code repository for paper \"Your Policy Is Secretly a Harness: The Decision Geometry of Agent Interfaces\"",
@@ -3214,6 +3312,7 @@
  "Tencent/WeVisCut": {
   "first_seen": "2026-11-01",
   "mentions": [
+   "2026-11-02/papers",
    "2026-11-01/papers"
   ],
   "description": "WeVisCut is a 9B tool-using agent that turns knowledge articles and narration scripts into multi-minute videos through planning, asset retrieval, editing, inspection, and repair. Built on Qwen3.5, it operates in a stateful 12-tool workflow and includes an editable Studio runtime.",
@@ -3241,12 +3340,13 @@
   "zh": "提供大模型、RAG检索增强和AI智能体实战应用的深度教程合集"
  },
  "D4Vinci/Scrapling": {
-  "first_seen": "2026-11-03",
+  "first_seen": "2026-11-02",
   "mentions": [
    "2026-11-04/social",
    "2026-11-04/github",
    "2026-11-03/social",
-   "2026-11-03/github"
+   "2026-11-03/github",
+   "2026-11-02/github"
   ],
   "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
   "stars": 96099,
@@ -3298,9 +3398,10 @@
   "zh": "集成 SSH、RDP 等远程连接与漏洞扫描的 AI 安全终端"
  },
  "YizhengWw/HachimoDock": {
-  "first_seen": "2026-11-03",
+  "first_seen": "2026-11-02",
   "mentions": [
-   "2026-11-03/github"
+   "2026-11-03/github",
+   "2026-11-02/github"
   ],
   "description": "A desktop pet that reacts to your Claude Code sessions in real-time — thinking, typing,  juggling, sleeping, and more.",
   "stars": 851,
@@ -3316,18 +3417,20 @@
   "zh": "把视频拼成带时间戳和字幕的分镜图，供模型理解视频"
  },
  "ThinkWatchProject/ThinkWatch-Lite": {
-  "first_seen": "2026-11-03",
+  "first_seen": "2026-11-02",
   "mentions": [
-   "2026-11-03/github"
+   "2026-11-03/github",
+   "2026-11-02/github"
   ],
   "description": "Local gateway for Claude Code, Codex and other AI clients on macOS, Windows and Linux: switch upstreams without touching clients, keep API keys from relays, cut off malicious tool calls, trace every request.",
   "stars": 607,
   "zh": "本地 AI 网关，可切换上游、隐藏密钥、拦截恶意调用并追踪请求"
  },
  "Get-Concord-AI/concord-mcp": {
-  "first_seen": "2026-11-03",
+  "first_seen": "2026-11-02",
   "mentions": [
-   "2026-11-03/github"
+   "2026-11-03/github",
+   "2026-11-02/github"
   ],
   "description": "Live messaging for coding agents",
   "stars": 933,
@@ -3395,7 +3498,7 @@
    "2026-11-03/papers"
   ],
   "description": "CoworkOS: a cowork harness for long-horizon and human-in-the-loop task execution",
-  "stars": 118,
+  "stars": 119,
   "zh": "支持长周期任务和人机协同执行的智能体协作框架"
  },
  "xlyu0106/CUA-Master": {
@@ -3418,9 +3521,10 @@
   "zh": "自动设计带持久记忆的机器人智能体"
  },
  "ModalityDance/MICA": {
-  "first_seen": "2026-11-03",
+  "first_seen": "2026-11-02",
   "mentions": [
-   "2026-11-03/papers"
+   "2026-11-03/papers",
+   "2026-11-02/papers"
   ],
   "description": "",
   "stars": null,
@@ -3500,9 +3604,10 @@
   "zh": "让 AI 编程智能体在 Windows 原生运行 Bash 的 Rust 工具"
  },
  "caru-ini/stack-diagram": {
-  "first_seen": "2026-11-04",
+  "first_seen": "2026-11-02",
   "mentions": [
-   "2026-11-04/github"
+   "2026-11-04/github",
+   "2026-11-02/github"
   ],
   "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
   "stars": 1727,
@@ -3635,12 +3740,85 @@
   "zh": "从数据库表结构、dbt、看板和文档中构建并扩展分析本体的技能集"
  },
  "choam2426/herdr-paddock": {
-  "first_seen": "2026-11-04",
+  "first_seen": "2026-11-02",
   "mentions": [
-   "2026-11-04/social"
+   "2026-11-04/social",
+   "2026-11-02/social"
   ],
   "description": "Herdr's Spaces sidebar, by project, with your agents in it: Orca-style projects, agents and sub-agents under their space, pins",
   "stars": 3,
   "zh": "按项目分组显示 Herdr 空间侧边栏，并把智能体及子智能体归入其下"
+ },
+ "sahenjp/RustXNG": {
+  "first_seen": "2026-11-02",
+  "mentions": [
+   "2026-11-02/github"
+  ],
+  "description": "Self-hosted metasearch and grounding engine for AI agents, based on SearXNG. Rust, JSON API, optional page text.",
+  "stars": 813,
+  "zh": "基于 SearXNG 用 Rust 重写的自托管元搜索引擎，为 AI Agent 提供搜索与网页正文"
+ },
+ "beenuar/AiSOC": {
+  "first_seen": "2026-11-02",
+  "mentions": [
+   "2026-11-02/github"
+  ],
+  "description": "Open-source AI Security Operations Center: alert fusion, LLM-agent triage, MITRE ATT&CK investigation, and a replayable decision ledger for every agent step. Self-hostable, runs with no API keys, MIT licensed. Ships an MCP server for Claude, Cursor and Continue.",
+  "stars": 7164,
+  "zh": "用 LLM Agent 自动研判安全告警并映射 MITRE ATT&CK 的自托管安全运营平台"
+ },
+ "Balanov/uncut": {
+  "first_seen": "2026-11-02",
+  "mentions": [
+   "2026-11-02/github"
+  ],
+  "description": "The lossless, headless coding agent harness. One 7 MB static binary, four tools, plain stdin/stdout, no silent cuts.",
+  "stars": 600,
+  "zh": "单文件静态二进制的无头编程 Agent 运行框架，通过标准输入输出调用本地模型"
+ },
+ "pardnchiu/Agenvoy": {
+  "first_seen": "2026-11-02",
+  "mentions": [
+   "2026-11-02/github"
+  ],
+  "description": "A local AI agent harness in Go that runs 24/7 with auto-built tools, MCP, and Ollama",
+  "stars": 649,
+  "zh": "用 Go 编写的本地 AI Agent 框架，可全天运行、自动构建工具并支持 MCP 与 Ollama"
+ },
+ "zhanghao123vip/ai-manju-skills": {
+  "first_seen": "2026-11-02",
+  "mentions": [
+   "2026-11-02/github"
+  ],
+  "description": "21 个题材的 AI 漫剧全流程 Skill：一句点子生成企划案、资产图提示词、分集剧本、分镜与视频提示词。可用于 Claude Code、WorkBuddy、DeepSeek",
+  "stars": 571,
+  "zh": "覆盖 21 种题材的 AI 漫剧 Skill，由一句点子生成企划、剧本、分镜与视频提示词"
+ },
+ "emanuele-em/kanzo": {
+  "first_seen": "2026-11-02",
+  "mentions": [
+   "2026-11-02/github"
+  ],
+  "description": "Self-hosted, sharable kanban for humans and agents. One 4.5 MB binary, 4.5 MB of RAM, 10 to 60 tokens per agent reply, starts in 2 ms, zero setup.",
+  "stars": 1004,
+  "zh": "可自托管、轻量的看板工具，让人和 AI Agent 共同管理与更新任务"
+ },
+ "Prophetlab/Investor-Last-Exam": {
+  "first_seen": "2026-11-02",
+  "mentions": [
+   "2026-11-02/papers"
+  ],
+  "description": "Investor’s Last Exam: Can AI Agents Do Equity Investment Without Seeing the Future?",
+  "stars": 141,
+  "zh": "评测 AI Agent 在不预知未来的情况下能否完成股票投资决策的基准（推断）"
+ },
+ "infiniflow/ragflow": {
+  "first_seen": "2026-11-02",
+  "mentions": [
+   "2026-11-02/papers"
+  ],
+  "description": "RAGFlow is an agent-native database: a Retrieval-Augmented Generation (RAG) engine that grew into context infrastructure.",
+  "stars": 93493,
+  "zh": "集检索增强生成引擎与上下文管理于一体，为 AI Agent 提供知识检索的数据库"
  }
 }
