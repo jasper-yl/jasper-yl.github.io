@@ -1,47 +1,47 @@
 {
- "date": "2026-11-05",
- "issue": 15,
+ "date": "2026-11-06",
+ "issue": 16,
  "cover": {
-  "kicker": "封面故事 · GitHub 项目",
-  "title": "NVIDIA 本体层项目\n日增四天涨到 2,467",
-  "dek": "NVIDIA 开源的 auto-ontology 给 Agent 做语义图和本体推理，日增四天内从 25 爬到 2,467。HN 上 289 分、139 条评论，讨论是自发的。",
-  "big": "+2,491",
+  "kicker": "封面故事 · 社区热议",
+  "title": "NVIDIA auto-ontology 两天涨到 2,322 星\nHN 上 289 分",
+  "dek": "它想解决的是 Agent 查对了库、却用错业务口径的问题。日增 +1,829，HN 上有 139 条评论，不全是转发和带货，讨论比较实在。",
+  "big": "+1,829",
   "unit": "颗星 / 日",
-  "kind": "github",
-  "kicker_en": "Cover story · GitHub",
-  "title_en": "NVIDIA's auto-ontology\ngoes from 25 to 2,467 a day",
-  "dek_en": "NVIDIA's open-source auto-ontology gives agents a semantic graph and ontology reasoning layer. Daily star gains went from 25 to 2,467 in four days, and the 289-point, 139-comment HN thread is organic.",
+  "kind": "social",
+  "kicker_en": "Cover story · Community",
+  "title_en": "NVIDIA's auto-ontology\nDraws 289 Points on HN",
+  "dek_en": "It targets agents that query the right database but apply the wrong business definitions. It added 1,829 stars in a day and 139 HN comments, so the discussion looks organic.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "老大回落",
-   "text": "rea 仍居第一，7 日日均 4,104，28 日日均 14,820",
-   "face": "┐(￣ヘ￣)┌",
+   "title": "Skills 回升",
+   "text": "cloudflare/security-audit-skill 近 3 天从 777 涨到 2,417,mattpocock/skills 也升到 2,043。",
+   "face": "(๑•̀ㅂ•́)و✧",
    "kind": "github",
-   "title_en": "Cooling off",
-   "text_en": "rea is still first, but its 7-day average is 4,104 a day against 14,820 over 28 days"
+   "title_en": "Skills pick up",
+   "text_en": "cloudflare/security-audit-skill went from 777 to 2,417 stars a day in 3 days. mattpocock/skills reached 2,043."
   },
   {
    "title": "论文角",
-   "text": "持续进化的 harness 会遗忘，SWE-Bench 从 94.0% 掉到 32.0%",
-   "face": "Σ(っ °Д °;)っ",
+   "text": "Switch-SWE 测任务切换后的恢复能力,其上下文管理插件把完成率提高 5.5–15.5 个百分点。",
+   "face": "φ(゜▽゜*)♪",
    "kind": "papers",
    "title_en": "Paper corner",
-   "text_en": "Continual Harness Evolution: Meta-Harness falls from 94.0% to 32.0% on SWE-Bench"
+   "text_en": "Switch-SWE tests recovery after task switches. Its context plugin lifts completion rates by 5.5 to 15.5 points."
   },
   {
-   "title": "官方推广",
-   "text": "agent-desktop 日增 +1,961，高管轮番发推，用户体验帖还没出现",
-   "face": "(°ー°〃)",
+   "title": "曝光落差",
+   "text": "elephant-goldfish-model 视频播放约 489,100,HN 5 帖各只有 1–2 分。",
+   "face": "┐(￣ヘ￣)┌",
    "kind": "social",
-   "title_en": "Official push",
-   "text_en": "agent-desktop gains +1,961 a day after its author and two Vercel execs posted; no user write-ups yet"
+   "title_en": "Views vs. talk",
+   "text_en": "Videos on elephant-goldfish-model drew about 489,100 views, while its 5 HN posts got 1 to 2 points each."
   }
  ],
  "reports": {
-  "github": "2026-11-05-github.md",
-  "papers": "2026-11-05-papers.md",
-  "social": "2026-11-05-social.md"
+  "github": "2026-11-06-github.md",
+  "papers": "2026-11-06-papers.md",
+  "social": "2026-11-06-social.md"
  }
 }
