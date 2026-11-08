@@ -1,47 +1,47 @@
 {
- "date": "2026-11-07",
- "issue": 17,
+ "date": "2026-11-08",
+ "issue": 18,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "Skills 成了今天的流量中心\n官方与个人合集一起涨",
-  "dek": "cloudflare、mattpocock、google 的 skills 仓库同日上榜，google/skills 近三天从 53 涨到 494，此前每天只有二三十。厂商、个人和垂直工作流三类都在涨。",
-  "big": "+1,922",
+  "title": "「逆向一切」热度回落\n周边项目接着涨",
+  "dek": "榜首 morluto/rea 近 14 天日增从 6,492 降到 3,005，但 Awesome-REA、rea-video、bla 今天各涨几百星。热度在往周边扩散，值得看看接棒的是谁。",
+  "big": "+2,767",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "Skills are today's biggest draw\nVendors and solo authors both climb",
-  "dek_en": "Skills repos from cloudflare, mattpocock and google all made the chart on the same day. google/skills went from 53 to 494 stars a day in three days, after weeks of 20 to 30.",
+  "title_en": "The 'reverse anything' wave cools\nbut its spin-offs keep climbing",
+  "dek_en": "morluto/rea's daily gain fell from 6,492 to 3,005 over 14 days, yet Awesome-REA, rea-video and bla each added several hundred stars today. Here is who picked up the slack.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "新热点",
-   "text": "NVIDIA/auto-ontology 11 月 4 日见顶后连降三天,今日日增 +1,062,HN 拿到 290 分。",
-   "face": "(°ー°〃)",
-   "kind": "social",
-   "title_en": "Cooling off",
-   "text_en": "NVIDIA/auto-ontology peaked on Nov 4 and has slid three days in a row to +1,062. It scored 290 on HN."
-  },
-  {
-   "title": "论文角",
-   "text": "Meta-Harness 持续演化后在 SWE-Bench 上从 94.0% 掉到 32.0%,相对下降 66%。",
+   "title": "官方入场",
+   "text": "google/skills 日增 +488，此前每天只有二三十，Skills 流量在向官方仓库集中。",
    "face": "Σ(っ °Д °;)っ",
-   "kind": "papers",
-   "title_en": "Paper corner",
-   "text_en": "After continual evolution, Meta-Harness fell from 94.0% to 32.0% on SWE-Bench, a 66% relative drop."
+   "kind": "github",
+   "title_en": "Official push",
+   "text_en": "google/skills gained +488 stars today, up from 20 or 30 a day. Skills traffic is moving to official repos."
   },
   {
-   "title": "上下文账",
-   "text": "Switch-SWE 的任务切换插件在 OpenCode 上提升 5.5 到 15.5 个百分点。",
+   "title": "上下文压缩",
+   "text": "Coca-Cola 把工具输出压成 latent token，token 降幅在 70.01% 到 89.24% 之间。",
    "face": "φ(゜▽゜*)♪",
    "kind": "papers",
-   "title_en": "Context pays",
-   "text_en": "Switch-SWE's task-switching plugin lifts OpenCode by 5.5 to 15.5 percentage points."
+   "title_en": "Squeezing context",
+   "text_en": "Coca-Cola compresses tool output into latent tokens and cuts token use by 70.01% to 89.24%."
+  },
+  {
+   "title": "任务切换",
+   "text": "Switch-SWE 测得交错未完成任务，让 7 个 coding agent 平均少解决 11.5 个百分点。",
+   "face": "( •̀ ω •́ )✧",
+   "kind": "papers",
+   "title_en": "Task switching",
+   "text_en": "Switch-SWE finds interleaved unfinished tasks cost 7 coding agents 11.5 percentage points on average."
   }
  ],
  "reports": {
-  "github": "2026-11-07-github.md",
-  "papers": "2026-11-07-papers.md",
-  "social": "2026-11-07-social.md"
+  "github": "2026-11-08-github.md",
+  "papers": "2026-11-08-papers.md",
+  "social": "2026-11-08-social.md"
  }
 }
