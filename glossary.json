@@ -123,6 +123,7 @@
   "stars": 144869,
   "zh": "把代码库、文档和配置解析成可查询的知识图谱，供编码Agent检索",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-09/github",
@@ -364,6 +365,7 @@
   "stars": 67659,
   "zh": "让编码Agent执行多阶段安全审计并输出可验证的结构化结果",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-09/social",
@@ -409,6 +411,7 @@
   "stars": 120141,
   "zh": "同时管理和运行多个编码Agent的桌面与移动端工作环境",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-09/social",
@@ -479,6 +482,7 @@
   "stars": 446048,
   "zh": "借助Agent对应用行为乃至原生二进制进行逆向工程",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-09/social",
@@ -631,6 +635,7 @@
   "stars": 12231,
   "zh": "管理Git worktree的命令行工具，便于并行运行多个AI Agent",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-06/github",
    "2026-11-05/github",
    "2026-11-04/github",
@@ -644,6 +649,7 @@
   "stars": 33023,
   "zh": "在菜单栏里为各编程智能体切换底层模型，如让 Codex 用 DeepSeek",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-09/social",
@@ -787,6 +793,7 @@
   "stars": 115268,
   "zh": "记录并压缩智能体的会话过程，在后续会话中自动注入相关上下文",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-09/github",
    "2026-11-08/github",
@@ -830,6 +837,7 @@
   "stars": 85900,
   "zh": "统一接入数百家模型服务商的 AI 网关，支持额度感知的自动回退切换",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-08/github",
    "2026-11-07/github",
@@ -1021,6 +1029,7 @@
   "stars": 277220,
   "zh": "DeepSeek 推出的以插件为核心的智能体运行框架",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-09/social",
@@ -1145,6 +1154,7 @@
   "stars": 155061,
   "zh": "运行在终端里的编程智能体，理解代码库并用自然语言完成编码和 Git 操作",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-06/social",
    "2026-10-23/github"
   ]
@@ -1236,6 +1246,7 @@
   "stars": 67241,
   "zh": "dsh 插件，免登录免密钥直接调用 DeepSeek、Kimi 等免费模型",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-09/social",
@@ -1362,6 +1373,7 @@
   "stars": 49584,
   "zh": "把数十家免费大模型接口聚合成统一 /v1 端点，支持自动路由与故障切换",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W43/weekly",
    "2026-10-25/social",
    "2026-10-24/social",
@@ -1393,6 +1405,7 @@
   "stars": 319392,
   "zh": "面向工程师的智能体技能合集，取自作者的 .agents 目录",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-09/social",
@@ -1428,6 +1441,7 @@
   "stars": 60062,
   "zh": "能从交互中不断学习的智能体长期记忆系统",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-09/github",
    "2026-11-08/github",
@@ -1466,6 +1480,7 @@
   "stars": 51556,
   "zh": "帮 Claude Code 等工具避免千篇一律 AI 风格的设计技能",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-09/social",
    "2026-11-09/github",
@@ -1906,6 +1921,7 @@
  "google/elephant-goldfish-model": {
   "first_seen": "2026-10-26",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-09/social",
    "2026-11-09/github",
@@ -2288,6 +2304,7 @@
  "reacher-z/Awesome-REA": {
   "first_seen": "2026-10-27",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-09/github",
    "2026-11-08/github",
    "2026-11-07/github",
@@ -2412,6 +2429,7 @@
  "Gathin23/cleanyourtv": {
   "first_seen": "2026-10-27",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-08/social",
    "2026-11-07/social",
@@ -2480,6 +2498,7 @@
  "pbakaus/impeccable": {
   "first_seen": "2026-10-28",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-09/github",
    "2026-11-08/social",
@@ -2513,6 +2532,7 @@
  "NVIDIA/auto-ontology": {
   "first_seen": "2026-10-28",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-09/github",
    "2026-11-08/github",
    "2026-11-07/social",
@@ -2756,6 +2776,7 @@
  "qybaihe/bla": {
   "first_seen": "2026-10-29",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-09/github",
    "2026-11-08/social",
    "2026-11-08/github",
@@ -2786,6 +2807,7 @@
  "microsoft/TokenEconomizer": {
   "first_seen": "2026-10-29",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-09/github",
    "2026-11-08/github",
@@ -2817,6 +2839,7 @@
  "milind-soni/OpenMausBot": {
   "first_seen": "2026-10-29",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-09/social",
    "2026-11-09/github",
@@ -3039,6 +3062,7 @@
  "wangzan101/Mika": {
   "first_seen": "2026-10-30",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-08/github",
    "2026-11-06/github",
@@ -3229,6 +3253,7 @@
  "vercel-labs/agent-desktop": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-W45/weekly",
    "2026-W44/weekly",
    "2026-11-09/github",
    "2026-11-08/social",
@@ -3270,6 +3295,7 @@
  "anthropics/skills": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-09/social",
    "2026-11-09/github",
    "2026-11-08/social",
@@ -3396,6 +3422,7 @@
  "qufei1993/skills-hub": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-09/social",
    "2026-11-08/social",
    "2026-11-07/social",
@@ -3412,6 +3439,7 @@
  "AgenticResourceRegistry/AgenticResourceRegistry": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-09/social",
    "2026-11-08/social",
    "2026-11-07/social",
@@ -3581,6 +3609,7 @@
  "D4Vinci/Scrapling": {
   "first_seen": "2026-11-02",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-08/github",
    "2026-11-07/github",
    "2026-11-06/github",
@@ -3743,6 +3772,7 @@
  "RUC-NLPIR/CoworkOS": {
   "first_seen": "2026-11-03",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-04/papers",
    "2026-11-03/papers"
   ],
@@ -3814,6 +3844,7 @@
  "aaitor/skill-video-studio": {
   "first_seen": "2026-11-03",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-03/social"
   ],
   "description": "Claude Code skill for product videos: real browser capture, branded composition, and local mastering.",
@@ -3823,6 +3854,7 @@
  "Muvon/octomind": {
   "first_seen": "2026-11-03",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-03/social"
   ],
   "description": "Open-source AI coding agent and agent runtime: one binary, any model, MCP-native. Runs in terminal, CI, or as a daemon.",
@@ -3832,6 +3864,7 @@
  "KKKKhazix/agent-autoloop": {
   "first_seen": "2026-11-04",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-07/github",
    "2026-11-06/github",
    "2026-11-05/social",
@@ -3879,6 +3912,7 @@
  "JuneYaooo/rea-video": {
   "first_seen": "2026-11-04",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-09/social",
    "2026-11-08/github",
    "2026-11-07/social",
@@ -4012,6 +4046,7 @@
  "GetCassis/ontology-skills": {
   "first_seen": "2026-11-04",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-07/social",
    "2026-11-06/social",
    "2026-11-05/social",
@@ -4024,6 +4059,7 @@
  "choam2426/herdr-paddock": {
   "first_seen": "2026-11-02",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-09/social",
    "2026-11-07/social",
    "2026-11-06/social",
@@ -4244,6 +4280,7 @@
  "google/skills": {
   "first_seen": "2026-11-06",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-08/github",
    "2026-11-07/github",
    "2026-11-06/github"
@@ -4255,6 +4292,7 @@
  "vercel-labs/agent-browser": {
   "first_seen": "2026-11-06",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-09/github",
    "2026-11-08/social",
    "2026-11-08/github",
@@ -4409,6 +4447,7 @@
  "rivet-dev/rivet": {
   "first_seen": "2026-11-06",
   "mentions": [
+   "2026-W45/weekly",
    "2026-11-06/social"
   ],
   "description": "The orchestrator for agentic workloads. A fast, high-density and scalable orchestrator for every workload an agent needs.",
