@@ -1,47 +1,47 @@
 {
- "date": "2026-11-08",
- "issue": 18,
+ "date": "2026-11-09",
+ "issue": 19,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "「逆向一切」热度回落\n周边项目接着涨",
-  "dek": "榜首 morluto/rea 近 14 天日增从 6,492 降到 3,005，但 Awesome-REA、rea-video、bla 今天各涨几百星。热度在往周边扩散，值得看看接棒的是谁。",
-  "big": "+2,767",
+  "title": "Skills 合集领跑日增榜\nanthropics/skills 还在加速",
+  "dek": "前十名里大半是技能集合，anthropics/skills 近两天分别涨了 725 和 1,007 颗星，今天又加 1,178。装 skill 之前先扫描的 SkillSpector，也已连续 70 天稳定增长。",
+  "big": "+1,178",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "The 'reverse anything' wave cools\nbut its spin-offs keep climbing",
-  "dek_en": "morluto/rea's daily gain fell from 6,492 to 3,005 over 14 days, yet Awesome-REA, rea-video and bla each added several hundred stars today. Here is who picked up the slack.",
+  "title_en": "Skills collections lead the daily chart\nand anthropics/skills is still speeding up",
+  "dek_en": "Most of the top ten are skill collections. anthropics/skills gained 725 and 1,007 stars over the last two days, then another 1,178 today. SkillSpector, which scans skills before you install them, has grown steadily for 70 days.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "官方入场",
-   "text": "google/skills 日增 +488，此前每天只有二三十，Skills 流量在向官方仓库集中。",
-   "face": "Σ(っ °Д °;)っ",
-   "kind": "github",
-   "title_en": "Official push",
-   "text_en": "google/skills gained +488 stars today, up from 20 or 30 a day. Skills traffic is moving to official repos."
-  },
-  {
-   "title": "上下文压缩",
-   "text": "Coca-Cola 把工具输出压成 latent token，token 降幅在 70.01% 到 89.24% 之间。",
+   "title": "论文角",
+   "text": "Coca-Cola 把工具输出压成隐 token,token 消耗降低 70.01% 到 89.24%。",
    "face": "φ(゜▽゜*)♪",
    "kind": "papers",
-   "title_en": "Squeezing context",
+   "title_en": "Paper corner",
    "text_en": "Coca-Cola compresses tool output into latent tokens and cuts token use by 70.01% to 89.24%."
   },
   {
-   "title": "任务切换",
-   "text": "Switch-SWE 测得交错未完成任务，让 7 个 coding agent 平均少解决 11.5 个百分点。",
-   "face": "( •̀ ω •́ )✧",
+   "title": "进化遗忘",
+   "text": "harness 持续自进化后,SWE-Bench 从 94.0% 掉到 32.0%。",
+   "face": "Σ(っ °Д °;)っ",
    "kind": "papers",
-   "title_en": "Task switching",
-   "text_en": "Switch-SWE finds interleaved unfinished tasks cost 7 coding agents 11.5 percentage points on average."
+   "title_en": "Forgetting",
+   "text_en": "After continued self-evolution, a harness fell from 94.0% to 32.0% on SWE-Bench."
+  },
+  {
+   "title": "HN 热帖",
+   "text": "Goldman Sachs 把 Claude Code 从银行家和交易员那里撤掉,HN 上 858 分、463 条评论。",
+   "face": "(°ー°〃)",
+   "kind": "social",
+   "title_en": "HN buzz",
+   "text_en": "Goldman Sachs pulled Claude Code from bankers and traders, drawing 858 points and 463 comments on HN."
   }
  ],
  "reports": {
-  "github": "2026-11-08-github.md",
-  "papers": "2026-11-08-papers.md",
-  "social": "2026-11-08-social.md"
+  "github": "2026-11-09-github.md",
+  "papers": "2026-11-09-papers.md",
+  "social": "2026-11-09-social.md"
  }
 }
