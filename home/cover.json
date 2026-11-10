@@ -1,47 +1,47 @@
 {
- "date": "2026-11-09",
- "issue": 19,
+ "date": "2026-11-10",
+ "issue": 20,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "Skills 合集领跑日增榜\nanthropics/skills 还在加速",
-  "dek": "前十名里大半是技能集合，anthropics/skills 近两天分别涨了 725 和 1,007 颗星，今天又加 1,178。装 skill 之前先扫描的 SkillSpector，也已连续 70 天稳定增长。",
-  "big": "+1,178",
+  "title": "Meta 的 astryx 连续两天\n日增超过 3000 颗星",
+  "dek": "Meta 做的 agent ready 设计系统，基于 React 和 StyleX，带 CLI 和 MCP server，还在 beta。今天 +3039，昨天 +3335，冲高原因暂时没查清，可以先看看。",
+  "big": "+3,039",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "Skills collections lead the daily chart\nand anthropics/skills is still speeding up",
-  "dek_en": "Most of the top ten are skill collections. anthropics/skills gained 725 and 1,007 stars over the last two days, then another 1,178 today. SkillSpector, which scans skills before you install them, has grown steadily for 70 days.",
+  "title_en": "Meta's astryx tops 3,000\nstars a day, two days running",
+  "dek_en": "Meta's agent-ready design system is built on React and StyleX, ships a CLI and an MCP server, and is still in beta. It gained 3,039 stars today after 3,335 yesterday. Nobody has pinned down why yet.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "论文角",
-   "text": "Coca-Cola 把工具输出压成隐 token,token 消耗降低 70.01% 到 89.24%。",
-   "face": "φ(゜▽゜*)♪",
-   "kind": "papers",
-   "title_en": "Paper corner",
-   "text_en": "Coca-Cola compresses tool output into latent tokens and cuts token use by 70.01% to 89.24%."
+   "title": "官方 Skills",
+   "text": "anthropics/skills 近 4 天日增从 415 一路升到 1,537，昨天创 30 周新高。",
+   "face": "(๑•̀ㅂ•́)و✧",
+   "kind": "github",
+   "title_en": "Official Skills",
+   "text_en": "anthropics/skills climbed from 415 to 1,537 stars a day over four days, a 30-week high yesterday."
   },
   {
-   "title": "进化遗忘",
-   "text": "harness 持续自进化后,SWE-Bench 从 94.0% 掉到 32.0%。",
+   "title": "论文角",
+   "text": "ARCBench 发现保留规则的压缩运行，违规率比完整历史高出两倍以上。",
    "face": "Σ(っ °Д °;)っ",
    "kind": "papers",
-   "title_en": "Forgetting",
-   "text_en": "After continued self-evolution, a harness fell from 94.0% to 32.0% on SWE-Bench."
+   "title_en": "Paper corner",
+   "text_en": "ARCBench finds compressed runs that keep the rules violate them over twice as often as full history."
   },
   {
-   "title": "HN 热帖",
-   "text": "Goldman Sachs 把 Claude Code 从银行家和交易员那里撤掉,HN 上 858 分、463 条评论。",
+   "title": "遗忘代价",
+   "text": "continual-harness-evolution 在新任务上进化后，旧任务 SWE-Bench 从 94.0% 掉到 32.0%。",
    "face": "(°ー°〃)",
-   "kind": "social",
-   "title_en": "HN buzz",
-   "text_en": "Goldman Sachs pulled Claude Code from bankers and traders, drawing 858 points and 463 comments on HN."
+   "kind": "papers",
+   "title_en": "Cost of forgetting",
+   "text_en": "After evolving on new tasks, continual-harness-evolution fell from 94.0% to 32.0% on old SWE-Bench tasks."
   }
  ],
  "reports": {
-  "github": "2026-11-09-github.md",
-  "papers": "2026-11-09-papers.md",
-  "social": "2026-11-09-social.md"
+  "github": "2026-11-10-github.md",
+  "papers": "2026-11-10-papers.md",
+  "social": "2026-11-10-social.md"
  }
 }
