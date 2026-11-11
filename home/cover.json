@@ -1,47 +1,46 @@
 {
- "date": "2026-11-10",
- "issue": 20,
+ "date": "2026-11-11",
+ "issue": 21,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "Meta 的 astryx 连续两天\n日增超过 3000 颗星",
-  "dek": "Meta 做的 agent ready 设计系统，基于 React 和 StyleX，带 CLI 和 MCP server，还在 beta。今天 +3039，昨天 +3335，冲高原因暂时没查清，可以先看看。",
-  "big": "+3,039",
+  "title": "REA 连续 38 天居榜首\n近 7 天日均不到 28 天的一半",
+  "dek": "morluto/rea 今天仍是 +2801，可近 7 天日均 3,327，只有近 28 天日均 8,378 的不到一半。峰值是 10 月 12 日的 +53,916，现在已经明显降温，但还没人把它挤下去。",
+  "big": "+2,801",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "Meta's astryx tops 3,000\nstars a day, two days running",
-  "dek_en": "Meta's agent-ready design system is built on React and StyleX, ships a CLI and an MCP server, and is still in beta. It gained 3,039 stars today after 3,335 yesterday. Nobody has pinned down why yet.",
+  "title_en": "REA Tops the Chart for 38 Days\nBut the 7-day average has halved",
+  "dek_en": "morluto/rea gained +2801 stars today and still leads. Its 7-day average of 3,327 is under half the 28-day average of 8,378, well off the +53,916 peak on October 12.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "官方 Skills",
-   "text": "anthropics/skills 近 4 天日增从 415 一路升到 1,537，昨天创 30 周新高。",
-   "face": "(๑•̀ㅂ•́)و✧",
-   "kind": "github",
-   "title_en": "Official Skills",
-   "text_en": "anthropics/skills climbed from 415 to 1,537 stars a day over four days, a 30-week high yesterday."
-  },
-  {
-   "title": "论文角",
-   "text": "ARCBench 发现保留规则的压缩运行，违规率比完整历史高出两倍以上。",
+   "title": "大厂入场",
+   "text": "Meta、Google、Expo 的 agent-ready 项目同日上榜，astryx 日增 +2419。",
    "face": "Σ(っ °Д °;)っ",
-   "kind": "papers",
-   "title_en": "Paper corner",
-   "text_en": "ARCBench finds compressed runs that keep the rules violate them over twice as often as full history."
+   "kind": "github",
+   "title_en": "Big names",
+   "text_en": "Meta, Google and Expo all landed agent-ready projects today, with astryx at +2419 stars."
   },
   {
-   "title": "遗忘代价",
-   "text": "continual-harness-evolution 在新任务上进化后，旧任务 SWE-Bench 从 94.0% 掉到 32.0%。",
-   "face": "(°ー°〃)",
+   "title": "Skills 分化",
+   "text": "addyosmani/agent-skills 近 4 天从 317 升到 765，anthropics/skills 则从 1,535 回落到 958。",
+   "face": "( •̀ ω •́ )✧",
+   "kind": "github",
+   "title_en": "Skills split",
+   "text_en": "addyosmani/agent-skills climbed from 317 to 765 over four days while anthropics/skills slid from 1,535 to 958."
+  },
+  {
+   "title": "记忆要验证",
+   "text": "WikiTrace 和 FGSE 都在处理错误经验污染记忆的问题，写入前先核对或证伪。",
+   "face": "φ(゜▽゜*)♪",
    "kind": "papers",
-   "title_en": "Cost of forgetting",
-   "text_en": "After evolving on new tasks, continual-harness-evolution fell from 94.0% to 32.0% on old SWE-Bench tasks."
+   "title_en": "Verify first",
+   "text_en": "WikiTrace and FGSE both tackle bad experiences polluting agent memory by checking or falsifying before a write."
   }
  ],
  "reports": {
-  "github": "2026-11-10-github.md",
-  "papers": "2026-11-10-papers.md",
-  "social": "2026-11-10-social.md"
+  "github": "2026-11-11-github.md",
+  "papers": "2026-11-11-papers.md"
  }
 }
