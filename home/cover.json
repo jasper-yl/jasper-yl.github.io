@@ -1,47 +1,47 @@
 {
- "date": "2026-11-12",
- "issue": 22,
+ "date": "2026-11-13",
+ "issue": 23,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "Chrome 一个讲 2019 年 JS 的仓库\n单日涨了 2,106 颗星",
-  "dek": "GoogleChrome/modern-web-guidance 此前每天只有约 10 颗星，前天 903，昨天 1,925，今天 2,106。它在 Hacker News 拿到 434 分，做的事是让 Agent 别再写旧版 JS。",
-  "big": "+2,106",
+  "title": "Chrome 的一份 agent 指引\n三天涨到 1 万颗星",
+  "dek": "GoogleChrome/modern-web-guidance 此前每天只涨 5 到 15 颗星，近三天逐日升到 +3,549。来源查到了：Show HN 442 分，加上 @ChromiumDev 官方连发。",
+  "big": "+3,549",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "A Chrome repo about modern JS\ngained 2,106 stars in a day",
-  "dek_en": "GoogleChrome/modern-web-guidance was getting about 10 stars a day. It hit 903, then 1,925, then 2,106 today, and scored 434 on Hacker News. Its pitch is simple: stop agents from writing 2019-era JS.",
+  "title_en": "Chrome's guide for agents\nhits 10,000 stars in three days",
+  "dek_en": "GoogleChrome/modern-web-guidance gained 5 to 15 stars a day until recently, then climbed to +3,549 a day. The source is traceable: a 442-point Show HN plus a run of posts from @ChromiumDev.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "论文主线",
-   "text": "WikiTrace 把每条经验链接回原始轨迹，减少记忆拖累任务的退化，HF 👍60。",
+   "title": "论文角",
+   "text": "SparseRead 控制 agent 读什么，总 token 最多降 92.9%，97% 的设置下质量不降。",
    "face": "φ(゜▽゜*)♪",
    "kind": "papers",
-   "title_en": "Paper trail",
-   "text_en": "WikiTrace links each memory back to its original trajectory to curb memory-induced regressions. 60 HF upvotes."
+   "title_en": "Papers",
+   "text_en": "SparseRead controls what an agent reads, cutting total tokens by up to 92.9% with no quality loss in 97% of settings."
   },
   {
-   "title": "航司禁令",
-   "text": "United Airlines 禁止 AI agent 代订机票，HN 636 分、661 评论，超过所有项目帖。",
+   "title": "新热点",
+   "text": "能操作手机的个人 Agent kuafuai/andee 日增 +911，前几天只有 40 到 100。",
    "face": "Σ(っ °Д °;)っ",
-   "kind": "social",
-   "title_en": "Airline ban",
-   "text_en": "United Airlines bars AI agents from booking flights. 636 points and 661 comments on HN, more than any project post."
+   "kind": "github",
+   "title_en": "New heat",
+   "text_en": "kuafuai/andee, a personal agent that operates phones, gained +911 stars in a day, up from 40 to 100 earlier this week."
   },
   {
-   "title": "并行控制台",
-   "text": "t3code 日增 +1,354，已连续 41 天；orca 日增 +1,077，连续 142 天。",
-   "face": "(๑•̀ㅂ•́)و✧",
-   "kind": "github",
-   "title_en": "Agent consoles",
-   "text_en": "t3code added 1,354 stars, its 41st day of growth in a row. orca added 1,077, now at 142 days."
+   "title": "社区风向",
+   "text": "HN 被 Claude 大面积故障占满，status 页那条帖子 417 分、344 条评论。",
+   "face": "┐(￣ヘ￣)┌",
+   "kind": "social",
+   "title_en": "Community",
+   "text_en": "Hacker News was taken over by the Claude outage, with the status page post at 417 points and 344 comments."
   }
  ],
  "reports": {
-  "github": "2026-11-12-github.md",
-  "papers": "2026-11-12-papers.md",
-  "social": "2026-11-12-social.md"
+  "github": "2026-11-13-github.md",
+  "papers": "2026-11-13-papers.md",
+  "social": "2026-11-13-social.md"
  }
 }
