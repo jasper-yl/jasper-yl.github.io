@@ -2,7 +2,7 @@
  "headroomlabs-ai/headroom": {
   "first_seen": "2026-10-22",
   "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
-  "stars": 79559,
+  "stars": 79645,
   "zh": "在内容进入大模型前压缩工具输出、日志和RAG片段，节省token",
   "mentions": [
    "2026-11-13/github",
@@ -12,7 +12,7 @@
  "mksglu/context-mode": {
   "first_seen": "2026-10-22",
   "description": "Free, local plugin that keeps tool output out of your coding agent's context window. Sandbox and SQLite FTS5 search, 99% fewer bytes in context. Works with Claude Code, Codex, Pi, OpenCode, Gemini CLI, Copilot CLI and 4 more agents. Zero telemetry.",
-  "stars": 34030,
+  "stars": 34083,
   "zh": "沙箱化处理编码Agent的工具输出并持久化会话记忆，优化上下文窗口",
   "mentions": [
    "2026-W43/weekly",
@@ -28,7 +28,7 @@
  "JuliusBrussee/caveman": {
   "first_seen": "2026-10-22",
   "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
-  "stars": 119637,
+  "stars": 119886,
   "zh": "让编码Agent用简短的“原始人”口吻回答，从而减少token消耗",
   "mentions": [
    "2026-W43/weekly",
@@ -57,7 +57,7 @@
  "DietrichGebert/ponytail": {
   "first_seen": "2026-10-22",
   "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
-  "stars": 190194,
+  "stars": 190712,
   "zh": "给编码Agent加上“偷懒资深开发”思路，倾向少写代码、避免过度实现",
   "mentions": [
    "2026-W44/weekly",
@@ -78,7 +78,7 @@
  "akitaonrails/ai-memory": {
   "first_seen": "2026-10-22",
   "description": "Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors",
-  "stars": 15790,
+  "stars": 15846,
   "zh": "为编码Agent命令行提供长期记忆，并方便在不同厂商Agent间交接",
   "mentions": [
    "2026-W43/weekly",
@@ -95,7 +95,7 @@
  "Asymptote-Labs/agent-beacon": {
   "first_seen": "2026-10-22",
   "description": "The cross-harness, self-improving memory layer for AI agents. Join our community: https://discord.com/invite/zdNChS2fBu",
-  "stars": 3462,
+  "stars": 3477,
   "zh": "跨Agent运行环境共用、可自我改进的AI Agent记忆层",
   "mentions": [
    "2026-W43/weekly",
@@ -108,7 +108,7 @@
  "Gentleman-Programming/engram": {
   "first_seen": "2026-10-22",
   "description": "Persistent memory system for AI coding agents. Agent-agnostic Go binary with SQLite + FTS5, MCP server, HTTP API, CLI, and TUI.",
-  "stars": 8109,
+  "stars": 8149,
   "zh": "基于SQLite的编码Agent持久记忆系统，提供MCP、HTTP接口和终端界面",
   "mentions": [
    "2026-10-22/github"
@@ -117,7 +117,7 @@
  "AgentMemoryRepo/agentmemoryrepo": {
   "first_seen": "2026-10-22",
   "description": "Spec for Agent Memory Repo",
-  "stars": 866,
+  "stars": 867,
   "zh": "定义Agent记忆仓库格式与规范的说明文档（推断）",
   "mentions": [
    "2026-10-22/github"
@@ -126,7 +126,7 @@
  "Graphify-Labs/graphify": {
   "first_seen": "2026-10-22",
   "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
-  "stars": 147127,
+  "stars": 147585,
   "zh": "把代码库、文档和配置解析成可查询的知识图谱，供编码Agent检索",
   "mentions": [
    "2026-W45/weekly",
@@ -168,7 +168,7 @@
  "xerj-org/xerj": {
   "first_seen": "2026-10-22",
   "description": "AI search engine and MCP server for bots and agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25 full-text, vector and hybrid search, code search without grep, agent memory and RAG. Elasticsearch-compatible API; Corpus Hub serves hundreds of reference memory corpora.",
-  "stars": 19019,
+  "stars": 19066,
   "zh": "本地优先的Rust搜索引擎，为Agent索引代码文档并支持全文与向量混合检索",
   "mentions": [
    "2026-W44/weekly",
@@ -191,7 +191,7 @@
  "dzhng/jevgrep": {
   "first_seen": "2026-10-22",
   "description": "Find code by asking what it does. A CLI for coding agents that uses Jev to discover relevant files and source context.",
-  "stars": 3216,
+  "stars": 3220,
   "zh": "用自然语言描述功能，为编码Agent查找相关代码文件的命令行工具",
   "mentions": [
    "2026-10-26/github",
@@ -204,7 +204,7 @@
  "anthropics/claude-plugins-official": {
   "first_seen": "2026-10-22",
   "description": "Official, Anthropic-managed directory of high quality Claude Code Plugins.",
-  "stars": 47139,
+  "stars": 47269,
   "zh": "Anthropic官方维护的Claude Code高质量插件目录",
   "mentions": [
    "2026-W43/weekly",
@@ -221,7 +221,7 @@
  "K-Dense-AI/scientific-agent-skills": {
   "first_seen": "2026-10-22",
   "description": "Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists worldwide. 177 ready-to-use validated skills plus 100+ scientific databases covering biology, chemistry, medicine, and drug discovery. Compatible with Cursor, Claude Code, Codex, Pi, Antigrav",
-  "stars": 57047,
+  "stars": 57177,
   "zh": "面向生物、化学、医药等科研场景的Agent技能库，并接入大量科学数据库",
   "mentions": [
    "2026-10-23/github",
@@ -231,7 +231,7 @@
  "cursor/plugins": {
   "first_seen": "2026-10-22",
   "description": "Cursor plugin specification and official plugins",
-  "stars": 16186,
+  "stars": 16268,
   "zh": "Cursor插件的规范说明及官方插件集合",
   "mentions": [
    "2026-W43/weekly",
@@ -259,7 +259,7 @@
  "vercel-labs/skills": {
   "first_seen": "2026-10-22",
   "description": "The open agent skills tool - npx skills",
-  "stars": 39237,
+  "stars": 39341,
   "zh": "通过npx命令安装和管理AI Agent技能的命令行工具",
   "mentions": [
    "2026-W43/weekly",
@@ -273,7 +273,7 @@
  "wshobson/agents": {
   "first_seen": "2026-10-22",
   "description": "Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi",
-  "stars": 42479,
+  "stars": 42503,
   "zh": "适配Claude Code、Codex、Cursor等多种Agent环境的插件市场",
   "mentions": [
    "2026-W44/weekly",
@@ -286,7 +286,7 @@
  "anthropics/knowledge-work-plugins": {
   "first_seen": "2026-10-22",
   "description": "Open source repository of plugins primarily intended for knowledge workers to use in Claude Cowork",
-  "stars": 35645,
+  "stars": 35742,
   "zh": "面向知识工作者、供Claude Cowork使用的插件集合",
   "mentions": [
    "2026-10-25/github",
@@ -298,7 +298,7 @@
  "EveryInc/compound-engineering-plugin": {
   "first_seen": "2026-10-22",
   "description": "Official Compound Engineering plugin for Claude Code, Codex, Cursor, and more",
-  "stars": 26064,
+  "stars": 26089,
   "zh": "为Claude Code、Codex、Cursor等提供复合工程工作流的官方插件",
   "mentions": [
    "2026-10-22/github"
@@ -307,7 +307,7 @@
  "samber/cc-skills-golang": {
   "first_seen": "2026-10-22",
   "description": "🧑‍🎨 A collection of Golang agentic skills that works",
-  "stars": 3846,
+  "stars": 3852,
   "zh": "面向Claude Code的Go语言开发Agent技能合集",
   "mentions": [
    "2026-10-22/github"
@@ -316,7 +316,7 @@
  "HKUDS/CLI-Anything": {
   "first_seen": "2026-10-22",
   "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
-  "stars": 58696,
+  "stars": 58730,
   "zh": "把各类软件改造成命令行接口，使其便于AI Agent调用",
   "mentions": [
    "2026-10-26/github",
@@ -329,7 +329,7 @@
  "agentgateway/agentgateway": {
   "first_seen": "2026-10-22",
   "description": "Next Generation Agentic Proxy for AI Agents and MCP servers",
-  "stars": 6177,
+  "stars": 6185,
   "zh": "面向AI Agent和MCP服务器的下一代代理网关",
   "mentions": [
    "2026-10-22/github"
@@ -338,7 +338,7 @@
  "github/github-mcp-server": {
   "first_seen": "2026-10-22",
   "description": "GitHub's official MCP Server",
-  "stars": 34438,
+  "stars": 34456,
   "zh": "GitHub官方MCP服务器，让AI通过MCP操作GitHub",
   "mentions": [
    "2026-10-22/github"
@@ -347,7 +347,7 @@
  "googleworkspace/cli": {
   "first_seen": "2026-10-22",
   "description": "Google Workspace CLI — one command-line tool for Drive, Gmail, Calendar, Sheets, Docs, Chat, Admin, and more. Dynamically built from Google Discovery Service. Includes AI agent skills.",
-  "stars": 32299,
+  "stars": 32312,
   "zh": "用一个命令行工具操作Drive、Gmail、日历、表格等Google Workspace服务",
   "mentions": [
    "2026-10-22/github"
@@ -356,7 +356,7 @@
  "larksuite/cli": {
   "first_seen": "2026-10-22",
   "description": "The official Lark/飞书 CLI tool, maintained by the larksuite team — built for humans and AI Agents. Covers core business domains including Messenger, Docs, Base, Sheets, Calendar, Mail, Tasks, Meetings, and more, with 200+ commands and 20+ AI Agent Skills.",
-  "stars": 18099,
+  "stars": 18110,
   "zh": "飞书官方命令行工具，可操作消息、文档、表格、日历等并带Agent技能",
   "mentions": [
    "2026-10-22/github"
@@ -365,7 +365,7 @@
  "reason-machines/reason-network": {
   "first_seen": "2026-10-22",
   "description": "Reason Network: your team's coding agents, talking to each other. The engine behind `reason network`.",
-  "stars": 1738,
+  "stars": 1740,
   "zh": "让团队的编码Agent通过点对点网络互相通信协作",
   "mentions": [
    "2026-10-23/github",
@@ -375,7 +375,7 @@
  "cloudflare/security-audit-skill": {
   "first_seen": "2026-10-22",
   "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
-  "stars": 71674,
+  "stars": 72389,
   "zh": "让编码Agent执行多阶段安全审计并输出可验证的结构化结果",
   "mentions": [
    "2026-W45/weekly",
@@ -427,7 +427,7 @@
  "stablyai/orca": {
   "first_seen": "2026-10-22",
   "description": "Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.",
-  "stars": 124191,
+  "stars": 124817,
   "zh": "同时管理和运行多个编码Agent的桌面与移动端工作环境",
   "mentions": [
    "2026-W45/weekly",
@@ -477,7 +477,7 @@
  "anomalyco/opencode": {
   "first_seen": "2026-10-22",
   "description": "The open source coding agent.",
-  "stars": 226604,
+  "stars": 226821,
   "zh": "开源的终端编码Agent，可辅助编写和修改代码",
   "mentions": [
    "2026-W43/weekly",
@@ -492,7 +492,7 @@
  "openai/codex": {
   "first_seen": "2026-10-22",
   "description": "Lightweight coding agent that runs in your terminal",
-  "stars": 135178,
+  "stars": 135276,
   "zh": "在终端中运行的轻量级编码Agent",
   "mentions": [
    "2026-11-10/github",
@@ -506,7 +506,7 @@
  "morluto/rea": {
   "first_seen": "2026-10-22",
   "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
-  "stars": 456995,
+  "stars": 459208,
   "zh": "借助Agent对应用行为乃至原生二进制进行逆向工程",
   "mentions": [
    "2026-W45/weekly",
@@ -561,7 +561,7 @@
  "firecrawl/firecrawl": {
   "first_seen": "2026-10-22",
   "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
-  "stars": 201495,
+  "stars": 201736,
   "zh": "抓取和搜索网页并转成Markdown等结构化数据，供AI Agent使用",
   "mentions": [
    "2026-10-30/github",
@@ -575,7 +575,7 @@
  "alibaba/open-code-review": {
   "first_seen": "2026-10-22",
   "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
-  "stars": 50347,
+  "stars": 51211,
   "zh": "结合确定性流程与大模型Agent，按规则给出行级评论的代码审查工具",
   "mentions": [
    "2026-10-22/github"
@@ -584,7 +584,7 @@
  "NVIDIA/OpenShell": {
   "first_seen": "2026-10-22",
   "description": "OpenShell is the safe, private runtime for autonomous AI agents.",
-  "stars": 21576,
+  "stars": 21619,
   "zh": "为自主运行的AI Agent提供安全、私密的运行时环境",
   "mentions": [
    "2026-W43/weekly",
@@ -600,7 +600,7 @@
  "multica-ai/multica": {
   "first_seen": "2026-10-22",
   "description": "Make humans and AI agents work as one team — open-source and self-hostable.",
-  "stars": 56034,
+  "stars": 56108,
   "zh": "让人类与AI Agent组成团队协作的可自托管平台",
   "mentions": [
    "2026-10-22/github"
@@ -609,7 +609,7 @@
  "vxcontrol/pentagi": {
   "first_seen": "2026-10-22",
   "description": "Fully autonomous AI Agents system capable of performing complex penetration testing tasks",
-  "stars": 34091,
+  "stars": 34150,
   "zh": "能自主执行复杂渗透测试任务的全自动AI Agent系统",
   "mentions": [
    "2026-10-27/github",
@@ -620,7 +620,7 @@
  "ruvnet/ruflo": {
   "first_seen": "2026-10-22",
   "description": "🌊 The original agent harness. Deploy intelligent multi-player swarms, coordinate autonomous workflows, and build conversational AI systems. Features adaptive memory, self-learning intelligence, federation, vector RAG integration, and native Claude Code / Codex / Hermes and many more Integrated",
-  "stars": 81618,
+  "stars": 81685,
   "zh": "编排多Agent集群与自主工作流的Agent框架，带自适应记忆和向量检索",
   "mentions": [
    "2026-W43/weekly",
@@ -634,7 +634,7 @@
  "CopilotKit/OpenBot": {
   "first_seen": "2026-10-22",
   "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
-  "stars": 12029,
+  "stars": 12234,
   "zh": "给每个AI同事配备独立电脑，操作均事先审批并事后记录",
   "mentions": [
    "2026-11-13/github",
@@ -668,7 +668,7 @@
  "max-sixty/worktrunk": {
   "first_seen": "2026-10-22",
   "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
-  "stars": 12502,
+  "stars": 12522,
   "zh": "管理Git worktree的命令行工具，便于并行运行多个AI Agent",
   "mentions": [
    "2026-W45/weekly",
@@ -682,7 +682,7 @@
  "yetone/magpie": {
   "first_seen": "2026-10-22",
   "description": "Every agent's model. One place. Codex on DeepSeek, Claude Code on Kimi, from the menu bar.",
-  "stars": 36031,
+  "stars": 36479,
   "zh": "在菜单栏里为各编程智能体切换底层模型，如让 Codex 用 DeepSeek",
   "mentions": [
    "2026-W45/weekly",
@@ -721,7 +721,7 @@
  "dominikmartn/harp": {
   "first_seen": "2026-10-22",
   "description": "Run many Claude Code and Codex agents side by side, in one sidebar that tells you which one needs you. An unofficial fork of Warp.",
-  "stars": 714,
+  "stars": 715,
   "zh": "Warp 的非官方分支，在同一侧栏并行管理多个 Claude Code 和 Codex 智能体",
   "mentions": [
    "2026-10-22/github"
@@ -730,7 +730,7 @@
  "Louis-CFM/coucou": {
   "first_seen": "2026-10-22",
   "description": "A tiny friend in your Mac's notch and on your iPhone that keeps an eye on your AI coding agents: Claude Code, Codex, Cursor, Gemini CLI, Antigravity and more. Approve from the notch or your Lock Screen.",
-  "stars": 7172,
+  "stars": 7188,
   "zh": "在 Mac 刘海和 iPhone 上监控 AI 编程智能体状态，并可远程批准操作",
   "mentions": [
    "2026-10-22/github"
@@ -739,7 +739,7 @@
  "onehumanbeing/esp32-iphone-agent": {
   "first_seen": "2026-10-22",
   "description": "Let an AI model use a real iPhone with a $7 ESP32: AirPlay eyes, USB HID hands, any OpenAI-compatible vision model. No Mac, no developer account, no jailbreak.",
-  "stars": 4909,
+  "stars": 4948,
   "zh": "用 ESP32 通过 AirPlay 看屏、USB 模拟键鼠，让视觉大模型操作真实 iPhone",
   "mentions": [
    "2026-10-25/github",
@@ -750,7 +750,7 @@
  "feder-cr/git-ai": {
   "first_seen": "2026-10-22",
   "description": "Git designed for AI agents.",
-  "stars": 1014,
+  "stars": 1029,
   "zh": "专为 AI 智能体设计的 Git 版本控制工具",
   "mentions": [
    "2026-10-22/github"
@@ -759,7 +759,7 @@
  "jwuthri-cloud/Tracely-ai": {
   "first_seen": "2026-10-22",
   "description": "Trace-native CI/CD for AI agents: grade production traces, cluster failures, freeze them into replayable regression tests, and block PRs that regress. Self-hostable.",
-  "stars": 948,
+  "stars": 1209,
   "zh": "为 AI 智能体做基于链路追踪的 CI/CD，把线上失败固化为回归测试并拦截问题 PR",
   "mentions": [
    "2026-10-22/github"
@@ -768,7 +768,7 @@
  "outcrawlai/scout": {
   "first_seen": "2026-10-22",
   "description": "Scout: the open-source browser agent, by Outcrawl. Mirrored automatically from Outcrawl's own repository.",
-  "stars": 744,
+  "stars": 946,
   "zh": "由 LLM 驱动、通过 CDP 自动操作网页的浏览器智能体",
   "mentions": [
    "2026-10-22/github"
@@ -777,7 +777,7 @@
  "nano-muse/nanoMuse": {
   "first_seen": "2026-10-22",
   "description": "nanoMuse: an open-source personal agent for every device you own. One agent with a name and a look of its own that does things, keeps working while the app is closed, remembers you, and asks before anything you cannot undo. On Android, iPhone and iPad, Windows / macOS / Linux and in the browser; you",
-  "stars": 3457,
+  "stars": 3482,
   "zh": "跨手机、电脑和浏览器的个人智能体，可在后台执行任务并记住用户",
   "mentions": [
    "2026-10-23/github",
@@ -798,7 +798,7 @@
  "MemTensor/MemT-1.0": {
   "first_seen": "2026-10-22",
   "description": "Official repository for MemT-1.0",
-  "stars": 536,
+  "stars": 537,
   "zh": "面向大模型的原生长期记忆项目 MemT-1.0 官方代码库",
   "mentions": [
    "2026-W43/weekly",
@@ -809,7 +809,7 @@
  "uclanlp/OpenVLHarness": {
   "first_seen": "2026-10-22",
   "description": "Official Code for OpenVLHarness: Real-World Visual Agentic Tool‑Use with Multimodal Memory",
-  "stars": 482,
+  "stars": 497,
   "zh": "带多模态记忆的真实世界视觉智能体工具调用框架官方代码",
   "mentions": [
    "2026-10-23/papers",
@@ -819,7 +819,7 @@
  "colbymchenry/codegraph": {
   "first_seen": "2026-10-23",
   "description": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, CoPilot, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
-  "stars": 77539,
+  "stars": 77597,
   "zh": "把代码库预先索引成本地知识图谱并自动同步，供各类编程智能体检索以省 token",
   "mentions": [
    "2026-11-05/github",
@@ -830,7 +830,7 @@
  "thedotmack/claude-mem": {
   "first_seen": "2026-10-23",
   "description": "Persistent Context Across Sessions for Every Agent –  Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
-  "stars": 116771,
+  "stars": 117013,
   "zh": "记录并压缩智能体的会话过程，在后续会话中自动注入相关上下文",
   "mentions": [
    "2026-W45/weekly",
@@ -868,7 +868,7 @@
  "tigerless-labs/agent-memory": {
   "first_seen": "2026-10-23",
   "description": "Long-term memory runtime for AI agents — plain Markdown as the source of truth, local ranked retrieval, and an independent sleep-time Manage layer. Claude Code and Codex share one store. No API key.",
-  "stars": 4316,
+  "stars": 4317,
   "zh": "以 Markdown 为存储的智能体长期记忆，本地检索，Claude Code 与 Codex 共享",
   "mentions": [
    "2026-10-24/github",
@@ -878,7 +878,7 @@
  "cheaper-inference/OmniRoute": {
   "first_seen": "2026-10-23",
   "description": "Never stop coding. Free MIT AI gateway: one endpoint, 375 providers (150+ free), 1,400+ models Kimi, Claude, GPT, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop",
-  "stars": 87081,
+  "stars": 87374,
   "zh": "统一接入数百家模型服务商的 AI 网关，支持额度感知的自动回退切换",
   "mentions": [
    "2026-W45/weekly",
@@ -908,7 +908,7 @@
  "affaan-m/ECC": {
   "first_seen": "2026-10-23",
   "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
-  "stars": 302327,
+  "stars": 302769,
   "zh": "为 Claude Code、Codex 等智能体提供技能、记忆与安全的性能优化套件",
   "mentions": [
    "2026-W44/weekly",
@@ -931,7 +931,7 @@
  "tt-a1i/archify": {
   "first_seen": "2026-10-23",
   "description": "Turn any idea, plan, or codebase into a beautiful interactive diagram. An agent skill for Claude Code, Codex, and more.",
-  "stars": 96165,
+  "stars": 96392,
   "zh": "把想法、方案或代码库生成可交互架构图的智能体技能",
   "mentions": [
    "2026-10-25/github",
@@ -942,7 +942,7 @@
  "obra/superpowers": {
   "first_seen": "2026-10-23",
   "description": "An agentic skills framework & software development methodology that works.",
-  "stars": 317124,
+  "stars": 317513,
   "zh": "为编程智能体提供技能库和子智能体驱动的软件开发方法论",
   "mentions": [
    "2026-W44/weekly",
@@ -958,7 +958,7 @@
  "Leonxlnx/taste-skill": {
   "first_seen": "2026-10-23",
   "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
-  "stars": 114821,
+  "stars": 115471,
   "zh": "让编程智能体借助参考图和浏览器检查做出有设计感的页面，避免千篇一律",
   "mentions": [
    "2026-W44/weekly",
@@ -979,7 +979,7 @@
  "addyosmani/agent-skills": {
   "first_seen": "2026-10-23",
   "description": "Production-grade engineering skills for AI coding agents.",
-  "stars": 117046,
+  "stars": 117443,
   "zh": "面向 AI 编程智能体的一套工程实践技能集合",
   "mentions": [
    "2026-11-13/github",
@@ -993,7 +993,7 @@
  "virgiliojr94/book-to-skill": {
   "first_seen": "2026-10-23",
   "description": "Turn any technical book PDF into a Claude Code skill — ready to study, reference, and use while you work.",
-  "stars": 37765,
+  "stars": 37851,
   "zh": "把技术书籍 PDF 转换成可供 Claude Code 查阅使用的技能",
   "mentions": [
    "2026-10-27/github",
@@ -1003,7 +1003,7 @@
  "tangency-labs/solidcraft": {
   "first_seen": "2026-10-23",
   "description": "SolidCraft: an open-source parametric 3D CAD application built in pure Rust. Desktop, web, and automation through MCP.",
-  "stars": 16108,
+  "stars": 16267,
   "zh": "用 Rust 编写的参数化 3D CAD 应用，可通过 MCP 自动化操作",
   "mentions": [
    "2026-10-26/github",
@@ -1015,7 +1015,7 @@
  "Panniantong/Agent-Reach": {
   "first_seen": "2026-10-23",
   "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
-  "stars": 111519,
+  "stars": 111734,
   "zh": "用一个命令行工具让智能体读取和搜索推特、Reddit、B站、小红书等平台",
   "mentions": [
    "2026-W44/weekly",
@@ -1040,7 +1040,7 @@
  "Leonxlnx/earshot": {
   "first_seen": "2026-10-23",
   "description": "Ears for coding agents: let AI hear, review and make sound. CPU-only, open source.",
-  "stars": 4725,
+  "stars": 4799,
   "zh": "让编程智能体能听音频、审查并生成声音的本地 CPU 工具",
   "mentions": [
    "2026-10-25/github",
@@ -1051,7 +1051,7 @@
  "earthtojake/text-to-cad": {
   "first_seen": "2026-10-23",
   "description": "Design physical products with AI",
-  "stars": 26247,
+  "stars": 26313,
   "zh": "让智能体通过文本描述生成 CAD 模型并导出 STEP、STL 文件",
   "mentions": [
    "2026-10-25/github",
@@ -1062,7 +1062,7 @@
  "VoltAgent/awesome-design-md": {
   "first_seen": "2026-10-23",
   "description": "A collection of DESIGN.md files analysis by popular brand design systems. Drop one into your project and let coding agents generate a matching UI.",
-  "stars": 127371,
+  "stars": 127503,
   "zh": "收集知名品牌设计系统的 DESIGN.md，供编程智能体生成风格一致的界面",
   "mentions": [
    "2026-10-24/github",
@@ -1072,7 +1072,7 @@
  "Fission-AI/OpenSpec": {
   "first_seen": "2026-10-23",
   "description": "Spec-driven development (SDD) for AI coding assistants.",
-  "stars": 74784,
+  "stars": 74853,
   "zh": "面向 AI 编程助手的规范驱动开发工具，先写规范再生成代码",
   "mentions": [
    "2026-10-23/github"
@@ -1081,7 +1081,7 @@
  "deepseek-ai/deepseek-harness": {
   "first_seen": "2026-10-23",
   "description": "DeepSeek Harness: Everything is a Plugin.",
-  "stars": 280375,
+  "stars": 281005,
   "zh": "DeepSeek 推出的以插件为核心的智能体运行框架",
   "mentions": [
    "2026-W45/weekly",
@@ -1133,7 +1133,7 @@
  "TauricResearch/TradingAgents": {
   "first_seen": "2026-10-23",
   "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
-  "stars": 122419,
+  "stars": 122548,
   "zh": "由多个大模型智能体协作完成金融交易决策的框架",
   "mentions": [
    "2026-11-04/github",
@@ -1157,7 +1157,7 @@
  "paperclipai/paperclip": {
   "first_seen": "2026-10-23",
   "description": "The open-source app everyone uses to manage agents at work",
-  "stars": 113596,
+  "stars": 113864,
   "zh": "用于管理和编排多个工作智能体的应用，支持任务与流程自动化",
   "mentions": [
    "2026-11-03/github",
@@ -1173,7 +1173,7 @@
  "liguobao/ds-harness-remote": {
   "first_seen": "2026-10-23",
   "description": "基于 DeepSeek Harness 插件机制构建的远程访问方案，通过低延迟、端到端加密的 P2P 网络，支持使用 PC、移动端 和 Web 随时访问本地设备上的DSH 、CodeX、Cursor、Claude Code等工作区。 (Built on DeepSeek Harness plugins, this low-latency, end-to-end encrypted P2P solution lets PC, mobile, and web clients access local DSH, Codex, Cursor, and Claude Code workspaces.)",
-  "stars": 2796,
+  "stars": 2881,
   "zh": "通过端到端加密的 P2P 网络，从电脑、安卓和网页远程操作 DeepSeek Harness",
   "mentions": [
    "2026-11-12/github",
@@ -1186,7 +1186,7 @@
  "NousResearch/hermes-agent": {
   "first_seen": "2026-10-23",
   "description": "The agent that grows with you",
-  "stars": 263156,
+  "stars": 263329,
   "zh": "Nous Research 推出的可随使用不断成长的 AI 智能体",
   "mentions": [
    "2026-11-07/github",
@@ -1204,7 +1204,7 @@
  "earendil-works/pi": {
   "first_seen": "2026-10-23",
   "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
-  "stars": 121843,
+  "stars": 121988,
   "zh": "包含统一大模型接口、智能体循环、终端界面和编程智能体命令行的工具包",
   "mentions": [
    "2026-10-26/github",
@@ -1214,7 +1214,7 @@
  "anthropics/claude-code": {
   "first_seen": "2026-10-23",
   "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
-  "stars": 155540,
+  "stars": 155649,
   "zh": "运行在终端里的编程智能体，理解代码库并用自然语言完成编码和 Git 操作",
   "mentions": [
    "2026-W45/weekly",
@@ -1244,7 +1244,7 @@
  "xingjian-bai/opal": {
   "first_seen": "2026-10-23",
   "description": "OPAL: a reactive optimizer. A coding agent rewrites the optimizer while your model trains.",
-  "stars": 454,
+  "stars": 458,
   "zh": "训练模型时由编程智能体实时改写优化器的响应式优化器",
   "mentions": [
    "2026-W44/weekly",
@@ -1260,7 +1260,7 @@
  "aicodeking/pandacode": {
   "first_seen": "2026-10-23",
   "description": "PandaCode: a calm desktop workspace for coding agents",
-  "stars": 1238,
+  "stars": 1248,
   "zh": "面向编程智能体的桌面工作台（推断）",
   "mentions": [
    "2026-10-31/github",
@@ -1307,7 +1307,7 @@
  "Ebony-Vinyl/dsh-our-free-model": {
   "first_seen": "2026-10-23",
   "description": "在 dsh 里装上这个插件即可，无需登录、注册或填 API Key，就能使用包括 DeepSeek V4.1 Flash、Kimi K3 在内的前沿模型——完全免费，不限量。 All you do is install this plugin in dsh: no login, no sign-up, no API key — the frontier models are just there, DeepSeek V4.1 Flash and Kimi K3 among them. Completely free, with no usage cap.",
-  "stars": 72592,
+  "stars": 74098,
   "zh": "dsh 插件，免登录免密钥直接调用 DeepSeek、Kimi 等免费模型",
   "mentions": [
    "2026-W45/weekly",
@@ -1351,7 +1351,7 @@
  "luongnv89/claude-howto": {
   "first_seen": "2026-10-23",
   "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
-  "stars": 47136,
+  "stars": 47187,
   "zh": "配有可复制模板、图文并茂的 Claude Code 从入门到进阶教程",
   "mentions": [
    "2026-10-25/social",
@@ -1362,7 +1362,7 @@
  "heygen-com/hyperframes": {
   "first_seen": "2026-10-23",
   "description": "Write HTML. Render video. Built for agents.",
-  "stars": 83786,
+  "stars": 84221,
   "zh": "用 HTML 编写画面并渲染成视频，专为智能体设计的视频框架",
   "mentions": [
    "2026-W44/weekly",
@@ -1383,7 +1383,7 @@
  "EpicGames/unreal-engine-skills-for-claude-code-plugin": {
   "first_seen": "2026-10-23",
   "description": "",
-  "stars": 1961,
+  "stars": 1969,
   "zh": "为 Claude Code 提供虚幻引擎开发技能的插件（推断）",
   "mentions": [
    "2026-W44/weekly",
@@ -1400,7 +1400,7 @@
  "google/mantis": {
   "first_seen": "2026-10-23",
   "description": "A modular, stack-agnostic toolkit for AI coding agents to autonomously find, reproduce, and patch vulnerabilities.",
-  "stars": 2773,
+  "stars": 2778,
   "zh": "模块化工具包，让 AI 编程智能体自动发现、复现并修补漏洞",
   "mentions": [
    "2026-W43/weekly",
@@ -1412,7 +1412,7 @@
  "NVIDIA/SkillSpector": {
   "first_seen": "2026-10-23",
   "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
-  "stars": 25823,
+  "stars": 26003,
   "zh": "安装前扫描智能体技能，检测提示注入、数据外泄等安全风险",
   "mentions": [
    "2026-W44/weekly",
@@ -1445,7 +1445,7 @@
  "tashfeenahmed/freellmapi": {
   "first_seen": "2026-10-23",
   "description": "7.4 billion tokens per month. 34 free LLM providers. 635 free model endpoints. All behind one /v1 endpoint, plus any custom OpenAI-compatible endpoint. Smart routing, automatic failover, encrypted keys. Personal experimentation only.",
-  "stars": 51625,
+  "stars": 52190,
   "zh": "把数十家免费大模型接口聚合成统一 /v1 端点，支持自动路由与故障切换",
   "mentions": [
    "2026-W45/weekly",
@@ -1458,7 +1458,7 @@
  "CopilotKit/OpenIntelligentUI": {
   "first_seen": "2026-10-23",
   "description": "Open-Source Generative UI Framework",
-  "stars": 4231,
+  "stars": 4234,
   "zh": "让大模型动态生成界面的生成式 UI 开发框架",
   "mentions": [
    "2026-10-24/social",
@@ -1468,7 +1468,7 @@
  "anthropics/claude-plugins-community": {
   "first_seen": "2026-10-23",
   "description": "Community plugin marketplace for Claude Cowork and Claude Code. Read-only mirror — submit plugins at clau.de/plugin-directory-submission.",
-  "stars": 4887,
+  "stars": 4892,
   "zh": "收录社区插件、供 Claude Code 与 Cowork 使用的插件市场镜像",
   "mentions": [
    "2026-10-23/social"
@@ -1477,7 +1477,7 @@
  "mattpocock/skills": {
   "first_seen": "2026-10-23",
   "description": "Skills for Real Engineers. Straight from my .agents directory.",
-  "stars": 323600,
+  "stars": 324291,
   "zh": "面向工程师的智能体技能合集，取自作者的 .agents 目录",
   "mentions": [
    "2026-W45/weekly",
@@ -1519,7 +1519,7 @@
  "vectorize-io/hindsight": {
   "first_seen": "2026-10-24",
   "description": "Hindsight: Agent Memory That Learns",
-  "stars": 60858,
+  "stars": 61030,
   "zh": "能从交互中不断学习的智能体长期记忆系统",
   "mentions": [
    "2026-W45/weekly",
@@ -1551,7 +1551,7 @@
  "SnailSploit/Claude-Red": {
   "first_seen": "2026-10-24",
   "description": "claude-red is a curated library of offensive security skills designed for the Claude skills system. Each skill is a structured SKILL.md file that primes Claude with expert-level methodology for a specific attack surface — from SQLi to shellcode, EDR evasion to exploit development.",
-  "stars": 10687,
+  "stars": 10868,
   "zh": "为 Claude 提供 SQL 注入到漏洞利用等攻防方法论的技能库",
   "mentions": [
    "2026-10-25/github",
@@ -1562,7 +1562,7 @@
  "Nutlope/hallmark": {
   "first_seen": "2026-10-24",
   "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
-  "stars": 54381,
+  "stars": 54849,
   "zh": "帮 Claude Code 等工具避免千篇一律 AI 风格的设计技能",
   "mentions": [
    "2026-W45/weekly",
@@ -1604,7 +1604,7 @@
  "cathrynlavery/diagram-design": {
   "first_seen": "2026-10-24",
   "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
-  "stars": 66858,
+  "stars": 67044,
   "zh": "为编程智能体生成 45 种编辑风格图表，输出 HTML 与 SVG",
   "mentions": [
    "2026-10-24/github"
@@ -1613,7 +1613,7 @@
  "ahujasid/mcp-for-blender": {
   "first_seen": "2026-10-24",
   "description": "Community plugin to control Blender 3D with any LLM of your choice. Not affiliated with the official Blender Foundation.",
-  "stars": 34288,
+  "stars": 34414,
   "zh": "让任意大模型通过 MCP 操控 Blender 进行 3D 建模的插件",
   "mentions": [
    "2026-10-24/github"
@@ -1622,7 +1622,7 @@
  "anthropics/sandbox-runtime": {
   "first_seen": "2026-10-24",
   "description": "A lightweight sandboxing tool for enforcing filesystem and network restrictions on arbitrary processes at the OS level, without requiring a container.",
-  "stars": 7113,
+  "stars": 7120,
   "zh": "无需容器，在系统层限制任意进程文件与网络访问的轻量沙箱",
   "mentions": [
    "2026-W43/weekly",
@@ -1635,7 +1635,7 @@
  "makecindy/cindy": {
   "first_seen": "2026-10-24",
   "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
-  "stars": 10047,
+  "stars": 10116,
   "zh": "开箱即用的开源 AI 智能体，替你自动完成各类任务",
   "mentions": [
    "2026-10-29/github",
@@ -1653,7 +1653,7 @@
  "usestrix/strix": {
   "first_seen": "2026-10-24",
   "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
-  "stars": 75291,
+  "stars": 75528,
   "zh": "用 AI 智能体自动对应用做渗透测试，发现并修复漏洞",
   "mentions": [
    "2026-11-04/github",
@@ -1670,7 +1670,7 @@
  "lemomo-ai/lemo-opuscar": {
   "first_seen": "2026-10-24",
   "description": "A toolbox of film styles made in code for Claude Code: 66 ready to use, and your own. Each style is a style prompt plus a demo film made entirely in code by Claude Opus 5.5, with no video model. By Lemomo. · 一套用代码做片的风格工具箱：66 种现成风格，也能做出你自己的",
-  "stars": 15605,
+  "stars": 16045,
   "zh": "让 Claude Code 用代码做短片的 59 种电影风格工具箱",
   "mentions": [
    "2026-W44/weekly",
@@ -1690,7 +1690,7 @@
  "openfilm/openfilm": {
   "first_seen": "2026-10-24",
   "description": "The open source AI video agent: turns any coding agent into a video agent, with an editor to change anything it makes.",
-  "stars": 6355,
+  "stars": 6990,
   "zh": "把编程智能体变成视频智能体，并带可修改成品的编辑器",
   "mentions": [
    "2026-10-26/github",
@@ -1711,7 +1711,7 @@
  "opensec-git/Pi-Bolt": {
   "first_seen": "2026-10-24",
   "description": "⚡ Pi, the coding agent, compiled ahead of time to one native executable. 10× faster to start, 7× less CPU and 4.5× less memory than Pi on Node. Linux, macOS, Windows, ARM64 and Android (Termux).",
-  "stars": 820,
+  "stars": 827,
   "zh": "把 Pi 编程智能体预编译成单个原生可执行文件，启动更快更省资源",
   "mentions": [
    "2026-10-26/github",
@@ -1767,7 +1767,7 @@
  "Tongyi-MAI/OpenGCUA": {
   "first_seen": "2026-10-24",
   "description": "An open-source stack for generalist computer-use agents, combining code execution, GUI interaction, and cross-device control.",
-  "stars": 601,
+  "stars": 602,
   "zh": "整合代码执行、界面操作与跨设备控制的通用电脑操作智能体",
   "mentions": [
    "2026-W43/weekly",
@@ -1780,7 +1780,7 @@
  "HexaFuture/HexaShell": {
   "first_seen": "2026-10-24",
   "description": "HexaShell: A Universal Harness for Robot Coding Agents in Simulation and the Real World",
-  "stars": 378,
+  "stars": 379,
   "zh": "让编程智能体根据 RGB 图像操控机器人并自写工具的轻量框架",
   "mentions": [
    "2026-10-24/papers"
@@ -1815,7 +1815,7 @@
  "slavakurilyak/awesome-ai-agents": {
   "first_seen": "2026-10-24",
   "description": "Awesome list of 300+ agentic AI resources",
-  "stars": 2921,
+  "stars": 2926,
   "zh": "收集 300 多个智能体 AI 相关资源的精选清单",
   "mentions": [
    "2026-10-24/social"
@@ -1824,7 +1824,7 @@
  "ranxianglei/billion-context": {
   "first_seen": "2026-10-25",
   "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
-  "stars": 7218,
+  "stars": 7375,
   "zh": "压缩上下文的 dsh 插件，支持超长会话并节省约五倍 token",
   "mentions": [
    "2026-11-11/github",
@@ -1837,7 +1837,7 @@
  "multica-ai/andrej-karpathy-skills": {
   "first_seen": "2026-10-25",
   "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
-  "stars": 232764,
+  "stars": 233084,
   "zh": "依据 Karpathy 对大模型编码缺陷的观察改进 Claude Code 的 CLAUDE.md",
   "mentions": [
    "2026-10-25/github"
@@ -1846,7 +1846,7 @@
  "aws/agent-toolkit-for-aws": {
   "first_seen": "2026-10-25",
   "description": "Official, AWS-supported MCP servers, skills, and plugins to help AI agents build on AWS",
-  "stars": 3486,
+  "stars": 3489,
   "zh": "AWS 官方支持的 MCP 服务器与技能，帮智能体在 AWS 上构建",
   "mentions": [
    "2026-10-25/github"
@@ -1865,7 +1865,7 @@
  "google-gemini/gemini-cli": {
   "first_seen": "2026-10-25",
   "description": "An open-source AI agent that brings the power of Gemini directly into your terminal.",
-  "stars": 108813,
+  "stars": 108826,
   "zh": "把 Gemini 模型接入终端的命令行 AI 智能体",
   "mentions": [
    "2026-10-25/github"
@@ -1874,7 +1874,7 @@
  "Gaurav-Gosain/tuios": {
   "first_seen": "2026-10-25",
   "description": "A terminal window manager that knows what your agents are doing. Tiling panes, workspaces, sessions that survive restarts, and one Inbox for every coding agent. Official only at tuios.dev and this repo. tuios has no X/Twitter account.",
-  "stars": 6515,
+  "stars": 6528,
   "zh": "能感知各编程智能体状态的终端窗口管理器，支持分屏与持久会话",
   "mentions": [
    "2026-10-25/github"
@@ -1883,7 +1883,7 @@
  "GortexAI/franco": {
   "first_seen": "2026-10-25",
   "description": "Franco: an outbound sales agent that runs on your Claude Code or Codex subscription",
-  "stars": 693,
+  "stars": 899,
   "zh": "基于 Claude Code 或 Codex 订阅运行的外呼销售智能体",
   "mentions": [
    "2026-10-25/github"
@@ -1892,7 +1892,7 @@
  "oil-oil/oil-ui": {
   "first_seen": "2026-10-25",
   "description": "UI design skill for Claude Code, Codex and other AI agents: explore distinct directions, compare them side by side, refine against real screenshots. 给 AI Agent 用的 UI 设计 Skill。",
-  "stars": 3253,
+  "stars": 3342,
   "zh": "供 AI 智能体使用的 UI 设计技能，可对比方案并按截图迭代",
   "mentions": [
    "2026-10-25/github"
@@ -1901,7 +1901,7 @@
  "ctoldigital/axuse": {
   "first_seen": "2026-10-25",
   "description": "Accessibility-first browser & computer use for AI agents — one MCP server for every harness (Codex, Claude Code, OpenCode, Antigravity). Instruments the DOM/accessibility tree via CDP instead of screenshot loops: diffed snapshots, stable element refs, trusted input, typed errors. Zero dependencies",
-  "stars": 742,
+  "stars": 804,
   "zh": "通过无障碍树操控浏览器的 MCP 服务器，供 AI Agent 自动化网页操作",
   "mentions": [
    "2026-10-25/github"
@@ -1922,7 +1922,7 @@
  "microsoft/skill-recorder": {
   "first_seen": "2026-10-25",
   "description": "Desktop app that records your on-screen work session and uses the GitHub Copilot SDK to reconstruct it as an intent + ordered steps, then builds a reusable Skill or Automation for Microsoft Autopilots like Scout, Microsoft Copilot Cowork, or Copilot Studio.",
-  "stars": 5781,
+  "stars": 5806,
   "zh": "录制屏幕操作并还原为意图与步骤，生成可复用的 Agent 技能或自动化流程",
   "mentions": [
    "2026-W43/weekly",
@@ -1934,7 +1934,7 @@
  "rlaope/oh-my-hermes": {
   "first_seen": "2026-10-25",
   "description": "⚚ The coding agent with Hermes Agent, Just type 'dag-ulw'",
-  "stars": 5621,
+  "stars": 5669,
   "zh": "为 Hermes Agent 提供编码能力与技能包，支持图工程式工作流",
   "mentions": [
    "2026-10-30/social",
@@ -1946,7 +1946,7 @@
  "alexgaoth/awesome-reverse-engineered": {
   "first_seen": "2026-10-25",
   "description": "Don't reverse engineer it twice. 16,000+ open-source tools built by reverse engineering closed apps, APIs, devices, protocols, file formats, games and AI tools. Search site + agent skill + MCP server, refreshed nightly.",
-  "stars": 1372,
+  "stars": 1402,
   "zh": "收录逆向工程闭源应用、接口、设备与协议所得开源工具的可搜索清单，附 MCP 服务器",
   "mentions": [
    "2026-10-29/github",
@@ -1977,7 +1977,7 @@
    "2026-10-26/social"
   ],
   "description": "A growing collection of viral videos made with Claude Opus 5.5 and the prompts behind them. Watch each original next to a live remake on Skillry. Updated regularly.",
-  "stars": 15122,
+  "stars": 15199,
   "zh": "收集用 Claude Opus 5.5 生成的爆款视频及其提示词，并附在线复刻对照"
  },
  "Vincentwei1021/mg-styles-15": {
@@ -1986,7 +1986,7 @@
    "2026-W43/weekly"
   ],
   "description": "15 motion design styles, each made by Claude Opus 5.5 writing code from one prompt: watch the films, copy the prompts, read the full source.",
-  "stars": 3502,
+  "stars": 3524,
   "zh": "收录15种由 Claude Opus 5.5 单条提示生成的动态设计风格短片，附提示词与源码"
  },
  "JohnHeibel/PDoomVideo": {
@@ -1996,7 +1996,7 @@
    "2026-10-27/social"
   ],
   "description": "Source code for the Claude Opus 5.5 music video for I'm Upping My P(doom)",
-  "stars": 2922,
+  "stars": 2931,
   "zh": "用 Claude Opus 5.5 编写代码生成的《I'm Upping My P(doom)》音乐视频源码"
  },
  "AgriciDaniel/claude-seo": {
@@ -2007,7 +2007,7 @@
    "2026-10-26/github"
   ],
   "description": "Universal SEO skill for Claude Code. 26 sub-skills + 19 sub-agents covering technical SEO, E-E-A-T, schema, GEO/AEO, agent readiness (Lighthouse Agentic Browsing, WebMCP, llms.txt), backlinks, local SEO, e-commerce, international SEO, Google APIs, and PDF/Excel reporting. 9 optional extensions for l",
-  "stars": 28949,
+  "stars": 29249,
   "zh": "面向 Claude Code 的 SEO 技能集，覆盖技术 SEO、结构化数据、外链与报告生成"
  },
  "google/elephant-goldfish-model": {
@@ -2044,7 +2044,7 @@
    "2026-10-26/github"
   ],
   "description": "Open-source plugin for designing and reviewing software with agents",
-  "stars": 18460,
+  "stars": 18970,
   "zh": "Google 出品的规范驱动开发方法与技能集，让大模型按规格说明写代码"
  },
  "t3dotgg/tstack": {
@@ -2057,7 +2057,7 @@
    "2026-10-26/github"
   ],
   "description": "The agent skills I use every day. Works with Claude Code and Codex.",
-  "stars": 3629,
+  "stars": 3688,
   "zh": "作者日常使用的一套智能体技能，适用于 Claude Code 和 Codex"
  },
  "AstrBotDevs/AstrBot": {
@@ -2066,7 +2066,7 @@
    "2026-10-26/github"
   ],
   "description": "AI Agent Assistant & development framework that integrates lots of IM platforms, LLMs, plugins and AI feature, and can be your openclaw alternative. ✨",
-  "stars": 46846,
+  "stars": 46913,
   "zh": "接入多种即时通讯平台、大模型与插件的 AI 智能体助手及开发框架"
  },
  "herdrdev/herdr": {
@@ -2083,7 +2083,7 @@
    "2026-10-26/github"
   ],
   "description": "the runtime your coding agents live on",
-  "stars": 50789,
+  "stars": 50938,
   "zh": "为多个编程智能体提供统一运行环境并负责编排调度的命令行工具"
  },
  "Kai-Jungsthoefel/SOMA": {
@@ -2092,7 +2092,7 @@
    "2026-10-26/github"
   ],
   "description": "Desktop app for designing parametric 3D models in CadQuery together with the coding agent of your choice",
-  "stars": 476,
+  "stars": 480,
   "zh": "桌面应用，与编程智能体协作用 CadQuery 设计参数化 3D 模型"
  },
  "mailschema/mailschema": {
@@ -2102,7 +2102,7 @@
    "2026-10-26/github"
   ],
   "description": "Working-draft Mail Action Protocol for agent actions through email, with type contracts, a registry, and a validation CLI.",
-  "stars": 154,
+  "stars": 226,
   "zh": "定义通过电子邮件触发智能体动作的协议，含类型约定、注册表和校验命令行"
  },
  "y5ez3g/facadecode": {
@@ -2111,7 +2111,7 @@
    "2026-10-26/github"
   ],
   "description": "The multi-agent orchestrator for VS Code. Run Claude Code, Codex, and other agent CLIs that start, message, and operate each other across windows and machines.",
-  "stars": 335,
+  "stars": 365,
   "zh": "基于 VS Code 的 IDE，让多个编程智能体并行处理多个项目与功能"
  },
  "ZipengWu365/TOMC": {
@@ -2134,7 +2134,7 @@
    "2026-10-26/github"
   ],
   "description": "Learning to Recover from LLM Agent Failures at Test Time",
-  "stars": 1466,
+  "stars": 1491,
   "zh": "研究如何让大模型智能体在测试阶段从失败中恢复（推断）"
  },
  "hanzohanzhe/Grandet": {
@@ -2145,7 +2145,7 @@
    "2026-10-26/github"
   ],
   "description": "Find the cheapest API for any model and connect it from your AI agent: Grandet Skill and an anonymous MCP server, backed by listed prices from 1,800+ official, inference and relay providers on grandet.ai.",
-  "stars": 1338,
+  "stars": 1366,
   "zh": "汇总各家 API 报价，帮智能体找到最便宜的模型接口并接入"
  },
  "ZiChuanLan/agent-purge": {
@@ -2157,7 +2157,7 @@
    "2026-10-26/github"
   ],
   "description": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
-  "stars": 1745,
+  "stars": 1775,
   "zh": "带本地网页控制台，为多种编程智能体统一替换或注入系统提示词"
  },
  "hevnsnt/CVEngine": {
@@ -2166,7 +2166,7 @@
    "2026-10-26/github"
   ],
   "description": "AI-first external attack surface assessment with continuous discovery, evidence-based vulnerability validation, and developer-agent MCP integration.",
-  "stars": 713,
+  "stars": 718,
   "zh": "AI 驱动的外部攻击面评估工具，持续发现资产并验证漏洞，支持 MCP 接入"
  },
  "morganlinton/BeautifulRust": {
@@ -2175,7 +2175,7 @@
    "2026-10-26/github"
   ],
   "description": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, and Gemini CLI.",
-  "stars": 1807,
+  "stars": 1812,
   "zh": "教编程智能体编写、审查和移植地道 Rust 代码的技能集，附 clippy 配置"
  },
  "JetBrains/thinkrail": {
@@ -2191,7 +2191,7 @@
    "2026-10-26/github"
   ],
   "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
-  "stars": 8229,
+  "stars": 8242,
   "zh": "轻量级 IDE，用 pi 智能体做氛围编程，并可按使用习惯自我定制"
  },
  "dagoSte/squadra": {
@@ -2206,7 +2206,7 @@
    "2026-10-26/github"
   ],
   "description": "Coordinate Claude, Codex and Cursor windows with shared tasks, acknowledgements, prechecks, parallel tests, source-bound proofs and independent review. Built-in skills recall lessons, simplify code and forecast work. Track progress, decisions and evidence in a bilingual local dashboard, with MCP plu",
-  "stars": 1277,
+  "stars": 1279,
   "zh": "协调多个 Claude、Codex、Cursor 窗口，共享任务、交叉评审并用本地面板追踪进度"
  },
  "SJTU-DAI-Sys/DLite": {
@@ -2265,7 +2265,7 @@
    "2026-10-26/papers"
   ],
   "description": "Can LLM agents do the work of an operations research practitioner, without an expert reformulating the problem first?",
-  "stars": 194,
+  "stars": 200,
   "zh": "评测大模型智能体能否不经专家转述，独立完成运筹学建模工作"
  },
  "jiamingzhang94/lgwm": {
@@ -2294,7 +2294,7 @@
    "2026-10-26/papers"
   ],
   "description": "A research framework for principled agent self-improvement under frozen evaluators and declared mutation boundaries, recording verifiable lineage to make it reproducible and auditable.",
-  "stars": 365,
+  "stars": 367,
   "zh": "在固定评估器和变更边界下研究智能体自我改进，并记录可验证的演化谱系"
  },
  "elayadesign/ai-design-skills": {
@@ -2308,7 +2308,7 @@
    "2026-10-26/social"
   ],
   "description": "",
-  "stars": 15445,
+  "stars": 15526,
   "zh": "面向 AI 智能体的设计类技能集合（推断）"
  },
  "threerocks/sweety-handdraw-video": {
@@ -2317,7 +2317,7 @@
    "2026-10-26/social"
   ],
   "description": "从主题或文章制作完整手绘讲解视频：按部位描线、逐字书写、VoiceStudio 配音、五项内置制作依赖。",
-  "stars": 1210,
+  "stars": 1215,
   "zh": "根据主题或文章生成手绘讲解视频，含描线、逐字书写和配音"
  },
  "JohnHeibel/ClaudeAnimationBase": {
@@ -2326,7 +2326,7 @@
    "2026-10-26/social"
   ],
   "description": "A starter kit for animating hand-painted cartoons with Claude: p5.js + p5.brush, the Clawd character, 31 acted emotions and a guide for the model",
-  "stars": 2948,
+  "stars": 2978,
   "zh": "用 Claude 制作手绘卡通动画的入门套件，基于 p5.js 并含角色与情绪表演"
  },
  "nightly-labs/openbot": {
@@ -2341,7 +2341,7 @@
    "2026-10-27/github"
   ],
   "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
-  "stars": 7445,
+  "stars": 7686,
   "zh": "本地优先的桌面工作台，让 Codex、Claude、Grok 等 AI 队友各有工作区并协作"
  },
  "alchaincyf/huashu-design": {
@@ -2351,7 +2351,7 @@
    "2026-10-27/github"
   ],
   "description": "Huashu Design 3.0 · 在 agent 里打一句话，拿回能交付的设计：网页 / App 原型 / 可编辑 PPTX / 动画 / 信息图 · 六个候选挑三个方向 · 84 种带样张的风格库 · 越用越懂你的外观账本与设计体检 · HTML-native design skill for Claude Code, Codex, Cursor & any agent",
-  "stars": 29417,
+  "stars": 29490,
   "zh": "在 Agent 中一句话生成网页、App 原型、可编辑 PPTX、动画和信息图的设计技能"
  },
  "HelixDB/helix-foundry": {
@@ -2361,7 +2361,7 @@
    "2026-10-27/github"
   ],
   "description": "Connect your company's data, let an agent draft an ontology over it, and load it into HelixDB as one graph you can explore and ask questions of. Hosted at foundry.helix-db.com, or run it on your own machine.",
-  "stars": 2115,
+  "stars": 2118,
   "zh": "接入企业数据，由 Agent 起草本体并载入 HelixDB 生成可探索问答的知识图谱"
  },
  "gitroomhq/postiz-app": {
@@ -2371,7 +2371,7 @@
    "2026-10-27/github"
   ],
   "description": "📨 The ultimate agentic social media scheduling tool 🤖",
-  "stars": 41521,
+  "stars": 41590,
   "zh": "支持 AI 智能体自动排期并发布内容的社交媒体管理工具"
  },
  "Tencent/WeKnora": {
@@ -2385,7 +2385,7 @@
    "2026-10-27/github"
   ],
   "description": "Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.",
-  "stars": 37387,
+  "stars": 37429,
   "zh": "把原始文档变成可检索问答的 RAG、推理 Agent 和自维护 Wiki 的知识平台"
  },
  "Fei2411/DS-Bot": {
@@ -2399,7 +2399,7 @@
    "2026-10-27/github"
   ],
   "description": "A team of long-lived bots for DeepSeek Harness, with main bots, bot-to-bot messages and group chats.",
-  "stars": 7568,
+  "stars": 7745,
   "zh": "为 DeepSeek Harness 提供长期运行的多机器人团队，支持机器人互发消息和群聊"
  },
  "reacher-z/Awesome-REA": {
@@ -2420,7 +2420,7 @@
    "2026-10-27/github"
   ],
   "description": "Curated tools, case studies and papers for reverse engineering websites, games, apps, binaries, firmware and protocols. Source-reviewed, English and Chinese.",
-  "stars": 2717,
+  "stars": 2803,
   "zh": "汇总网站、游戏、App、固件和协议等逆向工程工具、案例与论文的资源清单"
  },
  "TonF1917/claude-desktop-multiple-windows-different-api": {
@@ -2438,7 +2438,7 @@
    "2026-10-27/github"
   ],
   "description": "An open-source document parsing model with SOTA accuracy and speed, using an RSI loop during post-training.",
-  "stars": 3814,
+  "stars": 3826,
   "zh": "高精度、高速度的文档解析模型，用视觉语言模型把文档转成文本（OCR）"
  },
  "reacher-z/Awesome-CUA": {
@@ -2456,7 +2456,7 @@
    "2026-10-27/github"
   ],
   "description": "Open, source-backed catalog of computer-use agents: reviewed papers, GUI models, datasets, benchmarks, tools, and reusable JSONL/SQLite data.",
-  "stars": 828,
+  "stars": 872,
   "zh": "整理电脑操控类 Agent 的论文、GUI 模型、数据集、基准和工具的可复用目录"
  },
  "AIshihzong/awesome-reverse-engineer-anything": {
@@ -2470,7 +2470,7 @@
    "2026-10-27/github"
   ],
   "description": "Awesome REA (Reverse Engineer Anything): curated AI reverse engineering cases. What AI agents (REA, Craft Anything, Claude Code, Codex) reverse-engineered and rebuilt, open-source alternatives by app, and which ones really used REA. Unofficial, bilingual, every case checked.",
-  "stars": 703,
+  "stars": 730,
   "zh": "收录 AI Agent 拆解并重建软件的逆向工程案例与工具的资源清单"
  },
  "EricJujianZou/rederive": {
@@ -2480,7 +2480,7 @@
    "2026-10-27/github"
   ],
   "description": "Learn a codebase by re-deriving its design decisions yourself. A Claude Code skill.",
-  "stars": 555,
+  "stars": 759,
   "zh": "通过自己重新推导设计决策来学习代码库的 Claude Code 技能"
  },
  "blakeandersonw/ai-app-playbook": {
@@ -2498,7 +2498,7 @@
    "2026-10-27/github"
   ],
   "description": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Codex / OpenClaw / WorkBuddy …",
-  "stars": 1970,
+  "stars": 1971,
   "zh": "用一张照片生成数字人口播视频，并提供剪辑风格与包装组件的 Agent 技能"
  },
  "DenisSergeevitch/ex-ussr-kinship-research": {
@@ -2508,7 +2508,7 @@
    "2026-10-27/github"
   ],
   "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
-  "stars": 2409,
+  "stars": 2473,
   "zh": "基于证据查询前苏联地区教会、民事、军事和镇压档案的家谱研究 Agent 技能"
  },
  "morluto/awesome-reverse-engineering": {
@@ -2519,7 +2519,7 @@
    "2026-10-27/github"
   ],
   "description": "Curated reverse-engineering tools and learning resources for binaries, apps, firmware, formats, and protocols.",
-  "stars": 2100,
+  "stars": 2121,
   "zh": "精选二进制、应用、固件、格式和协议的逆向工程工具与学习资源清单"
  },
  "rehan-remade/universal-modder": {
@@ -2529,7 +2529,7 @@
    "2026-10-27/github"
   ],
   "description": "Point Claude at any game. Skills, tools and the fal MCP that let Claude Code mod almost any PC game you own: recon, reverse engineering, fal-generated art/3D/audio, in-game testing, showcase videos.",
-  "stars": 9665,
+  "stars": 9682,
   "zh": "让 Claude Code 对任意 PC 游戏做逆向、生成素材并制作 Mod 的技能与工具集"
  },
  "Gathin23/cleanyourtv": {
@@ -2552,7 +2552,7 @@
    "2026-10-27/github"
   ],
   "description": "Debloat any Android or Google TV over Wi-Fi and get an Apple TV-style home.",
-  "stars": 57314,
+  "stars": 57750,
   "zh": "通过 Wi-Fi 清除安卓电视或谷歌电视预装软件，并换成类 Apple TV 风格主屏"
  },
  "simbasjungles/free-my-tv": {
@@ -2562,7 +2562,7 @@
    "2026-10-27/github"
   ],
   "description": "A fast, ad-free home screen for Google TV, LG webOS and Samsung Tizen. One button to undo.",
-  "stars": 6347,
+  "stars": 6377,
   "zh": "为 Google TV、LG webOS 和三星 Tizen 提供快速无广告的主屏幕启动器"
  },
  "Ansub/tv-detox": {
@@ -2572,7 +2572,7 @@
    "2026-10-27/github"
   ],
   "description": "Make an old Android TV fast again with Claude Code or Codex: a tiny ad-free home screen plus the prompt to clean it up",
-  "stars": 2349,
+  "stars": 2362,
   "zh": "借助 Claude Code 或 Codex 清理老旧安卓电视，并提供无广告精简主屏"
  },
  "SouravBeraAkaSpeed/xiryn": {
@@ -2598,7 +2598,7 @@
    "2026-10-28/github"
   ],
   "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
-  "stars": 58880,
+  "stars": 59163,
   "zh": "基于多智能体与RAG的个性化AI导师，提供交互式学习与深度研究"
  },
  "pbakaus/impeccable": {
@@ -2637,7 +2637,7 @@
    "2026-10-28/github"
   ],
   "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
-  "stars": 109389,
+  "stars": 110033,
   "zh": "为编码Agent提供设计术语与审查技能，用于打磨界面并拦截粗糙的AI生成设计"
  },
  "NVIDIA/auto-ontology": {
@@ -2665,7 +2665,7 @@
    "2026-10-28/github"
   ],
   "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
-  "stars": 12486,
+  "stars": 12764,
   "zh": "在数据上构建语义图推理层的Python框架，支持确定性查询生成与上下文检索"
  },
  "Orkas-AI/Orkas": {
@@ -2684,7 +2684,7 @@
    "2026-10-28/github"
   ],
   "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-",
-  "stars": 9333,
+  "stars": 9348,
   "zh": "本地优先的桌面AI团队，由指挥官拆解目标并协调多个专家Agent与编码工具"
  },
  "Donchitos/Claude-Code-Game-Studios": {
@@ -2703,7 +2703,7 @@
    "2026-10-28/github"
   ],
   "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
-  "stars": 38856,
+  "stars": 39187,
   "zh": "把Claude Code变成游戏工作室，用49个分工Agent和工作流技能协作开发游戏"
  },
  "can1357/oh-my-pi": {
@@ -2728,7 +2728,7 @@
    "2026-10-28/github"
   ],
   "description": "⌥ Coding agent with the IDE wired in. Built by Stencil Labs.",
-  "stars": 38939,
+  "stars": 39007,
   "zh": "与IDE深度集成的命令行编码Agent，支持多种大模型与MCP"
  },
  "getpaseo/paseo": {
@@ -2753,7 +2753,7 @@
    "2026-10-28/github"
   ],
   "description": "Orchestrate multiple coding agents from desktop and mobile",
-  "stars": 23983,
+  "stars": 24046,
   "zh": "在桌面和手机上统一调度管理多个编码Agent的编排工具"
  },
  "apify/apify-mcp-server": {
@@ -2778,7 +2778,7 @@
    "2026-10-28/github"
   ],
   "description": "The Apify MCP server enables your AI agents to extract data from social media, search engines, maps, e-commerce sites, or any other website using thousands of ready-made scrapers, crawlers, and automation tools available on the Apify Store.",
-  "stars": 16096,
+  "stars": 16240,
   "zh": "让AI Agent通过现成爬虫工具抓取社交媒体、搜索引擎、地图和电商网站数据的MCP服务"
  },
  "TencentCloud/Octop": {
@@ -2787,7 +2787,7 @@
    "2026-10-28/github"
   ],
   "description": "A smarter, self-hosted AI assistant — multi-user, multi-agent.",
-  "stars": 12025,
+  "stars": 12041,
   "zh": "可自托管的多用户多Agent AI助手，具备长期记忆能力"
  },
  "huaxialucaicaizi/ai-startup-skills": {
@@ -2797,7 +2797,7 @@
    "2026-10-28/github"
   ],
   "description": "创业公司做 AI 产品的 7 步 Agent Skill 合集：验证 → BP → 政策 → 路演 → 获客 → 定价 → 注册。",
-  "stars": 924,
+  "stars": 926,
   "zh": "面向创业者的七步Agent技能合集，涵盖验证、商业计划、路演、获客与定价注册"
  },
  "daveebbelaar/bama": {
@@ -2807,7 +2807,7 @@
    "2026-10-28/github"
   ],
   "description": "BAMA: Build Any Mac App. Agent skills to research, clone, design, build, optimize, and test native macOS apps with Swift and SwiftUI.",
-  "stars": 1797,
+  "stars": 1813,
   "zh": "让Agent调研、克隆、设计、构建并测试Swift原生macOS应用的技能集"
  },
  "patch-gg/anymove": {
@@ -2816,7 +2816,7 @@
    "2026-10-28/github"
   ],
   "description": "Motion capture for any creature from one AI video: two cameras in one frame, a DINOv2 joint reader, the rig fitted in both views, a GLB out.",
-  "stars": 585,
+  "stars": 591,
   "zh": "从一段AI生成视频中为任意生物提取动作捕捉，并输出带骨骼的GLB模型"
  },
  "Litmeb/RAW-RAG": {
@@ -2870,7 +2870,7 @@
    "2026-10-28/papers"
   ],
   "description": "This is the official repo for paper InteractiveWorld A Verifiable Human-Centric Environment for Building Better Interactive MLLM Assistants",
-  "stars": 217,
+  "stars": 219,
   "zh": "用于构建更好交互式多模态助手的可验证、以人为中心的评测环境"
  },
  "haoyu-zhao/Continual-Learning-Exam": {
@@ -2920,8 +2920,8 @@
    "2026-10-30/github",
    "2026-10-29/github"
   ],
-  "description": "🛡️ BLA (Blind LLM Agents) — Adversarial defense shield that protects binaries, Electron apps, JS bundles, Python, and WebAssembly against AI reverse-engineering agents like REA. Poison -> Exhaust -> Hallucinate.",
-  "stars": 5534,
+  "description": "🛡️ BLA (bla-agents / Blind LLM Agents) — Open-source Blue Defense MCP server & CLI protecting JS/TS, Electron ASAR, WASM, Python, Native Binaries, SQLite, GGUF/Safetensors & Android DEX against AI reverse-engineering agents (REA).",
+  "stars": 5651,
   "zh": "保护二进制、Electron、JS、Python 和 WASM 代码，抵御 AI 逆向分析 Agent 的对抗防御工具"
  },
  "volcengine/OpenViking": {
@@ -2930,7 +2930,7 @@
    "2026-10-29/github"
   ],
   "description": "Self-evolving Context Database for AI Agents. Unify Agent Memory, Knowledge RAG and Skills.",
-  "stars": 42188,
+  "stars": 42231,
   "zh": "统一管理 AI Agent 的记忆、知识检索与技能，并能自我演进的上下文数据库"
  },
  "microsoft/TokenEconomizer": {
@@ -2956,7 +2956,7 @@
    "2026-10-29/github"
   ],
   "description": "Experience-Driven Black-Box Cost Control for Coding Agents",
-  "stars": 6037,
+  "stars": 6106,
   "zh": "基于经验对编程 Agent 的 Token 开销做黑盒成本控制的工具（推断）"
  },
  "MiniMax-AI/mcode-stack": {
@@ -2965,7 +2965,7 @@
    "2026-10-29/github"
   ],
   "description": "The workflows and skills the MiniMax Code team uses to build MiniMax Code. Open source, install and use.",
-  "stars": 707,
+  "stars": 715,
   "zh": "MiniMax Code 团队自用的 AI 编程工作流与技能集合，可直接安装使用"
  },
  "milind-soni/OpenMausBot": {
@@ -2999,7 +2999,7 @@
    "2026-10-29/github"
   ],
   "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
-  "stars": 22084,
+  "stars": 22636,
   "zh": "自托管的 Grok Bot 替代品，附带可供机器人操作的虚拟机"
  },
  "amosblomqvist/learnharness": {
@@ -3014,7 +3014,7 @@
    "2026-10-29/github"
   ],
   "description": "Agent harness for learning difficult things.",
-  "stars": 9204,
+  "stars": 9373,
   "zh": "专为学习困难知识而设计的 Agent 运行框架（推断）"
  },
  "every-app/open-seo": {
@@ -3026,7 +3026,7 @@
    "2026-10-29/github"
   ],
   "description": "Open source alternative to Semrush and Ahrefs",
-  "stars": 27584,
+  "stars": 27702,
   "zh": "提供关键词研究、外链分析和站点审计的 SEO 工具，可替代 Semrush 与 Ahrefs"
  },
  "dataelement/dsh-desktop": {
@@ -3039,7 +3039,7 @@
    "2026-10-29/github"
   ],
   "description": "DSHDesktop：DeepSeek Harness Desktop / DeepSeek Harness 桌面版",
-  "stars": 18642,
+  "stars": 18876,
   "zh": "DeepSeek Harness 的桌面客户端，用来运行 Agent 与插件应用"
  },
  "zhuyansen/awesome-claude-video-skills": {
@@ -3048,7 +3048,7 @@
    "2026-10-29/github"
   ],
   "description": "Open-source skills and toolkits that let Claude Code, Codex and other coding agents make video. 180 repos by type, each security-graded. English / 中文.",
-  "stars": 2012,
+  "stars": 2061,
   "zh": "按类型整理并做安全评级的视频制作 Agent 技能与工具合集，适用于 Claude Code 等"
  },
  "UnderleveledBuilder/awesome-short-drama-skills": {
@@ -3058,7 +3058,7 @@
    "2026-10-29/github"
   ],
   "description": "AI 短剧 · 漫剧 Skill（技能包）精选：剧本、改编、分镜、Seedance / 可灵 / MiniMax 视频提示词，千问、豆包、龙虾 OpenClaw、WorkBuddy、Claude Code、Codex 等智能体可用 | Curated agent skills for AI short drama, micro drama / microdrama, vertical drama and manju (AI comic drama): screenwriting, storyboards, Seedance / Kling / MiniMax video prompts",
-  "stars": 2281,
+  "stars": 2319,
   "zh": "精选 AI 短剧与漫剧 Agent 技能，涵盖剧本、分镜和视频提示词"
  },
  "nateherkai/roast-room": {
@@ -3068,7 +3068,7 @@
    "2026-10-29/github"
   ],
   "description": "Seven AI advisors (Bezos, Paul Graham, Hormozi, Gary Vee, Dan Martell, Gino Wickman, Buffett) debate your business decision in Claude Code, live around a table.",
-  "stars": 2102,
+  "stars": 2113,
   "zh": "让七位商业大咖 AI 顾问在 Claude Code 中围桌辩论你的商业决策"
  },
  "Jakeschincariol/arena-skill": {
@@ -3077,7 +3077,7 @@
    "2026-10-29/github"
   ],
   "description": "When Claude keeps giving you bad answers, make 100 versions of it fight to the death. Same task, 100 different strategies, a bracket, one answer left. Free Claude Code skill.",
-  "stars": 1478,
+  "stars": 1496,
   "zh": "让 100 种策略版本对同一任务淘汰赛、选出最佳答案的 Claude Code 技能"
  },
  "langchain-ai/design-agent": {
@@ -3086,7 +3086,7 @@
    "2026-10-29/github"
   ],
   "description": "Open-source design agent: on-brand stills, decks, diagrams, charts and motion graphics from a chat thread, built on Deep Agents.",
-  "stars": 615,
+  "stars": 616,
   "zh": "基于 Deep Agents，通过对话生成品牌风格的图片、演示稿、图表和动效的设计 Agent"
  },
  "Nasiko-Labs/nasiko": {
@@ -3097,7 +3097,7 @@
    "2026-10-29/github"
   ],
   "description": "The Open Runtime for AI Agents",
-  "stars": 11951,
+  "stars": 11944,
   "zh": "为 AI Agent 提供运行环境，含 MCP 网关与安全管控的开放运行时"
  },
  "rocketride-org/rocketride-server": {
@@ -3106,7 +3106,7 @@
    "2026-10-29/github"
   ],
   "description": "High-performance AI pipeline engine with a C++ core and 50+ Python-extensible nodes. Build, debug, and scale LLM workflows with 13+ model providers, 8+ vector databases, and agent orchestration, all from your IDE. Includes VS Code extension, TypeScript/Python SDKs, and Docker deployment.",
-  "stars": 20046,
+  "stars": 20039,
   "zh": "C++ 内核的 AI 流水线引擎，可在 IDE 中构建、调试并扩展 LLM 工作流"
  },
  "hexuan21/MemoryTax": {
@@ -3133,7 +3133,7 @@
    "2026-10-29/papers"
   ],
   "description": "Official implementation of The Trinity: Capability-Driven Recursive Self-Improvement for Multimodal Agents.",
-  "stars": 68,
+  "stars": 70,
   "zh": "简介仅写“即将推出”，具体功能不明的项目（推断）"
  },
  "InternLM/Intern-Decision": {
@@ -3161,7 +3161,7 @@
    "2026-10-30/github"
   ],
   "description": "The best-benchmarked open-source AI memory system. And it's free.",
-  "stars": 60546,
+  "stars": 60554,
   "zh": "基于 ChromaDB 的 AI 长期记忆系统，通过 MCP 为大模型存取记忆"
  },
  "trycua/cua": {
@@ -3175,7 +3175,7 @@
    "2026-10-30/github"
   ],
   "description": "Scale computer-use 2.0 with open-source drivers, cross-OS sandboxes, and benchmarks for training, evaluation, and data generation.",
-  "stars": 32299,
+  "stars": 32341,
   "zh": "提供跨系统沙箱与驱动，用于训练和评测能操作电脑的 AI 智能体"
  },
  "yzlin286-wq/Deepscient": {
@@ -3188,7 +3188,7 @@
    "2026-10-30/github"
   ],
   "description": "让 AI 与人类一起攻克真正的科学难题 —— 12 阶段 55 门 · 36 工具 · 98 条技能 · 证据链与可复现",
-  "stars": 984,
+  "stars": 986,
   "zh": "带证据链与可复现流程的 AI 科研助手，含多阶段工具与技能库"
  },
  "callstackincubator/simlock": {
@@ -3198,7 +3198,7 @@
    "2026-10-30/github"
   ],
   "description": "A control plane so parallel coding agents stop fighting over the same simulator.",
-  "stars": 655,
+  "stars": 656,
   "zh": "为并行运行的编程智能体分配模拟器使用权，避免争抢同一台设备"
  },
  "wangzan101/Mika": {
@@ -3220,7 +3220,7 @@
    "2026-10-30/github"
   ],
   "description": "An on-device AI agent for Android that operates apps and the web to get things done for you.",
-  "stars": 8508,
+  "stars": 8592,
   "zh": "安卓端本地 AI 助理，可自动操作手机 App 和网页完成任务"
  },
  "guilyx/grip": {
@@ -3229,7 +3229,7 @@
    "2026-10-30/github"
   ],
   "description": "A git hook that won't let you push code you can't explain. Quizzes you on your own diff. Works with Claude Code, Codex, Cursor.",
-  "stars": 437,
+  "stars": 219,
   "zh": "推送前针对你自己的代码改动出题提问，答不上来就拦截的 Git 钩子"
  },
  "Jakeschincariol/replica-skill": {
@@ -3238,7 +3238,7 @@
    "2026-10-30/github"
   ],
   "description": "Eleven free Claude skills that clone any app: reverse-engineer it, rebuild it, test it for bugs, then fix what its users hate. Free, MIT.",
-  "stars": 9201,
+  "stars": 9323,
   "zh": "一组 Claude 技能，可逆向、复刻任意应用并测试修复其缺陷"
  },
  "cranebeaker/coop-anything": {
@@ -3247,7 +3247,7 @@
    "2026-10-30/github"
   ],
   "description": "Co-op Anything: point your AI agent at any single-player game and play it with friends (online and/or splitscreen!). MCP server and playbook to let you reverse engineer, fix, test, ship and share what it learns.",
-  "stars": 2110,
+  "stars": 2117,
   "zh": "让 AI 智能体改造单人游戏，使其支持联机或分屏多人合玩的 MCP 服务"
  },
  "farion1231/cc-switch": {
@@ -3256,7 +3256,7 @@
    "2026-10-30/github"
   ],
   "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
-  "stars": 154199,
+  "stars": 154405,
   "zh": "统一管理 Claude Code、Codex 等 AI 编程工具的跨平台桌面应用"
  },
  "zjunlp/delta-tau-bench": {
@@ -3296,7 +3296,7 @@
    "2026-10-30/papers"
   ],
   "description": "TavernGym and TavernBench: a faithful, full-content Hearthstone Battlegrounds simulator with an RL interface, and a 960-task decision benchmark. Code and data for \"Build, Don't Play\".",
-  "stars": 279,
+  "stars": 280,
   "zh": "还原炉石酒馆战棋的模拟器与强化学习接口，附带决策评测基准"
  },
  "Zhanli-Li/Data-World": {
@@ -3325,7 +3325,7 @@
    "2026-10-30/papers"
   ],
   "description": "A robotic harness that gives LLM agents a visual-geometric control panel so that they can directly understand and invoke embodied tasks.",
-  "stars": 496,
+  "stars": 517,
   "zh": "为大模型智能体提供视觉几何控制面板，使其直接调用具身机器人任务"
  },
  "ZQ-Dev8/agent-mosaic": {
@@ -3344,7 +3344,7 @@
    "2026-10-30/papers"
   ],
   "description": "An Open All-in-One Platform for GUI Agent Evaluation and RL Training across Mobile and Computer Environments",
-  "stars": 57,
+  "stars": 58,
   "zh": "覆盖手机与电脑环境、用于 GUI 智能体评测和强化学习训练的平台"
  },
  "tigerless-labs/autoharness": {
@@ -3353,7 +3353,7 @@
    "2026-10-30/social"
   ],
   "description": "Building the self-learning layer next-gen agents will ship with, learning skills from real work.",
-  "stars": 11089,
+  "stars": 11120,
   "zh": "从真实会话中提炼、更新并清理技能的 Claude Code 自学习技能层"
  },
  "nextlevelbuilder/ui-ux-pro-max-skill": {
@@ -3362,7 +3362,7 @@
    "2026-10-30/social"
   ],
   "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
-  "stars": 148997,
+  "stars": 149393,
   "zh": "为 AI 提供设计规范，辅助生成多平台专业 UI/UX 界面的技能"
  },
  "Gen-Verse/RSI-Anything": {
@@ -3371,7 +3371,7 @@
    "2026-10-30/social"
   ],
   "description": "RSI-Anything: Unlocking Recursive Self-Improvement with World Models",
-  "stars": 1151,
+  "stars": 1156,
   "zh": "借助世界模型实现智能体递归式自我改进的研究项目（推断）"
  },
  "google-research/harness2": {
@@ -3380,7 +3380,7 @@
    "2026-10-30/social"
   ],
   "description": "",
-  "stars": 23696,
+  "stars": 23876,
   "zh": "谷歌研究院的智能体框架项目，具体功能不详（推断）"
  },
  "wheresryan22/anatomy": {
@@ -3389,7 +3389,7 @@
    "2026-10-30/social"
   ],
   "description": "An agent skill for creating detailed, interactive isometric illustrations of real-world machines and complex systems. Generates polished SVGs with optional WebGL shaders and 3D effects.",
-  "stars": 27086,
+  "stars": 27265,
   "zh": "生成真实机器与复杂系统的交互式等距 SVG 插图的智能体技能"
  },
  "vercel-labs/agent-desktop": {
@@ -3423,7 +3423,7 @@
    "2026-10-31/github"
   ],
   "description": "Computer use CLI for AI agents",
-  "stars": 23169,
+  "stars": 23651,
   "zh": "基于系统无障碍树读取并操作桌面应用界面的 Agent 电脑操控工具"
  },
  "Egonex-AI/Understand-Anything": {
@@ -3438,7 +3438,7 @@
    "2026-10-31/github"
   ],
   "description": "Graphs that teach > graphs that impress. Turn any code into an interactive knowledge graph you can explore, search, and ask questions about. Works with Claude Code, Codex, Cursor, Copilot, Gemini CLI, and more.",
-  "stars": 92513,
+  "stars": 92602,
   "zh": "把任意代码转成可探索、可搜索、可问答的交互式知识图谱"
  },
  "anthropics/skills": {
@@ -3457,7 +3457,7 @@
    "2026-10-31/github"
   ],
   "description": "Public repository for Agent Skills",
-  "stars": 194030,
+  "stars": 194463,
   "zh": "存放 Agent Skills 官方示例与技能包的公共仓库"
  },
  "metadist/synaplan-desktop": {
@@ -3478,7 +3478,7 @@
    "2026-10-31/github"
   ],
   "description": "Pass the baton from Claude Code or Codex to a local DeepSeek Harness. An MCP server that hands off tasks and brings the result back.",
-  "stars": 221,
+  "stars": 224,
   "zh": "把 Claude Code 或 Codex 的任务交接给本地 DeepSeek 并取回结果的 MCP 服务"
  },
  "pgrundev/pgx": {
@@ -3488,7 +3488,7 @@
    "2026-10-31/github"
   ],
   "description": "PGX — Lightweight Postgres for AI agents. Written in Rust. Thousands of isolated databases in one runtime🐘",
-  "stars": 717,
+  "stars": 718,
   "zh": "用 Rust 编写、为 AI Agent 提供大量隔离数据库的轻量 Postgres"
  },
  "Paradigm-Study/claude-share": {
@@ -3497,7 +3497,7 @@
    "2026-10-31/github"
   ],
   "description": "Multiplayer sessions for Claude Code. Share a link, work together live, and review the same replies, tools and previews.",
-  "stars": 1023,
+  "stars": 1041,
   "zh": "让多人通过链接实时协作使用同一个 Claude Code 会话的插件"
  },
  "patch-gg/pixelfx": {
@@ -3509,7 +3509,7 @@
    "2026-10-31/github"
   ],
   "description": "244 pixel art effects, every one a small piece of code. Plus a Claude Code skill to make your own.",
-  "stars": 7294,
+  "stars": 7429,
   "zh": "收录 232 种代码生成的像素特效，并带可自制特效的技能"
  },
  "taowangcheng/Skill-Infinity": {
@@ -3561,7 +3561,7 @@
    "2026-10-31/papers"
   ],
   "description": "VibeGame: Vibe Your Dream Game -- An open-source self-evolving multi-agent framework with an AI-Native game engine that turns your natural language into a fully playable 2D web game and edit it any way you want, built on Claude Code & Codex.",
-  "stars": 382,
+  "stars": 384,
   "zh": "用自然语言驱动多智能体生成并编辑可玩的 2D 网页游戏"
  },
  "wileai/pi-codex-connectors": {
@@ -3588,7 +3588,7 @@
    "2026-10-31/social"
   ],
   "description": "A cross-platform desktop app to manage Agent Skills in one place and sync them to multiple AI coding tools’ global skills directories — “Install once, sync everywhere”.",
-  "stars": 1871,
+  "stars": 1872,
   "zh": "统一管理 Agent 技能并同步到多个 AI 编程工具的桌面应用"
  },
  "AgenticResourceRegistry/AgenticResourceRegistry": {
@@ -3607,7 +3607,7 @@
    "2026-10-31/social"
   ],
   "description": "Share and discover coding agent resources across your team. Self-hosted, Apache 2.0, works with Claude Code, Kiro, Cursor, Codex, Pi and more.",
-  "stars": 4297,
+  "stars": 4298,
   "zh": "供团队自托管、共享与发现编程 Agent 资源的注册中心"
  },
  "haydenschmitty/floorplan": {
@@ -3619,7 +3619,7 @@
    "2026-11-01/github"
   ],
   "description": "See how your app actually fits together. An interactive, plain-English map of your codebase, drawn by Claude or Codex.",
-  "stars": 4085,
+  "stars": 4256,
   "zh": "把代码库画成可交互的白话架构图，帮人看清应用结构"
  },
  "ifixai-ai/iFixAi": {
@@ -3630,7 +3630,7 @@
    "2026-11-01/github"
   ],
   "description": "Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.",
-  "stars": 45178,
+  "stars": 45467,
   "zh": "对AI Agent做独立审计，快速核查其行为是否符合预期"
  },
  "deeplethe/sandstorm": {
@@ -3643,7 +3643,7 @@
    "2026-11-01/github"
   ],
   "description": "Run thousands of AI agent sandboxes on the cheapest machines.",
-  "stars": 6093,
+  "stars": 6095,
   "zh": "用低配机器同时运行成千上万个AI Agent沙箱，支持快照恢复"
  },
  "eliasbiondo/antirion": {
@@ -3652,7 +3652,7 @@
    "2026-11-01/github"
   ],
   "description": "🕷️ The fastest open-source AI Gateway and LLM Gateway — one binary with built-in console to route, secure, budget and observe every LLM call across OpenAI, Anthropic, Gemini, Bedrock and more.",
-  "stars": 458,
+  "stars": 462,
   "zh": "统一路由多家大模型调用的网关，内置控制台，支持鉴权、预算与监控"
  },
  "0xS4N4TG/kinetograph": {
@@ -3661,7 +3661,7 @@
    "2026-11-01/github"
   ],
   "description": "A blazingly fast programmatic video engine, made for agents.",
-  "stars": 515,
+  "stars": 519,
   "zh": "面向Agent的高性能程序化视频渲染引擎，用代码生成视频"
  },
  "sandbox-quantum/switch": {
@@ -3673,7 +3673,7 @@
    "2026-11-01/github"
   ],
   "description": "Open-source AI teammates in Slack, Teams, Discord, Telegram and Mattermost. Self-host it, with any agent harness and any model.",
-  "stars": 4500,
+  "stars": 4525,
   "zh": "把AI智能体接入Slack、Teams等聊天工具，作为可自托管的团队助手"
  },
  "elvarofficial/teardown": {
@@ -3684,7 +3684,7 @@
    "2026-11-01/github"
   ],
   "description": "A Claude Code skill that turns any machine into a 3D simulator you can take apart",
-  "stars": 3415,
+  "stars": 3489,
   "zh": "Claude Code技能，把任意机器生成可拆解的3D仿真模型"
  },
  "NiazMorshed2007/reanimate": {
@@ -3694,7 +3694,7 @@
    "2026-11-01/github"
   ],
   "description": "A Claude Code skill that reverse-engineers any animation frame by frame, then proves the copy moves the same.",
-  "stars": 1610,
+  "stars": 1652,
   "zh": "Claude Code技能，逐帧逆向网页动画并验证复刻效果一致"
  },
  "leepokai/Codync": {
@@ -3703,7 +3703,7 @@
    "2026-11-01/github"
   ],
   "description": "Open source Grok Bot alternative, Bring your own agent and subscription: message Claude Code, Codex, Gemini CLI, Cursor, Copilot and 40+ AI agents as bots on your own computer, from iPhone, Mac, Windows, Linux or terminal. Agent-agnostic and free. Also a Muse and Dots alternative. Built in Rust.",
-  "stars": 2075,
+  "stars": 2094,
   "zh": "在手机或电脑上通过消息远程调用Claude Code等40多种AI编程Agent"
  },
  "2020-qqtcg/HRP": {
@@ -3742,7 +3742,7 @@
    "2026-11-01/papers"
   ],
   "description": "WeVisCut is a 9B tool-using agent that turns knowledge articles and narration scripts into multi-minute videos through planning, asset retrieval, editing, inspection, and repair. Built on Qwen3.5, it operates in a stateful 12-tool workflow and includes an editable Studio runtime.",
-  "stars": 90,
+  "stars": 91,
   "zh": "90亿参数视频剪辑Agent，把知识文章和旁白脚本自动做成多分钟视频"
  },
  "haojinw0027/ParetoRSI-GYM": {
@@ -3762,7 +3762,7 @@
    "2026-11-01/social"
   ],
   "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications.",
-  "stars": 41828,
+  "stars": 41851,
   "zh": "提供大模型、RAG检索增强和AI智能体实战应用的深度教程合集"
  },
  "D4Vinci/Scrapling": {
@@ -3781,7 +3781,7 @@
    "2026-11-02/github"
   ],
   "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
-  "stars": 102427,
+  "stars": 102789,
   "zh": "支持从单次请求到整站爬取的 Python 网页抓取框架，带隐身与选择器"
  },
  "FailproofAI/failproofai": {
@@ -3790,7 +3790,7 @@
    "2026-11-03/github"
   ],
   "description": "Observability and enforcement for AI agent harnesses. Capture every run and runtime reliability with policy enforcement.  ",
-  "stars": 8834,
+  "stars": 8944,
   "zh": "记录 AI 智能体每次运行并用策略约束其行为，监控可靠性"
  },
  "lahfir/agent-desktop": {
@@ -3810,7 +3810,7 @@
    "2026-11-03/github"
   ],
   "description": "🚀 PR Agent: The Original Open-Source PR Reviewer. This project is not the Qodo free tier.",
-  "stars": 16076,
+  "stars": 16150,
   "zh": "用 AI 自动审查拉取请求并给出评审意见的工具"
  },
  "agent0ai/tuxee": {
@@ -3819,7 +3819,7 @@
    "2026-11-03/github"
   ],
   "description": "Tuxee - the most convenient Linux for servers and agents.",
-  "stars": 403,
+  "stars": 414,
   "zh": "专为服务器和智能体设计的 Linux 发行版，带管理面板"
  },
  "Anubis-Security-Tool/anubis": {
@@ -3847,7 +3847,7 @@
    "2026-11-03/github"
   ],
   "description": "Scene-aware storyboard for DeepSeek Harness: 9-16 numbered cells with timestamps + transcript + an audio envelope, packed into ONE image (384 tokens). Two tools: video_storyboard and video_zoom.",
-  "stars": 536,
+  "stars": 541,
   "zh": "把视频拼成带时间戳和字幕的分镜图，供模型理解视频"
  },
  "ThinkWatchProject/ThinkWatch-Lite": {
@@ -3867,7 +3867,7 @@
    "2026-11-02/github"
   ],
   "description": "Live messaging for coding agents",
-  "stars": 1136,
+  "stars": 1149,
   "zh": "让多个编程智能体之间实时互发消息的 MCP 服务"
  },
  "datawhalechina/agentic-rl-lab": {
@@ -3876,7 +3876,7 @@
    "2026-11-03/github"
   ],
   "description": "Reproducing and studying RL algorithms for LLM agents, including GRPO, GSPO, DAPO, OPD, Search-R1, ReTool, ALFWorld and beyond.",
-  "stars": 1433,
+  "stars": 1452,
   "zh": "复现并研究 GRPO、DAPO 等大模型智能体强化学习算法"
  },
  "scenario-labs/skills": {
@@ -3886,7 +3886,7 @@
    "2026-11-03/github"
   ],
   "description": "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity.",
-  "stars": 3750,
+  "stars": 3777,
   "zh": "让智能体生成图像、视频、音频和 3D 素材的技能集合"
  },
  "benjitaylor/skills": {
@@ -3897,7 +3897,7 @@
    "2026-11-03/github"
   ],
   "description": "Skills for AI coding agents.",
-  "stars": 3249,
+  "stars": 3298,
   "zh": "（推断）面向 AI 编程智能体的技能合集"
  },
  "mhfed/vn-law-check": {
@@ -3916,7 +3916,7 @@
    "2026-11-03/github"
   ],
   "description": "Show it a video you love. Get a new video in the same style. An AI crew (Claude Code or Codex) plans, builds and reviews it with you.",
-  "stars": 1977,
+  "stars": 1962,
   "zh": "参考喜欢的视频，由 AI 团队制作同风格新视频"
  },
  "beita6969/R2Orch": {
@@ -3936,7 +3936,7 @@
    "2026-11-03/papers"
   ],
   "description": "CoworkOS: a cowork harness for long-horizon and human-in-the-loop task execution",
-  "stars": 173,
+  "stars": 175,
   "zh": "支持长周期任务和人机协同执行的智能体协作框架"
  },
  "xlyu0106/CUA-Master": {
@@ -3978,7 +3978,7 @@
    "2026-11-03/papers"
   ],
   "description": "CaPtain: A Pipeline for Post-Training Code-as-Policy Robot Agents — CaPtain-Harness, SFT and RL training code, benchmark adapters",
-  "stars": 97,
+  "stars": 100,
   "zh": "后训练以代码为策略的机器人智能体，含训练与评测代码"
  },
  "salesforce-misc/crm-agent-bench": {
@@ -4007,7 +4007,7 @@
    "2026-11-03/social"
   ],
   "description": "Claude Code skill for product videos: real browser capture, branded composition, and local mastering.",
-  "stars": 396,
+  "stars": 397,
   "zh": "用真实浏览器录屏制作带品牌包装的产品视频的技能"
  },
  "Muvon/octomind": {
@@ -4017,7 +4017,7 @@
    "2026-11-03/social"
   ],
   "description": "Open-source AI coding agent and agent runtime: one binary, any model, MCP-native. Runs in terminal, CI, or as a daemon.",
-  "stars": 657,
+  "stars": 659,
   "zh": "单一可执行文件的 AI 编程智能体，支持任意模型与 MCP"
  },
  "KKKKhazix/agent-autoloop": {
@@ -4032,7 +4032,7 @@
    "2026-11-04/github"
   ],
   "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
-  "stars": 5100,
+  "stars": 5308,
   "zh": "让命令行智能体后台自动接活，遇难题才发卡片请你决策"
  },
  "yjid/kensaku": {
@@ -4047,7 +4047,7 @@
    "2026-11-04/github"
   ],
   "description": "Search inside documents, code, and even screenshots - instantly and locally. A free, open-source file launcher with OCR, semantic search, and MCP agent access.",
-  "stars": 1751,
+  "stars": 1775,
   "zh": "本地即时搜索文档、代码和截图，支持 OCR 与语义检索"
  },
  "lemonadesaltbagel/sill": {
@@ -4056,7 +4056,7 @@
    "2026-11-04/github"
   ],
   "description": "Native Windows Bash for AI coding agents. Run Claude Code, Codex, opencode & Gemini CLI without Git Bash, MSYS2 or WSL. Built in Rust, with MCP support.",
-  "stars": 282,
+  "stars": 290,
   "zh": "让 AI 编程智能体在 Windows 原生运行 Bash 的 Rust 工具"
  },
  "caru-ini/stack-diagram": {
@@ -4066,7 +4066,7 @@
    "2026-11-02/github"
   ],
   "description": "Agent skill: describe your stack in a sentence, get an architecture diagram with official logos",
-  "stars": 2476,
+  "stars": 2498,
   "zh": "一句话描述技术栈，生成带官方图标的架构图"
  },
  "JuneYaooo/rea-video": {
@@ -4087,7 +4087,7 @@
    "2026-11-04/github"
   ],
   "description": "Reverse-engineer any video, shot by shot: filmed, AI-generated or coded, and how to remake it. 逆向一切视频，逐个镜头看是拍的、AI 生成的还是代码做的，再告诉你怎么复刻。",
-  "stars": 7857,
+  "stars": 8415,
   "zh": "逐镜头拆解任意视频的画面、剪辑与声音并给出复刻方案"
  },
  "phone-harness/mcp": {
@@ -4096,7 +4096,7 @@
    "2026-11-04/github"
   ],
   "description": "Connect AI agents to real iPhones and Androids",
-  "stars": 795,
+  "stars": 803,
   "zh": "让 AI 智能体控制真实 iPhone 和安卓手机的 MCP 服务"
  },
  "southleft/figma-console-mcp": {
@@ -4105,7 +4105,7 @@
    "2026-11-04/github"
   ],
   "description": "Your design system as an API. Connect AI to Figma for extraction, creation, and debugging.",
-  "stars": 3301,
+  "stars": 3316,
   "zh": "让 AI 连接 Figma 提取、创建并调试设计系统"
  },
  "Miraclecsc/Switch-SWE": {
@@ -4147,7 +4147,7 @@
    "2026-11-04/papers"
   ],
   "description": "A Unified Robot-Use Agent Harness Across Environments",
-  "stars": 398,
+  "stars": 406,
   "zh": "跨多种环境通用的机器人操控智能体框架"
  },
  "BangProx/ReTRACE": {
@@ -4166,7 +4166,7 @@
    "2026-11-04/papers"
   ],
   "description": "Official repository for Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems.",
-  "stars": 21,
+  "stars": 23,
   "zh": "研究通用 AI 系统中模型与策略路由的官方代码"
  },
  "bytedance/axion1_0": {
@@ -4176,7 +4176,7 @@
    "2026-11-04/papers"
   ],
   "description": "Frontier-level agent capabilities with nothing more than high-quality data and a simple training recipe: 2 SFT + RL, no mid-training/DPO/OPD. Full recipe released.",
-  "stars": 73,
+  "stars": 79,
   "zh": "仅用高质量数据与简单两阶段训练得到的智能体大模型方案"
  },
  "dongguanting/ToolSpace": {
@@ -4186,7 +4186,7 @@
    "2026-11-04/papers"
   ],
   "description": "The official code of ToolSpace",
-  "stars": 175,
+  "stars": 224,
   "zh": "（推断）大模型工具使用相关的研究代码"
  },
  "aiming-lab/WebHarbor": {
@@ -4245,7 +4245,7 @@
    "2026-11-02/github"
   ],
   "description": "Self-hosted metasearch and grounding engine for AI agents, based on SearXNG. Rust, JSON API, optional page text.",
-  "stars": 967,
+  "stars": 973,
   "zh": "基于 SearXNG 用 Rust 重写的自托管元搜索引擎，为 AI Agent 提供搜索与网页正文"
  },
  "beenuar/AiSOC": {
@@ -4254,7 +4254,7 @@
    "2026-11-02/github"
   ],
   "description": "Open-source AI Security Operations Center: alert fusion, LLM-agent triage, MITRE ATT&CK investigation, and a replayable decision ledger for every agent step. Self-hostable, runs with no API keys, MIT licensed. Ships an MCP server for Claude, Cursor and Continue.",
-  "stars": 7702,
+  "stars": 7543,
   "zh": "用 LLM Agent 自动研判安全告警并映射 MITRE ATT&CK 的自托管安全运营平台"
  },
  "Balanov/uncut": {
@@ -4272,7 +4272,7 @@
    "2026-11-02/github"
   ],
   "description": "A local AI agent harness in Go that runs 24/7 with auto-built tools, MCP, and Ollama",
-  "stars": 598,
+  "stars": 603,
   "zh": "用 Go 编写的本地 AI Agent 框架，可全天运行、自动构建工具并支持 MCP 与 Ollama"
  },
  "zhanghao123vip/ai-manju-skills": {
@@ -4281,7 +4281,7 @@
    "2026-11-02/github"
   ],
   "description": "21 个题材的 AI 漫剧全流程 Skill：一句点子生成企划案、资产图提示词、分集剧本、分镜与视频提示词。可用于 Claude Code、WorkBuddy、DeepSeek",
-  "stars": 794,
+  "stars": 812,
   "zh": "覆盖 21 种题材的 AI 漫剧 Skill，由一句点子生成企划、剧本、分镜与视频提示词"
  },
  "emanuele-em/kanzo": {
@@ -4290,7 +4290,7 @@
    "2026-11-02/github"
   ],
   "description": "Self-hosted, sharable kanban for humans and agents. One 4.7 MB binary, 5 MB of RAM, 10 to 60 tokens per agent reply, starts in 3 ms, zero setup.",
-  "stars": 1180,
+  "stars": 1191,
   "zh": "可自托管、轻量的看板工具，让人和 AI Agent 共同管理与更新任务"
  },
  "Prophetlab/Investor-Last-Exam": {
@@ -4308,7 +4308,7 @@
    "2026-11-02/papers"
   ],
   "description": "RAGFlow is an agent-native database: a Retrieval-Augmented Generation (RAG) engine that grew into context infrastructure.",
-  "stars": 94122,
+  "stars": 94148,
   "zh": "集检索增强生成引擎与上下文管理于一体，为 AI Agent 提供知识检索的数据库"
  },
  "Generated-Computers/Locals": {
@@ -4329,7 +4329,7 @@
    "2026-11-05/github"
   ],
   "description": "The first fruit of the Nüwa tree — an autonomous AI pentest legion (634-team champion, 8h unattended, 1B tokens beat 4.5B). Not just a tool: evolvable by design. Grow your own fruit on the Nüwa Foundation (Create/Language/History).",
-  "stars": 2041,
+  "stars": 2083,
   "zh": "由 AI 指挥官统领多个工作智能体，自主完成渗透测试的自动化系统"
  },
  "Fangx-AI/geo-doctor": {
@@ -4350,7 +4350,7 @@
    "2026-11-05/github"
   ],
   "description": "A personal agent that works on your life around the clock, on a Mac you own. One sentence to Claude Code installs it.",
-  "stars": 389,
+  "stars": 401,
   "zh": "运行在自有 Mac 上、全天候协助处理个人生活事务的个人智能体"
  },
  "XiaoyeCodes/code-animation-prompts": {
@@ -4360,7 +4360,7 @@
    "2026-11-05/github"
   ],
   "description": "341 种代码动画风格提示词、196 张参考静帧与离线挑选器，封装为 Claude Code / Codex Skill，支持一键导入与 HTML 视频渲染。",
-  "stars": 1035,
+  "stars": 1069,
   "zh": "提供数百种代码动画风格提示词与参考图，可渲染成 HTML 视频的技能包"
  },
  "sarpstar/cinecode": {
@@ -4371,7 +4371,7 @@
    "2026-11-05/github"
   ],
   "description": "Films made with code. Short films, long YouTube videos, ads, explainers and music videos: an AI coding agent writes the script, builds every frame in code, designs the sound and hands you an MP4.",
-  "stars": 2394,
+  "stars": 2486,
   "zh": "让 AI 编程智能体用代码写脚本、逐帧制作并输出 MP4 短片"
  },
  "Balanov/latch": {
@@ -4416,7 +4416,7 @@
    "2026-11-05/papers"
   ],
   "description": "",
-  "stars": 13,
+  "stars": 14,
   "zh": "清华智能体团队的智能体相关研究项目（推断）"
  },
  "microsoft/Hybrid-Computer-Use": {
@@ -4427,7 +4427,7 @@
    "2026-11-05/papers"
   ],
   "description": "Official code for \"Hybrid Computer Use: A Unified Programmatic, Semantic, and Visual Interface for General Agents\"",
-  "stars": 51,
+  "stars": 53,
   "zh": "为通用智能体统一编程、语义与视觉接口的电脑操控方案代码"
  },
  "orca-ae/orca-agent-engine": {
@@ -4445,7 +4445,7 @@
    "2026-11-05/social"
   ],
   "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
-  "stars": 143204,
+  "stars": 143516,
   "zh": "输入主题或关键词，用大模型自动生成带字幕配音的高清短视频"
  },
  "google/skills": {
@@ -4457,7 +4457,7 @@
    "2026-11-06/github"
   ],
   "description": "Agent Skills for Google products and technologies",
-  "stars": 24125,
+  "stars": 24213,
   "zh": "提供面向 Google 产品与技术的 Agent 技能集合"
  },
  "vercel-labs/agent-browser": {
@@ -4474,7 +4474,7 @@
    "2026-11-06/github"
   ],
   "description": "Browser automation CLI for AI agents",
-  "stars": 50609,
+  "stars": 51048,
   "zh": "供 AI Agent 通过命令行操控浏览器的自动化工具"
  },
  "elder-plinius/T3MP3ST": {
@@ -4483,7 +4483,7 @@
    "2026-11-06/github"
   ],
   "description": "autonomous red teaming platform; multi-agent offensive-security meta-harness",
-  "stars": 7038,
+  "stars": 7052,
   "zh": "多 Agent 协同的自主红队攻防测试平台"
  },
  "cutetailbud/ff-ruyijs": {
@@ -4495,7 +4495,7 @@
    "2026-11-06/github"
   ],
   "description": "This is a lightweight, headless browser purpose-built for AI agents (such as Codex or Claude Code) to perform browser automation tasks; it is designed to navigate through various web protection systems, login processes, and reverse-engineering scenarios",
-  "stars": 1240,
+  "stars": 1244,
   "zh": "专为 AI Agent 打造的轻量无头浏览器，可应对反爬与登录场景"
  },
  "chutingyean/Agent-Cockpit": {
@@ -4505,7 +4505,7 @@
    "2026-11-06/github"
   ],
   "description": "Evidence-chain whiteboard + MCP server for AI research agents: every claim traces back to the run and code that produced it. 讓 AI agent 做研究時，每個結論都能追到產生它的程式碼。Claude Code · Codex · Cursor · Gemini CLI",
-  "stars": 495,
+  "stars": 500,
   "zh": "用证据链白板和 MCP 服务让 AI 研究结论可追溯到源代码"
  },
  "kyy-logs/code-review-skill": {
@@ -4529,7 +4529,7 @@
    "2026-11-06/github"
   ],
   "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
-  "stars": 1052,
+  "stars": 1227,
   "zh": "让 AI Agent 通过本地 MCP 服务操作真实 iPhone"
  },
  "shinyobjectz/raea": {
@@ -4539,7 +4539,7 @@
    "2026-11-06/github"
   ],
   "description": "Render Anything Engine: tell your AI what to make. Videos, motion graphics, 3D and games as React and TypeScript, rendered on your own GPU. Rust + Bevy, macOS, Linux and Windows.",
-  "stars": 2339,
+  "stars": 2449,
   "zh": "用 React 和 TypeScript 生成视频、动效与 3D 并本地 GPU 渲染"
  },
  "aa1143/NamiDSH": {
@@ -4618,7 +4618,7 @@
    "2026-11-06/papers"
   ],
   "description": "Open Drex decision models: runtime, docs and model pages",
-  "stars": 142,
+  "stars": 144,
   "zh": "提供 Drex 决策模型的运行时、文档与模型页面"
  },
  "rivet-dev/rivet": {
@@ -4628,7 +4628,7 @@
    "2026-11-06/social"
   ],
   "description": "The orchestrator for agentic workloads. A fast, high-density and scalable orchestrator for every workload an agent needs.",
-  "stars": 6903,
+  "stars": 6915,
   "zh": "为 Agent 工作负载提供高密度可扩展的编排调度"
  },
  "voyager-so/vork": {
@@ -4639,7 +4639,7 @@
    "2026-11-07/github"
   ],
   "description": "Headless 3D and VFX engine for agents. Research preview.",
-  "stars": 1512,
+  "stars": 1559,
   "zh": "面向 Agent 的无头 3D 与特效渲染引擎，支持光线追踪"
  },
  "devvmhq/devvm": {
@@ -4649,7 +4649,7 @@
    "2026-11-07/github"
   ],
   "description": "One VM for every project. An isolated sandbox with your project’s toolchain, ready for you or a coding agent to start coding",
-  "stars": 609,
+  "stars": 628,
   "zh": "为每个项目提供隔离虚拟机沙箱，供人或编码 Agent 开发"
  },
  "YCC-Lover/research-starter-skills": {
@@ -4659,7 +4659,7 @@
    "2026-11-07/github"
   ],
   "description": "面向科研新手的 Codex 科研协作技能集：选题、文献检索与阅读、论文写作、自然润色、审稿返修和可编辑学术汇报。结合 Research-Starter-Kit 原创教程，用 1 个总入口与 6 个专业模块推进研究。 Research training, writing & editable presentations for Codex.",
-  "stars": 262,
+  "stars": 231,
   "zh": "面向科研新手的 Codex 技能集，覆盖选题、文献、写作与审稿返修"
  },
  "eduwxyz/tucano": {
@@ -4671,7 +4671,7 @@
    "2026-11-07/github"
   ],
   "description": "Your team of AI agents, on your Mac, Windows or Linux. Agents that talk in channels, write code, review each other and use your tools, on the Claude Code, Codex, OpenCode or Pi you already have. Anything that touches the real world waits for your yes.",
-  "stars": 398,
+  "stars": 407,
   "zh": "在本机运行的 AI Agent 团队，可协作写代码、互相评审并调用工具"
  },
  "poco-ai/Agentero": {
@@ -4680,7 +4680,7 @@
    "2026-11-07/github"
   ],
   "description": "Unified research workspace for humans & agents — PDF Q&A with citations, Vault, writing. 为人与 Agent 协作的科研工作台；补齐 Zotero 时代的人机上下文断点。",
-  "stars": 2482,
+  "stars": 2504,
   "zh": "人与 Agent 共用的科研工作台，支持带引用的 PDF 问答与写作"
  },
  "anywhere-labs/Agents-Anywhere": {
@@ -4689,7 +4689,7 @@
    "2026-11-07/github"
   ],
   "description": "跨设备的开源Agent工作台",
-  "stars": 3377,
+  "stars": 3404,
   "zh": "可跨设备远程使用 Claude Code、Codex 等 Agent 的工作台"
  },
  "Qile-J/SwarmEvolve": {
@@ -4700,7 +4700,7 @@
    "2026-11-07/papers"
   ],
   "description": "SwarmEvolve: Latent Agent Swarms for Rapid Evolutionary Search (code coming soon)",
-  "stars": 47,
+  "stars": 48,
   "zh": "用潜在空间 Agent 群体加速进化式搜索的研究项目"
  },
  "antins-labs/VisSearch-Bench-v1": {
@@ -4736,7 +4736,7 @@
    "2026-11-07/social"
   ],
   "description": "A UI/UX skill for coding agents to build distinctive, usable interfaces.",
-  "stars": 234,
+  "stars": 239,
   "zh": "帮助编码 Agent 设计出有特色且易用界面的 UI/UX 技能"
  },
  "vAPI-Network/vapi-network": {
@@ -4745,7 +4745,7 @@
    "2026-11-08/github"
   ],
   "description": "Buyer-controlled client for x402 API payments in USDC on Base.",
-  "stars": 4321,
+  "stars": 4546,
   "zh": "买方自主控制、用 Base 链 USDC 支付 x402 API 调用费用的客户端"
  },
  "meta/astryx": {
@@ -4764,7 +4764,7 @@
    "2026-11-08/github"
   ],
   "description": "An open source design system that's fully customizable and agent ready",
-  "stars": 27247,
+  "stars": 27861,
   "zh": "可完全自定义、面向 AI Agent 使用的设计系统"
  },
  "superplanehq/superplane": {
@@ -4773,7 +4773,7 @@
    "2026-11-08/github"
   ],
   "description": "Open source factory for one-shot engineering",
-  "stars": 10040,
+  "stars": 10051,
   "zh": "编排 AI 编程 Agent，自动完成端到端软件工程任务的自托管工作流平台"
  },
  "genspark-ai/genoffice": {
@@ -4782,7 +4782,7 @@
    "2026-11-08/github"
   ],
   "description": "Free, open-source AI Office suite: Docs, Sheets, Slides, PDF, Markdown and HTML editors with a built-in AI agent, plus a `genoffice` CLI and agent skill so Claude Code, Codex and Cursor can create and edit real .docx/.xlsx/.pptx files locally. Bring your own key. macOS, Windows & Linux.",
-  "stars": 12299,
+  "stars": 12344,
   "zh": "内置 AI 助手的本地办公套件，可让编程 Agent 创建编辑 docx、xlsx、pptx 文件"
  },
  "open-net-worth-ai/open-net-worth": {
@@ -4791,7 +4791,7 @@
    "2026-11-08/github"
   ],
   "description": "Self-hosted alternative to Claude and ChatGPT Personal Finance. An AI agent that manages your budget and investments, and can place trades.",
-  "stars": 437,
+  "stars": 483,
   "zh": "自托管的 AI 个人理财助手，管理预算与投资并可代为下单交易"
  },
  "dhruvthakur11/youtube-ai-video-editing-system": {
@@ -4800,7 +4800,7 @@
    "2026-11-08/github"
   ],
   "description": "Eyeline teleprompter meets editing agents: JSON-driven animation and motion graphics workflow",
-  "stars": 386,
+  "stars": 387,
   "zh": "用 JSON 驱动动画与动态图形、结合提词器的 AI 视频剪辑工作流"
  },
  "wxj630/terminal-bench-math-modeling": {
@@ -4830,7 +4830,7 @@
    "2026-11-09/github"
   ],
   "description": "a13n - Build, run, and manage AI agents at scale on your own infrastructure. Open source, with a built-in harness, durable execution, multi-provider support, and a management console. Built With Love 💜 @converge-ai-labs",
-  "stars": 1177,
+  "stars": 1225,
   "zh": "在自有基础设施上构建、运行并管理大规模 AI 智能体的平台，含持久执行与管理控制台"
  },
  "kubai087/kubai-icons": {
@@ -4841,7 +4841,7 @@
    "2026-11-09/github"
   ],
   "description": "An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other coding agents. Comes with 2,600+ open-source icons for React, Vue and SVG, and a website to browse them.",
-  "stars": 811,
+  "stars": 825,
   "zh": "让编程智能体按统一风格绘制动画图标的技能，附带2600多个可用于React、Vue的图标"
  },
  "google/three-live": {
@@ -4850,7 +4850,7 @@
    "2026-11-09/github"
   ],
   "description": "AI-first Native 3D, CAD & spatial computing. Runtime and JIT compiler for Android (Filament & Jetpack XR), iOS/visionOS (RealityKit), and WebGL2/WebXR.",
-  "stars": 373,
+  "stars": 390,
   "zh": "面向安卓、苹果和网页的原生3D与CAD运行时及即时编译器，支持空间计算"
  },
  "codepawl/67.js": {
@@ -4859,7 +4859,7 @@
    "2026-11-09/github"
   ],
   "description": "3D engine that AI agents drive",
-  "stars": 606,
+  "stars": 631,
   "zh": "可由AI智能体通过MCP协议驱动的WebGL2 3D渲染引擎"
  },
  "0sec-labs/0": {
@@ -4869,7 +4869,7 @@
    "2026-11-09/github"
   ],
   "description": "The open-source AI security harness. Includes a web interface for code analysis, pentesting, vulnerability research, reverse engineering, verification, and fixing + CLI and MCP for agents.",
-  "stars": 1341,
+  "stars": 1350,
   "zh": "让AI智能体完成代码分析、渗透测试、漏洞研究与逆向的安全工具套件"
  },
  "StarTrail-org/DRPixel": {
@@ -4915,7 +4915,7 @@
    "2026-11-09/papers"
   ],
   "description": "Confucius4-R2T2: A Low Latency and High Accuracy Real-Time Speech Recognition Model",
-  "stars": 890,
+  "stars": 893,
   "zh": "低延迟、高准确率的实时语音识别模型"
  },
  "Lenovo-ICI/DARIC": {
@@ -4933,7 +4933,7 @@
    "2026-11-09/social"
   ],
   "description": "small LLM inference engine from scratch, w/ 6+ hours of youtube tutorials & 85+ pages of handwritten notes included",
-  "stars": 215,
+  "stars": 130,
   "zh": "从零实现的小型大模型推理引擎，附视频教程和手写笔记"
  },
  "homeassistant-ai/ha-mcp": {
@@ -4944,7 +4944,7 @@
    "2026-11-10/github"
   ],
   "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
-  "stars": 7737,
+  "stars": 7807,
   "zh": "让 Claude、ChatGPT 等 AI 助手配置并自动化控制 Home Assistant 智能家居"
  },
  "anthropics/claude-quickstarts": {
@@ -4953,7 +4953,7 @@
    "2026-11-10/github"
   ],
   "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
-  "stars": 20842,
+  "stars": 20941,
   "zh": "一组基于 Claude API 的入门示例项目，帮助开发者快速搭建可部署应用"
  },
  "garrytan/gbrain": {
@@ -4963,7 +4963,7 @@
    "2026-11-10/github"
   ],
   "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
-  "stars": 32837,
+  "stars": 32928,
   "zh": "Garry Tan 个人定制的 OpenClaw/Hermes 智能体“大脑”配置（推断）"
  },
  "opensandbox-group/OpenSandbox": {
@@ -4972,7 +4972,7 @@
    "2026-11-10/github"
   ],
   "description": "Secure, Fast, and Extensible Sandbox runtime for AI agents.",
-  "stars": 17271,
+  "stars": 17294,
   "zh": "为 AI 智能体提供安全、快速、可扩展的沙箱运行环境"
  },
  "ZhuLinsen/daily_stock_analysis": {
@@ -4983,7 +4983,7 @@
    "2026-11-10/github"
   ],
   "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
-  "stars": 71398,
+  "stars": 72183,
   "zh": "用大模型整合多源行情与新闻，生成股票分析决策看板并自动推送"
  },
  "lexmount/moli": {
@@ -4993,7 +4993,7 @@
    "2026-11-10/github"
   ],
   "description": "Best headless browser for AI agents. Lite, Fast, High-Compatibility. Built in Rust",
-  "stars": 23650,
+  "stars": 23741,
   "zh": "用 Rust 编写的轻量快速无头浏览器，供 AI 智能体做网页自动化"
  },
  "ShuaiMXu/happyhands": {
@@ -5005,7 +5005,7 @@
    "2026-11-10/github"
   ],
   "description": "Open-source, AI-assisted UI design review for coding agents. Inspect screenshots, scope code changes and compare results in a local workbench. Alpha.",
-  "stars": 488,
+  "stars": 497,
   "zh": "在本地工作台审查界面截图，辅助编码智能体按设计意见修改界面代码"
  },
  "herdrdev/herdr-core": {
@@ -5015,7 +5015,7 @@
    "2026-11-10/github"
   ],
   "description": "herdr-core: terminals for coding agents",
-  "stars": 668,
+  "stars": 689,
   "zh": "为多个编码智能体提供终端运行与管理环境（推断）"
  },
  "TIGER-AI-Lab/WebsiteBench": {
@@ -5027,7 +5027,7 @@
    "2026-11-10/github"
   ],
   "description": "Can AI agents rebuild websites through browser exploration?",
-  "stars": 326,
+  "stars": 367,
   "zh": "评测 AI 智能体能否通过浏览器探索来重建整个网站的基准"
  },
  "beluga-labs/beluga": {
@@ -5036,7 +5036,7 @@
    "2026-11-10/github"
   ],
   "description": "Beluga: An AI native IDE Mac app peer to peer connections everything designed around AI development",
-  "stars": 551,
+  "stars": 554,
   "zh": "面向 AI 开发的 Mac 原生 IDE，支持 Claude Code 与点对点连接"
  },
  "shinshin86/mesh-avatar-studio": {
@@ -5045,7 +5045,7 @@
    "2026-11-10/github"
   ],
   "description": "Turn one illustration into an animated 2D mesh avatar with a coding agent and a local editor",
-  "stars": 2343,
+  "stars": 2362,
   "zh": "借助编码智能体和本地编辑器，把一张插画做成可动的 2D 网格头像"
  },
  "Qi202/SoMem": {
@@ -5054,7 +5054,7 @@
    "2026-11-10/papers"
   ],
   "description": "SoMem: Can LLM Agents Organize Their Own Memory?",
-  "stars": 5,
+  "stars": 6,
   "zh": "研究大模型智能体能否自主整理和管理自身记忆的项目"
  },
  "sharar-project/hibana": {
@@ -5063,7 +5063,7 @@
    "2026-11-10/papers"
   ],
   "description": "Fast Inference for NVIDIA DGX/RTX Spark",
-  "stars": 4,
+  "stars": 32,
   "zh": "面向 NVIDIA DGX/RTX Spark 设备的快速大模型推理引擎"
  },
  "OmniJev/Flide": {
@@ -5073,7 +5073,7 @@
    "2026-11-10/papers"
   ],
   "description": "🔥🔥 The extremely fast inference engine for decision model",
-  "stars": 486,
+  "stars": 501,
   "zh": "面向决策类模型的高速推理引擎，支持 Qwen、Gemma 等模型"
  },
  "mohanji/flyhash-agent-memory": {
@@ -5104,7 +5104,7 @@
    "2026-11-10/papers"
   ],
   "description": "Video-Coder: Reinforcing Agentic Coding for Video Generation",
-  "stars": 68,
+  "stars": 70,
   "zh": "通过强化学习提升智能体编写代码生成视频的能力"
  },
  "chip-ai-agent/PCBRouteAgent": {
@@ -5114,7 +5114,7 @@
    "2026-11-10/papers"
   ],
   "description": "",
-  "stars": 61,
+  "stars": 66,
   "zh": "用 AI 智能体自动完成电路板 PCB 布线（推断）"
  },
  "PeepSick/usbplus": {
@@ -5125,7 +5125,7 @@
    "2026-11-10/social"
   ],
   "description": "USB+ — Universal Systems Bridge. One skill format, every agent runtime: 529 skills, 16 target formats, Trust Layer (secscan + mcprobe), zero-dependency CLI, HTTP MCP server.",
-  "stars": 10,
+  "stars": 11,
   "zh": "统一多种智能体运行环境的技能格式库，含安全扫描与 MCP 服务"
  },
  "GoogleChrome/modern-web-guidance": {
@@ -5138,7 +5138,7 @@
    "2026-11-11/github"
   ],
   "description": "Keep your coding agent up to date with the latest web best practices",
-  "stars": 10160,
+  "stars": 13698,
   "zh": "为编码 Agent 提供最新网页开发最佳实践指引，避免用过时写法"
  },
  "expo/exact": {
@@ -5150,7 +5150,7 @@
    "2026-11-11/github"
   ],
   "description": "Write an app once. It runs natively on the web, macOS, iOS, and Linux, and an AI agent can build it, run it, see it, and test it on every one of them.",
-  "stars": 3833,
+  "stars": 4139,
   "zh": "一次编写即可原生运行于 Web、macOS、iOS 和 Linux 的应用框架，AI 可构建并测试"
  },
  "kuafuai/andee": {
@@ -5162,7 +5162,7 @@
    "2026-11-11/github"
   ],
   "description": "Andee lives on your phone or Mac and uses any app like you do—no integrations, no root, any model; memory and passwords never leave your device | Andee 住进你的手机或 Mac，像你一样操作任何 App——无需集成、无需 Root、支持任意模型，记忆和密码绝不离开设备。",
-  "stars": 6085,
+  "stars": 6132,
   "zh": "常驻手机或 Mac 的个人 Agent，像人一样操作任意 App，记忆和密码留在本地"
  },
  "PapilotAI/papilot": {
@@ -5171,7 +5171,7 @@
    "2026-11-11/github"
   ],
   "description": "Next-Generation AI LaTeX Editor: Don't read or write LaTeX. Just work on the PDF.",
-  "stars": 255,
+  "stars": 284,
   "zh": "AI 驱动的 LaTeX 编辑器，直接在 PDF 上修改而无需读写 LaTeX 源码"
  },
  "alexsergivan/kwant": {
@@ -5182,7 +5182,7 @@
    "2026-11-11/github"
   ],
   "description": "Your own team of AI bots in one self-hosted binary: spaces, every account you have, handoffs, approvals and routines. Open-source, self-hosted alternative to Grok Bot, Claude Duet and OpenAI dots. Rust + React.",
-  "stars": 567,
+  "stars": 544,
   "zh": "自托管的 AI 机器人团队平台，支持多账号、任务交接、审批与定时例程"
  },
  "n8n-io/nod": {
@@ -5193,7 +5193,7 @@
    "2026-11-11/github"
   ],
   "description": "Open source personal agent with its own computer. It chases invoices, preps your calls and cancels trials on real websites, and asks before it acts. Runs on your machine with the model you choose. By n8n.",
-  "stars": 973,
+  "stars": 1138,
   "zh": "拥有独立电脑的本地个人 Agent，可在真实网站上追发票、取消试用，行动前先征求确认"
  },
  "mdiri-ai/SoduWork": {
@@ -5202,7 +5202,7 @@
    "2026-11-11/github"
   ],
   "description": "The AI-native engine for teams and their agents. Multi-harness, multi-agent, self-hosted.",
-  "stars": 642,
+  "stars": 774,
   "zh": "自托管的团队多 Agent 协作引擎，可编排多种 Agent 工具并支持人工介入"
  },
  "NeoVand/sketchpad": {
@@ -5229,7 +5229,7 @@
    "2026-11-11/papers"
   ],
   "description": "Reframe: Observation-Aligned Multi-Teacher On-Policy Distillation for Agentic Visual Reasoning",
-  "stars": 35,
+  "stars": 36,
   "zh": "用观测对齐的多教师在线策略蒸馏，训练 Agent 的视觉推理能力"
  },
  "TokenRhythm/InfraRSI": {
@@ -5238,7 +5238,7 @@
    "2026-11-11/papers"
   ],
   "description": "InfraRSI: Harnessing Recursive Self-Improvement for Training Infrastructure",
-  "stars": 69,
+  "stars": 73,
   "zh": "探索让模型递归自我改进，以优化训练基础设施的研究项目"
  },
  "InfrathonX/Infrathon": {
@@ -5247,7 +5247,7 @@
    "2026-11-11/papers"
   ],
   "description": "",
-  "stars": 27,
+  "stars": 35,
   "zh": "与基础设施相关的黑客松或工具项目，具体功能不明（推断）"
  },
  "SWE-rebench/LongTail-SWE": {
@@ -5256,7 +5256,7 @@
    "2026-11-11/papers"
   ],
   "description": "",
-  "stars": 3,
+  "stars": 4,
   "zh": "面向长尾软件工程任务的 SWE-rebench 评测数据集或基准（推断）"
  },
  "yukyeongleee/wikitrace": {
@@ -5276,7 +5276,7 @@
    "2026-11-11/papers"
   ],
   "description": "World In-Context Learning for Agentic Robot Manipulation",
-  "stars": 171,
+  "stars": 210,
   "zh": "让机器人操作 Agent 通过世界上下文学习，完成机械臂操控任务"
  },
  "openai/codex-security": {
@@ -5288,7 +5288,7 @@
    "2026-11-12/github"
   ],
   "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
-  "stars": 12937,
+  "stars": 13484,
   "zh": "用于发现、验证并修复代码安全漏洞的命令行工具与 TypeScript SDK"
  },
  "pingdotgg/t3code": {
@@ -5300,7 +5300,7 @@
    "2026-11-12/github"
   ],
   "description": "The best way to control Claude Code, Codex and more from any computer or phone",
-  "stars": 59261,
+  "stars": 60301,
   "zh": "在任意电脑或手机上远程控制 Claude Code、Codex 等编程智能体的统一界面"
  },
  "agentes-chat/agentes-chat": {
@@ -5310,7 +5310,7 @@
    "2026-11-12/github"
   ],
   "description": "Open-source, self-hosted Slack alternative where your team and AI agents work together in channels and DMs. Agents run on Claude, ChatGPT/Codex, Gemini or Grok, with MCP tools, their own computer and browser, routines, memory and approvals. Web, desktop and phone apps. Docker Compose + Postgres. AGP",
-  "stars": 1302,
+  "stars": 1382,
   "zh": "可自托管的团队聊天平台，人和 AI 智能体在频道与私信中协作"
  },
  "hypit-ai/hypit": {
@@ -5319,7 +5319,7 @@
    "2026-11-12/github"
   ],
   "description": "Clone any viral video with AI agents. Not just a script, the whole workflow: swap the face, the words, the B-roll, ship 100 variants in one command, and get your 100M views.",
-  "stars": 29647,
+  "stars": 29803,
   "zh": "用 AI 智能体克隆爆款视频，可批量替换人脸、台词与素材生成多个变体"
  },
  "Tencent/LoopForge": {
@@ -5329,7 +5329,7 @@
    "2026-11-12/github"
   ],
   "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
-  "stars": 663,
+  "stars": 775,
   "zh": "自托管的编程智能体交付工作流，用脚本和人工审批编排多个编码助手"
  },
  "orwa-mahmoud/nightshift": {
@@ -5338,7 +5338,7 @@
    "2026-11-12/github"
   ],
   "description": "Accountable long-running coding shifts for Cursor, Codex, and Claude Code. Safe autonomy, recovery, persistent state, and reviewable results a clear view of what’s done, in progress, parked, or blocked—without scrolling a marathon chat.",
-  "stars": 398,
+  "stars": 451,
   "zh": "让编程智能体长时间自主工作，并保存状态、支持恢复与结果审阅"
  },
  "INSANE0777/Awwwards-mcp": {
@@ -5348,7 +5348,7 @@
    "2026-11-12/github"
   ],
   "description": "Free, open-source MCP server that gives AI coding agents (Claude Code, Codex, Cursor, OpenCode, ZCode…) design inspiration from award-winning websites — search with real screenshots, pull design DNA, capture and record live sites. A Mobbin alternative. No API key.",
-  "stars": 698,
+  "stars": 737,
   "zh": "为编程智能体提供获奖网站设计灵感的 MCP 服务，可搜索截图并提取设计特征"
  },
  "alexeyw/lot-map": {
@@ -5357,7 +5357,7 @@
    "2026-11-12/github"
   ],
   "description": "A live map beside the chat that shows what Claude Code is doing: tool calls, model steps, hooks, skills and subagents light up as they happen. Local only, in 7 languages.",
-  "stars": 696,
+  "stars": 795,
   "zh": "以实时动画地图展示 Claude Code 正在调用的工具、技能和子智能体"
  },
  "mit-han-lab/EvolvingInfra": {
@@ -5366,7 +5366,7 @@
    "2026-11-12/papers"
   ],
   "description": "A inference framework that adapt to diverse and dynamic agent workload",
-  "stars": 22,
+  "stars": 38,
   "zh": "适应多样且动态智能体负载的大模型推理框架"
  },
  "lose4578/Auriga": {
@@ -5394,7 +5394,7 @@
    "2026-11-12/social"
   ],
   "description": "maxxing the ability to run different LLMs on the smallest devices possible",
-  "stars": 588,
+  "stars": 677,
   "zh": "让不同大语言模型尽可能在最小的设备上运行（推断）"
  },
  "GoogleChrome/modern-web-guidance-src": {
@@ -5404,7 +5404,7 @@
    "2026-11-13/github"
   ],
   "description": "Keep your coding agent up to date with the latest web best practices",
-  "stars": 4444,
+  "stars": 5603,
   "zh": "为编码 Agent 提供最新网页开发最佳实践指引的内容源"
  },
  "vercel-labs/ui": {
@@ -5414,7 +5414,7 @@
    "2026-11-13/github"
   ],
   "description": "A library of behaviors for agents to build the next generation of user interfaces.",
-  "stars": 3350,
+  "stars": 4360,
   "zh": "为 Agent 构建界面提供可复用交互行为的无头组件库"
  },
  "DIYgod/pinky": {
@@ -5423,7 +5423,7 @@
    "2026-11-13/github"
   ],
   "description": "Let AI use your iPhone or Android phone, with you in the loop: any MCP agent from macOS, Windows or Linux, or Pinky itself, right on the phone.",
-  "stars": 2072,
+  "stars": 2135,
   "zh": "让 AI 代理通过 MCP 在人工参与下操控 iPhone 和安卓手机"
  },
  "rtk-ai/rtk": {
@@ -5432,7 +5432,7 @@
    "2026-11-13/github"
   ],
   "description": "CLI proxy that reduces LLM token consumption by 60-90% on common dev commands. Single Rust binary, zero dependencies",
-  "stars": 86464,
+  "stars": 86558,
   "zh": "代理常用开发命令的 CLI 工具，压缩输出以减少 LLM 令牌消耗"
  },
  "Gentleman-Programming/gentle-ai": {
@@ -5441,7 +5441,7 @@
    "2026-11-13/github"
   ],
   "description": "Gentle-AI configures the AI coding agents you already use: Claude Code, Cursor, OpenCode, Codex, Pi, and more. Choose persistent memory, Organic-Driven Development, curated skills, MCP servers, personas, and optional bounded review. Open source, no agent lock-in.",
-  "stars": 9087,
+  "stars": 9169,
   "zh": "为 Claude Code、Cursor 等编码 Agent 统一配置记忆、技能和 MCP 服务"
  },
  "Parcha-ai/agentrun": {
@@ -5451,7 +5451,7 @@
    "2026-11-13/github"
   ],
   "description": "AgentRun is an open-source platform that supercharges your agents. It adds self-improvement, durable execution and a control plane on top of your favorite agent harness. Your agents become smarter, more fault tolerant and use fewer tokens with every run.",
-  "stars": 801,
+  "stars": 962,
   "zh": "为现有 Agent 增加自我改进、持久化执行和控制面的运行平台"
  },
  "NVIDIA/SkillEvaluator": {
@@ -5460,7 +5460,7 @@
    "2026-11-13/github"
   ],
   "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
-  "stars": 1075,
+  "stars": 1208,
   "zh": "多层级评估 Agent 技能质量、重叠度及其对 Agent 行为影响的框架"
  },
  "QwenLM/qwen-code": {
@@ -5469,7 +5469,7 @@
    "2026-11-13/github"
   ],
   "description": "An open-source AI coding agent that lives in your terminal.",
-  "stars": 30102,
+  "stars": 30209,
   "zh": "运行在终端里的 AI 编码 Agent，可读写代码并执行命令"
  },
  "everyinfra/seo-skills": {
@@ -5478,7 +5478,7 @@
    "2026-11-13/github"
   ],
   "description": "Free global SEO/GEO skill for Claude Code, Codex & 10 agent hosts — 18 market portals, 56 stdlib scripts, 672 golden tests, self-update intel loop, monitoring daemon, CI gates. Multilingual GEO, pSEO, CWV, penalty recovery.",
-  "stars": 259,
+  "stars": 270,
   "zh": "为 Claude Code 等 Agent 提供全球市场 SEO 与生成式引擎优化技能包"
  },
  "helloHub1212/dsh-windows-mcp": {
@@ -5487,7 +5487,7 @@
    "2026-11-13/github"
   ],
   "description": "Windows desktop automation for DeepSeek Harness: the in-box MCP client bridge mounted against CursorTouch/Windows-MCP, with an off-by-default Computer Use switch and an in-app dependency installer.",
-  "stars": 1020,
+  "stars": 1185,
   "zh": "通过 MCP 让 DeepSeek Harness 自动操作 Windows 桌面的插件"
  },
  "Gentleman-Programming/gentle-shell": {
@@ -5496,7 +5496,7 @@
    "2026-11-13/github"
   ],
   "description": "Gentle Shell is a Pi-native workspace for AI-assisted development, bringing parallel coding agents, live tasks, Git diffs, persistent memory, and permission controls into one terminal interface. Powered by Gentle AI and Organic Driven Development (ODD).",
-  "stars": 2535,
+  "stars": 2609,
   "zh": "在终端中并行运行多个编码 Agent，并集成任务、Git 差异和权限控制的工作区"
  },
  "ngocanhnckh/renderlint": {
@@ -5505,7 +5505,7 @@
    "2026-11-13/github"
   ],
   "description": "Lint the rendered UI: catches overflowing text, low contrast, overlaps, broken responsive layouts, emoji icons and more in any web framework. Built for AI coding agents.",
-  "stars": 446,
+  "stars": 493,
   "zh": "检查网页渲染结果中文字溢出、对比度不足、元素重叠等界面问题的检测工具"
  },
  "FrigadeHQ/yogurt": {
@@ -5513,8 +5513,8 @@
   "mentions": [
    "2026-11-13/github"
   ],
-  "description": "Private AI meeting notes. Free and open source.",
-  "stars": 1190,
+  "description": "Private AI meeting notes that stay on your computer. A free, open-source alternative to Granola for Mac, Windows and Linux.",
+  "stars": 1400,
   "zh": "在本地转写会议录音并生成 AI 会议纪要的隐私优先桌面应用"
  },
  "Liuzedooong/SparseReading": {
@@ -5523,7 +5523,7 @@
    "2026-11-13/papers"
   ],
   "description": "SparseRead: token-efficient reading for AI agents. Source mirror with preserved Git history. Paper: arXiv:2608.22237",
-  "stars": 20,
+  "stars": 48,
   "zh": "让 AI Agent 稀疏选择性阅读内容以节省令牌的方法与代码"
  },
  "air-embodied-brain/SteerDistill": {
@@ -5532,7 +5532,7 @@
    "2026-11-13/papers"
   ],
   "description": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
-  "stars": 10,
+  "stars": 11,
   "zh": "通过教师模型闭环引导来量化压缩 LLM Agent 的研究代码"
  },
  "SalesforceAIResearch/Interactive-Visual-Gym": {
@@ -5568,7 +5568,7 @@
    "2026-11-13/papers"
   ],
   "description": "",
-  "stars": 1,
+  "stars": 3,
   "zh": "基于强化学习训练模型或智能体的研究代码（推断）"
  },
  "ZJU-REAL/decision-agents": {
@@ -5576,8 +5576,8 @@
   "mentions": [
    "2026-11-13/papers"
   ],
-  "description": "",
-  "stars": 40,
+  "description": "Actor, Judge, or Teacher? Understanding Decision Models in Long-Horizon Agents",
+  "stars": 44,
   "zh": "面向决策任务的 LLM 智能体研究代码（推断）"
  },
  "ZJU-REAL/Agent-R2": {
@@ -5585,7 +5585,7 @@
   "mentions": [
    "2026-11-13/papers"
   ],
-  "description": "",
+  "description": "Agent-R2: Scaling Agents for Realistic Productivity Work via Real-Source Data Synthesis",
   "stars": 7,
   "zh": "关于智能体强化学习训练的研究代码（推断）"
  },
@@ -5595,7 +5595,7 @@
    "2026-11-13/social"
   ],
   "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
-  "stars": 69780,
+  "stars": 70124,
   "zh": "让 Claude Code、Codex 等多种编码 Agent 免费使用大模型额度的代理工具"
  }
 }
