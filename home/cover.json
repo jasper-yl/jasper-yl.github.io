@@ -1,47 +1,47 @@
 {
- "date": "2026-11-13",
- "issue": 23,
+ "date": "2026-11-15",
+ "issue": 24,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "Chrome 的一份 agent 指引\n三天涨到 1 万颗星",
-  "dek": "GoogleChrome/modern-web-guidance 此前每天只涨 5 到 15 颗星，近三天逐日升到 +3,549。来源查到了：Show HN 442 分，加上 @ChromiumDev 官方连发。",
-  "big": "+3,549",
+  "title": "Chrome 给 agent 发了一份官方指引\n五天从日增 8 星冲到 3,474",
+  "dek": "Chrome 团队 11-10 发布 Modern Web Guidance 1.0，一个 skill 加 CLI，让 agent 按需拉取最新的 Web 平台指引。5 天前每天只有 8–15 星，现在还在涨，HN 上也有 447 分。",
+  "big": "+3,474",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "Chrome's guide for agents\nhits 10,000 stars in three days",
-  "dek_en": "GoogleChrome/modern-web-guidance gained 5 to 15 stars a day until recently, then climbed to +3,549 a day. The source is traceable: a 442-point Show HN plus a run of posts from @ChromiumDev.",
+  "title_en": "Chrome Ships Official Guidance for Agents\nFrom 8 Stars a Day to 3,474 in Five Days",
+  "dek_en": "Chrome released Modern Web Guidance 1.0 on 11-10, a skill plus a CLI that lets agents pull current web platform guidance on demand. It was gaining 8 to 15 stars a day five days ago, is still climbing, and scored 447 on Hacker News.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
    "title": "论文角",
-   "text": "SparseRead 控制 agent 读什么，总 token 最多降 92.9%，97% 的设置下质量不降。",
-   "face": "φ(゜▽゜*)♪",
+   "text": "MemoryDojo 测记忆投毒：155 条长程轨迹、5 种记忆系统，没有一个能躲过。",
+   "face": "Σ(っ °Д °;)っ",
    "kind": "papers",
    "title_en": "Papers",
-   "text_en": "SparseRead controls what an agent reads, cutting total tokens by up to 92.9% with no quality loss in 97% of settings."
+   "text_en": "MemoryDojo tested memory poisoning on 155 long-horizon trajectories and 5 memory systems. All of them were affected."
   },
   {
-   "title": "新热点",
-   "text": "能操作手机的个人 Agent kuafuai/andee 日增 +911，前几天只有 40 到 100。",
-   "face": "Σ(っ °Д °;)っ",
+   "title": "新秀",
+   "text": "Tencent/LoopForge 日增 +513，涨幅 66.2%，是新秀里加速最明显的。",
+   "face": "(๑•̀ㅂ•́)و✧",
    "kind": "github",
-   "title_en": "New heat",
-   "text_en": "kuafuai/andee, a personal agent that operates phones, gained +911 stars in a day, up from 40 to 100 earlier this week."
+   "title_en": "Rising",
+   "text_en": "Tencent/LoopForge gained 513 stars in a day, up 66.2%, the fastest-accelerating newcomer."
   },
   {
-   "title": "社区风向",
-   "text": "HN 被 Claude 大面积故障占满，status 页那条帖子 417 分、344 条评论。",
+   "title": "带货观察",
+   "text": "morluto/rea 日增 +2,136，视频播放约 147 万，真实讨论只找到 2 条。",
    "face": "┐(￣ヘ￣)┌",
    "kind": "social",
-   "title_en": "Community",
-   "text_en": "Hacker News was taken over by the Claude outage, with the status page post at 417 points and 344 comments."
+   "title_en": "Hype Watch",
+   "text_en": "morluto/rea gained 2,136 stars in a day on about 1.47M video views, with only 2 real discussions found."
   }
  ],
  "reports": {
-  "github": "2026-11-13-github.md",
-  "papers": "2026-11-13-papers.md",
-  "social": "2026-11-13-social.md"
+  "github": "2026-11-15-github.md",
+  "papers": "2026-11-15-papers.md",
+  "social": "2026-11-15-social.md"
  }
 }
