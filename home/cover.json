@@ -1,47 +1,47 @@
 {
- "date": "2026-11-15",
- "issue": 24,
+ "date": "2026-11-16",
+ "issue": 25,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "Chrome 给 agent 发了一份官方指引\n五天从日增 8 星冲到 3,474",
-  "dek": "Chrome 团队 11-10 发布 Modern Web Guidance 1.0，一个 skill 加 CLI，让 agent 按需拉取最新的 Web 平台指引。5 天前每天只有 8–15 星，现在还在涨，HN 上也有 447 分。",
-  "big": "+3,474",
+  "title": "Chrome 官方的 agent 指南\n两周从日增个位数冲到 4,142",
+  "dek": "modern-web-guidance 14 天前每天只涨 1 到 15 颗星,11-14 到峰值,今天仍有 +2,408。HN 上 448 分、146 条评论,是今天少有的真实讨论。",
+  "big": "+2,408",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "Chrome Ships Official Guidance for Agents\nFrom 8 Stars a Day to 3,474 in Five Days",
-  "dek_en": "Chrome released Modern Web Guidance 1.0 on 11-10, a skill plus a CLI that lets agents pull current web platform guidance on demand. It was gaining 8 to 15 stars a day five days ago, is still climbing, and scored 447 on Hacker News.",
+  "title_en": "Chrome's official agent guide\nwent from single digits to 4,142 a day",
+  "dek_en": "Two weeks ago modern-web-guidance gained 1 to 15 stars a day. It peaked on 11-14 and still added +2,408 today. Its Show HN thread drew 448 points and 146 comments, real discussion on a day short of it.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "论文角",
-   "text": "MemoryDojo 测记忆投毒：155 条长程轨迹、5 种记忆系统，没有一个能躲过。",
-   "face": "Σ(っ °Д °;)っ",
-   "kind": "papers",
-   "title_en": "Papers",
-   "text_en": "MemoryDojo tested memory poisoning on 155 long-horizon trajectories and 5 memory systems. All of them were affected."
-  },
-  {
-   "title": "新秀",
-   "text": "Tencent/LoopForge 日增 +513，涨幅 66.2%，是新秀里加速最明显的。",
-   "face": "(๑•̀ㅂ•́)و✧",
+   "title": "管住 agent",
+   "text": "评测、审查、人工审批类项目同时起量,LoopForge 日增 +972,open-code-review +951。",
+   "face": "( •̀ ω •́ )✧",
    "kind": "github",
-   "title_en": "Rising",
-   "text_en": "Tencent/LoopForge gained 513 stars in a day, up 66.2%, the fastest-accelerating newcomer."
+   "title_en": "Reining in agents",
+   "text_en": "Evaluation, review and approval tools are rising together: LoopForge +972 a day, open-code-review +951."
   },
   {
-   "title": "带货观察",
-   "text": "morluto/rea 日增 +2,136，视频播放约 147 万，真实讨论只找到 2 条。",
+   "title": "论文角",
+   "text": "记忆压缩有了对照实验:答案是数值时压缩占优,需要原话时反而落后。",
+   "face": "φ(゜▽゜*)♪",
+   "kind": "papers",
+   "title_en": "Paper corner",
+   "text_en": "A memory study on LoCoMo finds compression wins for numeric answers and loses when the exact wording matters."
+  },
+  {
+   "title": "曝光落差",
+   "text": "rea 的 YouTube 教程曝光约 868,000 次,真实讨论却几乎没有。",
    "face": "┐(￣ヘ￣)┌",
    "kind": "social",
-   "title_en": "Hype Watch",
-   "text_en": "morluto/rea gained 2,136 stars in a day on about 1.47M video views, with only 2 real discussions found."
+   "title_en": "Views vs. talk",
+   "text_en": "The rea tutorials pulled roughly 868,000 YouTube views, yet there's almost no real discussion behind them."
   }
  ],
  "reports": {
-  "github": "2026-11-15-github.md",
-  "papers": "2026-11-15-papers.md",
-  "social": "2026-11-15-social.md"
+  "github": "2026-11-16-github.md",
+  "papers": "2026-11-16-papers.md",
+  "social": "2026-11-16-social.md"
  }
 }
