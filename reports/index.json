@@ -272,6 +272,11 @@
  ],
  "weeks": [
   {
+   "week": "2026-W46",
+   "file": "2026-W46-weekly.md",
+   "en": "en/2026-W46-weekly.md"
+  },
+  {
    "week": "2026-W45",
    "file": "2026-W45-weekly.md",
    "en": "en/2026-W45-weekly.md"
