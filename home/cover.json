@@ -1,47 +1,47 @@
 {
- "date": "2026-11-16",
- "issue": 25,
+ "date": "2026-11-17",
+ "issue": 26,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "Chrome 官方的 agent 指南\n两周从日增个位数冲到 4,142",
-  "dek": "modern-web-guidance 14 天前每天只涨 1 到 15 颗星,11-14 到峰值,今天仍有 +2,408。HN 上 448 分、146 条评论,是今天少有的真实讨论。",
-  "big": "+2,408",
+  "title": "Chrome 官方出了份指南\n一周从日增 15 星冲到 4,139",
+  "dek": "GoogleChrome/modern-web-guidance 让 coding agent 跟上最新的 Web 最佳实践，11-10 前后起量，今天日增 +2223。HN 的 Show HN 帖拿了 448 分、146 评论，是今天最强的自发讨论。",
+  "big": "+2,223",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "Chrome's official agent guide\nwent from single digits to 4,142 a day",
-  "dek_en": "Two weeks ago modern-web-guidance gained 1 to 15 stars a day. It peaked on 11-14 and still added +2,408 today. Its Show HN thread drew 448 points and 146 comments, real discussion on a day short of it.",
+  "title_en": "Chrome's official guide for agents\nwent from 15 stars a day to 4,139",
+  "dek_en": "GoogleChrome/modern-web-guidance helps coding agents keep up with current web best practices. It gained +2,223 stars today, and its Show HN post drew 448 points and 146 comments, the strongest organic discussion of the day.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "管住 agent",
-   "text": "评测、审查、人工审批类项目同时起量,LoopForge 日增 +972,open-code-review +951。",
-   "face": "( •̀ ω •́ )✧",
-   "kind": "github",
-   "title_en": "Reining in agents",
-   "text_en": "Evaluation, review and approval tools are rising together: LoopForge +972 a day, open-code-review +951."
-  },
-  {
    "title": "论文角",
-   "text": "记忆压缩有了对照实验:答案是数值时压缩占优,需要原话时反而落后。",
-   "face": "φ(゜▽゜*)♪",
+   "text": "Experience Rot 发现工具被静默变更后，带经验的 Agent 反而不如新手。",
+   "face": "Σ(っ °Д °;)っ",
    "kind": "papers",
    "title_en": "Paper corner",
-   "text_en": "A memory study on LoCoMo finds compression wins for numeric answers and loses when the exact wording matters."
+   "text_en": "Experience Rot finds that after a silent tool change, agents with experience do worse than novices."
   },
   {
-   "title": "曝光落差",
-   "text": "rea 的 YouTube 教程曝光约 868,000 次,真实讨论却几乎没有。",
-   "face": "┐(￣ヘ￣)┌",
-   "kind": "social",
-   "title_en": "Views vs. talk",
-   "text_en": "The rea tutorials pulled roughly 868,000 YouTube views, yet there's almost no real discussion behind them."
+   "title": "省 token",
+   "text": "Beyond Plain MCP 测得 code mode 比普通 MCP 省 70–90% token。",
+   "face": "(๑•̀ㅂ•́)و✧",
+   "kind": "papers",
+   "title_en": "Token diet",
+   "text_en": "Beyond Plain MCP measures code mode using 70–90% fewer tokens than plain MCP."
+  },
+  {
+   "title": "补课",
+   "text": "skill 越来越多，NVIDIA 同时放出 SkillEvaluator 和 SkillSpector，做评测与安全检查。",
+   "face": "( •̀ ω •́ )✧",
+   "kind": "github",
+   "title_en": "Catching up",
+   "text_en": "With skills multiplying, NVIDIA now has both SkillEvaluator and SkillSpector for evaluation and security checks."
   }
  ],
  "reports": {
-  "github": "2026-11-16-github.md",
-  "papers": "2026-11-16-papers.md",
-  "social": "2026-11-16-social.md"
+  "github": "2026-11-17-github.md",
+  "papers": "2026-11-17-papers.md",
+  "social": "2026-11-17-social.md"
  }
 }
