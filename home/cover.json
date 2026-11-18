@@ -1,47 +1,47 @@
 {
- "date": "2026-11-17",
- "issue": 26,
+ "date": "2026-11-18",
+ "issue": 27,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "Chrome 官方出了份指南\n一周从日增 15 星冲到 4,139",
-  "dek": "GoogleChrome/modern-web-guidance 让 coding agent 跟上最新的 Web 最佳实践，11-10 前后起量，今天日增 +2223。HN 的 Show HN 帖拿了 448 分、146 评论，是今天最强的自发讨论。",
-  "big": "+2,223",
+  "title": "三天涨到 2,838 星\nRust 重写 skill 的校验法",
+  "dek": "rust-anything 创建第 3 天，日增 +2,262，11-17 日报时还只有 576 星。它把应用逐块重写成 Rust，每一步都对照原程序录下的行为做校验。",
+  "big": "+2,262",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "Chrome's official guide for agents\nwent from 15 stars a day to 4,139",
-  "dek_en": "GoogleChrome/modern-web-guidance helps coding agents keep up with current web best practices. It gained +2,223 stars today, and its Show HN post drew 448 points and 146 comments, the strongest organic discussion of the day.",
+  "title_en": "2,838 stars in three days:\nthe Rust rewrite skill that checks its work",
+  "dek_en": "rust-anything went from 576 stars in yesterday's report to 2,838, adding 2,262 in a day. It rewrites an app into Rust piece by piece and checks each step against behavior recorded from the original program.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
    "title": "论文角",
-   "text": "Experience Rot 发现工具被静默变更后，带经验的 Agent 反而不如新手。",
-   "face": "Σ(っ °Д °;)っ",
+   "text": "Context Has a Price 实测:在 prefix cache 折扣下,删旧观察可能不省钱,反而更贵。",
+   "face": "(⊙ˍ⊙)",
    "kind": "papers",
-   "title_en": "Paper corner",
-   "text_en": "Experience Rot finds that after a silent tool change, agents with experience do worse than novices."
+   "title_en": "Papers",
+   "text_en": "Context Has a Price finds that dropping old observations can cost more once prefix cache discounts apply."
   },
   {
-   "title": "省 token",
-   "text": "Beyond Plain MCP 测得 code mode 比普通 MCP 省 70–90% token。",
-   "face": "(๑•̀ㅂ•́)و✧",
+   "title": "新秀",
+   "text": "Folio 用程序化折叠压缩上下文,在 LOCA-bench 解 66 题,模型写摘要的对照是 54 题。",
+   "face": "φ(゜▽゜*)♪",
    "kind": "papers",
-   "title_en": "Token diet",
-   "text_en": "Beyond Plain MCP measures code mode using 70–90% fewer tokens than plain MCP."
+   "title_en": "Rookie",
+   "text_en": "Folio folds context with code, not model summaries. It solves 66 LOCA-bench tasks against 54 for the model-written baseline."
   },
   {
-   "title": "补课",
-   "text": "skill 越来越多，NVIDIA 同时放出 SkillEvaluator 和 SkillSpector，做评测与安全检查。",
+   "title": "HN 热议",
+   "text": "HN 头条讨论 AI 编码 Agent 把瓶颈挪到了代码评审,拿到 293 分、377 条评论。",
    "face": "( •̀ ω •́ )✧",
-   "kind": "github",
-   "title_en": "Catching up",
-   "text_en": "With skills multiplying, NVIDIA now has both SkillEvaluator and SkillSpector for evaluation and security checks."
+   "kind": "social",
+   "title_en": "On HN",
+   "text_en": "The top HN thread says AI coding agents moved the bottleneck to code review: 293 points, 377 comments."
   }
  ],
  "reports": {
-  "github": "2026-11-17-github.md",
-  "papers": "2026-11-17-papers.md",
-  "social": "2026-11-17-social.md"
+  "github": "2026-11-18-github.md",
+  "papers": "2026-11-18-papers.md",
+  "social": "2026-11-18-social.md"
  }
 }
