@@ -1,47 +1,47 @@
 {
- "date": "2026-11-18",
- "issue": 27,
+ "date": "2026-11-19",
+ "issue": 28,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "三天涨到 2,838 星\nRust 重写 skill 的校验法",
-  "dek": "rust-anything 创建第 3 天，日增 +2,262，11-17 日报时还只有 576 星。它把应用逐块重写成 Rust，每一步都对照原程序录下的行为做校验。",
-  "big": "+2,262",
+  "title": "三天 4,779 星\n逐块改写成 Rust 的 skill",
+  "dek": "rust-anything 按模块逐段把应用改写成 Rust，每一步都用原程序录下的行为校验。X 上几乎没人聊，热度来自 YouTube 和 HN。",
+  "big": "+1,941",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "2,838 stars in three days:\nthe Rust rewrite skill that checks its work",
-  "dek_en": "rust-anything went from 576 stars in yesterday's report to 2,838, adding 2,262 in a day. It rewrites an app into Rust piece by piece and checks each step against behavior recorded from the original program.",
+  "title_en": "4,779 stars in three days\nfor a skill that rewrites apps in Rust",
+  "dek_en": "rust-anything ports an app to Rust one module at a time and checks each step against behavior recorded from the original program. It barely registers on X, and the attention comes from YouTube and HN.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
    "title": "论文角",
-   "text": "Context Has a Price 实测:在 prefix cache 折扣下,删旧观察可能不省钱,反而更贵。",
-   "face": "(⊙ˍ⊙)",
-   "kind": "papers",
-   "title_en": "Papers",
-   "text_en": "Context Has a Price finds that dropping old observations can cost more once prefix cache discounts apply."
-  },
-  {
-   "title": "新秀",
-   "text": "Folio 用程序化折叠压缩上下文,在 LOCA-bench 解 66 题,模型写摘要的对照是 54 题。",
+   "text": "Folio 在 LOCA-bench 做对 66/75 题，摘要压缩的对照只有 54 题",
    "face": "φ(゜▽゜*)♪",
    "kind": "papers",
-   "title_en": "Rookie",
-   "text_en": "Folio folds context with code, not model summaries. It solves 66 LOCA-bench tasks against 54 for the model-written baseline."
+   "title_en": "Papers",
+   "text_en": "Folio solves 66 of 75 LOCA-bench tasks. The summary-compression baseline solves 54."
   },
   {
-   "title": "HN 热议",
-   "text": "HN 头条讨论 AI 编码 Agent 把瓶颈挪到了代码评审,拿到 293 分、377 条评论。",
+   "title": "新风向",
+   "text": "NVIDIA 的 SkillEvaluator 和 SkillSpector 上榜，专做 skill 评测与安全",
    "face": "( •̀ ω •́ )✧",
+   "kind": "github",
+   "title_en": "New front",
+   "text_en": "NVIDIA's SkillEvaluator and SkillSpector made the list, both built to test and vet skills."
+  },
+  {
+   "title": "曝光账",
+   "text": "orca 的清单视频有 ▶102,777，评测视频合计只有约 ▶5,100",
+   "face": "┐(￣ヘ￣)┌",
    "kind": "social",
-   "title_en": "On HN",
-   "text_en": "The top HN thread says AI coding agents moved the bottleneck to code review: 293 points, 377 comments."
+   "title_en": "Reach vs. buzz",
+   "text_en": "orca's list video drew ▶102,777 views. Its review videos total about ▶5,100."
   }
  ],
  "reports": {
-  "github": "2026-11-18-github.md",
-  "papers": "2026-11-18-papers.md",
-  "social": "2026-11-18-social.md"
+  "github": "2026-11-19-github.md",
+  "papers": "2026-11-19-papers.md",
+  "social": "2026-11-19-social.md"
  }
 }
