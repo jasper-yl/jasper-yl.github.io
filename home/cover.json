@@ -1,47 +1,47 @@
 {
- "date": "2026-11-19",
- "issue": 28,
+ "date": "2026-11-20",
+ "issue": 29,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "三天 4,779 星\n逐块改写成 Rust 的 skill",
-  "dek": "rust-anything 按模块逐段把应用改写成 Rust，每一步都用原程序录下的行为校验。X 上几乎没人聊，热度来自 YouTube 和 HN。",
-  "big": "+1,941",
+  "title": "SoduWork 日增 +1,778 星\n四天里从 305 涨到 1,567",
+  "dek": "这个自托管、支持多 harness 的多 Agent 团队引擎，近 4 天日增一路加速，今天升到 +1,778，连续 10 天达标。11-17 它还在新秀榜，现在已居日榜首位。",
+  "big": "+1,778",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "4,779 stars in three days\nfor a skill that rewrites apps in Rust",
-  "dek_en": "rust-anything ports an app to Rust one module at a time and checks each step against behavior recorded from the original program. It barely registers on X, and the attention comes from YouTube and HN.",
+  "title_en": "SoduWork adds 1,778 stars a day\nup from 305 four days ago",
+  "dek_en": "The self-hosted, multi-harness engine for teams of agents has accelerated for four straight days and is now at +1,778. It was on the rookie list on 11-17 and now sits first on the daily chart.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
    "title": "论文角",
-   "text": "Folio 在 LOCA-bench 做对 66/75 题，摘要压缩的对照只有 54 题",
-   "face": "φ(゜▽゜*)♪",
+   "text": "一篇论文发现，没有反馈的自进化会让 Skills 在 SkillsBench 上平均掉 15 分。",
+   "face": "Σ(っ °Д °;)っ",
    "kind": "papers",
-   "title_en": "Papers",
-   "text_en": "Folio solves 66 of 75 LOCA-bench tasks. The summary-compression baseline solves 54."
+   "title_en": "Paper corner",
+   "text_en": "One paper finds that self-evolution without feedback costs Skills 15 points on average on SkillsBench."
   },
   {
-   "title": "新风向",
-   "text": "NVIDIA 的 SkillEvaluator 和 SkillSpector 上榜，专做 skill 评测与安全",
-   "face": "( •̀ ω •́ )✧",
-   "kind": "github",
-   "title_en": "New front",
-   "text_en": "NVIDIA's SkillEvaluator and SkillSpector made the list, both built to test and vet skills."
-  },
-  {
-   "title": "曝光账",
-   "text": "orca 的清单视频有 ▶102,777，评测视频合计只有约 ▶5,100",
+   "title": "回落快",
+   "text": "Chrome 的 modern-web-guidance 11-14 日增 +4,133，现在只剩 +595。",
    "face": "┐(￣ヘ￣)┌",
+   "kind": "github",
+   "title_en": "Fast fade",
+   "text_en": "Chrome's modern-web-guidance gained +4,133 stars a day on 11-14 and is down to +595 now."
+  },
+  {
+   "title": "榜单合集",
+   "text": "rust-anything 日增 +1,515，曝光主要来自一个 YouTube 合集（▶7552），HN 上 1 分 0 评。",
+   "face": "(⊙ˍ⊙)",
    "kind": "social",
-   "title_en": "Reach vs. buzz",
-   "text_en": "orca's list video drew ▶102,777 views. Its review videos total about ▶5,100."
+   "title_en": "Roundup effect",
+   "text_en": "rust-anything gains +1,515 a day, mostly from one YouTube roundup (▶7552). Its HN post has 1 point and 0 comments."
   }
  ],
  "reports": {
-  "github": "2026-11-19-github.md",
-  "papers": "2026-11-19-papers.md",
-  "social": "2026-11-19-social.md"
+  "github": "2026-11-20-github.md",
+  "papers": "2026-11-20-papers.md",
+  "social": "2026-11-20-social.md"
  }
 }
