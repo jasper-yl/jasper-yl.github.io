@@ -1,47 +1,47 @@
 {
- "date": "2026-11-20",
- "issue": 29,
+ "date": "2026-11-21",
+ "issue": 30,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "SoduWork 日增 +1,778 星\n四天里从 305 涨到 1,567",
-  "dek": "这个自托管、支持多 harness 的多 Agent 团队引擎，近 4 天日增一路加速，今天升到 +1,778，连续 10 天达标。11-17 它还在新秀榜，现在已居日榜首位。",
-  "big": "+1,778",
+  "title": "t3code 日增 1,659\n控制台赛道最稳",
+  "dek": "t3code 近 14 天日增一直在 +1,005 到 +1,674 之间，星数已到 69,089。同类的 orca 连续 139 天日增达标，多 Agent 控制台是眼下最稳的一条线。",
+  "big": "+1,659",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "SoduWork adds 1,778 stars a day\nup from 305 four days ago",
-  "dek_en": "The self-hosted, multi-harness engine for teams of agents has accelerated for four straight days and is now at +1,778. It was on the rookie list on 11-17 and now sits first on the daily chart.",
+  "title_en": "t3code adds 1,659 stars a day\nThe steadiest lane is the agent console",
+  "dek_en": "For 14 days t3code has gained between +1,005 and +1,674 stars daily, and it now sits at 69,089. Its peer orca has hit its daily mark for 139 straight days, so multi-agent consoles are the most reliable trend on the board.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
    "title": "论文角",
-   "text": "一篇论文发现，没有反馈的自进化会让 Skills 在 SkillsBench 上平均掉 15 分。",
+   "text": "Unfinished-Bench 里 98.3% 的违规，发生在规则已经显示之后。",
    "face": "Σ(っ °Д °;)っ",
    "kind": "papers",
-   "title_en": "Paper corner",
-   "text_en": "One paper finds that self-evolution without feedback costs Skills 15 points on average on SkillsBench."
+   "title_en": "Papers",
+   "text_en": "In Unfinished-Bench, 98.3% of rule violations happened after the rule was already shown."
   },
   {
-   "title": "回落快",
-   "text": "Chrome 的 modern-web-guidance 11-14 日增 +4,133，现在只剩 +595。",
+   "title": "回落中",
+   "text": "rust-anything 7,206 星，日增回落到 +912",
    "face": "┐(￣ヘ￣)┌",
-   "kind": "github",
-   "title_en": "Fast fade",
-   "text_en": "Chrome's modern-web-guidance gained +4,133 stars a day on 11-14 and is down to +595 now."
+   "kind": "social",
+   "title_en": "Cooling off",
+   "text_en": "rust-anything has 7,206 stars, and its daily gain has slipped to +912."
   },
   {
-   "title": "榜单合集",
-   "text": "rust-anything 日增 +1,515，曝光主要来自一个 YouTube 合集（▶7552），HN 上 1 分 0 评。",
-   "face": "(⊙ˍ⊙)",
-   "kind": "social",
-   "title_en": "Roundup effect",
-   "text_en": "rust-anything gains +1,515 a day, mostly from one YouTube roundup (▶7552). Its HN post has 1 point and 0 comments."
+   "title": "新形态",
+   "text": "phonedriver、pinky 等手机控制 agent 连续多天上涨",
+   "face": "(๑•̀ㅂ•́)و✧",
+   "kind": "github",
+   "title_en": "New form",
+   "text_en": "Phone-control agents like phonedriver and pinky have been climbing for several days running."
   }
  ],
  "reports": {
-  "github": "2026-11-20-github.md",
-  "papers": "2026-11-20-papers.md",
-  "social": "2026-11-20-social.md"
+  "github": "2026-11-21-github.md",
+  "papers": "2026-11-21-papers.md",
+  "social": "2026-11-21-social.md"
  }
 }
