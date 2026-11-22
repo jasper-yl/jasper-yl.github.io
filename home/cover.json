@@ -1,47 +1,47 @@
 {
- "date": "2026-11-21",
- "issue": 30,
+ "date": "2026-11-22",
+ "issue": 31,
  "cover": {
-  "kicker": "封面故事 · GitHub 项目",
-  "title": "t3code 日增 1,659\n控制台赛道最稳",
-  "dek": "t3code 近 14 天日增一直在 +1,005 到 +1,674 之间，星数已到 69,089。同类的 orca 连续 139 天日增达标，多 Agent 控制台是眼下最稳的一条线。",
-  "big": "+1,659",
-  "unit": "颗星 / 日",
-  "kind": "github",
-  "kicker_en": "Cover story · GitHub",
-  "title_en": "t3code adds 1,659 stars a day\nThe steadiest lane is the agent console",
-  "dek_en": "For 14 days t3code has gained between +1,005 and +1,674 stars daily, and it now sits at 69,089. Its peer orca has hit its daily mark for 139 straight days, so multi-agent consoles are the most reliable trend on the board.",
-  "unit_en": "stars / day"
+  "kicker": "封面故事 · 论文",
+  "title": "API 静默失败时\n强制校验把错答压到 1.7%",
+  "dek": "SilentGuard 在 harness 层做不变量检查，发现静默失败就强制弃答，错误回答从 74.0% 降到 1.7%。只发警告的做法，错误率仍有 70.1%。",
+  "big": "1.7%",
+  "unit": "静默失败后的错误回答率",
+  "kind": "papers",
+  "kicker_en": "Cover story · Papers",
+  "title_en": "When an API fails silently,\nenforced checks cut wrong answers to 1.7%",
+  "dek_en": "SilentGuard runs invariant checks in the harness and forces the agent to abstain when it spots a silent failure. Wrong answers fall from 74.0% to 1.7%, while a warning alone still leaves 70.1% wrong.",
+  "unit_en": "wrong answers after silent API failures"
  },
  "stickers": [
   {
-   "title": "论文角",
-   "text": "Unfinished-Bench 里 98.3% 的违规，发生在规则已经显示之后。",
-   "face": "Σ(っ °Д °;)っ",
-   "kind": "papers",
-   "title_en": "Papers",
-   "text_en": "In Unfinished-Bench, 98.3% of rule violations happened after the rule was already shown."
-  },
-  {
-   "title": "回落中",
-   "text": "rust-anything 7,206 星，日增回落到 +912",
-   "face": "┐(￣ヘ￣)┌",
-   "kind": "social",
-   "title_en": "Cooling off",
-   "text_en": "rust-anything has 7,206 stars, and its daily gain has slipped to +912."
-  },
-  {
-   "title": "新形态",
-   "text": "phonedriver、pinky 等手机控制 agent 连续多天上涨",
+   "title": "头部加速",
+   "text": "t3code 日增 +2,033，是近 14 天最高值，已连续 35 天达标。",
    "face": "(๑•̀ㅂ•́)و✧",
    "kind": "github",
-   "title_en": "New form",
-   "text_en": "Phone-control agents like phonedriver and pinky have been climbing for several days running."
+   "title_en": "Still speeding up",
+   "text_en": "t3code gained +2,033 stars today, its best in 14 days, and has now hit the bar for 35 days straight."
+  },
+  {
+   "title": "论文角",
+   "text": "Experience Rot：工具接口被静默修改后，带经验的智能体多数任务失败。",
+   "face": "Σ(っ °Д °;)っ",
+   "kind": "papers",
+   "title_en": "Paper corner",
+   "text_en": "Experience Rot: after a tool interface is silently changed, agents carrying experience fail most tasks."
+  },
+  {
+   "title": "HN 小游戏",
+   "text": "「你是 LLM 的 subagent」小游戏 worker755 在 HN 拿到 105 分。",
+   "face": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
+   "kind": "social",
+   "title_en": "HN toy",
+   "text_en": "worker755, a game where you play an LLM's subagent, scored 105 points on Hacker News."
   }
  ],
  "reports": {
-  "github": "2026-11-21-github.md",
-  "papers": "2026-11-21-papers.md",
-  "social": "2026-11-21-social.md"
+  "github": "2026-11-22-github.md",
+  "papers": "2026-11-22-papers.md",
+  "social": "2026-11-22-social.md"
  }
 }
