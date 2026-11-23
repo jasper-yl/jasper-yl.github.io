@@ -69,6 +69,7 @@
   "stars": 197373,
   "zh": "给编码Agent加上“偷懒资深开发”思路，倾向少写代码、避免过度实现",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-23/github",
@@ -144,6 +145,7 @@
   "stars": 152387,
   "zh": "把代码库、文档和配置解析成可查询的知识图谱，供编码Agent检索",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-W44/weekly",
@@ -421,6 +423,7 @@
   "stars": 77423,
   "zh": "让编码Agent执行多阶段安全审计并输出可验证的结构化结果",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-W44/weekly",
@@ -482,6 +485,7 @@
   "stars": 134166,
   "zh": "同时管理和运行多个编码Agent的桌面与移动端工作环境",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-W44/weekly",
@@ -579,6 +583,7 @@
   "stars": 475209,
   "zh": "借助Agent对应用行为乃至原生二进制进行逆向工程",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-W44/weekly",
@@ -649,6 +654,7 @@
   "stars": 207619,
   "zh": "抓取和搜索网页并转成Markdown等结构化数据，供AI Agent使用",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-23/github",
    "2026-11-22/social",
    "2026-11-22/github",
@@ -1034,6 +1040,7 @@
   "stars": 309385,
   "zh": "为 Claude Code、Codex 等智能体提供技能、记忆与安全的性能优化套件",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W44/weekly",
    "2026-W43/weekly",
    "2026-11-21/github",
@@ -1076,6 +1083,7 @@
   "stars": 324803,
   "zh": "为编程智能体提供技能库和子智能体驱动的软件开发方法论",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W44/weekly",
    "2026-11-23/github",
    "2026-11-22/github",
@@ -1100,6 +1108,7 @@
   "stars": 120534,
   "zh": "让编程智能体借助参考图和浏览器检查做出有设计感的页面，避免千篇一律",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W44/weekly",
    "2026-11-21/github",
@@ -1476,6 +1485,7 @@
   "stars": 84905,
   "zh": "dsh 插件，免登录免密钥直接调用 DeepSeek、Kimi 等免费模型",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-W44/weekly",
@@ -1669,6 +1679,7 @@
   "stars": 331183,
   "zh": "面向工程师的智能体技能合集，取自作者的 .agents 目录",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-W44/weekly",
@@ -1773,6 +1784,7 @@
   "stars": 59941,
   "zh": "帮 Claude Code 等工具避免千篇一律 AI 风格的设计技能",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-W44/weekly",
@@ -2850,6 +2862,7 @@
  "pbakaus/impeccable": {
   "first_seen": "2026-10-28",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-W44/weekly",
@@ -3912,6 +3925,7 @@
  "AgenticResourceRegistry/AgenticResourceRegistry": {
   "first_seen": "2026-10-31",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-11-22/social",
@@ -4556,6 +4570,7 @@
  "choam2426/herdr-paddock": {
   "first_seen": "2026-11-02",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-W45/weekly",
    "2026-11-22/social",
@@ -4886,6 +4901,7 @@
  "shinyobjectz/raea": {
   "first_seen": "2026-11-06",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-23/github",
    "2026-11-22/social",
    "2026-11-22/github",
@@ -5490,6 +5506,7 @@
  "PeepSick/usbplus": {
   "first_seen": "2026-11-10",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-11-22/social",
    "2026-11-21/social",
@@ -5506,6 +5523,7 @@
  "GoogleChrome/modern-web-guidance": {
   "first_seen": "2026-11-11",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-11-23/github",
    "2026-11-22/github",
@@ -5598,6 +5616,7 @@
  "mdiri-ai/SoduWork": {
   "first_seen": "2026-11-11",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-22/github",
    "2026-11-21/github",
    "2026-11-20/social",
@@ -5705,6 +5724,7 @@
  "pingdotgg/t3code": {
   "first_seen": "2026-11-12",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-11-23/github",
    "2026-11-22/social",
@@ -5756,6 +5776,7 @@
  "Tencent/LoopForge": {
   "first_seen": "2026-11-12",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-11-21/github",
    "2026-11-20/social",
@@ -5844,6 +5865,7 @@
  "GoogleChrome/modern-web-guidance-src": {
   "first_seen": "2026-11-13",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-11-21/github",
    "2026-11-20/github",
@@ -5923,6 +5945,7 @@
  "NVIDIA/SkillEvaluator": {
   "first_seen": "2026-11-13",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-19/github",
    "2026-11-18/github",
    "2026-11-17/social",
@@ -6088,6 +6111,7 @@
  "dream-num/univer": {
   "first_seen": "2026-11-15",
   "mentions": [
+   "2026-W47/weekly",
    "2026-W46/weekly",
    "2026-11-20/github",
    "2026-11-18/social",
@@ -6138,6 +6162,7 @@
  "ChromeDevTools/chrome-devtools-mcp": {
   "first_seen": "2026-11-15",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-17/github",
    "2026-11-16/github",
    "2026-11-15/github"
@@ -6286,6 +6311,7 @@
  "google-research/paper-orchestra": {
   "first_seen": "2026-11-16",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-21/github",
    "2026-11-20/github",
    "2026-11-19/social",
@@ -6330,6 +6356,7 @@
  "Mirix-AI/MIRIX": {
   "first_seen": "2026-11-16",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-17/papers",
    "2026-11-16/papers"
   ],
@@ -6349,6 +6376,7 @@
  "RainBowLuoCS/Gamer": {
   "first_seen": "2026-11-16",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-17/papers",
    "2026-11-16/papers"
   ],
@@ -6375,6 +6403,7 @@
  "withcoral/coral": {
   "first_seen": "2026-11-16",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-16/social"
   ],
   "description": "Execution rails for agents. Equip your AI to work with sensitive enterprise systems. Give agents precise permissions and custom tools that work faster with fewer tokens.",
@@ -6384,6 +6413,7 @@
  "elementalsouls/Claude-BugHunter": {
   "first_seen": "2026-11-17",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-23/github",
    "2026-11-22/social",
    "2026-11-22/github",
@@ -6484,6 +6514,7 @@
  "erkamyaman/rust-anything": {
   "first_seen": "2026-11-17",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-23/github",
    "2026-11-22/social",
    "2026-11-22/github",
@@ -6560,6 +6591,7 @@
  "localixai/tokendoctor": {
   "first_seen": "2026-11-17",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-17/social"
   ],
   "description": "tokendoctor: the same Claude Code for up to 38% less. Replays your own past sessions to show what each change would have saved, then changes only what you pick",
@@ -6578,6 +6610,7 @@
  "mvanhorn/last30days-skill": {
   "first_seen": "2026-11-18",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-23/github",
    "2026-11-22/social",
    "2026-11-22/github",
@@ -6742,6 +6775,7 @@
  "nexu-io/openmotion": {
   "first_seen": "2026-11-18",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-23/github",
    "2026-11-22/github",
    "2026-11-21/social",
@@ -6875,6 +6909,7 @@
  "brainfish-ai/webcrawl-anything": {
   "first_seen": "2026-11-19",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-22/social",
    "2026-11-21/social",
    "2026-11-20/social",
@@ -7005,6 +7040,7 @@
  "BaaRai/ARTEX": {
   "first_seen": "2026-11-21",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-23/github",
    "2026-11-22/social",
    "2026-11-22/github",
@@ -7159,6 +7195,7 @@
  "EL4CTEO/fast-anything": {
   "first_seen": "2026-11-22",
   "mentions": [
+   "2026-W47/weekly",
    "2026-11-23/github",
    "2026-11-22/github"
   ],
