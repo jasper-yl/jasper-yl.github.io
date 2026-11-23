@@ -1,47 +1,46 @@
 {
- "date": "2026-11-22",
- "issue": 31,
+ "date": "2026-11-23",
+ "issue": 32,
  "cover": {
-  "kicker": "封面故事 · 论文",
-  "title": "API 静默失败时\n强制校验把错答压到 1.7%",
-  "dek": "SilentGuard 在 harness 层做不变量检查，发现静默失败就强制弃答，错误回答从 74.0% 降到 1.7%。只发警告的做法，错误率仍有 70.1%。",
-  "big": "1.7%",
-  "unit": "静默失败后的错误回答率",
-  "kind": "papers",
-  "kicker_en": "Cover story · Papers",
-  "title_en": "When an API fails silently,\nenforced checks cut wrong answers to 1.7%",
-  "dek_en": "SilentGuard runs invariant checks in the harness and forces the agent to abstain when it spots a silent failure. Wrong answers fall from 74.0% to 1.7%, while a warning alone still leaves 70.1% wrong.",
-  "unit_en": "wrong answers after silent API failures"
+  "kicker": "封面故事 · GitHub 项目",
+  "title": "t3code 日增 3,047\n编排控制台仍在加速",
+  "dek": "t3code 今天涨了 3,047 颗星，此前几天从 +1,537 升到 +2,741，脱离了之前 +1,003 到 +1,674 的区间。连续 36 天达标，编排类是眼下最稳的一条线。",
+  "big": "+3,047",
+  "unit": "颗星 / 日",
+  "kind": "github",
+  "kicker_en": "Cover story · GitHub",
+  "title_en": "t3code adds 3,047 stars in a day\nand the orchestration push keeps climbing",
+  "dek_en": "t3code gained 3,047 stars today, up from +1,537 to +2,741 over the past few days and well clear of its earlier +1,003 to +1,674 range. It has now hit the daily bar for 36 straight days, the steadiest line in the multi-agent space.",
+  "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "头部加速",
-   "text": "t3code 日增 +2,033，是近 14 天最高值，已连续 35 天达标。",
-   "face": "(๑•̀ㅂ•́)و✧",
-   "kind": "github",
-   "title_en": "Still speeding up",
-   "text_en": "t3code gained +2,033 stars today, its best in 14 days, and has now hit the bar for 35 days straight."
-  },
-  {
-   "title": "论文角",
-   "text": "Experience Rot：工具接口被静默修改后，带经验的智能体多数任务失败。",
+   "title": "经验过期",
+   "text": "工具接口被悄悄改动后，带经验的 agent 反而不如没经验的新手。",
    "face": "Σ(っ °Д °;)っ",
    "kind": "papers",
-   "title_en": "Paper corner",
-   "text_en": "Experience Rot: after a tool interface is silently changed, agents carrying experience fail most tasks."
+   "title_en": "Stale Lessons",
+   "text_en": "Experience Rot finds that after a silent tool-interface change, agents with experience do worse than fresh ones."
   },
   {
-   "title": "HN 小游戏",
-   "text": "「你是 LLM 的 subagent」小游戏 worker755 在 HN 拿到 105 分。",
-   "face": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
-   "kind": "social",
-   "title_en": "HN toy",
-   "text_en": "worker755, a game where you play an LLM's subagent, scored 105 points on Hacker News."
+   "title": "强制校验",
+   "text": "SilentGuard 把静默故障下的错误答案从 74.0% 降到 1.7%",
+   "face": "(๑•̀ㅂ•́)و✧",
+   "kind": "papers",
+   "title_en": "Enforced Checks",
+   "text_en": "SilentGuard cuts wrong answers under silent API failures from 74.0% to 1.7%."
+  },
+  {
+   "title": "安全新星",
+   "text": "Claude-BugHunter 日增 +2,009，11-12 前每天只涨 9 到 13 颗星。",
+   "face": "(⊙ˍ⊙)",
+   "kind": "github",
+   "title_en": "Security Riser",
+   "text_en": "Claude-BugHunter gained 2,009 stars today, after adding only 9 to 13 a day before 11-12."
   }
  ],
  "reports": {
-  "github": "2026-11-22-github.md",
-  "papers": "2026-11-22-papers.md",
-  "social": "2026-11-22-social.md"
+  "github": "2026-11-23-github.md",
+  "papers": "2026-11-23-papers.md"
  }
 }
