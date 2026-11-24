@@ -1,46 +1,47 @@
 {
- "date": "2026-11-23",
- "issue": 32,
+ "date": "2026-11-24",
+ "issue": 33,
  "cover": {
   "kicker": "封面故事 · GitHub 项目",
-  "title": "t3code 日增 3,047\n编排控制台仍在加速",
-  "dek": "t3code 今天涨了 3,047 颗星，此前几天从 +1,537 升到 +2,741，脱离了之前 +1,003 到 +1,674 的区间。连续 36 天达标，编排类是眼下最稳的一条线。",
-  "big": "+3,047",
+  "title": "t3code 近四天日增翻了近一倍\n已连续 37 天达标",
+  "dek": "t3code 近 4 天官方日增从 +1,530 涨到 +3,028，已连续 37 天达标。它是一处管理多个编码 Agent 的控制台，涨得最快，但第三方的真实使用讨论还不多。",
+  "big": "+2,737",
   "unit": "颗星 / 日",
   "kind": "github",
   "kicker_en": "Cover story · GitHub",
-  "title_en": "t3code adds 3,047 stars in a day\nand the orchestration push keeps climbing",
-  "dek_en": "t3code gained 3,047 stars today, up from +1,537 to +2,741 over the past few days and well clear of its earlier +1,003 to +1,674 range. It has now hit the daily bar for 36 straight days, the steadiest line in the multi-agent space.",
+  "title_en": "t3code's daily stars nearly doubled in four days\nand the streak is now 37 days",
+  "dek_en": "Over the last four days t3code's official daily gain climbed from +1,530 to +3,028, extending a 37-day streak. It's a console for running several coding agents in one place, and it's growing fastest of the lot, though there's little independent talk about real use yet.",
   "unit_en": "stars / day"
  },
  "stickers": [
   {
-   "title": "经验过期",
-   "text": "工具接口被悄悄改动后，带经验的 agent 反而不如没经验的新手。",
-   "face": "Σ(っ °Д °;)っ",
-   "kind": "papers",
-   "title_en": "Stale Lessons",
-   "text_en": "Experience Rot finds that after a silent tool-interface change, agents with experience do worse than fresh ones."
-  },
-  {
-   "title": "强制校验",
-   "text": "SilentGuard 把静默故障下的错误答案从 74.0% 降到 1.7%",
-   "face": "(๑•̀ㅂ•́)و✧",
-   "kind": "papers",
-   "title_en": "Enforced Checks",
-   "text_en": "SilentGuard cuts wrong answers under silent API failures from 74.0% to 1.7%."
-  },
-  {
-   "title": "安全新星",
-   "text": "Claude-BugHunter 日增 +2,009，11-12 前每天只涨 9 到 13 颗星。",
+   "title": "新官方",
+   "text": "gemini-api-cli 日增 +1,106，此前日增都没超过 6。",
    "face": "(⊙ˍ⊙)",
    "kind": "github",
-   "title_en": "Security Riser",
-   "text_en": "Claude-BugHunter gained 2,009 stars today, after adding only 9 to 13 a day before 11-12."
+   "title_en": "New official",
+   "text_en": "gemini-api-cli gained +1,106 stars today, after never topping 6 a day before."
+  },
+  {
+   "title": "论文角",
+   "text": "LEDGER+EP 用 1% 上下文，与全量回放同为 74.8%。",
+   "face": "φ(゜▽゜*)♪",
+   "kind": "papers",
+   "title_en": "Paper corner",
+   "text_en": "LEDGER+EP matches full replay at 74.8% on LongMemEval using 1% of the context."
+  },
+  {
+   "title": "冷眼看",
+   "text": "多数增长榜项目在 X 上几乎没有真实讨论，增长来自趋势榜和 YouTube。",
+   "face": "┐(￣ヘ￣)┌",
+   "kind": "social",
+   "title_en": "Reality check",
+   "text_en": "Most fast-growing repos get almost no real discussion on X; the stars come from trending lists and YouTube."
   }
  ],
  "reports": {
-  "github": "2026-11-23-github.md",
-  "papers": "2026-11-23-papers.md"
+  "github": "2026-11-24-github.md",
+  "papers": "2026-11-24-papers.md",
+  "social": "2026-11-24-social.md"
  }
 }
