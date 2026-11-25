@@ -1,47 +1,47 @@
 {
- "date": "2026-11-24",
- "issue": 33,
+ "date": "2026-11-25",
+ "issue": 34,
  "cover": {
-  "kicker": "封面故事 · GitHub 项目",
-  "title": "t3code 近四天日增翻了近一倍\n已连续 37 天达标",
-  "dek": "t3code 近 4 天官方日增从 +1,530 涨到 +3,028，已连续 37 天达标。它是一处管理多个编码 Agent 的控制台，涨得最快，但第三方的真实使用讨论还不多。",
-  "big": "+2,737",
-  "unit": "颗星 / 日",
-  "kind": "github",
-  "kicker_en": "Cover story · GitHub",
-  "title_en": "t3code's daily stars nearly doubled in four days\nand the streak is now 37 days",
-  "dek_en": "Over the last four days t3code's official daily gain climbed from +1,530 to +3,028, extending a 37-day streak. It's a console for running several coding agents in one place, and it's growing fastest of the lot, though there's little independent talk about real use yet.",
-  "unit_en": "stars / day"
+  "kicker": "封面故事 · 论文",
+  "title": "agent 想停下时先压缩上下文\n2,000 轮覆盖率翻了一倍多",
+  "dek": "MiMo 在 2,000 轮里的能力覆盖，原策略只有 32.4%，SCoRe 在 agent 想停下时压缩上下文后到了 67.0%。另一篇论文测出，有缓存折扣时删旧观察反而更贵。",
+  "big": "67.0%",
+  "unit": "2,000 轮能力覆盖",
+  "kind": "papers",
+  "kicker_en": "Cover story · Papers",
+  "title_en": "Compress context when the agent\nwants to stop, and coverage doubles",
+  "dek_en": "On MiMo, the original policy covered 32.4% of capabilities over 2,000 turns. SCoRe, which compresses context at the moment an agent wants to stop, reaches 67.0%. A second paper finds that dropping old observations can raise costs when prefix caching is discounted.",
+  "unit_en": "capability coverage at 2,000 turns"
  },
  "stickers": [
   {
-   "title": "新官方",
-   "text": "gemini-api-cli 日增 +1,106，此前日增都没超过 6。",
-   "face": "(⊙ˍ⊙)",
+   "title": "控制台",
+   "text": "orca 日增 +1,903，连续 143 天达标，昨日 +1,882 创近 30 周新高。",
+   "face": "(๑•̀ㅂ•́)و✧",
    "kind": "github",
-   "title_en": "New official",
-   "text_en": "gemini-api-cli gained +1,106 stars today, after never topping 6 a day before."
+   "title_en": "Consoles",
+   "text_en": "orca adds 1,903 stars a day, on a 143-day streak, and yesterday's +1,882 was a 30-week high."
+  },
+  {
+   "title": "自发传播",
+   "text": "diagram-design 日增 +1,042，11-23 起出现一批真实使用帖。",
+   "face": "ヾ(≧▽≦*)o",
+   "kind": "social",
+   "title_en": "Organic buzz",
+   "text_en": "diagram-design gains 1,042 stars a day, with a batch of real usage posts since 11-23."
   },
   {
    "title": "论文角",
-   "text": "LEDGER+EP 用 1% 上下文，与全量回放同为 74.8%。",
-   "face": "φ(゜▽゜*)♪",
+   "text": "有前缀缓存折扣时，删掉旧观察可能让成本上升 38–116%。",
+   "face": "(⊙ˍ⊙)",
    "kind": "papers",
    "title_en": "Paper corner",
-   "text_en": "LEDGER+EP matches full replay at 74.8% on LongMemEval using 1% of the context."
-  },
-  {
-   "title": "冷眼看",
-   "text": "多数增长榜项目在 X 上几乎没有真实讨论，增长来自趋势榜和 YouTube。",
-   "face": "┐(￣ヘ￣)┌",
-   "kind": "social",
-   "title_en": "Reality check",
-   "text_en": "Most fast-growing repos get almost no real discussion on X; the stars come from trending lists and YouTube."
+   "text_en": "With a prefix-cache discount, deleting old observations can raise cost by 38–116%."
   }
  ],
  "reports": {
-  "github": "2026-11-24-github.md",
-  "papers": "2026-11-24-papers.md",
-  "social": "2026-11-24-social.md"
+  "github": "2026-11-25-github.md",
+  "papers": "2026-11-25-papers.md",
+  "social": "2026-11-25-social.md"
  }
 }
