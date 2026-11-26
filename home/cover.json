@@ -1,47 +1,47 @@
 {
- "date": "2026-11-25",
- "issue": 34,
+ "date": "2026-11-26",
+ "issue": 35,
  "cover": {
   "kicker": "封面故事 · 论文",
-  "title": "agent 想停下时先压缩上下文\n2,000 轮覆盖率翻了一倍多",
-  "dek": "MiMo 在 2,000 轮里的能力覆盖，原策略只有 32.4%，SCoRe 在 agent 想停下时压缩上下文后到了 67.0%。另一篇论文测出，有缓存折扣时删旧观察反而更贵。",
-  "big": "67.0%",
-  "unit": "2,000 轮能力覆盖",
+  "title": "让模型自己管上下文\n32K 预算下从 21% 升到 56%",
+  "dek": "NVIDIA 的新论文让模型自己决定何时压缩、压缩什么。GPT 6.1 在 32K 预算下从 21% 升到 56%，Kimi 的输入 token 最多少了 41%。",
+  "big": "21% → 56%",
+  "unit": "GPT 6.1 · 32K 预算",
   "kind": "papers",
   "kicker_en": "Cover story · Papers",
-  "title_en": "Compress context when the agent\nwants to stop, and coverage doubles",
-  "dek_en": "On MiMo, the original policy covered 32.4% of capabilities over 2,000 turns. SCoRe, which compresses context at the moment an agent wants to stop, reaches 67.0%. A second paper finds that dropping old observations can raise costs when prefix caching is discounted.",
-  "unit_en": "capability coverage at 2,000 turns"
+  "title_en": "Letting models manage their own context\nGPT 6.1 goes from 21% to 56% at 32K",
+  "dek_en": "NVIDIA's new paper lets the model decide when to compress and what to compress. At a 32K budget GPT 6.1 climbs from 21% to 56%, and Kimi uses up to 41% fewer input tokens.",
+  "unit_en": "GPT 6.1 at a 32K budget"
  },
  "stickers": [
   {
-   "title": "控制台",
-   "text": "orca 日增 +1,903，连续 143 天达标，昨日 +1,882 创近 30 周新高。",
+   "title": "新热点",
+   "text": "orca 日增 +2,391，昨日 +2,230 是近 30 周最高。",
    "face": "(๑•̀ㅂ•́)و✧",
    "kind": "github",
-   "title_en": "Consoles",
-   "text_en": "orca adds 1,903 stars a day, on a 143-day streak, and yesterday's +1,882 was a 30-week high."
+   "title_en": "Hot repo",
+   "text_en": "orca adds +2,391 stars a day, and yesterday's +2,230 was its best in 30 weeks."
   },
   {
-   "title": "自发传播",
-   "text": "diagram-design 日增 +1,042，11-23 起出现一批真实使用帖。",
-   "face": "ヾ(≧▽≦*)o",
+   "title": "视频带火",
+   "text": "rea 在 X 上讨论很少，5 条 YouTube 视频合计播放约 1.51M。",
+   "face": "(⊙ˍ⊙)",
    "kind": "social",
-   "title_en": "Organic buzz",
-   "text_en": "diagram-design gains 1,042 stars a day, with a batch of real usage posts since 11-23."
+   "title_en": "Video-led",
+   "text_en": "rea has little discussion on X, but 5 YouTube videos add up to about 1.51M views."
   },
   {
    "title": "论文角",
-   "text": "有前缀缓存折扣时，删掉旧观察可能让成本上升 38–116%。",
-   "face": "(⊙ˍ⊙)",
+   "text": "Autoresearch 消融显示，保留可访问的历史记录比滚动摘要效果好。",
+   "face": "φ(゜▽゜*)♪",
    "kind": "papers",
    "title_en": "Paper corner",
-   "text_en": "With a prefix-cache discount, deleting old observations can raise cost by 38–116%."
+   "text_en": "An Autoresearch ablation finds that keeping an accessible history beats rolling summaries."
   }
  ],
  "reports": {
-  "github": "2026-11-25-github.md",
-  "papers": "2026-11-25-papers.md",
-  "social": "2026-11-25-social.md"
+  "github": "2026-11-26-github.md",
+  "papers": "2026-11-26-papers.md",
+  "social": "2026-11-26-social.md"
  }
 }
