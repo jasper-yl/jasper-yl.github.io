@@ -1,47 +1,47 @@
 {
- "date": "2026-11-26",
- "issue": 35,
+ "date": "2026-11-27",
+ "issue": 36,
  "cover": {
   "kicker": "封面故事 · 论文",
-  "title": "让模型自己管上下文\n32K 预算下从 21% 升到 56%",
-  "dek": "NVIDIA 的新论文让模型自己决定何时压缩、压缩什么。GPT 6.1 在 32K 预算下从 21% 升到 56%，Kimi 的输入 token 最多少了 41%。",
-  "big": "21% → 56%",
-  "unit": "GPT 6.1 · 32K 预算",
+  "title": "OS-Omni 评测\n最强模型比人类低 8.8 个点",
+  "dek": "OS-Omni 测电脑使用，最强的 Claude Opus 5.5 平均成功率 68.5%，人类是 77.3%。首日 👍99、GitHub 102 星，是 New 里热度最高的一篇。",
+  "big": "68.5%",
+  "unit": "Opus 5.5 平均成功率",
   "kind": "papers",
   "kicker_en": "Cover story · Papers",
-  "title_en": "Letting models manage their own context\nGPT 6.1 goes from 21% to 56% at 32K",
-  "dek_en": "NVIDIA's new paper lets the model decide when to compress and what to compress. At a 32K budget GPT 6.1 climbs from 21% to 56%, and Kimi uses up to 41% fewer input tokens.",
-  "unit_en": "GPT 6.1 at a 32K budget"
+  "title_en": "OS-Omni benchmark:\nthe best model trails humans by 8.8 points",
+  "dek_en": "OS-Omni tests computer use. Claude Opus 5.5, the strongest model on it, averages a 68.5% success rate against 77.3% for humans. It drew 👍99 and 102 GitHub stars on day one, the hottest paper in New.",
+  "unit_en": "Opus 5.5 avg. success rate"
  },
  "stickers": [
   {
    "title": "新热点",
-   "text": "orca 日增 +2,391，昨日 +2,230 是近 30 周最高。",
-   "face": "(๑•̀ㅂ•́)و✧",
+   "text": "多 Agent 控制台最挤，t3code 日增 +1,292。",
+   "face": "(ﾉ◕ヮ◕)ﾉ*:･ﾟ✧",
    "kind": "github",
-   "title_en": "Hot repo",
-   "text_en": "orca adds +2,391 stars a day, and yesterday's +2,230 was its best in 30 weeks."
-  },
-  {
-   "title": "视频带火",
-   "text": "rea 在 X 上讨论很少，5 条 YouTube 视频合计播放约 1.51M。",
-   "face": "(⊙ˍ⊙)",
-   "kind": "social",
-   "title_en": "Video-led",
-   "text_en": "rea has little discussion on X, but 5 YouTube videos add up to about 1.51M views."
+   "title_en": "Hot spot",
+   "text_en": "Multi-agent consoles are the busiest lane, with t3code up +1,292 stars in a day."
   },
   {
    "title": "论文角",
-   "text": "Autoresearch 消融显示，保留可访问的历史记录比滚动摘要效果好。",
+   "text": "SEEK 把经验沉淀成可复用程序，少了 77.6% 的模型请求。",
    "face": "φ(゜▽゜*)♪",
    "kind": "papers",
    "title_en": "Paper corner",
-   "text_en": "An Autoresearch ablation finds that keeping an accessible history beats rolling summaries."
+   "text_en": "SEEK turns experience into reusable programs and makes 77.6% fewer model requests."
+  },
+  {
+   "title": "HN 热帖",
+   "text": "Notion 官方 MCP 被指注入隐藏追加销售指令，HN 58 分。",
+   "face": "Σ(っ °Д °;)っ",
+   "kind": "social",
+   "title_en": "HN watch",
+   "text_en": "Notion's official MCP is accused of injecting hidden upsell instructions into agent context. 58 points on HN."
   }
  ],
  "reports": {
-  "github": "2026-11-26-github.md",
-  "papers": "2026-11-26-papers.md",
-  "social": "2026-11-26-social.md"
+  "github": "2026-11-27-github.md",
+  "papers": "2026-11-27-papers.md",
+  "social": "2026-11-27-social.md"
  }
 }
